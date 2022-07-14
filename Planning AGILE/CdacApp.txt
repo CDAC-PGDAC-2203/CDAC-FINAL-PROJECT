@@ -1,0 +1,47 @@
+# CDAC ACTS App
+
+## Templates
+
+	- Student Registration(initial doc upload)
+	- Student Login
+	- Faculty Login
+	- CC Login
+	- Admin Login
+
+## Features
+
+- Student specific :
+1. Feedback system
+2. Attendance system (time-based)
+3. Online repository : Module wise
+   3.1 Video recordings
+   3.2 Study material
+   3.3 Reference material
+4. Student Dashboard
+   4.1 Daily schedule
+   4.2 Student performance
+   4.3 Doubt forum
+   4.4 Assignment submission
+   4.5 Notification center
+   4.6 If possible : chat box
+5. Online exams
+6. IDE Integration
+7. Result portal
+
+
+- CC Specific :
+1. Access to all student data.
+2. Day wise attendance reports.
+3. Notification broadcast.
+4. Feedback response.
+5. exam upload
+
+Faculty Specific
+-repo. control
+
+
+
+**** if mann kia ***
+1. Valid through
+2. Date & Time
+
