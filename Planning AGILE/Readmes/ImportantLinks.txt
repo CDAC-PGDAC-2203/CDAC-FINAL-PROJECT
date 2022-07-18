@@ -1,0 +1,5 @@
+- Authentication management : KeyCloak : https://www.keycloak.org/
+
+- Password encryption to store in dataBase : https://www.javatpoint.com/how-to-encrypt-password-in-java#:~:text=Password%2DBased%20Encryption%20using%20Salt,util%20package
+
+- Implementation of JWT : https://www.youtube.com/watch?v=CWiwpvpCrro
