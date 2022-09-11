@@ -1,0 +1,20 @@
+1. User tables : user_tables (profile)
+2. result_table & exam_table tables (same table)
+3. weekly_schedule table
+4. current_day_attendance 
+5. overall_attendance tables
+6. doubt_forum table
+7. lecture_link table
+8. performance_table table
+9. pending_feedback table
+10. teacher_feedback table
+
+- Prepare create query for each table.
+
+CREATE database CDAC_ACTS_APP;
+USE CDAC_ACTS_APP;
+IF NOT EXIST (.... query to check if table peresent in db)
+	BEGIN
+		// query to create table
+	END
+GO
