@@ -45,7 +45,7 @@ insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17'
 
 -- user_address
 
-create table user_address(u_id int NOT NULL,
+create table if not exists user_address(u_id int NOT NULL,
 							add_line1 varchar(30),
                             add_line2 varchar(30),
 							state varchar(20),
