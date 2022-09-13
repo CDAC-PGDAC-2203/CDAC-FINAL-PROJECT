@@ -35,7 +35,7 @@ INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'Student');
 -- ------------------------------------------------------------------------------------------------------
 -- personal_table
 -- Date format YYYY-MM-DD 
-create table if not exists personal_details(u_id int PRIMARY KEY NOT NULL, f_name varchar(25) NOT NULL, 
+create table if not exists personal_details(u_id bigint PRIMARY KEY NOT NULL, f_name varchar(25) NOT NULL, 
 m_name varchar(25), l_name varchar(25), gender varchar(1) NOT NULL, dob date NOT NULL,
 email varchar(60) NOT NULL, phone bigint NOT NULL,qualification varchar(15) NOT NULL,photo blob);
 
@@ -45,7 +45,7 @@ insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17'
 
 -- user_address
 
-create table user_address(u_id int NOT NULL,
+create table if not exists user_address(u_id bigint NOT NULL,
 							add_line1 varchar(30),
                             add_line2 varchar(30),
 							state varchar(20),
