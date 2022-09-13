@@ -10,3 +10,4 @@ insert into ccat_pre values('2203002','Joy',NULL,'Pahari','1998-09-01');
 insert into ccat_pre values('2203003','Udit',NULL,'Keskar','1999-11-23');
 insert into ccat_pre values('2203004','Mayank',NULL,'Sachan','1994-03-07');
 insert into ccat_pre values('2203005','Kamana',NULL,'Mathur','1997-07-04');
+insert into ccat_pre values('1111111','admin','admin','admin','1999-01-01');
