@@ -42,3 +42,20 @@ email varchar(60) NOT NULL, phone bigint NOT NULL,qualification varchar(15) NOT 
 insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com',
 '8630296896','B.tech',NULL);
 -- ------------------------------------------------------------------------------------------------------
+
+-- user_address
+
+create table user_address(u_id int NOT NULL,
+							add_line1 varchar(30),
+                            add_line2 varchar(30),
+							state varchar(20),
+                            city varchar(20),
+                            pincode int,
+                            foreign key(u_id) references user_table(u_id));
+                            
+insert into user_address values(1,
+								'Ganesh Apartment',
+                                'Kisan Nagar',
+								'Uttar Pradesh',
+                                'Hapur',
+                                400001);
