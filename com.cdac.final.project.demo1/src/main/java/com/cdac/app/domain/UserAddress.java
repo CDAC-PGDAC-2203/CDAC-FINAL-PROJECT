@@ -10,12 +10,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = "user_address")
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -24,7 +28,7 @@ public class UserAddress {
 	@Id
 	@Column(name = "u_id")
 	private Long userId;
-
+	
 	@Column(name = "add_line1")
 	private String AddLine1;
 	
