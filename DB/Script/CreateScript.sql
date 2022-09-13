@@ -45,13 +45,12 @@ insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17'
 
 -- user_address
 
-create table if not exists user_address(u_id bigint NOT NULL,
+create table if not exists user_address(u_id bigint NOT NULL Primary Key,
 							add_line1 varchar(30),
                             add_line2 varchar(30),
 							state varchar(20),
                             city varchar(20),
-                            pincode int,
-                            foreign key(u_id) references user_table(u_id));
+                            pincode int);
                             
 insert into user_address values(1,
 								'Ganesh Apartment',
