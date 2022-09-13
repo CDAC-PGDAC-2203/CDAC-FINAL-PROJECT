@@ -1,3 +1,9 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Joy Pahari [220340120092]
+ * @Date: 13-09-2022
+*/
+
 package com.cdac.app.domain;
 
 import javax.persistence.Column;
@@ -16,14 +22,14 @@ import lombok.ToString;
 public class Guardian {
 
 	@Column(name = "ccat_no")
-	private Integer ccatNo;
+	private Long ccatNo;
 
 	@Column(name = "u_id")
-	private Integer userId;
+	private Long userId;
 
 	@Column(name = "guardian_name")
 	private String guardianName;
 
 	@Column(name = "guardian_phone")
-	private Integer guardianPhone;
+	private Long guardianPhone;
 }

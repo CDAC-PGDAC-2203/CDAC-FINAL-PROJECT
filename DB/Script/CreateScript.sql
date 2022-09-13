@@ -68,3 +68,15 @@ insert into user_address values(1,
 CREATE TABLE IF NOT EXISTS student_user(u_id bigint NOT NULL,ccat_no bigint NOT NULL, course varchar(10) NOT NULL);
 
 INSERT INTO student_user VALUES('1','2203001','PG-DAC');
+
+-- -----------------------------------------------------------------------------------------------
+-- guardian
+
+CREATE TABLE IF NOT EXISTS guardian(
+	ccat_no BIGINT NOT NULL,
+    u_id BIGINT NOT NULL,
+    guardian_name VARCHAR(50),
+    guardian_phone BIGINT
+);
+
+INSERT INTO guardian VALUES(2203001, 1, 'Mala Agarwal', '1234567890');

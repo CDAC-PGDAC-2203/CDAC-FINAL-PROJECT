@@ -1,3 +1,9 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Joy Pahari [220340120092]
+ * @Date: 13-09-2022
+*/
+
 package com.cdac.app.domain;
 
 import javax.persistence.Column;
@@ -19,13 +25,13 @@ public class UserTable {
 
 	@Column(name = "u_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
+	private Long userId;
 
 	@Column(name = "f_name")
 	private String fName;
 
 	@Column(name = "ccat_no")
-	private Integer ccatNo;
+	private Long ccatNo;
 
 	@Column(name = "u_role")
 	private Role userRole;
