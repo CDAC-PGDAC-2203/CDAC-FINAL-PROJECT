@@ -13,16 +13,20 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "ccat_pre")
+@Table(name = "ccat_student")
 @Getter
 @Setter
 @ToString
-public class CCATPre {
+@NoArgsConstructor
+@AllArgsConstructor
+public class CCATStudent {
 
 	@Id
 	@Column(name = "ccat_no")
@@ -42,4 +46,5 @@ public class CCATPre {
 
 	@Column(name = "course")
 	private String course;
+
 }

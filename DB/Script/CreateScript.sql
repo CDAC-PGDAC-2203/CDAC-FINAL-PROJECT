@@ -2,7 +2,7 @@ create database cdac_app_final;
 use cdac_app_final;
 ----------------------------------------------------------------------------------------------------------------
 -- Date format YYYY-MM-DD 
-create table if not exists ccat_pre(
+create table if not exists ccat_student(
 	ccat_no bigint PRIMARY KEY NOT NULL,
     f_name varchar(25) NOT NULL, 
 	m_name varchar(25),
@@ -11,12 +11,12 @@ create table if not exists ccat_pre(
     course varchar(10) NOT NULL
 );
 
-insert into ccat_pre values('2203001','Hardik',NULL,'Agarwal','2000-03-17','PG-DAC');
-insert into ccat_pre values('2203002','Joy',NULL,'Pahari','1998-09-01','PG-DAC');
-insert into ccat_pre values('2203003','Udit',NULL,'Keskar','1999-11-23','PG-DBDA');
-insert into ccat_pre values('2203004','Mayank',NULL,'Sachan','1994-03-07','PG-DESC');
-insert into ccat_pre values('2203005','Kamana',NULL,'Mathur','1997-07-04','PG-XYZ');
-insert into ccat_pre values('1111111','admin','admin','admin','1999-01-01','PG-DAC');
+insert into ccat_student values('2203001','Hardik',NULL,'Agarwal','2000-03-17','PG-DAC');
+insert into ccat_student values('2203002','Joy',NULL,'Pahari','1998-09-01','PG-DAC');
+insert into ccat_student values('2203003','Udit',NULL,'Keskar','1999-11-23','PG-DBDA');
+insert into ccat_student values('2203004','Mayank',NULL,'Sachan','1994-03-07','PG-DESC');
+insert into ccat_student values('2203005','Kamana',NULL,'Mathur','1997-07-04','PG-XYZ');
+insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','PG-DAC');
 
 -- ---------------------------------------------------------------------------------------------------------------------------------------------
 
