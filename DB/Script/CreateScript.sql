@@ -40,5 +40,5 @@ m_name varchar(25), l_name varchar(25), gender varchar(1) NOT NULL, dob date NOT
 email varchar(60) NOT NULL, phone bigint NOT NULL,qualification varchar(15) NOT NULL,photo blob);
 
 insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com',
-'9898989898','B.tech',NULL);
+'8630296896','B.tech',NULL);
 -- ------------------------------------------------------------------------------------------------------
