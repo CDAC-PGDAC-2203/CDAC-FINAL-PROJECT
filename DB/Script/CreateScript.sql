@@ -88,17 +88,17 @@ INSERT INTO guardian VALUES(2203001, 1, 'Mala Agarwal', '1234567890');
 
 -- user_prn
 CREATE TABLE IF NOT EXISTS user_prn(u_id bigint primary key not null,
-                      user_prn bigint not null,
-                      default_password bigint not null);
+                      u_prn bigint not null,
+                      default_password varchar(15) not null);
                       
-INSERT INTO user_prn VALUES(1,220340120083,220340120083);
+INSERT INTO user_prn VALUES(1,220340120083,'220340120083');
 
 -- ---------------------------------------------------------------------------------------
 
 -- user_login
 CREATE TABLE IF NOT EXISTS user_login(u_id bigint primary key not null,
-                        user_name bigint not null,
-                        user_password varchar(20) not null);
+                        u_name bigint not null,
+                        u_password varchar(20) not null);
 		-- password(user_password) encrypts the password using hashing technique
         
 INSERT INTO user_login VALUES(1,220340120083,'xyz123');
