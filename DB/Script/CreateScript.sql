@@ -35,37 +35,40 @@ INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'Student');
 -- ------------------------------------------------------------------------------------------------------
 -- personal_table
 -- Date format YYYY-MM-DD 
-create table if not exists personal_details(u_id bigint PRIMARY KEY NOT NULL, f_name varchar(25) NOT NULL, 
-											m_name varchar(25), l_name varchar(25), 
-                                            gender varchar(1) NOT NULL, 
-											dob date NOT NULL,
-											email varchar(60) NOT NULL, 
-                                            phone bigint NOT NULL,
-                                            qualification varchar(15) NOT NULL,
-                                            photo varchar(500));
+create table if not exists personal_details(
+	u_id bigint PRIMARY KEY NOT NULL, f_name varchar(25) NOT NULL,
+    m_name varchar(25), l_name varchar(25),
+    gender varchar(1) NOT NULL,
+    dob date NOT NULL,
+    email varchar(60) NOT NULL,
+    phone bigint NOT NULL,
+    qualification varchar(15) NOT NULL,
+    photo varchar(500)
+);
 
-insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com',
-'8630296896','B.tech','https:///dcjcbbivfvbv');
+insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com','8630296896','B.tech','https:///dcjcbbivfvbv');
 -- ------------------------------------------------------------------------------------------------------
-
 -- user_address
 
-create table if not exists user_address(u_id bigint PRIMARY KEY NOT NULL,
-							add_line1 varchar(30) NOT NULL,
-                            add_line2 varchar(30),
-							state varchar(20) NOT NULL,
-                            city varchar(20) NOT NULL,
-                            pincode int NOT NULL);
+create table if not exists user_address(
+	u_id bigint PRIMARY KEY NOT NULL,
+	add_line1 varchar(30) NOT NULL,
+	add_line2 varchar(30),
+	state varchar(20) NOT NULL,
+	city varchar(20) NOT NULL,
+	pincode int NOT NULL
+);
                             
-insert into user_address values(1,
-								'Ganesh Apartment',
-                                'Kisan Nagar',
-								'Uttar Pradesh',
-                                'Hapur',
-                                400001);
+insert into user_address values(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
                                 
 -----------------------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS student_user(u_id bigint NOT NULL,ccat_no bigint NOT NULL, course varchar(10) NOT NULL);
+-- student_user
+
+CREATE TABLE IF NOT EXISTS student_user(
+	u_id bigint NOT NULL,
+    ccat_no bigint NOT NULL,
+    course varchar(10) NOT NULL
+);
 
 INSERT INTO student_user VALUES('1','2203001','PG-DAC');
 
