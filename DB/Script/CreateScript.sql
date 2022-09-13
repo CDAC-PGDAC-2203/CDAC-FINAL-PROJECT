@@ -50,7 +50,7 @@ insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17'
 -- ------------------------------------------------------------------------------------------------------
 -- user_address
 
-create table if not exists user_address(
+CREATE TABLE IF NOT EXISTS user_address(
 	u_id bigint PRIMARY KEY NOT NULL,
 	add_line1 varchar(30) NOT NULL,
 	add_line2 varchar(30),
@@ -59,7 +59,7 @@ create table if not exists user_address(
 	pincode int NOT NULL
 );
                             
-insert into user_address values(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
+INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
                                 
 -----------------------------------------------------------------------------------------------
 -- student_user
@@ -83,3 +83,22 @@ CREATE TABLE IF NOT EXISTS guardian(
 );
 
 INSERT INTO guardian VALUES(2203001, 1, 'Mala Agarwal', '1234567890');
+
+-- ---------------------------------------------------------------------------------------
+
+-- user_prn
+CREATE TABLE IF NOT EXISTS user_prn(u_id bigint primary key not null,
+                      user_prn bigint not null,
+                      default_password bigint not null);
+                      
+INSERT INTO user_prn VALUES(1,220340120083,220340120083);
+
+-- ---------------------------------------------------------------------------------------
+
+-- user_login
+CREATE TABLE IF NOT EXISTS user_login(u_id bigint primary key not null,
+                        user_name bigint not null,
+                        user_password varchar(20) not null);
+		-- password(user_password) encrypts the password using hashing technique
+        
+INSERT INTO user_login VALUES(1,220340120083,'xyz123');
