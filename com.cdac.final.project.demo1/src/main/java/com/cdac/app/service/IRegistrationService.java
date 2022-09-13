@@ -1,5 +1,7 @@
 package com.cdac.app.service;
 
-public interface IRegistrationService {
+import com.cdac.app.domain.CCATStudent;
 
+public interface IRegistrationService {
+	public String checkIfValid(Long ccatNo,String fName);
 }

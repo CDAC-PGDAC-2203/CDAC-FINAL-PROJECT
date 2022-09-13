@@ -1,7 +1,11 @@
 package com.cdac.app.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface IRegistrationRepository {//extends JpaRepository<T, ID> {
+import com.cdac.app.domain.CCATStudent;
 
+@Repository
+public interface IRegistrationRepository extends JpaRepository<CCATStudent, Long> {
+	public CCATStudent findByCcatNoAndFName(Long ccatNo,String fName);
 }
