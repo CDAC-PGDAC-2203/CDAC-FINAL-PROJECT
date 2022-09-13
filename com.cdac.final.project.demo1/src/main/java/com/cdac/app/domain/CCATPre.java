@@ -33,4 +33,7 @@ public class CCATPre {
 
 	@Column(name = "dob")
 	private LocalDate dob;
+
+	@Column(name = "course")
+	private String course;
 }
