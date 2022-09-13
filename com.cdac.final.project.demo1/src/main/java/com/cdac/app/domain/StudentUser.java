@@ -16,7 +16,7 @@ import lombok.ToString;
 @ToString
 public class StudentUser {
 	@Id
-	@Column(name = "uid")
+	@Column(name = "u_id")
 	private Long userId;
 
 	@Column(name = "ccat_no")
