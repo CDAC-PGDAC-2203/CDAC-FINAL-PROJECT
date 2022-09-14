@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.app.domain.PersonalDetails;
+import com.cdac.app.domain.UserAddress;
 import com.cdac.app.service.IRegistrationService;
 
 @RestController("/register")
@@ -33,5 +34,12 @@ public class RegistrationController {
 	public void savePersonalDetails(Object o) {
 		PersonalDetails pDetails = (PersonalDetails)o;
 		service.savePersonalDetails(pDetails);
+	}
+	
+	// To save address details in database
+	@PostMapping("/saveAddressDetails")
+	public void saveAddressDetails(Object o) {
+	  UserAddress addressDetails = (UserAddress)o;
+	  service.saveAddressDetails(addressDetails);
 	}
 }

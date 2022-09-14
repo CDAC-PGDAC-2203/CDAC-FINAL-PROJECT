@@ -8,7 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cdac.app.domain.CCATStudent;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.Role;
+import com.cdac.app.domain.UserAddress;
 import com.cdac.app.domain.UserTable;
+import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.ICCATUserRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.IUserTableRepository;
@@ -25,6 +27,9 @@ public class RegistrationBean implements IRegistrationService {
 	
 	@Autowired
 	private IPersonalDetailsRepository personalDetailsRepository;
+	
+	@Autowired
+	private IAddressDetailsRepository addressDetailsRepository;
 
 	@Override
 	public String checkIfValid(Long ccatNo, String fName) {
@@ -69,6 +74,13 @@ public class RegistrationBean implements IRegistrationService {
 	public void savePersonalDetails(PersonalDetails pDetails) {
 
 		personalDetailsRepository.save(pDetails);
-		
+
+	}
+
+	@Override
+	public void saveAddressDetails(UserAddress addressDetails) {
+
+		addressDetailsRepository.save(addressDetails);
+
 	}
 }
