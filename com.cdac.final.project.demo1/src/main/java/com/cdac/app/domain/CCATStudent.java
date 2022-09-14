@@ -19,7 +19,7 @@ public class CCATStudent {
 
 	@Id
 	@Column(name = "ccat_no")
-	private Integer ccatNo;
+	private Long ccatNo;
 
 	@Column(name = "f_name")
 	private String fName;
@@ -40,7 +40,7 @@ public class CCATStudent {
 		super();
 	}
 
-	public CCATStudent(Integer ccatNo, String fName, String mName, String lName, LocalDate dob, String course) {
+	public CCATStudent(Long ccatNo, String fName, String mName, String lName, LocalDate dob, String course) {
 		super();
 		this.ccatNo = ccatNo;
 		this.fName = fName;
@@ -50,11 +50,11 @@ public class CCATStudent {
 		this.course = course;
 	}
 
-	public Integer getCcatNo() {
+	public Long getCcatNo() {
 		return ccatNo;
 	}
 
-	public void setCcatNo(Integer ccatNo) {
+	public void setCcatNo(Long ccatNo) {
 		this.ccatNo = ccatNo;
 	}
 

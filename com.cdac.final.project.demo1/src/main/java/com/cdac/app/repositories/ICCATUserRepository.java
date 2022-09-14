@@ -8,4 +8,5 @@ import com.cdac.app.domain.CCATStudent;
 @Repository
 public interface ICCATUserRepository extends JpaRepository<CCATStudent, Long> {
 	public CCATStudent findByCcatNoAndFName(Long ccatNo,String fName);
+	public CCATStudent findByCcatNo(Long ccatNo);
 }

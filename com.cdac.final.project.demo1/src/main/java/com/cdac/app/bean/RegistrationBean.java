@@ -1,5 +1,7 @@
 package com.cdac.app.bean;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,5 +43,20 @@ public class RegistrationBean implements IRegistrationService {
 			uTable.setUserRole(Role.valueOf("STUDENT"));
 		}
 		userTableRepository.save(uTable);
+	}
+
+	@Override
+	public HashMap<String, String> getUserDetails(Long ccatNo) {
+		CCATStudent ccatStudent = ccatUserRepository.findByCcatNo(ccatNo);
+		UserTable uTable = userTableRepository.findByCcatNo(ccatNo);
+		HashMap<String, String> map = new HashMap<>();
+
+		map.put("userId", uTable.getUserId().toString());
+		map.put("fName", ccatStudent.getfName());
+		map.put("mName", ccatStudent.getmName());
+		map.put("lName", ccatStudent.getlName());
+		map.put("dob", ccatStudent.getDob().toString());
+
+		return map;
 	}
 }

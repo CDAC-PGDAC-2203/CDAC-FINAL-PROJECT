@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.cdac.app.domain.UserTable;
 
 public interface IUserTableRepository extends JpaRepository<UserTable, Long> {
+
+	public UserTable findByCcatNo(Long ccatNo);
 }
