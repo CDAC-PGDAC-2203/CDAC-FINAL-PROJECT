@@ -12,19 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "user_table")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 public class UserTable {
 
 	@Column(name = "u_id")
@@ -39,4 +28,51 @@ public class UserTable {
 
 	@Column(name = "u_role")
 	private Role userRole;
+
+	public UserTable() {
+	}
+
+	public UserTable(String fName, Long ccatNo, Role userRole) {
+		this.fName = fName;
+		this.ccatNo = ccatNo;
+		this.userRole = userRole;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public Long getCcatNo() {
+		return ccatNo;
+	}
+
+	public void setCcatNo(Long ccatNo) {
+		this.ccatNo = ccatNo;
+	}
+
+	public Role getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(Role userRole) {
+		this.userRole = userRole;
+	}
+
+	@Override
+	public String toString() {
+		return "UserTable [userId=" + userId + ", fName=" + fName + ", ccatNo=" + ccatNo + ", userRole=" + userRole
+				+ "]";
+	}
 }

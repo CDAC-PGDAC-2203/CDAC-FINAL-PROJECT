@@ -10,19 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "user_address")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
 public class UserAddress {
 
 	@Id
@@ -43,5 +32,72 @@ public class UserAddress {
 	
 	@Column(name = "pincode")
 	private Integer Pincode;
-	
+
+	public UserAddress() {
+		super();
+	}
+
+	public UserAddress(Long userId, String addLine1, String addLine2, String state, String city, Integer pincode) {
+		super();
+		this.userId = userId;
+		AddLine1 = addLine1;
+		AddLine2 = addLine2;
+		State = state;
+		City = city;
+		Pincode = pincode;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getAddLine1() {
+		return AddLine1;
+	}
+
+	public void setAddLine1(String addLine1) {
+		AddLine1 = addLine1;
+	}
+
+	public String getAddLine2() {
+		return AddLine2;
+	}
+
+	public void setAddLine2(String addLine2) {
+		AddLine2 = addLine2;
+	}
+
+	public String getState() {
+		return State;
+	}
+
+	public void setState(String state) {
+		State = state;
+	}
+
+	public String getCity() {
+		return City;
+	}
+
+	public void setCity(String city) {
+		City = city;
+	}
+
+	public Integer getPincode() {
+		return Pincode;
+	}
+
+	public void setPincode(Integer pincode) {
+		Pincode = pincode;
+	}
+
+	@Override
+	public String toString() {
+		return "UserAddress [userId=" + userId + ", AddLine1=" + AddLine1 + ", AddLine2=" + AddLine2 + ", State="
+				+ State + ", City=" + City + ", Pincode=" + Pincode + "]";
+	}
 }

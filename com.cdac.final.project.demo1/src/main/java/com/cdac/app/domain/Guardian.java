@@ -10,19 +10,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "guardian")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 public class Guardian {
 
 	@Column(name = "ccat_no")
@@ -36,5 +25,54 @@ public class Guardian {
 
 	@Column(name = "guardian_phone")
 	private Long guardianPhone;
-	
+
+	public Guardian() {
+		super();
+	}
+
+	public Guardian(Long ccatNo, Long userId, String guardianName, Long guardianPhone) {
+		super();
+		this.ccatNo = ccatNo;
+		this.userId = userId;
+		this.guardianName = guardianName;
+		this.guardianPhone = guardianPhone;
+	}
+
+	public Long getCcatNo() {
+		return ccatNo;
+	}
+
+	public void setCcatNo(Long ccatNo) {
+		this.ccatNo = ccatNo;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getGuardianName() {
+		return guardianName;
+	}
+
+	public void setGuardianName(String guardianName) {
+		this.guardianName = guardianName;
+	}
+
+	public Long getGuardianPhone() {
+		return guardianPhone;
+	}
+
+	public void setGuardianPhone(Long guardianPhone) {
+		this.guardianPhone = guardianPhone;
+	}
+
+	@Override
+	public String toString() {
+		return "Guardian [ccatNo=" + ccatNo + ", userId=" + userId + ", guardianName=" + guardianName
+				+ ", guardianPhone=" + guardianPhone + "]";
+	}
 }

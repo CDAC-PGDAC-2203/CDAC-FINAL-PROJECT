@@ -13,19 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "ccat_student")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 public class CCATStudent {
 
 	@Id
@@ -47,4 +36,71 @@ public class CCATStudent {
 	@Column(name = "course")
 	private String course;
 
+	public CCATStudent() {
+		super();
+	}
+
+	public CCATStudent(Integer ccatNo, String fName, String mName, String lName, LocalDate dob, String course) {
+		super();
+		this.ccatNo = ccatNo;
+		this.fName = fName;
+		this.mName = mName;
+		this.lName = lName;
+		this.dob = dob;
+		this.course = course;
+	}
+
+	public Integer getCcatNo() {
+		return ccatNo;
+	}
+
+	public void setCcatNo(Integer ccatNo) {
+		this.ccatNo = ccatNo;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getmName() {
+		return mName;
+	}
+
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		return "CCATStudent [ccatNo=" + ccatNo + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName + ", dob="
+				+ dob + ", course=" + course + "]";
+	}
 }
