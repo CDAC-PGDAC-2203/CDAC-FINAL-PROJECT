@@ -18,33 +18,33 @@ public class RegistrationController {
 	@Autowired
 	private IRegistrationService service;
 
-	// To check if student is valid for registration
+	// API to check if student is valid for registration
 	@PostMapping("/validate")
 	public String checkValidStudent(Long ccatNo, String fName) {
 		return service.checkIfValid(ccatNo, fName);
 	}
 
-	// To fetch data in personal detail page (ajax call)
+	// API to fetch data in personal detail page (ajax call)
 	@GetMapping("/getDetails")
 	public HashMap<String, String> getUserDetails(Long ccatNo) {
 		return service.getUserDetails(ccatNo);
 	}
 
-	// To save personal details in dataBase
+	// API to save personal details in dataBase
 	@PostMapping("/savePersonalDetails")
 	public void savePersonalDetails(Object o) {
 		PersonalDetails pDetails = (PersonalDetails)o;
 		service.savePersonalDetails(pDetails);
 	}
 	
-	// To save address details in database
+	// API to save address details in database
 	@PostMapping("/saveAddressDetails")
 	public void saveAddressDetails(Object o) {
 	  UserAddress addressDetails = (UserAddress)o;
 	  service.saveAddressDetails(addressDetails);
 	}
 	
-	// To save guardian details in database
+	// API to save guardian details in database
 	@PostMapping("/saveGuardianDetails")
 	public void saveGuardianDetails(Object o) {
 		Guardian guardianDetails = (Guardian) o;
