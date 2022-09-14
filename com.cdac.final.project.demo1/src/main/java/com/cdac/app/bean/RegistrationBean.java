@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.CCATStudent;
+import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.Role;
 import com.cdac.app.domain.UserTable;
 import com.cdac.app.repositories.ICCATUserRepository;
+import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.IUserTableRepository;
 import com.cdac.app.service.IRegistrationService;
 
@@ -20,6 +22,9 @@ public class RegistrationBean implements IRegistrationService {
 
 	@Autowired
 	private IUserTableRepository userTableRepository;
+	
+	@Autowired
+	private IPersonalDetailsRepository personalDetailsRepository;
 
 	@Override
 	public String checkIfValid(Long ccatNo, String fName) {
@@ -58,5 +63,12 @@ public class RegistrationBean implements IRegistrationService {
 		map.put("dob", ccatStudent.getDob().toString());
 
 		return map;
+	}
+
+	@Override
+	public void savePersonalDetails(PersonalDetails pDetails) {
+
+		personalDetailsRepository.save(pDetails);
+		
 	}
 }

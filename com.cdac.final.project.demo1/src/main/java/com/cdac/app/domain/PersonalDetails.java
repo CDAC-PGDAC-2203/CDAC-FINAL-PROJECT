@@ -18,7 +18,7 @@ public class PersonalDetails {
 
 	@Id
 	@Column(name = "u_id")
-	private Long uId;
+	private Long userId;
 
 	@Column(name = "f_name")
 	private String fName;
@@ -51,10 +51,10 @@ public class PersonalDetails {
 		super();
 	}
 
-	public PersonalDetails(Long uId, String fName, String mName, String lName, String gender, LocalDate dob,
+	public PersonalDetails(Long userId, String fName, String mName, String lName, String gender, LocalDate dob,
 			String email, Long phone, String qualification, String photo) {
 		super();
-		this.uId = uId;
+		this.userId = userId;
 		this.fName = fName;
 		this.mName = mName;
 		this.lName = lName;
@@ -66,12 +66,12 @@ public class PersonalDetails {
 		this.photo = photo;
 	}
 
-	public Long getuId() {
-		return uId;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setuId(Long uId) {
-		this.uId = uId;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getfName() {
@@ -148,7 +148,7 @@ public class PersonalDetails {
 
 	@Override
 	public String toString() {
-		return "PersonalDetails [uId=" + uId + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName
+		return "PersonalDetails [uId=" + userId + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName
 				+ ", gender=" + gender + ", dob=" + dob + ", email=" + email + ", phone=" + phone + ", qualification="
 				+ qualification + ", photo=" + photo + "]";
 	}

@@ -32,5 +32,6 @@ public class RegistrationController {
 	@PostMapping("/savePersonalDetails")
 	public void savePersonalDetails(Object o) {
 		PersonalDetails pDetails = (PersonalDetails)o;
+		service.savePersonalDetails(pDetails);
 	}
 }
