@@ -19,18 +19,23 @@ public class RegistrationController {
 	private IRegistrationService service;
 
 	// API to check if student is valid for registration
+	// Input   : ccat_number and first_name
+	// Returns : Takes user to registration page
 	@PostMapping("/validate")
 	public String checkValidStudent(Long ccatNo, String fName) {
 		return service.checkIfValid(ccatNo, fName);
 	}
 
 	// API to fetch data in personal detail page (ajax call)
+	// Input   : ccat_number
+	// Returns : map (userId, fName, mName, lName, dob)
 	@GetMapping("/getDetails")
 	public HashMap<String, String> getUserDetails(Long ccatNo) {
 		return service.getUserDetails(ccatNo);
 	}
 
 	// API to save personal details in dataBase
+	// Input : json in form of object
 	@PostMapping("/savePersonalDetails")
 	public void savePersonalDetails(Object o) {
 		PersonalDetails pDetails = (PersonalDetails)o;
@@ -38,6 +43,7 @@ public class RegistrationController {
 	}
 	
 	// API to save address details in database
+	// Input : json in form of object
 	@PostMapping("/saveAddressDetails")
 	public void saveAddressDetails(Object o) {
 	  UserAddress addressDetails = (UserAddress)o;
@@ -45,6 +51,7 @@ public class RegistrationController {
 	}
 	
 	// API to save guardian details in database
+	// Input : json in form of object
 	@PostMapping("/saveGuardianDetails")
 	public void saveGuardianDetails(Object o) {
 		Guardian guardianDetails = (Guardian) o;
