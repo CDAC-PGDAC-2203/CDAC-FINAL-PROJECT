@@ -36,6 +36,9 @@ public class RegistrationBean implements IRegistrationService {
 	@Autowired
 	private IGuardianRepository guardianRepository;
 
+	// Method to validate user before registration
+	// If valid   : move to personal_details page
+	// If invalid : return to registration page
 	@Override
 	public String checkIfValid(Long ccatNo, String fName) {
 		CCATStudent validStudent = ccatUserRepository.findByCcatNoAndFName(ccatNo, fName);
@@ -47,6 +50,10 @@ public class RegistrationBean implements IRegistrationService {
 		}
 	}
 
+	// Method to save user in user_table
+	// User can be :
+		// 1. Admin
+		// 2. Student
 	@Override
 	public void saveUser(Long ccatNo, String fName) {
 		UserTable uTable = new UserTable();
@@ -60,6 +67,7 @@ public class RegistrationBean implements IRegistrationService {
 		userTableRepository.save(uTable);
 	}
 
+	// Method to return user details to frontend
 	@Override
 	public HashMap<String, String> getUserDetails(Long ccatNo) {
 		CCATStudent ccatStudent = ccatUserRepository.findByCcatNo(ccatNo);
@@ -75,6 +83,7 @@ public class RegistrationBean implements IRegistrationService {
 		return map;
 	}
 
+	// Method to save user personal details in personal_details table
 	@Override
 	public void savePersonalDetails(PersonalDetails pDetails) {
 
@@ -82,6 +91,7 @@ public class RegistrationBean implements IRegistrationService {
 
 	}
 
+	// Method to save user address in user_address table
 	@Override
 	public void saveAddressDetails(UserAddress addressDetails) {
 
@@ -89,6 +99,7 @@ public class RegistrationBean implements IRegistrationService {
 
 	}
 
+	// Method to store user guardian details in guardian table
 	@Override
 	public void saveGuardianDetails(Guardian guardianDetails) {
 
