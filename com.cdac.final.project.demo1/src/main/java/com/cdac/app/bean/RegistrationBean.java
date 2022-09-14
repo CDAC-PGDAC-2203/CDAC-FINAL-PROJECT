@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.CCATStudent;
+import com.cdac.app.domain.Guardian;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.Role;
 import com.cdac.app.domain.UserAddress;
 import com.cdac.app.domain.UserTable;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.ICCATUserRepository;
+import com.cdac.app.repositories.IGuardianRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.IUserTableRepository;
 import com.cdac.app.service.IRegistrationService;
@@ -30,6 +32,9 @@ public class RegistrationBean implements IRegistrationService {
 	
 	@Autowired
 	private IAddressDetailsRepository addressDetailsRepository;
+	
+	@Autowired
+	private IGuardianRepository guardianRepository;
 
 	@Override
 	public String checkIfValid(Long ccatNo, String fName) {
@@ -80,7 +85,13 @@ public class RegistrationBean implements IRegistrationService {
 	@Override
 	public void saveAddressDetails(UserAddress addressDetails) {
 
-		addressDetailsRepository.save(addressDetails);
+		addressDetailsRepository.save(addressDetails);	
 
+	}
+
+	@Override
+	public void saveGuardianDetails(Guardian guardianDetails) {
+
+		guardianRepository.save(guardianDetails);
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cdac.app.domain.Guardian;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.UserAddress;
 import com.cdac.app.service.IRegistrationService;
@@ -41,5 +42,12 @@ public class RegistrationController {
 	public void saveAddressDetails(Object o) {
 	  UserAddress addressDetails = (UserAddress)o;
 	  service.saveAddressDetails(addressDetails);
+	}
+	
+	// To save guardian details in database
+	@PostMapping("/saveGuardianDetails")
+	public void saveGuardianDetails(Object o) {
+		Guardian guardianDetails = (Guardian) o;
+		service.saveGuardianDetails(guardianDetails);
 	}
 }
