@@ -1,6 +1,6 @@
 create database cdac_app_final;
 use cdac_app_final;
-
+-- drop database cdac_app_final
 -- ----------------------------------------------------------------------
 -- ccat_student
 
@@ -66,14 +66,13 @@ INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Prades
 -- ----------------------------------------------------------------------
 -- guardian
 
-DROP TABLE guardian;
 CREATE TABLE IF NOT EXISTS guardian(
     u_id BIGINT PRIMARY KEY NOT NULL,
     guardian_name VARCHAR(50),
     guardian_phone BIGINT
 );
 
-INSERT INTO guardian VALUES(1, 'Mala Agarwal', '1234567890');
+INSERT INTO guardian VALUES(1, 'Mala Agarwal', '8630298749');
 
 -- ----------------------------------------------------------------------
 
