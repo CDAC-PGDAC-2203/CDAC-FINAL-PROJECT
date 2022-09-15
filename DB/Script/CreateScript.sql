@@ -36,7 +36,8 @@ INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'Student');
 -- personal_table
 
 create table if not exists personal_details(
-	u_id bigint PRIMARY KEY NOT NULL, f_name varchar(25) NOT NULL,
+	u_id bigint PRIMARY KEY NOT NULL,
+    f_name varchar(25) NOT NULL,
     m_name varchar(25), l_name varchar(25),
     gender varchar(1) NOT NULL,
     dob date NOT NULL,		-- Date format YYYY-MM-DD
@@ -65,13 +66,22 @@ INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Prades
 -- ----------------------------------------------------------------------
 -- guardian
 
+DROP TABLE guardian;
 CREATE TABLE IF NOT EXISTS guardian(
-	ccat_no BIGINT NOT NULL,
-    u_id BIGINT NOT NULL,
+    u_id BIGINT PRIMARY KEY NOT NULL,
     guardian_name VARCHAR(50),
     guardian_phone BIGINT
 );
 
-INSERT INTO guardian VALUES(2203001, 1, 'Mala Agarwal', '1234567890');
+INSERT INTO guardian VALUES(1, 'Mala Agarwal', '1234567890');
 
 -- ----------------------------------------------------------------------
+
+-- user_login
+
+CREATE TABLE IF NOT EXISTS user_login(
+	u_id bigint not null,
+    u_name varchar(50),
+    u_prn bigint,
+    u_password varchar(20)
+);
