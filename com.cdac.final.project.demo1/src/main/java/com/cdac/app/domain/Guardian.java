@@ -8,15 +8,14 @@ package com.cdac.app.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "guardian")
 public class Guardian {
 
-	@Column(name = "ccat_no")
-	private Long ccatNo;
-
+	@Id
 	@Column(name = "u_id")
 	private Long userId;
 
@@ -30,20 +29,11 @@ public class Guardian {
 		super();
 	}
 
-	public Guardian(Long ccatNo, Long userId, String guardianName, Long guardianPhone) {
+	public Guardian(Long userId, String guardianName, Long guardianPhone) {
 		super();
-		this.ccatNo = ccatNo;
 		this.userId = userId;
 		this.guardianName = guardianName;
 		this.guardianPhone = guardianPhone;
-	}
-
-	public Long getCcatNo() {
-		return ccatNo;
-	}
-
-	public void setCcatNo(Long ccatNo) {
-		this.ccatNo = ccatNo;
 	}
 
 	public Long getUserId() {
@@ -72,7 +62,8 @@ public class Guardian {
 
 	@Override
 	public String toString() {
-		return "Guardian [ccatNo=" + ccatNo + ", userId=" + userId + ", guardianName=" + guardianName
-				+ ", guardianPhone=" + guardianPhone + "]";
+		return "Guardian [userId=" + userId + ", guardianName=" + guardianName + ", guardianPhone=" + guardianPhone
+				+ "]";
 	}
+
 }
