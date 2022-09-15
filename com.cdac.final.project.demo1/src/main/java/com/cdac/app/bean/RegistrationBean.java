@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.CCATStudent;
@@ -22,6 +23,7 @@ import com.cdac.app.repositories.IUserTableRepository;
 import com.cdac.app.service.IRegistrationService;
 
 
+@Component
 @Transactional
 public class RegistrationBean implements IRegistrationService {
 

@@ -13,6 +13,6 @@ public interface IPersonalDetailsRepository extends JpaRepository<PersonalDetail
 
 	@Query(value = "select p.userId, p.fName, p.mName, p.lName "
 				 + "from PersonalDetails p "
-				 + "order by p.fName, p.mName, p.lName;")
+				 + "order by p.fName, p.mName, p.lName")
 	public List<PersonalDetails> findAll();
 }

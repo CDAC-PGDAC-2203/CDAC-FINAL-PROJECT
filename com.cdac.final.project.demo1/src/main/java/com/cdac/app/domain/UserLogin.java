@@ -7,12 +7,14 @@ package com.cdac.app.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "user_login")
 public class UserLogin {
 
+	@Id
 	@Column(name = "u_id")
 	private Long userId;
 
