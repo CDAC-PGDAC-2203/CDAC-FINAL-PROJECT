@@ -63,17 +63,6 @@ CREATE TABLE IF NOT EXISTS user_address(
 INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
                                 
 -- ----------------------------------------------------------------------
--- student_user
-
-CREATE TABLE IF NOT EXISTS student_user(
-	u_id bigint NOT NULL,
-    ccat_no bigint NOT NULL,
-    course varchar(10) NOT NULL
-);
-
-INSERT INTO student_user VALUES('1','2203001','PG-DAC');
-
--- ----------------------------------------------------------------------
 -- guardian
 
 CREATE TABLE IF NOT EXISTS guardian(
