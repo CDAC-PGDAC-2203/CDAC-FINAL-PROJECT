@@ -16,14 +16,8 @@ public class UserLogin {
 	@Column(name = "u_id")
 	private Long userId;
 
-	@Column(name = "f_name")
-	private String fName;
-
-	@Column(name = "m_name")
-	private String mName;
-
-	@Column(name = "l_name")
-	private String lName;
+	@Column(name = "u_name")
+	private String uName;
 
 	@Column(name = "u_prn")
 	private Long uPrn;
@@ -35,12 +29,10 @@ public class UserLogin {
 		super();
 	}
 
-	public UserLogin(Long userId, String fName, String mName, String lName, Long uPrn, String uPassword) {
+	public UserLogin(Long userId, String uName, Long uPrn, String uPassword) {
 		super();
 		this.userId = userId;
-		this.fName = fName;
-		this.mName = mName;
-		this.lName = lName;
+		this.uName = uName;
 		this.uPrn = uPrn;
 		this.uPassword = uPassword;
 	}
@@ -53,28 +45,12 @@ public class UserLogin {
 		this.userId = userId;
 	}
 
-	public String getfName() {
-		return fName;
+	public String getuName() {
+		return uName;
 	}
 
-	public void setfName(String fName) {
-		this.fName = fName;
-	}
-
-	public String getmName() {
-		return mName;
-	}
-
-	public void setmName(String mName) {
-		this.mName = mName;
-	}
-
-	public String getlName() {
-		return lName;
-	}
-
-	public void setlName(String lName) {
-		this.lName = lName;
+	public void setuName(String uName) {
+		this.uName = uName;
 	}
 
 	public Long getuPrn() {
@@ -95,7 +71,7 @@ public class UserLogin {
 
 	@Override
 	public String toString() {
-		return "UserLogin [userId=" + userId + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName + ", uPrn="
-				+ uPrn + ", uPassword=" + uPassword + "]";
+		return "UserLogin [userId=" + userId + ", uName=" + uName + ", uPrn=" + uPrn + ", uPassword=" + uPassword + "]";
 	}
+
 }

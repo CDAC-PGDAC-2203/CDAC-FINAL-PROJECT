@@ -3,7 +3,6 @@ package com.cdac.app.bean;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -110,7 +109,6 @@ public class RegistrationBean implements IRegistrationService {
 	// Method to store user guardian details in guardian table
 	@Override
 	public void saveGuardianDetails(Guardian guardianDetails) {
-
 		guardianRepository.save(guardianDetails);
 	}
 
@@ -122,19 +120,17 @@ public class RegistrationBean implements IRegistrationService {
 	}
 
 	public List<UserLogin> populatePRNList(List<PersonalDetails> list){
-		UserLogin tempList = new UserLogin();
 		List<UserLogin> prnList = new ArrayList<>();
 		Long prnNo = 220340120001L;
-		PersonalDetails userDetails;
-		for(int i = 0 ; i < list.size() ; i++ , prnNo++) {
-			userDetails = list.get(i);
-			tempList.setUserId(userDetails.getUserId());
-			tempList.setfName(userDetails.getfName());
-			tempList.setmName(userDetails.getmName());
-			tempList.setlName(userDetails.getlName());
-			tempList.setuPrn(prnNo);
-			tempList.setuPassword(prnNo.toString());
-			prnList.add(tempList);
+		for(PersonalDetails pDetail : list) {
+			UserLogin userLogin = new UserLogin();
+
+			userLogin.setUserId(pDetail.getUserId());
+			userLogin.setuName(pDetail.getfName()+pDetail.getmName()+pDetail.getlName());
+			userLogin.setuPrn(prnNo);
+			userLogin.setuPassword(prnNo.toString());
+
+			prnList.add(userLogin);
 		}
 		return prnList;
 	}
