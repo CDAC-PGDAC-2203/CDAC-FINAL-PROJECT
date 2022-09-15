@@ -1,6 +1,8 @@
 package com.cdac.app.bean;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,13 +12,16 @@ import com.cdac.app.domain.Guardian;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.Role;
 import com.cdac.app.domain.UserAddress;
+import com.cdac.app.domain.UserLogin;
 import com.cdac.app.domain.UserTable;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.ICCATUserRepository;
 import com.cdac.app.repositories.IGuardianRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
+import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.repositories.IUserTableRepository;
 import com.cdac.app.service.IRegistrationService;
+
 
 @Transactional
 public class RegistrationBean implements IRegistrationService {
@@ -35,6 +40,9 @@ public class RegistrationBean implements IRegistrationService {
 	
 	@Autowired
 	private IGuardianRepository guardianRepository;
+
+	@Autowired
+	private IUserLoginRepository userLoginRepository;
 
 	// Method to validate user before registration
 	// If valid   : move to personal_details page
@@ -104,5 +112,30 @@ public class RegistrationBean implements IRegistrationService {
 	public void saveGuardianDetails(Guardian guardianDetails) {
 
 		guardianRepository.save(guardianDetails);
+	}
+
+	@Override
+	public void generatePRN() {
+		List<PersonalDetails> list = personalDetailsRepository.findAll();
+		List<UserLogin> prnList = populatePRNList(list);
+		userLoginRepository.saveAll(prnList);
+	}
+
+	public List<UserLogin> populatePRNList(List<PersonalDetails> list){
+		UserLogin tempList = new UserLogin();
+		List<UserLogin> prnList = new ArrayList<>();
+		Long prnNo = 220340120001L;
+		PersonalDetails userDetails;
+		for(int i = 0 ; i < list.size() ; i++ , prnNo++) {
+			userDetails = list.get(i);
+			tempList.setUserId(userDetails.getUserId());
+			tempList.setfName(userDetails.getfName());
+			tempList.setmName(userDetails.getmName());
+			tempList.setlName(userDetails.getlName());
+			tempList.setuPrn(prnNo);
+			tempList.setuPassword(prnNo.toString());
+			prnList.add(tempList);
+		}
+		return prnList;
 	}
 }

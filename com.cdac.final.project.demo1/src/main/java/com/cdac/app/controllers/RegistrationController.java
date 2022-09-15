@@ -57,4 +57,10 @@ public class RegistrationController {
 		Guardian guardianDetails = (Guardian) o;
 		service.saveGuardianDetails(guardianDetails);
 	}
+
+	// 
+	@PostMapping("/generatePRN")
+	public void generatePRN() {
+		service.generatePRN();
+	}
 }

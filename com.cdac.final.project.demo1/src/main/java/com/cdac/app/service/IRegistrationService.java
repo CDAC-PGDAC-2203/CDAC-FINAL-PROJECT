@@ -13,4 +13,5 @@ public interface IRegistrationService {
 	public void savePersonalDetails(PersonalDetails pDetails);
 	public void saveAddressDetails(UserAddress addressDetails);
 	public void saveGuardianDetails(Guardian guardianDetails);
+	public void generatePRN();
 }

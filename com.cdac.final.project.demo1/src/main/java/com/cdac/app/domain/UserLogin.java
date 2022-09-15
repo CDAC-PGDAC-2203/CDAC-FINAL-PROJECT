@@ -16,21 +16,33 @@ public class UserLogin {
 	@Column(name = "u_id")
 	private Long userId;
 
-	@Column(name = "u_name")
-	private Long userName;
+	@Column(name = "f_name")
+	private String fName;
+
+	@Column(name = "m_name")
+	private String mName;
+
+	@Column(name = "l_name")
+	private String lName;
+
+	@Column(name = "u_prn")
+	private Long uPrn;
 
 	@Column(name = "u_password")
-	private String password;
+	private String uPassword;
 
 	public UserLogin() {
 		super();
 	}
 
-	public UserLogin(Long userId, Long userName, String password) {
+	public UserLogin(Long userId, String fName, String mName, String lName, Long uPrn, String uPassword) {
 		super();
 		this.userId = userId;
-		this.userName = userName;
-		this.password = password;
+		this.fName = fName;
+		this.mName = mName;
+		this.lName = lName;
+		this.uPrn = uPrn;
+		this.uPassword = uPassword;
 	}
 
 	public Long getUserId() {
@@ -41,25 +53,49 @@ public class UserLogin {
 		this.userId = userId;
 	}
 
-	public Long getUserName() {
-		return userName;
+	public String getfName() {
+		return fName;
 	}
 
-	public void setUserName(Long userName) {
-		this.userName = userName;
+	public void setfName(String fName) {
+		this.fName = fName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getmName() {
+		return mName;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public Long getuPrn() {
+		return uPrn;
+	}
+
+	public void setuPrn(Long uPrn) {
+		this.uPrn = uPrn;
+	}
+
+	public String getuPassword() {
+		return uPassword;
+	}
+
+	public void setuPassword(String uPassword) {
+		this.uPassword = uPassword;
 	}
 
 	@Override
 	public String toString() {
-		return "UserLogin [userId=" + userId + ", userName=" + userName + ", password=" + password + "]";
+		return "UserLogin [userId=" + userId + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName + ", uPrn="
+				+ uPrn + ", uPassword=" + uPassword + "]";
 	}
-
 }
