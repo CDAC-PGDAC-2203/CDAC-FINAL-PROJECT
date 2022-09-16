@@ -8,6 +8,8 @@ package com.cdac.app.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,6 +31,7 @@ public class UserTable {
 	private Long ccatNo;
 
 	@Column(name = "u_role")
+	@Enumerated(EnumType.STRING)
 	private Role userRole;
 
 	public UserTable() {
