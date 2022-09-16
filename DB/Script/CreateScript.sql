@@ -44,10 +44,11 @@ create table if not exists personal_details(
     email varchar(60) NOT NULL,
     phone bigint NOT NULL,
     qualification varchar(15) NOT NULL,
-    photo varchar(500)
+    photo varchar(500),
+    course varchar(10) NOT NULL
 );
 
-insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com','8630296896','B.tech','https:///dcjcbbivfvbv');
+insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com','8630296896','B.tech','https:///dcjcbbivfvbv','PG-DAC');
 
 -- ----------------------------------------------------------------------
 -- user_address
@@ -81,6 +82,7 @@ INSERT INTO guardian VALUES(1, 'Mala Agarwal', '8630298749');
 CREATE TABLE IF NOT EXISTS user_login(
 	u_id bigint not null,
     u_name varchar(50),
-    u_prn bigint,
-    u_password varchar(20)
+    u_prn bigint primary key,
+    u_password varchar(20),
+    course varchar(10)
 );
