@@ -116,12 +116,41 @@ CREATE TABLE IF NOT EXISTS result_table(
 -- Doubt Forum table
 
 CREATE TABLE IF NOT EXISTS doubt_forum(
-                         d_id bigint primary key not null,
-						 u_prn bigint not null,
-                         u_name varchar(25) not null,
-                         email varchar(60) not null,
-						 sub_name varchar(10) not null,
-                         doubt_content varchar(250) not null,
-                         attachment varchar(500),
-                         active_doubt char(1) not null -- (Y/N)
-                         );
+	d_id bigint primary key not null,
+    u_prn bigint not null,
+    u_name varchar(25) not null,
+    email varchar(60) not null,
+    sub_name varchar(10) not null,
+    doubt_content varchar(250) not null,
+    attachment varchar(500),
+    active_doubt char(1) not null -- (Y/N)
+);
+
+-- ----------------------------------------------------------------------------------------
+
+-- current_day_attendance
+
+CREATE TABLE IF NOT EXISTS current_day_attendance(
+	u_prn bigint not null,
+    module varchar(10) not null,
+    todays_date date not null,
+    lecture_attendance int not null,
+    lab_attendance int not null,
+    total_attended int not null,
+    lecture_count int not null,
+    primary key (u_prn, module)
+);
+
+-- ----------------------------------------------------------------------------------------
+
+-- total_attendance
+
+CREATE TABLE IF NOT EXISTS total_attendance(
+	u_prn bigint not null,
+    module varchar(10) not null,
+    attended_lecture int not null,
+    total_lecture int not null,
+    primary key (u_prn, module)
+);
+
+-- ----------------------------------------------------------------------------------------
