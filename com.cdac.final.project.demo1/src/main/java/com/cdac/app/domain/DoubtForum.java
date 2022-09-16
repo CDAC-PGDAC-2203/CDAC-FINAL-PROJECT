@@ -37,4 +37,94 @@ public class DoubtForum {
 	@Column(name = "active_doubt")
 	private String activeDoubt;
 	
+	public DoubtForum() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public DoubtForum(Long doubtId, Long userPrn, String userName, String email, String subjectName,
+			String doubtContent, String attachment, String activeDoubt) {
+		super();
+		this.doubtId = doubtId;
+		this.userPrn = userPrn;
+		this.userName = userName;
+		this.email = email;
+		this.subjectName = subjectName;
+		this.doubtContent = doubtContent;
+		this.attachment = attachment;
+		this.activeDoubt = activeDoubt;
+	}
+
+	public Long getDoubtId() {
+		return doubtId;
+	}
+
+	public void setDoubtId(Long doubtId) {
+		this.doubtId = doubtId;
+	}
+
+	public Long getUserPrn() {
+		return userPrn;
+	}
+
+	public void setUserPrn(Long userPrn) {
+		this.userPrn = userPrn;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSubjectName() {
+		return subjectName;
+	}
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
+	}
+
+	public String getDoubtContent() {
+		return doubtContent;
+	}
+
+	public void setDoubtContent(String doubtContent) {
+		this.doubtContent = doubtContent;
+	}
+
+	public String getAttachment() {
+		return attachment;
+	}
+
+	public void setAttachment(String attachment) {
+		this.attachment = attachment;
+	}
+
+	public String getActiveDoubt() {
+		return activeDoubt;
+	}
+
+	public void setActiveDoubt(String activeDoubt) {
+		this.activeDoubt = activeDoubt;
+	}
+
+	@Override
+	public String toString() {
+		return "DoubtForum [doubtId=" + doubtId + ", userPrn=" + userPrn + ", userName=" + userName + ", email=" + email
+				+ ", subjectName=" + subjectName + ", doubtContent=" + doubtContent + ", attachment=" + attachment
+				+ ", activeDoubt=" + activeDoubt + "]";
+	}
+	
+	
+	
 }
