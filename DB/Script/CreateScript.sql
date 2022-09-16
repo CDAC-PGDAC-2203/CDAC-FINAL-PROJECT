@@ -154,3 +154,9 @@ CREATE TABLE IF NOT EXISTS total_attendance(
 );
 
 -- ----------------------------------------------------------------------------------------
+
+-- schedule_table table
+
+CREATE TABLE IF NOT EXISTS schedule_table(
+	
+);
