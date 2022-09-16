@@ -82,7 +82,31 @@ INSERT INTO guardian VALUES(1, 'Mala Agarwal', '8630298749');
 CREATE TABLE IF NOT EXISTS user_login(
 	u_id bigint not null,
     u_name varchar(50),
-    u_prn bigint primary key,
+    u_prn bigint primary key not null,
     u_password varchar(20),
     course varchar(10)
+);
+
+-- ----------------------------------------------------------------------
+
+-- Result Table
+
+CREATE TABLE IF NOT EXISTS result_table(
+	u_prn bigint primary key not null,
+
+    mod1_lab int,
+    mod1_assessment int,
+    mod1_attendance int,
+    mod1_total int,
+    
+    mod2_lab int,
+    mod2_assessment int,
+    mod2_attendance int,
+    mod2_total int,
+    
+    mod3_lab int,
+    mod3_assessment int,
+    mod3_attendance int,
+    mod3_total int
+    
 );
