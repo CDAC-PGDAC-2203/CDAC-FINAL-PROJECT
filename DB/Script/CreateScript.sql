@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS doubt_forum(
 CREATE TABLE IF NOT EXISTS current_day_attendance(
 	u_prn bigint not null,
     module varchar(10) not null,
-    todays_date date not null,
+    today_date date not null,
     lecture_attendance int not null,
     lab_attendance int not null,
     total_attended int not null,
@@ -158,5 +158,13 @@ CREATE TABLE IF NOT EXISTS total_attendance(
 -- schedule_table table
 
 CREATE TABLE IF NOT EXISTS schedule_table(
-	
+	today_date date primary key not null,
+    module varchar(10) not null,
+	lect_link varchar(500),
+    lab_b1_link varchar(500),
+    lab_b2_link varchar(500),
+    lab_b3_link varchar(500),
+    lab_b4_link varchar(500)
 );
+
+-- ----------------------------------------------------------------
