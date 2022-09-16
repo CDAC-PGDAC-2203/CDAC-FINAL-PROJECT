@@ -1,18 +1,27 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Joy Pahari [220340120092]
+ * @Date: 16-09-2022
+*/
+
 package com.cdac.app.domain;
 
 import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "current_day_attendance")
 public class CurrentDayAttendance {
 
+	@Id
 	@Column(name = "u_prn")
 	private Long uPrn;
 
+	@Id
 	@Column(name = "module")
 	private String module;
 

@@ -1,3 +1,9 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Kamana Mathur [220340120098]
+ * @Date: 16-09-2022
+*/
+
 package com.cdac.app.domain;
 
 import javax.persistence.Column;
