@@ -110,3 +110,18 @@ CREATE TABLE IF NOT EXISTS result_table(
     mod3_total int
     
 );
+
+-- ----------------------------------------------------------------------------------------
+
+-- Doubt Forum table
+
+CREATE TABLE IF NOT EXISTS doubt_forum(
+                         d_id bigint primary key not null,
+						 u_prn bigint not null,
+                         u_name varchar(25) not null,
+                         email varchar(60) not null,
+						 sub_name varchar(10) not null,
+                         doubt_content varchar(250) not null,
+                         attachment varchar(500),
+                         active_doubt char(1) not null -- (Y/N)
+                         );
