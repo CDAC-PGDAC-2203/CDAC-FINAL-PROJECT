@@ -49,13 +49,20 @@ public class PersonalDetails {
 
 	@Column(name = "course")
 	private String course;
+	
+	@Column(name = "guardian_name")
+	private String guardianName;
+
+	@Column(name = "guardian_phone")
+	private Long guardianPhone;
 
 	public PersonalDetails() {
 		super();
 	}
 
 	public PersonalDetails(Long userId, String fName, String mName, String lName, String gender, LocalDate dob,
-			String email, Long phone, String qualification, String photo, String course) {
+			String email, Long phone, String qualification, String photo, String course, String guardianName,
+			Long guardianPhone) {
 		super();
 		this.userId = userId;
 		this.fName = fName;
@@ -68,6 +75,8 @@ public class PersonalDetails {
 		this.qualification = qualification;
 		this.photo = photo;
 		this.course = course;
+		this.guardianName = guardianName;
+		this.guardianPhone = guardianPhone;
 	}
 
 	public Long getUserId() {
@@ -158,11 +167,29 @@ public class PersonalDetails {
 		this.course = course;
 	}
 
+	public String getGuardianName() {
+		return guardianName;
+	}
+
+	public void setGuardianName(String guardianName) {
+		this.guardianName = guardianName;
+	}
+
+	public Long getGuardianPhone() {
+		return guardianPhone;
+	}
+
+	public void setGuardianPhone(Long guardianPhone) {
+		this.guardianPhone = guardianPhone;
+	}
+
 	@Override
 	public String toString() {
 		return "PersonalDetails [userId=" + userId + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName
 				+ ", gender=" + gender + ", dob=" + dob + ", email=" + email + ", phone=" + phone + ", qualification="
-				+ qualification + ", photo=" + photo + ", course=" + course + "]";
+				+ qualification + ", photo=" + photo + ", course=" + course + ", guardianName=" + guardianName
+				+ ", guardianPhone=" + guardianPhone + "]";
 	}
 
+	
 }

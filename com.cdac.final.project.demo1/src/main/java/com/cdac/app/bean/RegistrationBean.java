@@ -3,12 +3,12 @@ package com.cdac.app.bean;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.CCATStudent;
-import com.cdac.app.domain.Guardian;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.Role;
 import com.cdac.app.domain.UserAddress;
@@ -16,7 +16,6 @@ import com.cdac.app.domain.UserLogin;
 import com.cdac.app.domain.UserTable;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.ICCATUserRepository;
-import com.cdac.app.repositories.IGuardianRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.repositories.IUserTableRepository;
@@ -42,9 +41,6 @@ public class RegistrationBean implements IRegistrationService {
 	
 	@Autowired
 	private IAddressDetailsRepository addressDetailsRepository;
-	
-	@Autowired
-	private IGuardianRepository guardianRepository;
 
 	@Autowired
 	private IUserLoginRepository userLoginRepository;
@@ -110,12 +106,6 @@ public class RegistrationBean implements IRegistrationService {
 
 		addressDetailsRepository.save(addressDetails);	
 
-	}
-
-	// Method to store user guardian details in guardian table
-	@Override
-	public void saveGuardianDetails(Guardian guardianDetails) {
-		guardianRepository.save(guardianDetails);
 	}
 
 	@Override
