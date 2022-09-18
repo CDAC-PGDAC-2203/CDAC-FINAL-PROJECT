@@ -190,6 +190,4 @@ public class PersonalDetails {
 				+ qualification + ", photo=" + photo + ", course=" + course + ", guardianName=" + guardianName
 				+ ", guardianPhone=" + guardianPhone + "]";
 	}
-
-	
 }

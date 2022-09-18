@@ -50,7 +50,6 @@ public class RegistrationController {
 	  service.saveAddressDetails(addressDetails);
 	}
 
-	// 
 	@PostMapping("/generatePRN")
 	public void generatePRN(@PathVariable(name = "courseName") String courseName) {
 		service.generatePRN(courseName);

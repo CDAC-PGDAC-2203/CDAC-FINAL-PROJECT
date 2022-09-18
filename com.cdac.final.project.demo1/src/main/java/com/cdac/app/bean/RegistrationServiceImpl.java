@@ -24,7 +24,7 @@ import com.cdac.app.service.IRegistrationService;
 
 @Component
 @Transactional
-public class RegistrationBean implements IRegistrationService {
+public class RegistrationServiceImpl implements IRegistrationService {
 
 	private static Long prnDAC = 220340120001L;
 	private static Long prnDBDA = 220340130001L;
