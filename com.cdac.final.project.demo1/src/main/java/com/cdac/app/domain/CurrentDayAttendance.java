@@ -7,14 +7,17 @@
 package com.cdac.app.domain;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "current_day_attendance")
+@IdClass(AttendanceId.class)
 public class CurrentDayAttendance {
 
 	@Id
@@ -117,6 +120,27 @@ public class CurrentDayAttendance {
 		return "CurrentDayAttendance [uPrn=" + uPrn + ", module=" + module + ", todayDate=" + todayDate
 				+ ", lectureAttendance=" + lectureAttendance + ", labAttendance=" + labAttendance + ", totalAttended="
 				+ totalAttended + ", lectureCount=" + lectureCount + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(labAttendance, lectureAttendance, lectureCount, module, todayDate, totalAttended, uPrn);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CurrentDayAttendance other = (CurrentDayAttendance) obj;
+		return Objects.equals(labAttendance, other.labAttendance)
+				&& Objects.equals(lectureAttendance, other.lectureAttendance)
+				&& Objects.equals(lectureCount, other.lectureCount) && Objects.equals(module, other.module)
+				&& Objects.equals(todayDate, other.todayDate) && Objects.equals(totalAttended, other.totalAttended)
+				&& Objects.equals(uPrn, other.uPrn);
 	}
 
 }

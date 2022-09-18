@@ -6,6 +6,8 @@
 
 package com.cdac.app.domain;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -79,6 +81,24 @@ public class TotalAttendance {
 	public String toString() {
 		return "TotalAttendance [uPrn=" + uPrn + ", module=" + module + ", attendedLecture=" + attendedLecture
 				+ ", total_lecture=" + total_lecture + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(attendedLecture, module, total_lecture, uPrn);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TotalAttendance other = (TotalAttendance) obj;
+		return Objects.equals(attendedLecture, other.attendedLecture) && Objects.equals(module, other.module)
+				&& Objects.equals(total_lecture, other.total_lecture) && Objects.equals(uPrn, other.uPrn);
 	}
 
 }

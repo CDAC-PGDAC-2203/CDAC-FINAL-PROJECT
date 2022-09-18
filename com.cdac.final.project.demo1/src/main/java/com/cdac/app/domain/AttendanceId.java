@@ -1,6 +1,9 @@
 package com.cdac.app.domain;
 
-public class AttendanceId {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class AttendanceId implements Serializable {
 
 	private Long uPrn;
 	private String module;
@@ -29,6 +32,23 @@ public class AttendanceId {
 
 	public void setModule(String module) {
 		this.module = module;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(module, uPrn);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AttendanceId other = (AttendanceId) obj;
+		return Objects.equals(module, other.module) && Objects.equals(uPrn, other.uPrn);
 	}
 
 }

@@ -13,7 +13,7 @@ import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.UserAddress;
 import com.cdac.app.service.IRegistrationService;
 
-@RestController("/register")
+@RestController
 public class RegistrationController {
 
 	@Autowired
@@ -30,7 +30,7 @@ public class RegistrationController {
 	// API to fetch data in personal detail page (ajax call)
 	// Input   : ccat_number
 	// Returns : map (userId, fName, mName, lName, dob)
-	@GetMapping("/getDetails")
+	@GetMapping("/details/{ccatNo}")
 	public HashMap<String, String> getUserDetails(@PathVariable(name = "ccatNo") Long ccatNo) {
 		return service.getUserDetails(ccatNo);
 	}
