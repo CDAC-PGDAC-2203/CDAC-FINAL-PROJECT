@@ -78,16 +78,16 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	// Method to return user details to frontend
 	@Override
-	public HashMap<String, String> getUserDetails(Long ccatNo) {
+	public HashMap<String, Object> getUserDetails(Long ccatNo) {
 		CCATStudent ccatStudent = ccatUserRepository.findByCcatNo(ccatNo);
 		UserTable uTable = userTableRepository.findByCcatNo(ccatNo);
-		HashMap<String, String> map = new HashMap<>();
+		HashMap<String, Object> map = new HashMap<>();
 
-		map.put("userId", uTable.getUserId().toString());
+		map.put("userId", uTable.getUserId());
 		map.put("fName", ccatStudent.getfName());
 		map.put("mName", ccatStudent.getmName());
 		map.put("lName", ccatStudent.getlName());
-		map.put("dob", ccatStudent.getDob().toString());
+		map.put("dob", ccatStudent.getDob());
 
 		return map;
 	}
