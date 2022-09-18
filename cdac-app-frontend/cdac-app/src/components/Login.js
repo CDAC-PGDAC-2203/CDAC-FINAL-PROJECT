@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link, Route, Router } from 'react-router-dom';
 import {
   Button,
   Form,
@@ -7,6 +8,7 @@ import {
   Label
 } from 'reactstrap';
 import '../App.css';
+import Validate from './Register/Validate';
 
 function Login() {
     return (
@@ -34,7 +36,20 @@ function Login() {
         <Button>Submit</Button>
       </Form>
       <br/>
-      <span>Not a user? <a href='https://www.google.com'>Register</a></span>
+      <span>Not a user? </span>
+      <Router>
+      <Route path="/Register/Validate">
+        <Validate />
+      </Route>
+      <Link
+        to={{
+          pathname: "/Register/Validate",
+          state: { fromDashboard: true },
+        }}
+      >
+        Register
+      </Link>
+    </Router>
     </div>
   );
 }
