@@ -35,7 +35,7 @@ function Login() {
         <Button>Submit</Button>
       </Form>
       <br/>
-      <span>Not a user?<a href="/validate">Register</a> </span>
+      <span>Not a user?<a href="/validate"> Register</a></span>
     </div>
   );
 }
