@@ -1,6 +1,8 @@
 import React, {useContext, useState} from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import { CcatContext } from "./CcatContext"; 
+import PersonalDetails  from "./PersonalDetails";
 
 function Validate() {
     var [ccatNo,setCcatNo] = useState("");
@@ -9,7 +11,7 @@ function Validate() {
     }
     var [compState, setCompState] = useState();
     return (
-
+    <CcatContext.Provider value={ccatNo}>
     <Container>
       <Form>
         <Form.Group>
@@ -21,9 +23,9 @@ function Validate() {
             <Form.Control type="text" placeholder="First Name" />
         </Form.Group>
       </Form>
-      <button>Next</button>
+      <button onClick={()=>{setCompState(<PersonalDetails />)}}>Next</button>
     </Container>
-
+    </CcatContext.Provider>
     );       
 }
 export default Validate;
