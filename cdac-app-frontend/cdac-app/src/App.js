@@ -3,8 +3,8 @@ import Login from './components/Login';
 import './App.css';
 import Validate from './components/Register/Validate';
 import { BrowserRouter,Route,Routes} from "react-router-dom";
-import PersonalDetails from './components/Register/PersonalDetails';
-import MultistepForm from './components/Register/MultistepFrom';
+import PersonalDetails from './components/Register1/PersonalDetails';
+import MultistepForm from './components/Register/MultistepForm';
 
 function App() {
   return (
