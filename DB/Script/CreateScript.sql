@@ -27,8 +27,7 @@ CREATE TABLE IF NOT EXISTS user_table(
 	u_id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     f_name VARCHAR(25),
     ccat_no BIGINT NOT NULL,
-    u_role VARCHAR(10),
-    FOREIGN KEY(ccat_no) REFERENCES ccat_student(ccat_no)
+    u_role VARCHAR(10)
 );
 
 INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
@@ -47,10 +46,14 @@ create table if not exists personal_details(
     qualification varchar(15) NOT NULL,
     photo varchar(500),
     course varchar(10) NOT NULL,
-    FOREIGN KEY(u_id) REFERENCES user_table(u_id)
+    guardian_name VARCHAR(50),
+    guardian_phone BIGINT
 );
 
-insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com','8630296896','B.tech','https:///dcjcbbivfvbv','PG-DAC');
+insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17',
+'hardik@gmail.com','8630296896','B.tech',
+'https:///dcjcbbivfvbv','PG-DAC',
+'Mala Agarwal', '8630298749');
 
 -- ----------------------------------------------------------------------
 -- user_address
@@ -61,14 +64,10 @@ CREATE TABLE IF NOT EXISTS user_address(
 	add_line2 varchar(30),
 	state varchar(20) NOT NULL,
 	city varchar(20) NOT NULL,
-	pincode int NOT NULL,
-    guardian_name VARCHAR(50),
-    guardian_phone BIGINT,
-    FOREIGN KEY(u_id) REFERENCES personal_details(u_id)
+	pincode int NOT NULL
 );
                             
-INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001,
-								'Mala Agarwal', '8630298749');
+INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
                                 
 -- ----------------------------------------------------------------------
 
@@ -79,8 +78,7 @@ CREATE TABLE IF NOT EXISTS user_login(
     u_name varchar(50),
     u_prn bigint primary key not null,
     u_password varchar(20),
-    course varchar(10),
-    FOREIGN KEY(u_id) REFERENCES personal_details(u_id)
+    course varchar(10)
 );
 
 -- ----------------------------------------------------------------------
@@ -103,8 +101,7 @@ CREATE TABLE IF NOT EXISTS result_table(
     mod3_lab int,
     mod3_assessment int,
     mod3_attendance int,
-    mod3_total int,
-    FOREIGN KEY(u_prn) REFERENCES user_login(u_prn)
+    mod3_total int
 );
 
 -- ----------------------------------------------------------------------------------------
@@ -119,8 +116,7 @@ CREATE TABLE IF NOT EXISTS doubt_forum(
     sub_name varchar(10) not null,
     doubt_content varchar(250) not null,
     attachment varchar(500),
-    active_doubt char(1) not null, -- (Y/N)
-    FOREIGN KEY(u_prn) REFERENCES user_login(u_prn)
+    active_doubt char(1) not null -- (Y/N)
 );
 
 -- ----------------------------------------------------------------------------------------
@@ -135,8 +131,7 @@ CREATE TABLE IF NOT EXISTS current_day_attendance(
     lab_attendance int not null,
     total_attended int not null,
     lecture_count int not null,
-    primary key (u_prn, module),
-    FOREIGN KEY(u_prn) REFERENCES user_login(u_prn)
+    primary key (u_prn, module)
 );
 
 -- ----------------------------------------------------------------------------------------
@@ -148,8 +143,7 @@ CREATE TABLE IF NOT EXISTS total_attendance(
     module varchar(10) not null,
     attended_lecture int not null,
     total_lecture int not null,
-    PRIMARY KEY (u_prn, module),
-    FOREIGN KEY(u_prn,module) REFERENCES current_day_attendance(u_prn,module)
+    PRIMARY KEY (u_prn, module)
 );
 
 -- ----------------------------------------------------------------------------------------

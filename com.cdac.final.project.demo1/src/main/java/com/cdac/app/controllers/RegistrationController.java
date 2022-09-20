@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.app.domain.PersonalDetails;
@@ -32,15 +33,13 @@ public class RegistrationController {
 
 	// API to save personal details in dataBase
 	@PostMapping("/savePersonalDetails")
-	public void savePersonalDetails(@PathVariable(name = "o") Object o) {
-		PersonalDetails pDetails = (PersonalDetails)o;
+	public void savePersonalDetails(@RequestBody PersonalDetails pDetails) {
 		service.savePersonalDetails(pDetails);
 	}
-	
+
 	// API to save address details in database
 	@PostMapping("/saveAddressDetails")
-	public void saveAddressDetails(@PathVariable(name = "o") Object o) {
-	  UserAddress addressDetails = (UserAddress)o;
+	public void saveAddressDetails(@RequestBody UserAddress addressDetails) {
 	  service.saveAddressDetails(addressDetails);
 	}
 
