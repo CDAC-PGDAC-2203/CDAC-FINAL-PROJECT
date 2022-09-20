@@ -14,6 +14,7 @@ import com.cdac.app.repositories.IDoubtForumRepository;
 import com.cdac.app.repositories.IFinalResultRepositiry;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
 import com.cdac.app.service.IDashboardService;
+import com.cdac.app.utils.Utils;
 
 @Component
 @Transactional
@@ -30,9 +31,13 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private ITotalAttendanceRepository totalAttendanceRepository;
+	
+	@Autowired
+	private Utils utils;
 
 	@Override
 	public void saveDoubtDetails(DoubtForum doubtDetails) {
+		doubtDetails.setAttachment(utils.uploadFileAddress(doubtDetails.getAttachment(), doubtDetails.getUserPrn()+doubtDetails.getSubjectName()));
 		doubtForumRepository.save(doubtDetails);
 
 	}

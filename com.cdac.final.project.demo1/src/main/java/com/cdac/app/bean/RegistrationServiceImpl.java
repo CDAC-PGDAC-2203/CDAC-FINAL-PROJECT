@@ -1,6 +1,5 @@
 package com.cdac.app.bean;
 
-import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,12 +8,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.cdac.app.domain.CCATStudent;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.Role;
@@ -27,6 +23,7 @@ import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.repositories.IUserTableRepository;
 import com.cdac.app.service.IRegistrationService;
+import com.cdac.app.utils.Utils;
 
 @Component
 @Transactional
@@ -52,12 +49,9 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	@Autowired
 	private IUserLoginRepository userLoginRepository;
-
-	@Value("${application.bucket.name}")
-	private String bucketName;
-
+	
 	@Autowired
-	private AmazonS3 s3Client;
+	private Utils utils;
 
 	// Method to validate user before registration
 	// If valid : move to personal_details page
@@ -111,7 +105,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	// Method to save user personal details in personal_details table
 	@Override
 	public void savePersonalDetails(PersonalDetails pDetails) {
-		pDetails.setPhoto(uploadImageAddress(pDetails.getPhoto(),
+		pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),
 				pDetails.getfName() + pDetails.getUserId().toString() + LocalDate.now().toString()));
 		personalDetailsRepository.save(pDetails);
 	}
@@ -168,10 +162,4 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		return prnList;
 	}
 
-	public String uploadImageAddress(String imagePath, String fileName) {
-		File convertedFile = new File(imagePath);
-		s3Client.putObject(new PutObjectRequest(bucketName, fileName, convertedFile));
-		convertedFile.delete();
-		return fileName;
-	}
 }
