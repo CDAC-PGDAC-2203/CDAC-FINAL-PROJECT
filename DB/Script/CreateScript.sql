@@ -90,21 +90,53 @@ CREATE TABLE IF NOT EXISTS result_table(
     mod1_lab int,
     mod1_assessment int,
     mod1_attendance int,
-    mod1_total int,
     
     mod2_lab int,
     mod2_assessment int,
     mod2_attendance int,
-    mod2_total int,
     
     mod3_lab int,
     mod3_assessment int,
     mod3_attendance int,
-    mod3_total int
+    
+    mod4_lab int,
+    mod4_assessment int,
+    mod4_attendance int,
+    
+    mod5_lab int,
+    mod5_assessment int,
+    mod5_attendance int,
+    
+    mod6_lab int,
+    mod6_assessment int,
+    mod6_attendance int,
+    
+    mod7_lab int,
+    mod7_assessment int,
+    mod7_attendance int,
+    
+    mod8_lab int,
+    mod8_assessment int,
+    mod8_attendance int
 );
 
 -- ----------------------------------------------------------------------------------------
+-- Result Table
 
+CREATE TABLE IF NOT EXISTS final_result_table(
+	u_prn bigint primary key not null,
+
+    mod1 int,
+	mod2 int,
+    mod3 int,
+    mod4 int,
+    mod5 int,
+    mod6 int,
+    mod7 int,
+    mod8 int
+);
+
+-- ----------------------------------------------------------------------------------------
 -- Doubt Forum table
 
 CREATE TABLE IF NOT EXISTS doubt_forum(
