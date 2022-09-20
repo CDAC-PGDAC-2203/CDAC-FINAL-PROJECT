@@ -1,0 +1,25 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAYIVDFW47VB4NIRNT
+      secret-key: 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
+    region:
+      static: ap-south-1
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: cdac-app-final
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+#server:
+#  port: 9090
