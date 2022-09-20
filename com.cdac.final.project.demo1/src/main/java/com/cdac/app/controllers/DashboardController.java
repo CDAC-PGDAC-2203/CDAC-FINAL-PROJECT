@@ -25,4 +25,9 @@ public class DashboardController {
 	public Double getFinalPerformance(@PathVariable(name = "uPrn") Long uPrn) {
 		return service.getPerformance(uPrn);
 	}
+
+	@GetMapping("/attendance/{uPrn}")
+	public Double getTotalAttendance(@PathVariable(name = "uPrn") Long uPrn) {
+		return service.getAttendance(uPrn);
+	}
 }

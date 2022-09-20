@@ -9,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.FinalResultTable;
+import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.repositories.IDoubtForumRepository;
 import com.cdac.app.repositories.IFinalResultRepositiry;
+import com.cdac.app.repositories.ITotalAttendanceRepository;
 import com.cdac.app.service.IDashboardService;
 
 @Component
@@ -25,6 +27,9 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private IFinalResultRepositiry finalResultRepositiry;
+
+	@Autowired
+	private ITotalAttendanceRepository totalAttendanceRepository;
 
 	@Override
 	public void saveDoubtDetails(DoubtForum doubtDetails) {
@@ -51,4 +56,14 @@ public class DashboardServiceImpl implements IDashboardService {
 		performancePercentage = ((obtained * 1.0)/total) * 100.0;
 		return performancePercentage;
 	}
+
+	@Override
+	public Double getAttendance(Long uPrn) {
+		Double attendancePercentage = 0.0;
+		TotalAttendance tAttendance = totalAttendanceRepository.findByUPrn(uPrn);
+		
+		attendancePercentage = ((tAttendance.getAttendedLecture() * 1.0) / tAttendance.getTotalLecture()) * 100.0;
+		return attendancePercentage;
+	}
+
 }
