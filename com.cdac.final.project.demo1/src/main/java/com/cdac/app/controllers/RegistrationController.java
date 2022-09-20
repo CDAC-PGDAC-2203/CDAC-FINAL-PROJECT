@@ -32,18 +32,18 @@ public class RegistrationController {
 	}
 
 	// API to save personal details in dataBase
-	@PostMapping("/savePersonalDetails")
+	@PostMapping("/details")
 	public void savePersonalDetails(@RequestBody PersonalDetails pDetails) {
 		service.savePersonalDetails(pDetails);
 	}
 
 	// API to save address details in database
-	@PostMapping("/saveAddressDetails")
+	@PostMapping("/address")
 	public void saveAddressDetails(@RequestBody UserAddress addressDetails) {
 	  service.saveAddressDetails(addressDetails);
 	}
 
-	@PostMapping("/generatePRN/{courseName}")
+	@PostMapping("/generate/{courseName}")
 	public void generatePRN(@PathVariable(name = "courseName") String courseName) {
 		service.generatePRN(courseName);
 	}
