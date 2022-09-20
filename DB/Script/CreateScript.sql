@@ -136,6 +136,8 @@ CREATE TABLE IF NOT EXISTS final_result_table(
     mod8 int
 );
 
+insert into final_result_table values(220340120003,60,58,58,59,60,48,60,48);
+
 -- ----------------------------------------------------------------------------------------
 -- Doubt Forum table
 
