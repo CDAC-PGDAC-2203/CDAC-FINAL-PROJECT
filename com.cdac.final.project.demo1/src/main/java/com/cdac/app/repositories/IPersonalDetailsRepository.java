@@ -11,7 +11,7 @@ import com.cdac.app.domain.PersonalDetails;
 @Repository
 public interface IPersonalDetailsRepository extends JpaRepository<PersonalDetails, Long> {
 
-	@Query(value = "select p.userId, p.fName, p.mName, p.lName "
+	@Query(value = "select p "
 				 + "from PersonalDetails p "
 				 + "where p.course = ?1 "
 				 + "order by p.fName, p.mName, p.lName")

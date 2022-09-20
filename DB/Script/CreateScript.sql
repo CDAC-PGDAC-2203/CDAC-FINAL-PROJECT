@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS user_table(
     FOREIGN KEY(ccat_no) REFERENCES ccat_student(ccat_no)
 );
 
-INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'Student');
+INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
 
 -- ----------------------------------------------------------------------
 -- personal_table
