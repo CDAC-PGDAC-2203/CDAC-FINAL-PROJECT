@@ -82,42 +82,72 @@ CREATE TABLE IF NOT EXISTS user_login(
 
 -- ----------------------------------------------------------------------
 
--- Result Table
+-- module tables
 
-CREATE TABLE IF NOT EXISTS result_table(
+CREATE TABLE IF NOT EXISTS module_1(
 	u_prn bigint primary key not null,
 
-    mod1_lab int,
-    mod1_assessment int,
-    mod1_attendance int,
-    
-    mod2_lab int,
-    mod2_assessment int,
-    mod2_attendance int,
-    
-    mod3_lab int,
-    mod3_assessment int,
-    mod3_attendance int,
-    
-    mod4_lab int,
-    mod4_assessment int,
-    mod4_attendance int,
-    
-    mod5_lab int,
-    mod5_assessment int,
-    mod5_attendance int,
-    
-    mod6_lab int,
-    mod6_assessment int,
-    mod6_attendance int,
-    
-    mod7_lab int,
-    mod7_assessment int,
-    mod7_attendance int,
-    
-    mod8_lab int,
-    mod8_assessment int,
-    mod8_attendance int
+    lab int,
+    assessment int,
+    attendance int
+);
+insert into module_1 values(220340120003,35,15,5);
+
+CREATE TABLE IF NOT EXISTS module_2(
+	u_prn bigint primary key not null,
+
+    lab int,
+    assessment int,
+    attendance int
+);
+insert into module_2 values(220340120003,34,15,5);
+
+CREATE TABLE IF NOT EXISTS module_3(
+	u_prn bigint primary key not null,
+
+    lab int,
+    assessment int,
+    attendance int
+);
+
+CREATE TABLE IF NOT EXISTS module_4(
+	u_prn bigint primary key not null,
+
+    lab int,
+    assessment int,
+    attendance int
+);
+
+CREATE TABLE IF NOT EXISTS module_5(
+	u_prn bigint primary key not null,
+
+    lab int,
+    assessment int,
+    attendance int
+);
+
+CREATE TABLE IF NOT EXISTS module_6(
+	u_prn bigint primary key not null,
+
+    lab int,
+    assessment int,
+    attendance int
+);
+
+CREATE TABLE IF NOT EXISTS module_7(
+	u_prn bigint primary key not null,
+
+    lab int,
+    assessment int,
+    attendance int
+);
+
+CREATE TABLE IF NOT EXISTS module_8(
+	u_prn bigint primary key not null,
+
+    lab int,
+    assessment int,
+    attendance int
 );
 
 -- ----------------------------------------------------------------------------------------

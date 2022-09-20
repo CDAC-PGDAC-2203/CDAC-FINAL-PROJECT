@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cdac.app.service.IResultService;
 
 @RestController
-public class ExamController {
+public class ResultController {
 
 	@Autowired
 	private IResultService resultService;
 
 	// API to get result using module name
-	@GetMapping("/result/{moduleName}")
-	public HashMap<String, Object> getResult(@PathVariable(name = "moduleName") String moduleName) {
-		return resultService.getResult(moduleName);
+	@GetMapping("/result/{uPrn}/{moduleName}")
+	public HashMap<String, String> getResult(@PathVariable(name = "uPrn") Long uPrn, @PathVariable(name = "moduleName") String moduleName) {
+		return resultService.getResult(uPrn, moduleName.toLowerCase());
 	}
 }

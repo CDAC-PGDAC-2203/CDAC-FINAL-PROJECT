@@ -3,5 +3,5 @@ package com.cdac.app.service;
 import java.util.HashMap;
 
 public interface IResultService {
-	public HashMap<String, Object> getResult(String moduleName);
+	HashMap<String, String> getResult(Long uPrn, String moduleName);
 }
