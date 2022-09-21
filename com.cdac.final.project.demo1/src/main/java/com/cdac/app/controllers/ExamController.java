@@ -24,7 +24,7 @@ public class ExamController {
 	private final static Logger logger = LoggerFactory.getLogger(ExamController.class);
 
 	@PostMapping("/questions")
-	public void uploadExamPaper(@RequestBody String paperPath, @RequestBody String subject) {
+	public void uploadExamPaper(@RequestBody String paperPath, String subject) {
 
 		service.uploadExamPaper(paperPath,subject);
 		logger.info("************Uploaded Question Paper*************");
