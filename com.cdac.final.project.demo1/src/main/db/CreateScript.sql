@@ -224,3 +224,23 @@ CREATE TABLE IF NOT EXISTS schedule_table(
 );
 
 -- ----------------------------------------------------------------
+
+-- Lab_join table
+CREATE TABLE IF NOT EXISTS lab_join_table(
+    u_prn bigint not null,
+    lab_b1 char(1) not null,
+    lab_b2 char(1) not null,
+    lab_b3 char(1) not null,
+    lab_b4 char(1) not null
+);
+
+-- ---------------------------------------------------------------------------------------------------------
+
+-- Lecture_link table
+CREATE TABLE IF NOT EXISTS lecture_link(
+    lect_link varchar(500),
+    b1_link varchar(500),
+    b2_link varchar(500),
+    b3_link varchar(500),
+    b4_link varchar(500)
+)

@@ -37,6 +37,7 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Override
 	public void saveDoubtDetails(DoubtForum doubtDetails) {
+		doubtDetails.setActiveDoubt("Y");
 		doubtDetails.setAttachment(utils.uploadFileAddress(doubtDetails.getAttachment(), doubtDetails.getUserPrn()+doubtDetails.getSubjectName()));
 		doubtForumRepository.save(doubtDetails);
 
