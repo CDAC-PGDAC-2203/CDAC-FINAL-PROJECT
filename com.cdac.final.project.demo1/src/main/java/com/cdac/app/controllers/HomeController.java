@@ -1,13 +1,13 @@
 package com.cdac.app.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HomeController {
 
 	@GetMapping("/")
-	public void kuchBhi() {
-		System.out.println("Chal gya !!!");
+	public String kuchBhi() {
+		return "/hello";
 	}
 }
