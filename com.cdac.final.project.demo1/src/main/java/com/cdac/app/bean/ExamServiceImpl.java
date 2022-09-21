@@ -56,4 +56,8 @@ public class ExamServiceImpl implements IExamService {
 		}
 	}
 
+	@Override
+	public List<QuestionPaper> getQuestionPaper(String module) {
+		return repository.findAllByModule(module);
+	}
 }
