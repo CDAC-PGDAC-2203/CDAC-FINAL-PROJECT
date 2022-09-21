@@ -2,12 +2,14 @@ package com.cdac.app.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name ="lab_join_table")
 public class LabJoin {
-     
+    
+	@Id
 	@Column(name = "u_prn")
 	private long uPrn;
 

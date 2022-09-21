@@ -3,6 +3,7 @@ package com.cdac.app.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+@SuppressWarnings("serial")
 public class AttendanceId implements Serializable {
 
 	private Long uPrn;

@@ -255,5 +255,5 @@ CREATE TABLE IF NOT EXISTS question_paper(
     option3 varchar(50),
     option4 varchar(50),
     answer varchar(50),
-    subject varchar(50)
+    module varchar(50)
 );

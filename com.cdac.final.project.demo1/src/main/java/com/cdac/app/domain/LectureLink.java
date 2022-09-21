@@ -2,29 +2,31 @@ package com.cdac.app.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "lecture_link")
 public class LectureLink {
-	
+
+	@Id
 	@Column(name = "lect_link")
 	private String theoryLink;
-	
+
 	@Column(name = "b1_link")
 	private String b1Link;
-	
+
 	@Column(name = "b2_link")
 	private String b2Link;
-	
+
 	@Column(name = "b3_link")
 	private String b3Link;
-	
+
 	@Column(name = "b4_link")
 	private String b4Link;
-	
+
 	public LectureLink() {
-		
+
 	}
 
 	public LectureLink(String theoryLink, String b1Link, String b2Link, String b3Link, String b4Link) {
@@ -81,6 +83,5 @@ public class LectureLink {
 		return "LectureLink [theoryLink=" + theoryLink + ", b1Link=" + b1Link + ", b2Link=" + b2Link + ", b3Link="
 				+ b3Link + ", b4Link=" + b4Link + "]";
 	}
-	
 
 }
