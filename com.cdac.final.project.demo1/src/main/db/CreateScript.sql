@@ -243,4 +243,17 @@ CREATE TABLE IF NOT EXISTS lecture_link(
     b2_link varchar(500),
     b3_link varchar(500),
     b4_link varchar(500)
-)
+);
+-------------------------------------------------------------------------------------------------------------
+
+-- Question paper table
+
+CREATE TABLE IF NOT EXISTS question_paper(
+	question varchar(1000) PRIMARY KEY NOT NULL,
+    option1 varchar(50),
+    option2 varchar(50),
+    option3 varchar(50),
+    option4 varchar(50),
+    answer varchar(50),
+    subject varchar(50)
+);
