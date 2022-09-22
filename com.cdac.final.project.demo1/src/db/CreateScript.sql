@@ -1,8 +1,11 @@
 create database cdac_app_final;
 use cdac_app_final;
 -- drop database cdac_app_final
--- ----------------------------------------------------------------------
--- ccat_student
+
+-- ------------------------------------------------------------------------------------------------------
+
+-- ccat_student table
+
 create table if not exists ccat_student(
 	ccat_no bigint PRIMARY KEY NOT NULL,
     f_name varchar(25) NOT NULL, 
@@ -19,7 +22,8 @@ insert into ccat_student values('2203004','Mayank',NULL,'Sachan','1994-03-07','P
 insert into ccat_student values('2203005','Kamana',NULL,'Mathur','1997-07-04','PG-XYZ');
 insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','PG-DAC');
 
--- ----------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
+
 -- user_table
 
 CREATE TABLE IF NOT EXISTS user_table(
@@ -31,8 +35,9 @@ CREATE TABLE IF NOT EXISTS user_table(
 
 INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
 
--- ----------------------------------------------------------------------
--- personal_table
+-- ------------------------------------------------------------------------------------------------------
+
+-- personal_details table
 
 create table if not exists personal_details(
 	u_id bigint PRIMARY KEY NOT NULL,
@@ -54,8 +59,9 @@ insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17'
 'https:///dcjcbbivfvbv','PG-DAC',
 'Mala Agarwal', '8630298749');
 
--- ----------------------------------------------------------------------
--- user_address
+-- ------------------------------------------------------------------------------------------------------
+
+-- user_address table
 
 CREATE TABLE IF NOT EXISTS user_address(
 	u_id bigint PRIMARY KEY NOT NULL,
@@ -68,9 +74,9 @@ CREATE TABLE IF NOT EXISTS user_address(
                             
 INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
                                 
--- ----------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
--- user_login
+-- user_login table
 
 CREATE TABLE IF NOT EXISTS user_login(
 	u_id bigint not null,
@@ -80,7 +86,7 @@ CREATE TABLE IF NOT EXISTS user_login(
     course varchar(10)
 );
 
--- ----------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
 -- module tables
 
@@ -150,8 +156,9 @@ CREATE TABLE IF NOT EXISTS module_8(
     attendance bigint
 );
 
--- ----------------------------------------------------------------------------------------
--- Result Table
+-- ------------------------------------------------------------------------------------------------------
+
+-- final_result_table 
 
 CREATE TABLE IF NOT EXISTS final_result_table(
 	u_prn bigint primary key not null,
@@ -168,8 +175,9 @@ CREATE TABLE IF NOT EXISTS final_result_table(
 
 insert into final_result_table values(220340120003,60,58,58,59,60,48,60,48);
 
--- ----------------------------------------------------------------------------------------
--- Doubt Forum table
+-- ------------------------------------------------------------------------------------------------------
+
+-- doubt Forum table
 
 CREATE TABLE IF NOT EXISTS doubt_forum(
 	d_id bigint primary key not null,
@@ -182,9 +190,9 @@ CREATE TABLE IF NOT EXISTS doubt_forum(
     active_doubt char(1) not null -- (Y/N)
 );
 
--- ----------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
--- current_day_attendance
+-- current_day_attendance table
 
 CREATE TABLE IF NOT EXISTS current_day_attendance(
 	u_prn bigint not null,
@@ -197,9 +205,9 @@ CREATE TABLE IF NOT EXISTS current_day_attendance(
     primary key (u_prn, module)
 );
 
--- ----------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
--- total_attendance
+-- total_attendance table
 
 CREATE TABLE IF NOT EXISTS total_attendance(
 	u_prn bigint not null,
@@ -209,7 +217,7 @@ CREATE TABLE IF NOT EXISTS total_attendance(
     PRIMARY KEY (u_prn, module)
 );
 
--- ----------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
 -- schedule_table table
 
@@ -223,9 +231,10 @@ CREATE TABLE IF NOT EXISTS schedule_table(
     lab_b4_link varchar(500)
 );
 
--- ----------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
--- Lab_join table
+-- lab_join table
+
 CREATE TABLE IF NOT EXISTS lab_join_table(
     u_prn bigint not null,
     lab_b1 char(1) not null,
@@ -234,9 +243,10 @@ CREATE TABLE IF NOT EXISTS lab_join_table(
     lab_b4 char(1) not null
 );
 
--- ---------------------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
--- Lecture_link table
+-- lecture_link table
+
 CREATE TABLE IF NOT EXISTS lecture_link(
     lect_link varchar(500),
     b1_link varchar(500),
@@ -244,9 +254,10 @@ CREATE TABLE IF NOT EXISTS lecture_link(
     b3_link varchar(500),
     b4_link varchar(500)
 );
--------------------------------------------------------------------------------------------------------------
 
--- Question paper table
+-- ------------------------------------------------------------------------------------------------------
+
+-- question_paper table
 
 CREATE TABLE IF NOT EXISTS question_paper(
 	question varchar(500) PRIMARY KEY NOT NULL,
@@ -258,12 +269,42 @@ CREATE TABLE IF NOT EXISTS question_paper(
     module varchar(50)
 );
 
--- ---------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 
 -- mcq_marks table
 
-CREATE TABLE IF NOT EXISTS mcq_table(
+CREATE TABLE IF NOT EXISTS mcq_marks(
 	u_prn bigint not null,
     module varchar(50),
     marks bigint
 );
+
+-- ------------------------------------------------------------------------------------------------------
+
+-- feedback table
+
+CREATE TABLE IF NOT EXISTS feedback(
+	u_prn bigint primary key not null,
+    course varchar(10),
+    faculty varchar(100),
+    module varchar(50),
+    parameter_1 int,
+    parameter_2 int,
+    parameter_3 int,
+    parameter_4 int,
+    parameter_5 int,
+    parameter_total int,
+    suggestion varchar(300)
+);
+
+-- ------------------------------------------------------------------------------------------------------
+
+-- faculty table
+CREATE TABLE IF NOT EXISTS faculty(
+	faculty_id bigint primary key not null,
+    faculty_name varchar(100),
+    visibility_flag varchar(1),
+    course varchar(10)
+);
+
+-- ------------------------------------------------------------------------------------------------------
