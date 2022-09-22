@@ -6,6 +6,7 @@
 
 package com.cdac.app.controllers;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -28,14 +29,14 @@ public class ExamController {
 
 	private final static Logger logger = LoggerFactory.getLogger(ExamController.class);
 
-	@PostMapping("/questions")
-	public void uploadExamPaper(@RequestBody String paperPath, String subject) {
-		service.uploadExamPaper(paperPath,subject);
-		logger.info("************Uploaded Question Paper*************");
-	}
-
 	@GetMapping("/questions/{module}")
 	public List<QuestionPaper> getQuestions(@PathVariable(name="module") String module){
+		logger.info("*******Receiving Question Paper***********");
 		return service.getQuestionPaper(module);
+	}
+
+	@PostMapping("/exam")
+	public void examAttempt(@RequestBody HashMap<String,String> map, String module, Long uPrn) {
+		service.examAttempt(map, module, uPrn);
 	}
 }
