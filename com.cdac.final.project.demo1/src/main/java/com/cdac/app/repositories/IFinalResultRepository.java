@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.cdac.app.domain.FinalResultTable;
 
-public interface IFinalResultRepositiry extends JpaRepository<FinalResultTable, Long> {
+public interface IFinalResultRepository extends JpaRepository<FinalResultTable, Long> {
 	@Query(value = "select f from FinalResultTable f where f.uPrn = ?1")
 	public FinalResultTable findByUPrn(Long uPrn);
 }

@@ -18,7 +18,7 @@ import com.cdac.app.domain.FinalResultTable;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.repositories.ICurrentDayAttendanceRepository;
 import com.cdac.app.repositories.IDoubtForumRepository;
-import com.cdac.app.repositories.IFinalResultRepositiry;
+import com.cdac.app.repositories.IFinalResultRepository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.utils.Utils;
@@ -31,7 +31,7 @@ public class DashboardServiceImpl implements IDashboardService {
 	private IDoubtForumRepository doubtForumRepository;
 
 	@Autowired
-	private IFinalResultRepositiry finalResultRepositiry;
+	private IFinalResultRepository finalResultRepositiry;
 
 	@Autowired
 	private ITotalAttendanceRepository totalAttendanceRepository;
@@ -66,9 +66,18 @@ public class DashboardServiceImpl implements IDashboardService {
 	@Override
 	public Double getAttendance(Long uPrn) {
 		Double attendancePercentage = 0.0;
-		TotalAttendance tAttendance = totalAttendanceRepository.findByUPrn(uPrn);
+		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
 
-		attendancePercentage = ((tAttendance.getAttendedLecture() * 1.0) / tAttendance.getTotalLecture()) * 100.0;
+		int lectureAttended = 0;
+		int totalLecture = 0;
+		if (list != null) {
+			for (TotalAttendance tAttendance : list) {
+				lectureAttended += tAttendance.getAttendedLecture();
+				totalLecture += tAttendance.getTotalLecture();
+			}
+		}
+
+		attendancePercentage = ((lectureAttended * 1.0) / totalLecture) * 100.0;
 		return attendancePercentage;
 	}
 
@@ -114,18 +123,18 @@ public class DashboardServiceImpl implements IDashboardService {
 				cda.setLectureAttendance(lecture);
 				cda.setLabAttendance(lab);
 				cda.setTotalAttended(lab + lecture);
-			
-				TotalAttendance ta = totalAttendanceRepository.findByUPrnAndModule(cda.getuPrn(),subject);
-				if(ta == null) {
+
+				TotalAttendance ta = totalAttendanceRepository.findByUPrnAndModule(cda.getuPrn(), subject);
+				if (ta == null) {
 					ta = new TotalAttendance();
 				}
 
 				ta.setuPrn(cda.getuPrn());
 				ta.setModule(cda.getModule());
-				if((ta.getTotalLecture() == null) && (ta.getAttendedLecture() == null)) {
+				if ((ta.getTotalLecture() == null) && (ta.getAttendedLecture() == null)) {
 					ta.setTotalLecture(cda.getLectureCount());
 					ta.setAttendedLecture(lab + lecture);
-				}else {
+				} else {
 					ta.setTotalLecture(ta.getTotalLecture() + cda.getLectureCount());
 					ta.setAttendedLecture(ta.getAttendedLecture() + lab + lecture);
 				}
@@ -135,7 +144,7 @@ public class DashboardServiceImpl implements IDashboardService {
 			}
 			currentDayAttendanceRepository.saveAll(list);
 			totalAttendanceRepository.saveAll(listTotal);
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
