@@ -67,7 +67,7 @@ public class AdminController {
 	@PostMapping("/attendance")
 	public void uploadAttendance(String filePath, String subject) {
 		dashboardService.uploadAttendance(filePath,subject);
-		logger.info("************Uploaded Question Paper*************");
+		logger.info("************Uploaded Attendance Key*************");
 	}
 
 	@PostMapping("/result")

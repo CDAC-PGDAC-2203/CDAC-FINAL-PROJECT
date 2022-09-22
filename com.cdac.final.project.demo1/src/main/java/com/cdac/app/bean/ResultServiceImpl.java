@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cdac.app.domain.FinalResult;
 import com.cdac.app.domain.MCQExamMarks;
 import com.cdac.app.domain.Module1;
 import com.cdac.app.domain.Module2;
@@ -21,6 +22,7 @@ import com.cdac.app.domain.Module6;
 import com.cdac.app.domain.Module7;
 import com.cdac.app.domain.Module8;
 import com.cdac.app.domain.TotalAttendance;
+import com.cdac.app.repositories.IFinalResultRepository;
 import com.cdac.app.repositories.IMCQExamRepository;
 import com.cdac.app.repositories.IModule1Repository;
 import com.cdac.app.repositories.IModule2Repository;
@@ -66,6 +68,9 @@ public class ResultServiceImpl implements IResultService {
 
 	@Autowired
 	private IMCQExamRepository mcqExamRepository;
+
+	@Autowired
+	private IFinalResultRepository finalResultRepository;
 
 	// Method to return result to frontend
 	@Override
@@ -144,10 +149,13 @@ public class ResultServiceImpl implements IResultService {
 		List<Module6> list6 = new ArrayList<>();
 		List<Module7> list7 = new ArrayList<>();
 		List<Module8> list8 = new ArrayList<>();
+		List<FinalResult> listFinal = new ArrayList<>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 			while ((line = br.readLine()) != null) {
 				String[] record = line.split(splitBy);
+				FinalResult finalResult = new FinalResult();
+
 				if ("mod1".equals(module)) {
 					Module1 moduleResult = new Module1();
 					moduleResult.setuPrn(Long.parseLong(record[0]));
@@ -155,7 +163,11 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod1(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list1.add(moduleResult);
+					listFinal.add(finalResult);
 
 				} else if ("mod2".equals(module)) {
 					Module2 moduleResult = new Module2();
@@ -164,7 +176,11 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod2(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list2.add(moduleResult);
+					listFinal.add(finalResult);
 
 				} else if ("mod3".equals(module)) {
 					Module3 moduleResult = new Module3();
@@ -173,7 +189,11 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod3(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list3.add(moduleResult);
+					listFinal.add(finalResult);
 
 				} else if ("mod4".equals(module)) {
 					Module4 moduleResult = new Module4();
@@ -182,7 +202,11 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod4(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					
 					list4.add(moduleResult);
+					listFinal.add(finalResult);
 
 				} else if ("mod5".equals(module)) {
 					Module5 moduleResult = new Module5();
@@ -191,7 +215,11 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod5(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list5.add(moduleResult);
+					listFinal.add(finalResult);
 
 				} else if ("mod6".equals(module)) {
 					Module6 moduleResult = new Module6();
@@ -200,7 +228,11 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod6(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list6.add(moduleResult);
+					listFinal.add(finalResult);
 
 				} else if ("mod7".equals(module)) {
 					Module7 moduleResult = new Module7();
@@ -209,7 +241,12 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod7(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list7.add(moduleResult);
+					listFinal.add(finalResult);
+
 				} else {
 					Module8 moduleResult = new Module8();
 					moduleResult.setuPrn(Long.parseLong(record[0]));
@@ -217,7 +254,12 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setLab(Long.parseLong(record[1]));
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
+					finalResult.setuPrn(Long.parseLong(record[0]));
+					finalResult.setMod8(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list8.add(moduleResult);
+					listFinal.add(finalResult);
+
 				}
 			}
 			if (!list1.isEmpty()) {
@@ -237,6 +279,8 @@ public class ResultServiceImpl implements IResultService {
 			} else {
 				module8Repository.saveAll(list8);
 			}
+			finalResultRepository.saveAll(listFinal);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
