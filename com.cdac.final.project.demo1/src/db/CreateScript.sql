@@ -160,20 +160,20 @@ CREATE TABLE IF NOT EXISTS module_8(
 
 -- final_result_table 
 
-CREATE TABLE IF NOT EXISTS final_result_table(
+CREATE TABLE IF NOT EXISTS final_result(
 	u_prn bigint primary key not null,
 
-    mod1 int,
-	mod2 int,
-    mod3 int,
-    mod4 int,
-    mod5 int,
-    mod6 int,
-    mod7 int,
-    mod8 int
+    mod1 bigint,
+	mod2 bigint,
+    mod3 bigint,
+    mod4 bigint,
+    mod5 bigint,
+    mod6 bigint,
+    mod7 bigint,
+    mod8 bigint
 );
 
-insert into final_result_table values(220340120003,60,58,58,59,60,48,60,48);
+insert into final_result values(220340120003,60,58,58,59,60,48,60,48);
 
 -- ------------------------------------------------------------------------------------------------------
 
