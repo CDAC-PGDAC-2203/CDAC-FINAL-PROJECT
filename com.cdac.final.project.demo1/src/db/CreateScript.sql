@@ -192,21 +192,6 @@ CREATE TABLE IF NOT EXISTS doubt_forum(
 
 -- ------------------------------------------------------------------------------------------------------
 
--- current_day_attendance table
-
-CREATE TABLE IF NOT EXISTS current_day_attendance(
-	u_prn bigint not null,
-    module varchar(10) not null,
-    today_date date not null,
-    lecture_attendance int not null,
-    lab_attendance int not null,
-    total_attended int not null,
-    lecture_count int not null,
-    primary key (u_prn, module)
-);
-
--- ------------------------------------------------------------------------------------------------------
-
 -- total_attendance table
 
 CREATE TABLE IF NOT EXISTS total_attendance(
