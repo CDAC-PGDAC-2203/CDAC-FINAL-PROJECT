@@ -87,67 +87,67 @@ CREATE TABLE IF NOT EXISTS user_login(
 CREATE TABLE IF NOT EXISTS module_1(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 insert into module_1 values(220340120003,35,15,5);
 
 CREATE TABLE IF NOT EXISTS module_2(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 insert into module_2 values(220340120003,34,15,5);
 
 CREATE TABLE IF NOT EXISTS module_3(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 
 CREATE TABLE IF NOT EXISTS module_4(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 
 CREATE TABLE IF NOT EXISTS module_5(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 
 CREATE TABLE IF NOT EXISTS module_6(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 
 CREATE TABLE IF NOT EXISTS module_7(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 
 CREATE TABLE IF NOT EXISTS module_8(
 	u_prn bigint primary key not null,
 
-    lab int,
-    assessment int,
-    attendance int
+    lab bigint,
+    assessment bigint,
+    attendance bigint
 );
 
 -- ----------------------------------------------------------------------------------------
@@ -256,4 +256,14 @@ CREATE TABLE IF NOT EXISTS question_paper(
     option4 varchar(50),
     answer varchar(50),
     module varchar(50)
+);
+
+-- ---------------------------------------------------------------
+
+-- mcq_marks table
+
+CREATE TABLE IF NOT EXISTS mcq_table(
+	u_prn bigint not null,
+    module varchar(50),
+    marks bigint
 );
