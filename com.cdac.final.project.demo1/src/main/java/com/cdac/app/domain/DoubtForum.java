@@ -44,7 +44,6 @@ public class DoubtForum {
 	private String activeDoubt;
 	
 	public DoubtForum() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public DoubtForum(Long doubtId, Long userPrn, String userName, String email, String subjectName,

@@ -20,17 +20,17 @@ public class Module2 {
 	private Long uPrn;
 
 	@Column(name = "lab")
-	private Integer lab;
+	private Long lab;
 	@Column(name = "assessment")
-	private Integer assessment;
+	private Long assessment;
 	@Column(name = "attendance")
-	private Integer attendance;
+	private Long attendance;
 	
 	public Module2() {
 		super();
 	}
 
-	public Module2(Long uPrn, Integer lab, Integer assessment, Integer attendance) {
+	public Module2(Long uPrn, Long lab, Long assessment, Long attendance) {
 		super();
 		this.uPrn = uPrn;
 		this.lab = lab;
@@ -46,27 +46,27 @@ public class Module2 {
 		this.uPrn = uPrn;
 	}
 
-	public Integer getLab() {
+	public Long getLab() {
 		return lab;
 	}
 
-	public void setLab(Integer lab) {
+	public void setLab(Long lab) {
 		this.lab = lab;
 	}
 
-	public Integer getAssessment() {
+	public Long getAssessment() {
 		return assessment;
 	}
 
-	public void setAssessment(Integer assessment) {
+	public void setAssessment(Long assessment) {
 		this.assessment = assessment;
 	}
 
-	public Integer getAttendance() {
+	public Long getAttendance() {
 		return attendance;
 	}
 
-	public void setAttendance(Integer attendance) {
+	public void setAttendance(Long attendance) {
 		this.attendance = attendance;
 	}
 
