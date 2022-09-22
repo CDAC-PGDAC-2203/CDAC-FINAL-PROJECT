@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.app.domain.DoubtForum;
+import com.cdac.app.domain.Feedback;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IExamService;
+import com.cdac.app.service.IFeedbackService;
 import com.cdac.app.service.IRegistrationService;
 import com.cdac.app.service.IResultService;
 
@@ -32,6 +34,9 @@ public class AdminController {
 
 	@Autowired
 	private IResultService resultService;
+
+	@Autowired
+	private IFeedbackService feedbackService;
 	
 	private final static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
@@ -68,5 +73,20 @@ public class AdminController {
 	@PostMapping("/result")
 	public void setResult(@RequestBody String filePath, String module, String course) {
 		resultService.setResult(filePath, module,course);
+	}
+
+	@GetMapping("/feedback/{course}")
+	public List<Feedback> getFeedbackList(@PathVariable(name = "course") String course) {
+		return feedbackService.getFeedbackList(course);
+	}
+
+	@PostMapping("/faculty")
+	public void importFacultyList(@RequestBody String filePath, String course) {
+		feedbackService.importFacultyList(filePath, course);
+	}
+
+	@PutMapping("/faculty/{flag}/{facultyId}/{course}")
+	public void updateFacultyFlag(@PathVariable(name = "flag") String flag, @PathVariable(name = "facultyId") Long facultyId, @PathVariable(name = "course") String course) {
+		feedbackService.updateFacultyFlag(flag,facultyId,course);
 	}
 }
