@@ -3,6 +3,7 @@ package com.cdac.app.bean;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.FinalResult;
+import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.TotalAttendance;
+import com.cdac.app.domain.UserAddress;
+import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.IDoubtForumRepository;
 import com.cdac.app.repositories.IFinalResultRepository;
+import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.utils.Utils;
@@ -30,6 +35,12 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private ITotalAttendanceRepository totalAttendanceRepository;
+
+	@Autowired
+	private IPersonalDetailsRepository personalDetailsRepository;
+
+	@Autowired
+	private IAddressDetailsRepository addressDetailsRepository;
 
 	@Autowired
 	private Utils utils;
@@ -86,10 +97,9 @@ public class DashboardServiceImpl implements IDashboardService {
 	}
 
 	@Override
-	public Double getAttendance(Long uPrn) {
-		Double attendancePercentage = 0.0;
+	public Double getTotalAttendance(Long uPrn) {
 		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
-
+		Double attendancePercentage = 0.0;
 		int lectureAttended = 0;
 		int totalLecture = 0;
 		if (list != null) {
@@ -98,9 +108,18 @@ public class DashboardServiceImpl implements IDashboardService {
 				totalLecture += tAttendance.getTotalLecture();
 			}
 		}
-
 		attendancePercentage = ((lectureAttended * 1.0) / totalLecture) * 100.0;
 		return attendancePercentage;
+	}
+
+	@Override
+	public HashMap<String, Double> getModuleAttendance(Long uPrn) {
+		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
+		HashMap<String,Double> map = new HashMap<>();
+		for(TotalAttendance ta:list) {
+			map.put(ta.getModule(), ((ta.getAttendedLecture()*1.0)/ta.getTotalLecture())*100);
+		}
+		return map;
 	}
 
 	@Override
@@ -149,6 +168,46 @@ public class DashboardServiceImpl implements IDashboardService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
 
+	@Override
+	public HashMap<String, String> getProfile(Long uPrn) {
+
+		PersonalDetails pDetail = personalDetailsRepository.findByUPrn(uPrn);
+		UserAddress address = addressDetailsRepository.findByUPrn(uPrn);
+
+		HashMap<String,String> map = new HashMap<>();
+
+		map.put("u_prn", uPrn.toString());
+		
+		String name = pDetail.getfName();
+		if (pDetail.getmName() != null) {
+			name = name + " " + pDetail.getmName();
+		}
+		if (pDetail.getlName() != null) {
+			name = name + " " +  pDetail.getlName();
+		}
+		map.put("name", name);
+		map.put("course", pDetail.getCourse());
+		map.put("gender", pDetail.getGender());
+		map.put("dob", pDetail.getDob().toString());
+		map.put("email", pDetail.getEmail());
+		map.put("phone", pDetail.getPhone().toString());
+		map.put("photo", pDetail.getPhoto());
+		map.put("address1", address.getAddLine1());
+		map.put("address2", address.getAddLine2());
+		map.put("city", address.getCity());
+		map.put("state", address.getState());
+		map.put("pincode", address.getPincode().toString());
+
+		return map;
+	}
+
+	@Override
+	public void updateProfile(UserAddress address, Long uPrn) {
+		UserAddress addressSaved = addressDetailsRepository.findByUPrn(uPrn);
+		if((!(address.getAddLine1()).equals(addressSaved.getAddLine1())) || !(address.getPincode()).equals(addressSaved.getPincode())) {
+			addressDetailsRepository.save(address);
+		}
 	}
 }

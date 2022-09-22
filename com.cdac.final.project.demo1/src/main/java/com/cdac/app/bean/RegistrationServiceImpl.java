@@ -146,10 +146,10 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 			String name = pDetail.getfName();
 			if (pDetail.getmName() != null) {
-				name += pDetail.getmName();
+				name = name + " " + pDetail.getmName();
 			}
 			if (pDetail.getlName() != null) {
-				name += pDetail.getlName();
+				name = name + " " +  pDetail.getlName();
 			}
 
 			userLogin.setuName(name);

@@ -10,6 +10,6 @@ import com.cdac.app.domain.UserTable;
 @Repository
 public interface IUserTableRepository extends JpaRepository<UserTable, Long> {
 
-	@Query(value = "select u from UserTable u where u.ccatNo = ccatNo")
+	@Query(value = "select u from UserTable u where u.ccatNo = :ccatNo")
 	public UserTable findByCcatNo(@Param("ccatNo") Long ccatNo);
 }
