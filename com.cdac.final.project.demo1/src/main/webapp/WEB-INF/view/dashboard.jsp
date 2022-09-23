@@ -6,13 +6,13 @@
 <title>CDAC APP | Dashboard</title>
 <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
 <script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="./css/styleDashboard.css" />
+<link rel="stylesheet" href="./css/styleNavbarAndFooter.css" />
 <link rel="stylesheet" href="./css/dashboard.css" />
 </head>
 <body>
 	<!-- navbar -->
      <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
-      <a class="navbar-brand" href="#"><img class="img-responsive" src="C:\Users\Kamana Mathur\Desktop\cdac-app-logo.jpeg"></a>
+      <a class="navbar-brand" href="#"><img class="img-responsive" src="./img/cdac-logo.jpeg"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -332,7 +332,7 @@
               Panchwati Road, Pashan,
               Pune, Maharashtra 411008
               <a href="https://www.google.com/maps/place/CENTRE+FOR+DEVELOPMENT+OF+ADVANCED+COMPUTING,+Panchawati+Rd,+Mansarovar,+Pashan,+Pune,+Maharashtra+411008/@18.5349721,73.8105031,19z/data=!4m5!3m4!1s0x3bc2bf0e5dca0f97:0xaed6c14da20b1d0f!8m2!3d18.5350147!4d73.8108441?shorturl=1">
-                <img src="C:\Users\Kamana Mathur\Desktop\2901214.png" style="height: 13px; width: 13px;" />
+                <img src="./img/2901214.png" style="height: 13px; width: 13px;" />
               </a>
             </p>
             <p>
