@@ -16,4 +16,5 @@ public interface IDashboardService {
 	void uploadAttendance(String filePath, String subject);
 	HashMap<String,String> getProfile(Long uPrn);
 	void updateProfile(UserAddress address, Long uPrn);
+	void setNotice(String noticeName, String noticeLink);
 }

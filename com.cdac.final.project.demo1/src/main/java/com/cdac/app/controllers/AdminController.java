@@ -99,4 +99,9 @@ public class AdminController {
 	public void uploadLinks(@RequestBody LectureLink lectureLink) {
 		joinLectureService.uploadLectureLinks(lectureLink);
 	}
+
+	@PostMapping("/notice")
+	public void setNotice(@RequestBody String noticeName, String noticeLink) {
+		dashboardService.setNotice(noticeName, noticeLink);
+	}
 }

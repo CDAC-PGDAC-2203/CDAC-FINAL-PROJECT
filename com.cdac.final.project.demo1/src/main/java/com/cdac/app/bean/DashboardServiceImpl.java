@@ -12,12 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.FinalResult;
+import com.cdac.app.domain.Notice;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.domain.UserAddress;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.IDoubtForumRepository;
 import com.cdac.app.repositories.IFinalResultRepository;
+import com.cdac.app.repositories.INoticeRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
 import com.cdac.app.service.IDashboardService;
@@ -41,6 +43,9 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private IAddressDetailsRepository addressDetailsRepository;
+
+	@Autowired
+	private INoticeRepository noticeRepository;
 
 	@Autowired
 	private Utils utils;
@@ -209,5 +214,15 @@ public class DashboardServiceImpl implements IDashboardService {
 		if((!(address.getAddLine1()).equals(addressSaved.getAddLine1())) || !(address.getPincode()).equals(addressSaved.getPincode())) {
 			addressDetailsRepository.save(address);
 		}
+	}
+
+	@Override
+	public void setNotice(String noticeName, String noticeLink) {
+		Notice notice = new Notice();
+		notice.setNoticeName(noticeName);
+		notice.setNoticeLink(noticeLink);
+		notice.setVisibility("Y");
+
+		noticeRepository.save(notice);
 	}
 }

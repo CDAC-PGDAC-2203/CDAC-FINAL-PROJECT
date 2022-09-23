@@ -292,3 +292,13 @@ CREATE TABLE IF NOT EXISTS user_token(
 );
 
 -- ------------------------------------------------------------------------------------------------------
+
+-- notice table
+
+CREATE TABLE IF NOT EXISTS notice(
+	notice_name varchar(100),
+    notice_link varchar(100),
+    visibility varchar(100)
+);
+
+-- ------------------------------------------------------------------------------------------------------
