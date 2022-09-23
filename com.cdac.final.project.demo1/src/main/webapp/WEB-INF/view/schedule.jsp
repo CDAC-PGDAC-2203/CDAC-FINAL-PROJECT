@@ -244,7 +244,7 @@
 		<!-- Copyright -->
 		<div class="text-center p-4"
 			style="background-color: rgba(0, 0, 0, 0.05);">
-			Â© 2022 CDAC. All rights reserved: <a class="text-reset fw-bold"
+			© 2022 CDAC. All rights reserved: <a class="text-reset fw-bold"
 				href="https://acts.cdac.in/">acts.cdac.in</a>
 		</div>
 		<!-- Copyright -->
