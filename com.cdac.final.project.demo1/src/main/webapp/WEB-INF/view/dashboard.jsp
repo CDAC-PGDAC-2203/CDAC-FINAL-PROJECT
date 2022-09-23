@@ -1,23 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo3</title>
-     <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-  crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="Dashboard.css" />
+<title>CDAC APP | Dashboard</title>
+<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="./css/styleDashboard.css" />
+<link rel="stylesheet" href="./css/dashboard.css" />
 </head>
 <body>
-     <!-- navbar -->
+	<!-- navbar -->
      <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
       <a class="navbar-brand" href="#"><img class="img-responsive" src="C:\Users\Kamana Mathur\Desktop\cdac-app-logo.jpeg"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -359,7 +352,7 @@
     <!-- Section: Links  -->
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      Â© 2022 CDAC. All rights reserved:
+      © 2022 CDAC. All rights reserved:
       <a class="text-reset fw-bold" href="https://acts.cdac.in/">acts.cdac.in</a>
     </div>
     <!-- Copyright -->
