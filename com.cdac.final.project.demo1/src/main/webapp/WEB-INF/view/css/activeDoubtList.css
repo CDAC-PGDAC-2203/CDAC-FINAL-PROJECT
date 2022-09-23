@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+body{
+    background-color: rgb(65, 105, 225);
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+}
+
+.feedback-table{
+    margin: 90px;
+}
+
+tr{
+    background-color: white;
+}
+th{
+    text-align: center;
+}
+th,td {
+    vertical-align: middle;
+    color: black;
+    border: 1px solid darkgray;
+}
