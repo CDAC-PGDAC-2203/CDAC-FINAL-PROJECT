@@ -106,4 +106,9 @@ public class AdminController {
 			@PathVariable(name = "link") String noticeLink) {
 		dashboardService.setNotice(noticeName, noticeLink);
 	}
+
+	@PostMapping("/notice/{name}")
+	public void removeNotice(@PathVariable(name = "name") String noticeName) {
+		dashboardService.removeNotice(noticeName);
+	}
 }

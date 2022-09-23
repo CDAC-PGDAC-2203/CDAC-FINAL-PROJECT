@@ -3,6 +3,7 @@ package com.cdac.app.bean;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -120,9 +121,9 @@ public class DashboardServiceImpl implements IDashboardService {
 	@Override
 	public HashMap<String, Double> getModuleAttendance(Long uPrn) {
 		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
-		HashMap<String,Double> map = new HashMap<>();
-		for(TotalAttendance ta:list) {
-			map.put(ta.getModule(), ((ta.getAttendedLecture()*1.0)/ta.getTotalLecture())*100);
+		HashMap<String, Double> map = new HashMap<>();
+		for (TotalAttendance ta : list) {
+			map.put(ta.getModule(), ((ta.getAttendedLecture() * 1.0) / ta.getTotalLecture()) * 100);
 		}
 		return map;
 	}
@@ -181,16 +182,16 @@ public class DashboardServiceImpl implements IDashboardService {
 		PersonalDetails pDetail = personalDetailsRepository.findByUPrn(uPrn);
 		UserAddress address = addressDetailsRepository.findByUPrn(uPrn);
 
-		HashMap<String,String> map = new HashMap<>();
+		HashMap<String, String> map = new HashMap<>();
 
 		map.put("u_prn", uPrn.toString());
-		
+
 		String name = pDetail.getfName();
 		if (pDetail.getmName() != null) {
 			name = name + " " + pDetail.getmName();
 		}
 		if (pDetail.getlName() != null) {
-			name = name + " " +  pDetail.getlName();
+			name = name + " " + pDetail.getlName();
 		}
 		map.put("name", name);
 		map.put("course", pDetail.getCourse());
@@ -211,7 +212,8 @@ public class DashboardServiceImpl implements IDashboardService {
 	@Override
 	public void updateProfile(UserAddress address, Long uPrn) {
 		UserAddress addressSaved = addressDetailsRepository.findByUPrn(uPrn);
-		if((!(address.getAddLine1()).equals(addressSaved.getAddLine1())) || !(address.getPincode()).equals(addressSaved.getPincode())) {
+		if ((!(address.getAddLine1()).equals(addressSaved.getAddLine1()))
+				|| !(address.getPincode()).equals(addressSaved.getPincode())) {
 			addressDetailsRepository.save(address);
 		}
 	}
@@ -225,4 +227,27 @@ public class DashboardServiceImpl implements IDashboardService {
 
 		noticeRepository.save(notice);
 	}
+
+	@Override
+	public void removeNotice(String noticeName) {
+		noticeRepository.removeNotice(noticeName, "N");
+	}
+
+	@Override
+	public List<HashMap<String, String>> getNotice() {
+		List<Notice> list = noticeRepository.findAllByVisibility("Y");
+		List<HashMap<String, String>> listMap = new ArrayList<>();
+
+		for (Notice notice : list) {
+			HashMap<String, String> map = new HashMap<>();
+
+			map.put("noticeName", notice.getNoticeName());
+			map.put("noticeLink", notice.getNoticeLink());
+
+			listMap.add(map);
+		}
+
+		return listMap;
+	}
+
 }

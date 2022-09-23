@@ -1,6 +1,7 @@
 package com.cdac.app.controllers;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -71,5 +72,10 @@ public class DashboardController {
 	@GetMapping("/links/{date}/{course}")
 	public HashMap<String,String> lectureLink(@PathVariable(name = "date") String date,@PathVariable(name="course")  String course){
 		return joinLectureService.getLectureLink(date,course);
+	}
+
+	@GetMapping("/notice")
+	public List<HashMap<String, String>> getNotice(){
+		return service.getNotice();
 	}
 }

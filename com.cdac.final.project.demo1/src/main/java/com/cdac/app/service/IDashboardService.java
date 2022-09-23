@@ -17,4 +17,6 @@ public interface IDashboardService {
 	HashMap<String,String> getProfile(Long uPrn);
 	void updateProfile(UserAddress address, Long uPrn);
 	void setNotice(String noticeName, String noticeLink);
+	void removeNotice(String noticeName);
+	List<HashMap<String,String>> getNotice();
 }
