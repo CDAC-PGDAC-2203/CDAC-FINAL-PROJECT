@@ -29,12 +29,14 @@ public class ExamController {
 
 	private final static Logger logger = LoggerFactory.getLogger(ExamController.class);
 
+	// API to get question paper
 	@GetMapping("/questions/{module}")
 	public List<QuestionPaper> getQuestions(@PathVariable(name="module") String module){
 		logger.info("*******Receiving Question Paper***********");
 		return service.getQuestionPaper(module);
 	}
 
+	// API to get MCQ answers
 	@PostMapping("/exam")
 	public void examAttempt(@RequestBody HashMap<String,String> map, String module, Long uPrn) {
 		service.examAttempt(map, module, uPrn);

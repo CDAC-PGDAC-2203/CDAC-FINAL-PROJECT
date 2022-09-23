@@ -29,53 +29,65 @@ public class DashboardController {
 	@Autowired
 	private IJoinLectureService joinLectureService;
 
+	// API to get doubt details
 	@PostMapping("/doubt")
 	public void DoubtForumDetails(@RequestBody DoubtForum dobutDetails) {
 		service.saveDoubtDetails(dobutDetails);
 	}
 
+	// API to show student performance
 	@GetMapping("/performance/{uPrn}")
 	public Double getFinalPerformance(@PathVariable(name = "uPrn") Long uPrn) {
 		return service.getPerformance(uPrn);
 	}
 
+	// API to show student attendance report
 	@GetMapping("/attendance/{uPrn}")
 	public Double getTotalAttendance(@PathVariable(name = "uPrn") Long uPrn) {
 		return service.getTotalAttendance(uPrn);
 	}
 
+	// API to show student module wise attendance report
 	@GetMapping("/moduleAttendance/{uPrn}")
-	public HashMap<String,Double> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn){
+	public HashMap<String, Double> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn) {
 		return service.getModuleAttendance(uPrn);
 	}
 
+	// API to show user profile details
 	@GetMapping("/profile/{uPrn}")
 	public HashMap<String, String> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
 		return service.getProfile(uPrn);
 	}
 
+	// API to update user profile (Address)
 	@PostMapping("/profile")
 	public void updateProfile(@RequestBody UserAddress address, Long uPrn) {
 		service.updateProfile(address, uPrn);
 	}
 
+	// API to store feedback
 	@PostMapping("/feedback")
 	public void submitFeedback(@RequestBody Feedback feedback) {
 		feedbackService.submitFeedback(feedback);
 	}
 
+	// API to get lecture timings
 	@GetMapping("/time/{date}/{course}")
-	public HashMap<String,String> lectureTime(@PathVariable(name = "date") String date,@PathVariable(name="course")  String course){
-		return joinLectureService.getLectureTime(date,course);
+	public HashMap<String, String> lectureTime(@PathVariable(name = "date") String date,
+			@PathVariable(name = "course") String course) {
+		return joinLectureService.getLectureTime(date, course);
 	}
 
+	// API to get lecture links
 	@GetMapping("/links/{date}/{course}")
-	public HashMap<String,String> lectureLink(@PathVariable(name = "date") String date,@PathVariable(name="course")  String course){
-		return joinLectureService.getLectureLink(date,course);
+	public HashMap<String, String> lectureLink(@PathVariable(name = "date") String date,
+			@PathVariable(name = "course") String course) {
+		return joinLectureService.getLectureLink(date, course);
 	}
 
+	// API to get notice details on dashBoard
 	@GetMapping("/notice")
-	public List<HashMap<String, String>> getNotice(){
+	public List<HashMap<String, String>> getNotice() {
 		return service.getNotice();
 	}
 }

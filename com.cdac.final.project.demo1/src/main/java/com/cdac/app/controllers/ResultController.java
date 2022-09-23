@@ -15,9 +15,10 @@ public class ResultController {
 	@Autowired
 	private IResultService resultService;
 
-	// API to get result using module name
+	// API to get fetch result
 	@GetMapping("/result/{uPrn}/{moduleName}")
-	public HashMap<String, String> getResult(@PathVariable(name = "uPrn") Long uPrn, @PathVariable(name = "moduleName") String moduleName) {
+	public HashMap<String, String> getResult(@PathVariable(name = "uPrn") Long uPrn,
+			@PathVariable(name = "moduleName") String moduleName) {
 		return resultService.getResult(uPrn, moduleName.toLowerCase());
 	}
 }

@@ -45,68 +45,80 @@ public class AdminController {
 
 	private final static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
+	// API to upload question paper
 	@PostMapping("/questions")
 	public void uploadExamPaper(@RequestBody String paperPath, String subject) {
 		examService.uploadExamPaper(paperPath, subject);
 		logger.info("************Uploaded Question Paper*************");
 	}
 
+	// API to generate PRN of students course wise
 	@PostMapping("/generate/{courseName}")
 	public void generatePRN(@PathVariable(name = "courseName") String courseName) {
 		registartionService.generatePRN(courseName);
 		logger.info("**************Generated PRN of course: " + courseName + "****************");
 	}
 
+	// API to get all active doubts
 	@GetMapping("/doubts")
 	public List<DoubtForum> getAllActiveDoubts() {
 		logger.info("************Receiving active doubts*************");
 		return dashboardService.getActiveDoubts();
 	}
 
+	// API to mark solved doubts
 	@PutMapping("/doubt/{doubtId}")
 	public void updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
 		dashboardService.updateActiveFlag(doubtId);
 		logger.info("************Doubt:" + doubtId + " inactive*************");
 	}
 
+	// API to upload attendance of students
 	@PostMapping("/attendance")
 	public void uploadAttendance(@RequestBody String filePath, String subject) {
 		dashboardService.uploadAttendance(filePath, subject);
 		logger.info("************Uploaded Attendance Key*************");
 	}
 
+	// API to upload results of students
 	@PostMapping("/result")
 	public void setResult(@RequestBody String filePath, String module, String course) {
 		resultService.setResult(filePath, module, course);
 	}
 
+	// API to get feedback list
 	@GetMapping("/feedback/{course}")
 	public List<Feedback> getFeedbackList(@PathVariable(name = "course") String course) {
 		return feedbackService.getFeedbackList(course);
 	}
 
+	// API to update faculty list
 	@PostMapping("/faculty")
 	public void importFacultyList(@RequestBody String filePath, String course) {
 		feedbackService.importFacultyList(filePath, course);
 	}
 
+	// API to assign faculty to a course
 	@PutMapping("/faculty/{flag}/{facultyId}/{course}")
 	public void updateFacultyFlag(@PathVariable(name = "flag") String flag,
 			@PathVariable(name = "facultyId") Long facultyId, @PathVariable(name = "course") String course) {
 		feedbackService.updateFacultyFlag(flag, facultyId, course);
 	}
 
+	// API to upload lecture links
 	@PostMapping("/links")
 	public void uploadLinks(@RequestBody LectureLink lectureLink) {
 		joinLectureService.uploadLectureLinks(lectureLink);
 	}
 
+	// API to upload notice
 	@PostMapping("/notice/{name}/{link}")
 	public void setNotice(@PathVariable(name = "name") String noticeName,
 			@PathVariable(name = "link") String noticeLink) {
 		dashboardService.setNotice(noticeName, noticeLink);
 	}
 
+	// API to remove an old notice
 	@PostMapping("/notice/{name}")
 	public void removeNotice(@PathVariable(name = "name") String noticeName) {
 		dashboardService.removeNotice(noticeName);

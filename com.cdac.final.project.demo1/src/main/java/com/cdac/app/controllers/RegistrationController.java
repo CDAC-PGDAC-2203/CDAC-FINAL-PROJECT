@@ -21,11 +21,12 @@ public class RegistrationController {
 
 	// API to check if student is valid for registration
 	@PostMapping("/validate/{ccatNo}/{fName}")
-	public String checkValidStudent(@PathVariable(name = "ccatNo") Long ccatNo, @PathVariable(name = "fName") String fName) {
+	public String checkValidStudent(@PathVariable(name = "ccatNo") Long ccatNo,
+			@PathVariable(name = "fName") String fName) {
 		return service.checkIfValid(ccatNo, fName);
 	}
 
-	// API to fetch data in personal detail page (ajax call)
+	// API to fetch data in personal detail page (Ajax call)
 	@GetMapping("/details/{ccatNo}")
 	public HashMap<String, Object> getUserDetails(@PathVariable(name = "ccatNo") Long ccatNo) {
 		return service.getUserDetails(ccatNo);
@@ -40,7 +41,7 @@ public class RegistrationController {
 	// API to save address details in database
 	@PostMapping("/address")
 	public void saveAddressDetails(@RequestBody UserAddress addressDetails) {
-	  service.saveAddressDetails(addressDetails);
+		service.saveAddressDetails(addressDetails);
 	}
 
 }
