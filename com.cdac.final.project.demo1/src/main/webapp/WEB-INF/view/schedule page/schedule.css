@@ -1,0 +1,30 @@
+.ouetrmostdiv {
+    height: 465px;
+    width: 100%;
+}
+
+.outerdiv {
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: lightgray;
+    margin-top: 2%;
+    border-radius: 1%;
+}
+
+h4 {
+    overflow-x: auto;
+    font-family: "Google Sans", Roboto,Arial,sans-serif;
+    color: black;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+th, td {
+    border-radius: 5%;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 18px;
+}

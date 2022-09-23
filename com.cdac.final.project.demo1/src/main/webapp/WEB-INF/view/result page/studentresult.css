@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(65, 105, 225);
+    height: 414px;
+}
+
+.outer-div {
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.inner-div {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: none;
+}
+
+tr {
+    height: 4rem;
+    font-size: 110%;
+    background-color: white;
+    text-align: justify;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+}
+
+th,td {
+    vertical-align: middle;
+    color: black;
+    border: 1px solid darkgray;
+}
+
+.data {
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: large;
+}
+
+h2 {
+    overflow-x: auto;
+    font-family: "Google Sans", Roboto,Arial,sans-serif;
+    color: whitesmoke;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 6%;
+}
