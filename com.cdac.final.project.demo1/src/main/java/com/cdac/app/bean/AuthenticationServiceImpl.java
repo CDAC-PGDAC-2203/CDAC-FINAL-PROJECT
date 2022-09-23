@@ -15,9 +15,10 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
 
 	@Autowired
 	private IUserLoginRepository userLoginRepository;
-	
+
+	// Method to validate user using name and password
 	@Override
 	public UserLogin validateUser(String userName, String password) {
-		return userLoginRepository.findByUserPassword(Long.parseLong(userName),password);
+		return userLoginRepository.findByUserPassword(Long.parseLong(userName), password);
 	}
 }

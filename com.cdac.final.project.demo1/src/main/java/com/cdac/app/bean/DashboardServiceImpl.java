@@ -51,6 +51,7 @@ public class DashboardServiceImpl implements IDashboardService {
 	@Autowired
 	private Utils utils;
 
+	// Method to calculate performance of a student
 	@Override
 	public Double getPerformance(Long uPrn) {
 		Double performancePercentage = 0.0;
@@ -102,6 +103,7 @@ public class DashboardServiceImpl implements IDashboardService {
 		return performancePercentage;
 	}
 
+	// Method to calculate attendance of a student
 	@Override
 	public Double getTotalAttendance(Long uPrn) {
 		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
@@ -118,6 +120,7 @@ public class DashboardServiceImpl implements IDashboardService {
 		return attendancePercentage;
 	}
 
+	// Method to get module wise attendance of a student
 	@Override
 	public HashMap<String, Double> getModuleAttendance(Long uPrn) {
 		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
@@ -128,6 +131,7 @@ public class DashboardServiceImpl implements IDashboardService {
 		return map;
 	}
 
+	// Method to store doubt details in dataBase
 	@Override
 	public void saveDoubtDetails(DoubtForum doubtDetails) {
 		doubtDetails.setActiveDoubt("Y");
@@ -137,16 +141,19 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	}
 
+	// Method to fetch active doubts
 	@Override
 	public List<DoubtForum> getActiveDoubts() {
 		return doubtForumRepository.findAllActiveDoubt("Y");
 	}
 
+	// Method to mark solved doubts in dataBase
 	@Override
 	public void updateActiveFlag(Long doubtId) {
 		doubtForumRepository.updateActiveFlag(doubtId, "N");
 	}
 
+	// Method to upload assignment (Admin functionality)
 	@Override
 	public void uploadAttendance(String filePath, String module) {
 		String line = "";
@@ -176,6 +183,7 @@ public class DashboardServiceImpl implements IDashboardService {
 		}
 	}
 
+	// Method to fetch personal details
 	@Override
 	public HashMap<String, String> getProfile(Long uPrn) {
 
@@ -209,6 +217,7 @@ public class DashboardServiceImpl implements IDashboardService {
 		return map;
 	}
 
+	// Method to update profile details (Address)
 	@Override
 	public void updateProfile(UserAddress address, Long uPrn) {
 		UserAddress addressSaved = addressDetailsRepository.findByUPrn(uPrn);
@@ -218,6 +227,7 @@ public class DashboardServiceImpl implements IDashboardService {
 		}
 	}
 
+	// Method to upload notice (Admin functionality)
 	@Override
 	public void setNotice(String noticeName, String noticeLink) {
 		Notice notice = new Notice();
@@ -228,11 +238,13 @@ public class DashboardServiceImpl implements IDashboardService {
 		noticeRepository.save(notice);
 	}
 
+	// Method to remove notice (Admin functionality)
 	@Override
 	public void removeNotice(String noticeName) {
 		noticeRepository.removeNotice(noticeName, "N");
 	}
 
+	// Method to get notice (Ajax call)
 	@Override
 	public List<HashMap<String, String>> getNotice() {
 		List<Notice> list = noticeRepository.findAllByVisibility("Y");

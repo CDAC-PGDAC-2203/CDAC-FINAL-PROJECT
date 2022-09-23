@@ -18,38 +18,41 @@ public class JoinLectureServiceImpl implements IJoinLectureService {
 	@Autowired
 	private ILectureLinkRepository repository;
 
+	// Method to upload lecture links (Admin functionality)
 	@Override
 	public void uploadLectureLinks(LectureLink lectureLink) {
 		repository.save(lectureLink);
 	}
 
+	// Method to fetch lecture timings
 	@Override
 	public HashMap<String, String> getLectureTime(String date, String course) {
 
 		HashMap<String, String> map = new HashMap<>();
-		LectureLink lectureLink =  repository.findByDate(LocalDate.parse(date),course);
-		
-		map.put("theory",lectureLink.getTheoryLink().split("_")[0].toString());
+		LectureLink lectureLink = repository.findByDate(LocalDate.parse(date), course);
+
+		map.put("theory", lectureLink.getTheoryLink().split("_")[0].toString());
 		map.put("b1", lectureLink.getB1Link().split("_")[0].toString());
 		map.put("b2", lectureLink.getB2Link().split("_")[0].toString());
 		map.put("b3", lectureLink.getB3Link().split("_")[0].toString());
 		map.put("b4", lectureLink.getB4Link().split("_")[0].toString());
-		
+
 		return map;
 	}
 
+	// Method to get lecture links
 	@Override
 	public HashMap<String, String> getLectureLink(String date, String course) {
 
 		HashMap<String, String> map = new HashMap<>();
-		LectureLink lectureLink =  repository.findByDate(LocalDate.parse(date),course);
-		
-		map.put("theory",lectureLink.getTheoryLink().split("_")[1].toString());
+		LectureLink lectureLink = repository.findByDate(LocalDate.parse(date), course);
+
+		map.put("theory", lectureLink.getTheoryLink().split("_")[1].toString());
 		map.put("b1", lectureLink.getB1Link().split("_")[1].toString());
 		map.put("b2", lectureLink.getB2Link().split("_")[1].toString());
 		map.put("b3", lectureLink.getB3Link().split("_")[1].toString());
 		map.put("b4", lectureLink.getB4Link().split("_")[1].toString());
-		
+
 		return map;
 	}
 }

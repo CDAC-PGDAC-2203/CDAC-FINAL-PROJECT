@@ -27,16 +27,19 @@ public class FeedbackServiceImpl implements IFeedbackService {
 	@Autowired
 	private IFacultyRepository facultyRepository;
 
+	// Method to store feedback to dataBase
 	@Override
 	public void submitFeedback(Feedback feedback) {
 		repository.save(feedback);
 	}
 
+	// Method to fetch feedback response (Admin functionality)
 	@Override
 	public List<Feedback> getFeedbackList(String course) {
 		return repository.findAllByCourse(course);
 	}
 
+	// Method to store faculty list of a particular course
 	@Override
 	public void importFacultyList(String filePath, String course) {
 		String line = "";
@@ -58,11 +61,12 @@ public class FeedbackServiceImpl implements IFeedbackService {
 			facultyRepository.saveAll(list);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
 
+	// Method to update faculty list (Admin functionality)
 	@Override
 	public void updateFacultyFlag(String flag, Long facultyId, String course) {
-		facultyRepository.updateFacultyFlag(flag, facultyId,course);
+		facultyRepository.updateFacultyFlag(flag, facultyId, course);
 	}
 }

@@ -49,13 +49,11 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	@Autowired
 	private IUserLoginRepository userLoginRepository;
-	
+
 	@Autowired
 	private Utils utils;
 
 	// Method to validate user before registration
-	// If valid : move to personal_details page
-	// If invalid : return to registration page
 	@Override
 	public String checkIfValid(Long ccatNo, String fName) {
 		CCATStudent validStudent = ccatUserRepository.findByCcatNoAndFName(ccatNo, fName);
@@ -67,10 +65,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		}
 	}
 
-	// Method to save user in user_table
-	// User can be :
-	// 1. Admin
-	// 2. Student
+	// Method to save user details to dataBase
 	@Override
 	public void saveUser(Long ccatNo, String fName) {
 		UserTable uTable = new UserTable();
@@ -84,7 +79,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		userTableRepository.save(uTable);
 	}
 
-	// Method to return user details to frontend
+	// Method to fetch user details
 	@Override
 	public HashMap<String, Object> getUserDetails(Long ccatNo) {
 		CCATStudent ccatStudent = ccatUserRepository.findByCcatNo(ccatNo);
@@ -102,7 +97,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		return map;
 	}
 
-	// Method to save user personal details in personal_details table
+	// Method to save user personal details
 	@Override
 	public void savePersonalDetails(PersonalDetails pDetails) {
 		pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),
@@ -110,7 +105,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		personalDetailsRepository.save(pDetails);
 	}
 
-	// Method to save user address in user_address table
+	// Method to save user address details
 	@Override
 	public void saveAddressDetails(UserAddress addressDetails) {
 
@@ -118,6 +113,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	}
 
+	// Method to store PRN of students course wise (Admin functionality)
 	@Override
 	public void generatePRN(String courseName) {
 		List<PersonalDetails> list = personalDetailsRepository.findAll(courseName);
@@ -125,6 +121,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		userLoginRepository.saveAll(prnList);
 	}
 
+	// Method to generate PRN of students course wise
 	public List<UserLogin> populatePRNList(List<PersonalDetails> list) {
 		List<UserLogin> prnList = new ArrayList<>();
 		Long prnNo = 0L;
@@ -149,7 +146,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 				name = name + " " + pDetail.getmName();
 			}
 			if (pDetail.getlName() != null) {
-				name = name + " " +  pDetail.getlName();
+				name = name + " " + pDetail.getlName();
 			}
 
 			userLogin.setuName(name);

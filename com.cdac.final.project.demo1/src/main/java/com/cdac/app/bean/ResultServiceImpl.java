@@ -72,7 +72,7 @@ public class ResultServiceImpl implements IResultService {
 	@Autowired
 	private IFinalResultRepository finalResultRepository;
 
-	// Method to return result to frontend
+	// Method to return student overall result
 	@Override
 	public HashMap<String, String> getResult(Long uPrn, String moduleName) {
 		HashMap<String, String> map = new HashMap<>();
@@ -137,6 +137,7 @@ public class ResultServiceImpl implements IResultService {
 		return map;
 	}
 
+	// Method to upload student marks module wise (Admin functionality)
 	@Override
 	public void setResult(String filePath, String module, String course) {
 		String line = "";
@@ -164,7 +165,8 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod1(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					finalResult.setMod1(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
 
 					list1.add(moduleResult);
 					listFinal.add(finalResult);
@@ -177,7 +179,8 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod2(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					finalResult.setMod2(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
 
 					list2.add(moduleResult);
 					listFinal.add(finalResult);
@@ -190,7 +193,8 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod3(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					finalResult.setMod3(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
 
 					list3.add(moduleResult);
 					listFinal.add(finalResult);
@@ -203,8 +207,9 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod4(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
-					
+					finalResult.setMod4(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+
 					list4.add(moduleResult);
 					listFinal.add(finalResult);
 
@@ -216,7 +221,8 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod5(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					finalResult.setMod5(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
 
 					list5.add(moduleResult);
 					listFinal.add(finalResult);
@@ -229,7 +235,8 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod6(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					finalResult.setMod6(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
 
 					list6.add(moduleResult);
 					listFinal.add(finalResult);
@@ -242,7 +249,8 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod7(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					finalResult.setMod7(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
 
 					list7.add(moduleResult);
 					listFinal.add(finalResult);
@@ -255,7 +263,8 @@ public class ResultServiceImpl implements IResultService {
 					moduleResult.setAssessment(getMCQMarks(Long.parseLong(record[0]), module));
 
 					finalResult.setuPrn(Long.parseLong(record[0]));
-					finalResult.setMod8(moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
+					finalResult.setMod8(
+							moduleResult.getAssessment() + moduleResult.getLab() + moduleResult.getAttendance());
 
 					list8.add(moduleResult);
 					listFinal.add(finalResult);
@@ -286,9 +295,10 @@ public class ResultServiceImpl implements IResultService {
 		}
 	}
 
+	// Method to get attendance marks for calculating overall result
 	public Long getAttendanceMarks(Long uPRN, String module) {
 		TotalAttendance ta = totalAttendanceRepository.findByUPrnAndModule(uPRN, module);
-		if(ta!=null){
+		if (ta != null) {
 			Integer totalAttendance = ta.getTotalLecture();
 			Integer actualAttendance = ta.getAttendedLecture();
 			return Math.round(((actualAttendance * 1.0) / totalAttendance) * 10);
@@ -296,8 +306,9 @@ public class ResultServiceImpl implements IResultService {
 		return 0L;
 	}
 
+	// Method to get MCQ marks for calculating overall result
 	public Long getMCQMarks(Long uPrn, String module) {
-		MCQExamMarks mcqMarks = mcqExamRepository.findAllByUPrnAndModule(uPrn,module);
+		MCQExamMarks mcqMarks = mcqExamRepository.findAllByUPrnAndModule(uPrn, module);
 		return mcqMarks.getMarks();
 	}
 }

@@ -34,6 +34,7 @@ public class ExamServiceImpl implements IExamService {
 	@Autowired
 	private IMCQExamRepository mcqRepository;
 
+	// Method to upload question paper (Admin functionality)
 	@Override
 	public void uploadExamPaper(String paperPath, String subject) {
 		String line = "";
@@ -62,11 +63,13 @@ public class ExamServiceImpl implements IExamService {
 		}
 	}
 
+	// Method to fetch question paper
 	@Override
 	public List<QuestionPaper> getQuestionPaper(String module) {
 		return repository.findAllByModule(module);
 	}
 
+	// Method to calculate MCQ marks scored by a student
 	@Override
 	public void examAttempt(HashMap<String, String> map, String module, Long uPrn) {
 		List<QuestionPaper> paper = repository.findAllByModule(module);
@@ -82,7 +85,7 @@ public class ExamServiceImpl implements IExamService {
 			}
 		}
 
-		MCQExamMarks mcqMarks = new MCQExamMarks(uPrn, module, Math.round(((marks*1.0)/paper.size())*10));
+		MCQExamMarks mcqMarks = new MCQExamMarks(uPrn, module, Math.round(((marks * 1.0) / paper.size()) * 10));
 		mcqRepository.save(mcqMarks);
 	}
 }
