@@ -4,9 +4,9 @@
 <html>
 <head>
 <title>CDAC APP | Login</title>
-<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
 	<style>
         *{
             padding: 0;

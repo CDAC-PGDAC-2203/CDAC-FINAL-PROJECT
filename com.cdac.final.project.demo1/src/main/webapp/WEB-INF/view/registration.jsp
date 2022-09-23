@@ -4,11 +4,11 @@
 <html>
 <head>
 <title>CDAC APP | Register</title>
-<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="./css/styleRegistration.css" />
-<script src="./js/registration.js" defer></script>
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/styleRegistration.css" />
+<script src="js/registration.js" defer></script>
 </head>
 <body>
 	<section class="Form my-2 mx-5">

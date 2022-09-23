@@ -5,10 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>CDAC APP | Admin Dashboard</title>
-<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
-<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="./css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="./css/adminDashboard.css" />
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
+<link rel="stylesheet" href="css/adminDashboard.css" />
 </head>
 <body>
    <!-- navbar -->

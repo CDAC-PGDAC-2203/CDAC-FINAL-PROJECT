@@ -7,9 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.app.domain.UserLogin;
 import com.cdac.app.domain.UserToken;
@@ -18,13 +19,18 @@ import com.cdac.app.service.IAuthenticationService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-@RestController
+@Controller
 public class HomeController {
 
 	@Autowired
 	private IAuthenticationService service;
 
-	@PostMapping("/user")
+	@GetMapping("/home")
+	public String homePage(){
+		return "/login";
+	}
+
+	@PostMapping("/home/login")
 	public UserToken login(@RequestParam("user") String username, @RequestParam("password") String password) {
 		
 		UserLogin user = service.validateUser(username, password);

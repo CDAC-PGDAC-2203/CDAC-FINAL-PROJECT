@@ -5,11 +5,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>CDAC APP | Admin Feedback List</title>
-<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="./css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="./css/feedBackList.css" />
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
+<link rel="stylesheet" href="css/feedBackList.css" />
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">

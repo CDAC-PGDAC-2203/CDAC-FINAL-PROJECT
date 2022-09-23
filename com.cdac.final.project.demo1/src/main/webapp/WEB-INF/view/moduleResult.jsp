@@ -4,11 +4,11 @@
 <html>
 <head>
 <title>CDAC APP | Module Result</title>
-<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="./css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="./css/moduleResult.css" />
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
+<link rel="stylesheet" href="css/moduleResult.css" />
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">

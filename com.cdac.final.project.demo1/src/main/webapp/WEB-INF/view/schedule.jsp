@@ -4,11 +4,11 @@
 <html>
 <head>
 <title>CDAC APP | Schedule</title>
-<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="./css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="./css/schedule.css" />
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
+<link rel="stylesheet" href="css/schedule.css" />
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
