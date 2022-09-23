@@ -283,11 +283,21 @@ CREATE TABLE IF NOT EXISTS feedback(
 -- ------------------------------------------------------------------------------------------------------
 
 -- faculty table
+
 CREATE TABLE IF NOT EXISTS faculty(
 	faculty_id bigint primary key not null,
     faculty_name varchar(100),
     visibility_flag varchar(1),
     course varchar(10)
+);
+
+-- ------------------------------------------------------------------------------------------------------
+
+-- user_token table
+
+CREATE TABLE IF NOT EXISTS user_token(
+	u_prn bigint primary key,
+    token varchar(500)
 );
 
 -- ------------------------------------------------------------------------------------------------------
