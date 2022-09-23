@@ -97,7 +97,7 @@
                 <h6 id="centerName">
                   CDAC ACTS Pune
                 </h6>
-                <h3 class="profile-course" id="courseName">PG-DAC</h3>
+                <h3 class="profile-course" id="profileCourseName">PG-DAC</h3>
                 <h6 id="uPrn">
                   2203401200097
                 </h6>
@@ -128,7 +128,7 @@
                     <div class="col-md-6">
                       <label>Gender</label>
                     </div>
-                    <div class="col-md-6" id="gender">
+                    <div class="col-md-6" id="profileGender">
                       <p id="genderId">Female</p>
                     </div>
                   </div>
@@ -136,7 +136,7 @@
                     <div class="col-md-6">
                       <label>Date of Birth</label>
                     </div>
-                    <div class="col-md-6" id="dob">
+                    <div class="col-md-6" id="profileDob">
                       <p id="dobId">04-07-1997</p>
                     </div>
                   </div>
@@ -144,7 +144,7 @@
                     <div class="col-md-6">
                       <label>Email</label>
                     </div>
-                    <div class="col-md-6" id="email">
+                    <div class="col-md-6" id="profileEmail">
                       <p id="emailId">kamana.mathur89@gmail.com</p>
                     </div>
                   </div>
@@ -152,7 +152,7 @@
                     <div class="col-md-6">
                       <label>Phone</label>
                     </div>
-                    <div class="col-md-6" id="phone">
+                    <div class="col-md-6" id="profilePhone">
                       <p id="phoneNo">8976145876</p>
                     </div>
                   </div>

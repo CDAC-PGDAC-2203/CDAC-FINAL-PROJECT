@@ -137,7 +137,7 @@
             <input type="password" placeholder="Retype New Password" class="input-control">
          </div>
         <div class="input-box">
-            <button class="btn">Change Password</button>
+            <button class="btn" id="chPassword">Change Password</button>
         </div>
        
         </div>
