@@ -42,23 +42,23 @@ public class AdminController {
 
 	@Autowired
 	private IJoinLectureService joinLectureService;
-	
+
 	private final static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
 	@PostMapping("/questions")
 	public void uploadExamPaper(@RequestBody String paperPath, String subject) {
-		examService.uploadExamPaper(paperPath,subject);
+		examService.uploadExamPaper(paperPath, subject);
 		logger.info("************Uploaded Question Paper*************");
 	}
 
 	@PostMapping("/generate/{courseName}")
 	public void generatePRN(@PathVariable(name = "courseName") String courseName) {
 		registartionService.generatePRN(courseName);
-		logger.info("**************Generated PRN of course: "+courseName+"****************");
+		logger.info("**************Generated PRN of course: " + courseName + "****************");
 	}
 
 	@GetMapping("/doubts")
-	public List<DoubtForum> getAllActiveDoubts(){
+	public List<DoubtForum> getAllActiveDoubts() {
 		logger.info("************Receiving active doubts*************");
 		return dashboardService.getActiveDoubts();
 	}
@@ -66,18 +66,18 @@ public class AdminController {
 	@PutMapping("/doubt/{doubtId}")
 	public void updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
 		dashboardService.updateActiveFlag(doubtId);
-		logger.info("************Doubt:"+doubtId+" inactive*************");
+		logger.info("************Doubt:" + doubtId + " inactive*************");
 	}
 
 	@PostMapping("/attendance")
 	public void uploadAttendance(@RequestBody String filePath, String subject) {
-		dashboardService.uploadAttendance(filePath,subject);
+		dashboardService.uploadAttendance(filePath, subject);
 		logger.info("************Uploaded Attendance Key*************");
 	}
 
 	@PostMapping("/result")
 	public void setResult(@RequestBody String filePath, String module, String course) {
-		resultService.setResult(filePath, module,course);
+		resultService.setResult(filePath, module, course);
 	}
 
 	@GetMapping("/feedback/{course}")
@@ -91,8 +91,9 @@ public class AdminController {
 	}
 
 	@PutMapping("/faculty/{flag}/{facultyId}/{course}")
-	public void updateFacultyFlag(@PathVariable(name = "flag") String flag, @PathVariable(name = "facultyId") Long facultyId, @PathVariable(name = "course") String course) {
-		feedbackService.updateFacultyFlag(flag,facultyId,course);
+	public void updateFacultyFlag(@PathVariable(name = "flag") String flag,
+			@PathVariable(name = "facultyId") Long facultyId, @PathVariable(name = "course") String course) {
+		feedbackService.updateFacultyFlag(flag, facultyId, course);
 	}
 
 	@PostMapping("/links")
@@ -100,8 +101,9 @@ public class AdminController {
 		joinLectureService.uploadLectureLinks(lectureLink);
 	}
 
-	@PostMapping("/notice")
-	public void setNotice(@RequestBody String noticeName, String noticeLink) {
+	@PostMapping("/notice/{name}/{link}")
+	public void setNotice(@PathVariable(name = "name") String noticeName,
+			@PathVariable(name = "link") String noticeLink) {
 		dashboardService.setNotice(noticeName, noticeLink);
 	}
 }
