@@ -139,6 +139,7 @@ img{
   color: white;
   border-radius: 4px;
   font-weight: bold;
+  font-size: 2rem;
 }
 .btn1:hover{
   background:rgb(35, 81, 221);

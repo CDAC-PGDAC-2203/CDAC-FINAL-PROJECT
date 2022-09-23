@@ -1,48 +1,72 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Feedback Form</title>
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing:border-box;
-        }
-        body{
-            background:rgb(65, 105, 225);
-        }
-        .row{
-            background: white;
-            border-radius: 30px;
-            box-shadow: 10px 10px 15px rgb(100, 99, 99);
-        }
-        .btn1{
-            border: none;
-            outline: none;
-            height: 50px;
-            width:100%;
-            background-color:rgb(65, 105, 225);
-            color: white;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .btn1:hover{
-            background:rgb(35, 81, 221);
-            border:1px solid;
-        }
-    </style>
-    <script>
-    </script>
-  </head>
-  <body>
-    <section class="Form my-4 mx-5">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>CDAC APP | Feedback</title>
+<link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="./css/styleFeedback.css">
+<link rel="stylesheet" href="./css/styleNavbarAndFooter.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
+		<a class="navbar-brand" href="#"><img class="img-responsive"
+			src="./img/cdac-logo.jpeg"></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+			data-bs-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse justify-content-end"
+			id="navbarNav">
+			<ul class="navbar-nav">
+
+				<li id="dashboard" class="nav-item active"><a class="nav-link"
+					href="#">Dashboard</a></li>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">Join
+						Link</a>
+					<ul class="dropdown-menu dropdown-menu-end"
+						aria-labelledby="navbarDropdown">
+						<li id="theory"><a class="dropdown-item" href="#">Theory</a>
+						</li>
+						<li><a class="dropdown-item" href="#"> Lab &raquo; </a>
+							<ul class="dropdown-menu dropdown-submenu">
+								<li id="b1"><a class="dropdown-item" href="#">B1</a></li>
+								<li id="b2"><a class="dropdown-item" href="#">B2</a></li>
+								<li id="b3"><a class="dropdown-item" href="#">B3</a></li>
+								<li id="b4"><a class="dropdown-item" href="#">B4</a></li>
+							</ul></li>
+					</ul></li>
+
+				<li id="exam" class="nav-item"><a class="nav-link" href="#">Exam</a>
+				</li>
+				<li id="result" class="nav-item"><a class="nav-link" href="#">Result</a>
+				</li>
+				<li id="feedback" class="nav-item"><a class="nav-link" href="#">Feedback</a>
+				</li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+					<ul class="dropdown-menu dropdown-menu-end"
+						aria-labelledby="navbarDropdown">
+						<li id="myprofile"><a class="dropdown-item" href="#">My
+								Profile</a></li>
+						<li id="logout"><a class="dropdown-item" href="#">Logout</a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<section class="Form my-4 mx-5">
         <div class="container-fluid">
-            <div class="row no-gutters">
+            <div class="row" style="width:50%;margin:auto">
                 <div class=" px-5 pt-3">
                     <div class="pb-3">
                     <h4>Feedback Form</h4>
@@ -180,7 +204,85 @@
             </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-  </body>
+    <!-- Footer -->
+	<footer class="text-center text-lg-start bg-light text-muted">
+
+		<!-- Section: Links  -->
+		<section class="">
+			<div class="container text-center text-md-start mt-5">
+				<!-- Grid row -->
+				<div class="row mt-3">
+					<!-- Grid column -->
+					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 mt-4">
+						<!-- Links -->
+						<h5 class="text-uppercase fw-bold mb-4">Courses</h5>
+						<p id="pg-dac">
+							<a href="#!" class="text-reset">PG-DAC</a>
+						</p>
+						<p id="pg-dbda">
+							<a href="#!" class="text-reset">PG-DBDA</a>
+						</p>
+						<p id="pg-desd">
+							<a href="#!" class="text-reset">PG-DESD</a>
+						</p>
+					</div>
+					<!-- Grid column -->
+
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-4">
+						<!-- Links -->
+						<h5 class="text-uppercase fw-bold mb-4">Links</h5>
+						<p id="dashboard">
+							<a href="#!" class="text-reset">Dashboard</a>
+						</p>
+						<p id="exam">
+							<a href="#!" class="text-reset">Exam</a>
+						</p>
+						<p id="result">
+							<a href="#!" class="text-reset">Result</a>
+						</p>
+						<p id="feedback">
+							<a href="#!" class="text-reset">Feedback</a>
+						</p>
+					</div>
+					<!-- Grid column -->
+
+					<!-- Grid column -->
+					<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-4"
+						style="padding-bottom: 20px;">
+						<!-- Links -->
+						<h5 class="text-uppercase fw-bold mb-4">Contact</h5>
+						<p>
+							<i class="fas fa-home"></i> Centre for Development of Advanced
+							Computing, C-DAC Innovation Park 34, B/1, Panchwati Road, Pashan,
+							Pune, Maharashtra 411008 <a
+								href="https://www.google.com/maps/place/CENTRE+FOR+DEVELOPMENT+OF+ADVANCED+COMPUTING,+Panchawati+Rd,+Mansarovar,+Pashan,+Pune,+Maharashtra+411008/@18.5349721,73.8105031,19z/data=!4m5!3m4!1s0x3bc2bf0e5dca0f97:0xaed6c14da20b1d0f!8m2!3d18.5350147!4d73.8108441?shorturl=1">
+								<img
+								src="./img/2901214.png"
+								style="height: 13px; width: 13px;" />
+							</a>
+						</p>
+						<p>
+							<i class="fas fa-phone"></i> Phone: +91-20-25503100 <br>
+							Fax: +91-20-25503131
+						</p>
+					</div>
+					<!-- Grid column -->
+
+				</div>
+				<!-- Grid row -->
+
+			</div>
+		</section>
+		<!-- Section: Links  -->
+		<!-- Copyright -->
+		<div class="text-center p-4"
+			style="background-color: rgba(0, 0, 0, 0.05);">
+			© 2022 CDAC. All rights reserved: <a class="text-reset fw-bold"
+				href="https://acts.cdac.in/">acts.cdac.in</a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+	<!-- Footer -->
+</body>
 </html>
- 

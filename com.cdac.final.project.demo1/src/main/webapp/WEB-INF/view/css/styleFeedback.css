@@ -6,11 +6,17 @@
   font-family: 'Poppins', sans-serif;
 }
 html,body{
-  display: grid;
   height: 100%;
   place-items: center;
   text-align: center;
   background: rgb(65, 105, 225);
+}
+.row{
+  background: white;
+  border-radius: 30px;   
+}
+navbar{
+	width:100%;
 }
 .edit:hover{
   text-decoration: underline;
@@ -24,8 +30,8 @@ html,body{
   padding-top: 8px;
   padding-left:10px ;
   padding-right: 20px;
-  float: right;
   transition: all 0.2s ease;
+  float:right;
 }
 input:not(:checked) ~ label:hover,
 input:not(:checked) ~ label:hover ~ label{
@@ -90,4 +96,19 @@ form .btn button{
 }
 form .btn button:hover{
   background: #1b1b1b;
+}
+
+ 
+.btn1{
+	border: none;
+    outline: none;
+    height: 50px;
+    width:100%;
+    background-color:rgb(65, 105, 225);
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;}
+.btn1:hover{
+    background:rgb(35, 81, 221);
+    border:1px solid;
 }
