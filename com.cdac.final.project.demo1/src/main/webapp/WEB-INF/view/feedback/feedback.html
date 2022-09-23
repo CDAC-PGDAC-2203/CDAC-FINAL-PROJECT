@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing:border-box;
+        }
+        body{
+            background:rgb(65, 105, 225);
+        }
+        .row{
+            background: white;
+            border-radius: 30px;
+            box-shadow: 10px 10px 15px rgb(100, 99, 99);
+        }
+        .btn1{
+            border: none;
+            outline: none;
+            height: 50px;
+            width:100%;
+            background-color:rgb(65, 105, 225);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .btn1:hover{
+            background:rgb(35, 81, 221);
+            border:1px solid;
+        }
+    </style>
+    <script>
+    </script>
+  </head>
+  <body>
+    <section class="Form my-4 mx-5">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class=" px-5 pt-3">
+                    <div class="pb-3">
+                    <h4>Feedback Form</h4>
+                    </div>
+                    <form>
+                        <div class="form-row">
+                            <div class="d-flex justify-content-around pb-2">
+                                <div>
+                                    <label for="faculty" class="">Faculty:</label>
+                                    <select style="color: rgb(65, 105, 225);">
+                                        <option>faculty 1</option>
+                                        <option>faculty 2</option>
+                                        <option>faculty 3</option>
+                                        <option>faculty 4</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="faculty" class="">Module:</label>
+                                    <select style="color: rgb(65, 105, 225);">
+                                        <option>Module 1</option>
+                                        <option>Module 2</option>
+                                        <option>Module 3</option>
+                                        <option>Module 4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Field</th>
+                                        <th scope="col">Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Knowledge</td>
+                                        <td>
+                                            <div class="star-widget">
+                                                <input type="radio" name="1rate" id="1rate-5">
+                                                <label for="1rate-5" class="fas fa-star"></label>
+                                                <input type="radio" name="1rate" id="1rate-4">
+                                                <label for="1rate-4" class="fas fa-star"></label>
+                                                <input type="radio" name="1rate" id="1rate-3">
+                                                <label for="1rate-3" class="fas fa-star"></label>
+                                                <input type="radio" name="1rate" id="1rate-2">
+                                                <label for="1rate-2" class="fas fa-star"></label>
+                                                <input type="radio" name="1rate" id="1rate-1">
+                                                <label for="1rate-1" class="fas fa-star"></label>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Communication</td>
+                                        <td>
+                                            <div class="star-widget">
+                                                <input type="radio" name="2rate" id="2rate-5">
+                                                <label for="2rate-5" class="fas fa-star"></label>
+                                                <input type="radio" name="2rate" id="2rate-4">
+                                                <label for="2rate-4" class="fas fa-star"></label>
+                                                <input type="radio" name="2rate" id="2rate-3">
+                                                <label for="2rate-3" class="fas fa-star"></label>
+                                                <input type="radio" name="2rate" id="2rate-2">
+                                                <label for="2rate-2" class="fas fa-star"></label>
+                                                <input type="radio" name="2rate" id="2rate-1">
+                                                <label for="2rate-1" class="fas fa-star"></label>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Punctuality</td>
+                                        <td>
+                                            <div class="star-widget">
+                                                <input type="radio" name="3rate" id="3rate-5">
+                                                <label for="3rate-5" class="fas fa-star"></label>
+                                                <input type="radio" name="3rate" id="3rate-4">
+                                                <label for="3rate-4" class="fas fa-star"></label>
+                                                <input type="radio" name="3rate" id="3rate-3">
+                                                <label for="3rate-3" class="fas fa-star"></label>
+                                                <input type="radio" name="3rate" id="3rate-2">
+                                                <label for="3rate-2" class="fas fa-star"></label>
+                                                <input type="radio" name="3rate" id="3rate-1">
+                                                <label for="3rate-1" class="fas fa-star"></label>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Teaching</td>
+                                        <td>
+                                            <div class="star-widget">
+                                                <input type="radio" name="4rate" id="4rate-5">
+                                                <label for="4rate-5" class="fas fa-star"></label>
+                                                <input type="radio" name="4rate" id="4rate-4">
+                                                <label for="4rate-4" class="fas fa-star"></label>
+                                                <input type="radio" name="4rate" id="4rate-3">
+                                                <label for="4rate-3" class="fas fa-star"></label>
+                                                <input type="radio" name="4rate" id="4rate-2">
+                                                <label for="4rate-2" class="fas fa-star"></label>
+                                                <input type="radio" name="4rate" id="4rate-1">
+                                                <label for="4rate-1" class="fas fa-star"></label>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Guidance</td>
+                                        <td>
+                                            <div class="star-widget">
+                                                <input type="radio" name="5rate" id="5rate-5">
+                                                <label for="5rate-5" class="fas fa-star"></label>
+                                                <input type="radio" name="5rate" id="5rate-4">
+                                                <label for="5rate-4" class="fas fa-star"></label>
+                                                <input type="radio" name="5rate" id="5rate-3">
+                                                <label for="5rate-3" class="fas fa-star"></label>
+                                                <input type="radio" name="5rate" id="5rate-2">
+                                                <label for="5rate-2" class="fas fa-star"></label>
+                                                <input type="radio" name="5rate" id="5rate-1">
+                                                <label for="5rate-1" class="fas fa-star"></label>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                            <div class="textarea">
+                                <textarea cols="30" placeholder="Suggestion...."></textarea>
+                            </div>
+                            <button id="submit" type="submit" class="btn1 mt-3 mb-5">Submit</button> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
+ 

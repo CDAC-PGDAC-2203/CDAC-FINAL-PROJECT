@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing:border-box;
+        }
+        body{
+            background:rgb(65, 105, 225);
+        }
+        .row{
+            background: white;
+            border-radius: 30px;
+            box-shadow: 12px 12px 22px rgb(100, 99, 99);
+        }
+        img{
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        .btn1{
+            border: none;
+            outline: none;
+            height: 50px;
+            width:100%;
+            background-color:rgb(65, 105, 225);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .btn1:hover{
+            background:rgb(35, 81, 221);
+            border:1px solid;
+        }
+        a:link {
+            text-decoration: none;
+        }
+    </style>
+  </head>
+  <body>
+    <section class="Form my-5 mx-5">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-lg-5 mt-4" style="text-align: center;">
+                    <img src="./cdac.jpeg" width="100" height="100" class="img-fluid">
+                    <h4 style="color:rgb(35, 81, 221);">CENTER FOR DEVELOPMENT OF ADVANCED COMPUTING</h4>
+                </div>
+                <div class="col-lg-7 px-5 pt-5">
+                    <h1 class="font-weight-bold py-3">CDAC STUDENT PORTAL</h1>
+                    <h4>Sign in to your acccout</h4>
+                    <form>
+                        <div class="form-row">
+                            <div class="col-lg-7"> 
+                                <input id="prnNo" type="text" placeholder="PRN No."class="form-control my-3 p-4"> 
+                            </div>    
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7"> 
+                                <input id="password" type="password" placeholder="Password"class="form-control my-3 p-4"> 
+                            </div>    
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7"> 
+                                <button id="Login" type="button" class="btn1 mt-3 mb-5">Login</button> 
+                            </div>    
+                        </div>
+                        <h5>
+                            <a id="forgotPassword" href="#">Forgot password ?</a>
+                            <p>If not registered -> <a id="register" href="#">Register</a></p>
+                        </h5>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
+ 
