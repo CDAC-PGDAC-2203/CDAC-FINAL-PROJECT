@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
+import com.cdac.app.domain.LectureLink;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IExamService;
 import com.cdac.app.service.IFeedbackService;
+import com.cdac.app.service.IJoinLectureService;
 import com.cdac.app.service.IRegistrationService;
 import com.cdac.app.service.IResultService;
 
@@ -37,6 +39,9 @@ public class AdminController {
 
 	@Autowired
 	private IFeedbackService feedbackService;
+
+	@Autowired
+	private IJoinLectureService joinLectureService;
 	
 	private final static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
@@ -65,7 +70,7 @@ public class AdminController {
 	}
 
 	@PostMapping("/attendance")
-	public void uploadAttendance(String filePath, String subject) {
+	public void uploadAttendance(@RequestBody String filePath, String subject) {
 		dashboardService.uploadAttendance(filePath,subject);
 		logger.info("************Uploaded Attendance Key*************");
 	}
@@ -88,5 +93,10 @@ public class AdminController {
 	@PutMapping("/faculty/{flag}/{facultyId}/{course}")
 	public void updateFacultyFlag(@PathVariable(name = "flag") String flag, @PathVariable(name = "facultyId") Long facultyId, @PathVariable(name = "course") String course) {
 		feedbackService.updateFacultyFlag(flag,facultyId,course);
+	}
+
+	@PostMapping("/links")
+	public void uploadLinks(@RequestBody LectureLink lectureLink) {
+		joinLectureService.uploadLectureLinks(lectureLink);
 	}
 }

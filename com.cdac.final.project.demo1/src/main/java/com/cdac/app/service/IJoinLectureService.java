@@ -1,6 +1,13 @@
 package com.cdac.app.service;
 
+import java.util.HashMap;
+
+import com.cdac.app.domain.LectureLink;
+
 public interface IJoinLectureService {
-   
-	public void setActiveBatch(long uPrn);
+	void uploadLectureLinks(LectureLink lectureLink);
+
+	HashMap<String, String> getLectureTime(String date, String course);
+
+	HashMap<String, String> getLectureLink(String date, String course);
 }

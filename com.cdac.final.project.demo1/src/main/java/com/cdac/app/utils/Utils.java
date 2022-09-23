@@ -46,8 +46,4 @@ public class Utils {
 		}
         return path;
     }
-
-	public String[] getDataFromCSV(String filePath) {
-		return null;
-	}
 }

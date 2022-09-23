@@ -10,14 +10,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.app.domain.DoubtForum;
+import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.UserAddress;
 import com.cdac.app.service.IDashboardService;
+import com.cdac.app.service.IFeedbackService;
+import com.cdac.app.service.IJoinLectureService;
 
 @RestController
 public class DashboardController {
 
 	@Autowired
 	private IDashboardService service;
+
+	@Autowired
+	private IFeedbackService feedbackService;
+
+	@Autowired
+	private IJoinLectureService joinLectureService;
 
 	@PostMapping("/doubt")
 	public void DoubtForumDetails(@RequestBody DoubtForum dobutDetails) {
@@ -47,5 +56,20 @@ public class DashboardController {
 	@PostMapping("/profile")
 	public void updateProfile(@RequestBody UserAddress address, Long uPrn) {
 		service.updateProfile(address, uPrn);
+	}
+
+	@PostMapping("/feedback")
+	public void submitFeedback(@RequestBody Feedback feedback) {
+		feedbackService.submitFeedback(feedback);
+	}
+
+	@GetMapping("/time/{date}/{course}")
+	public HashMap<String,String> lectureTime(@PathVariable(name = "date") String date,@PathVariable(name="course")  String course){
+		return joinLectureService.getLectureTime(date,course);
+	}
+
+	@GetMapping("/links/{date}/{course}")
+	public HashMap<String,String> lectureLink(@PathVariable(name = "date") String date,@PathVariable(name="course")  String course){
+		return joinLectureService.getLectureLink(date,course);
 	}
 }
