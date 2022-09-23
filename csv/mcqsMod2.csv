@@ -1,0 +1,15 @@
+What is the full form of DBMS?,Data of Binary Management System,Database Management System,Database Management Service,Data Backup Management System,Database Management System,mod2
+What is a database?,Organized collection of information that cannot be accessed updated and managed,Collection of data or information without organizing,Organized collection of data or information that can be accessed updated and managed,Organized collection of data that cannot be updated,Organized collection of data or information that can be accessed updated and managed,mod2
+In which of the following formats data is stored in the database management system?,Image,Text,Table,Graph,Table,mod2
+Which of the following is not a type of database?,Hierarchical,Network,Distributed,Decentralized,Decentralized,mod2
+Which of the following is not an example of DBMS?MySQL,Microsoft Access,IBM DB2,Google,Google,mod2
+Which of the following is a function of the DBMS?,Storing data,Providing multi-users access control,Data Integrity,All of the above,All of the above,mod2
+Which of the following is a component of the DBMS?,Data,Data Languages,Data Manager,All of the above,All of the above,mod2
+What is information about data called?,Hyper data,Tera data,Meta data,Relations,Meta data,mod2 
+RDBMS consist of collection of?,Records,Keys,Tables,Fields,Tables,mod2
+The ability to query data as well as insert delete and alter tuples is offered by,TCL,DCL,DDL,DML,DML,mod2
+Which command is used to remove a relation from an SQL?,Drop table,Delete,Purge,Remove,Drop table,mod2
+Operations do not preserve non-matched tuples:,Left outer join,Inner join,Natural join,Right outer join,Inner join,mod2
+For designing a normal RDBMS which of the following normal form is considered adequate?,4NF,3NF,2NF,5NF,3NF,mod2
+The oldest DB model is,Network,Physical,Hierarchical,Relational,Network,mod2
+Automatically Unique and Not Null values are in,Foreign Key,Primary Key,Super Key,Candidate Key,Primary Key,mod2
