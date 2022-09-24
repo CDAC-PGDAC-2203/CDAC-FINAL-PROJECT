@@ -127,27 +127,27 @@
             <div class="form-step">
               <div class="form-row">
                 <div> 
-                  <input type="text" placeholder="Address Line 1"class="form-control my-3 p-4"> 
+                  <input type="text" placeholder="Address Line 1" id="addL1" class="form-control my-3 p-4"> 
                 </div>    
               </div>
               <div class="form-row">
                 <div> 
-                  <input type="text" placeholder="Address Line 1"class="form-control my-3 p-4"> 
+                  <input type="text" placeholder="Address Line 1" id="addL2" class="form-control my-3 p-4"> 
                 </div>    
               </div>
               <div class="form-row">
                 <div> 
-                  <input type="text" placeholder="State"class="form-control my-3 p-4"> 
+                  <input type="text" placeholder="State" id="state" class="form-control my-3 p-4"> 
                 </div>    
               </div>
               <div class="form-row">
                 <div> 
-                  <input type="text" placeholder="City"class="form-control my-3 p-4"> 
+                  <input type="text" placeholder="City" id="city" class="form-control my-3 p-4"> 
                 </div>    
               </div>
               <div class="form-row">
                 <div> 
-                  <input type="text" placeholder="Pin code"class="form-control my-3 p-4"> 
+                  <input type="text" placeholder="Pin code" id="pincode" class="form-control my-3 p-4"> 
                 </div>    
               </div>
               <div class="form-row">

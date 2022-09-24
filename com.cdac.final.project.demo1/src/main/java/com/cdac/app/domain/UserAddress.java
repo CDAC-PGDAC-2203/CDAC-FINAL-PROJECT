@@ -17,21 +17,21 @@ public class UserAddress {
 	@Id
 	@Column(name = "u_id")
 	private Long userId;
-	
+
 	@Column(name = "add_line1")
-	private String AddLine1;
-	
+	private String addLine1;
+
 	@Column(name = "add_line2")
-	private String AddLine2;
+	private String addLine2;
 
 	@Column(name = "state")
-	private String State;
-	
+	private String state;
+
 	@Column(name = "city")
-	private String City;
-	
+	private String city;
+
 	@Column(name = "pincode")
-	private Integer Pincode;
+	private Integer pincode;
 
 	public UserAddress() {
 		super();
@@ -40,11 +40,11 @@ public class UserAddress {
 	public UserAddress(Long userId, String addLine1, String addLine2, String state, String city, Integer pincode) {
 		super();
 		this.userId = userId;
-		AddLine1 = addLine1;
-		AddLine2 = addLine2;
-		State = state;
-		City = city;
-		Pincode = pincode;
+		this.addLine1 = addLine1;
+		this.addLine2 = addLine2;
+		this.state = state;
+		this.city = city;
+		this.pincode = pincode;
 	}
 
 	public Long getUserId() {
@@ -56,48 +56,48 @@ public class UserAddress {
 	}
 
 	public String getAddLine1() {
-		return AddLine1;
+		return addLine1;
 	}
 
 	public void setAddLine1(String addLine1) {
-		AddLine1 = addLine1;
+		this.addLine1 = addLine1;
 	}
 
 	public String getAddLine2() {
-		return AddLine2;
+		return addLine2;
 	}
 
 	public void setAddLine2(String addLine2) {
-		AddLine2 = addLine2;
+		this.addLine2 = addLine2;
 	}
 
 	public String getState() {
-		return State;
+		return state;
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
 
 	public String getCity() {
-		return City;
+		return city;
 	}
 
 	public void setCity(String city) {
-		City = city;
+		this.city = city;
 	}
 
 	public Integer getPincode() {
-		return Pincode;
+		return pincode;
 	}
 
 	public void setPincode(Integer pincode) {
-		Pincode = pincode;
+		this.pincode = pincode;
 	}
 
 	@Override
 	public String toString() {
-		return "UserAddress [userId=" + userId + ", AddLine1=" + AddLine1 + ", AddLine2=" + AddLine2 + ", State="
-				+ State + ", City=" + City + ", Pincode=" + Pincode + "]";
+		return "UserAddress [userId=" + userId + ", AddLine1=" + addLine1 + ", AddLine2=" + addLine2 + ", State="
+				+ state + ", City=" + city + ", Pincode=" + pincode + "]";
 	}
 }

@@ -41,6 +41,7 @@ INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
 
 create table if not exists personal_details(
 	u_id bigint PRIMARY KEY NOT NULL,
+    ccat_no bigint,
     f_name varchar(25) NOT NULL,
     m_name varchar(25), l_name varchar(25),
     gender varchar(1) NOT NULL,
@@ -54,10 +55,10 @@ create table if not exists personal_details(
     guardian_phone BIGINT
 );
 
-insert into personal_details values('1','Hardik',NULL,'Agarwal','M','2000-03-17',
-'hardik@gmail.com','8630296896','B.tech',
-'https:///dcjcbbivfvbv','PG-DAC',
-'Mala Agarwal', '8630298749');
+insert into personal_details values(
+	'1',2203001,'Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com',
+'	8630296896','B.tech','https:///dcjcbbivfvbv','PG-DAC','Mala Agarwal', '8630298749'
+);
 
 -- ------------------------------------------------------------------------------------------------------
 
