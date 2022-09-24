@@ -20,6 +20,9 @@ public class PersonalDetails {
 	@Column(name = "u_id")
 	private Long userId;
 
+	@Column(name = "ccat_no")
+	private Long ccatNo;
+
 	@Column(name = "f_name")
 	private String fName;
 
@@ -60,11 +63,12 @@ public class PersonalDetails {
 		super();
 	}
 
-	public PersonalDetails(Long userId, String fName, String mName, String lName, String gender, LocalDate dob,
-			String email, Long phone, String qualification, String photo, String course, String guardianName,
-			Long guardianPhone) {
+	public PersonalDetails(Long userId, Long ccatNo, String fName, String mName, String lName, String gender,
+			LocalDate dob, String email, Long phone, String qualification, String photo, String course,
+			String guardianName, Long guardianPhone) {
 		super();
 		this.userId = userId;
+		this.ccatNo = ccatNo;
 		this.fName = fName;
 		this.mName = mName;
 		this.lName = lName;
@@ -183,11 +187,19 @@ public class PersonalDetails {
 		this.guardianPhone = guardianPhone;
 	}
 
+	public Long getCcatNo() {
+		return ccatNo;
+	}
+
+	public void setCcatNo(Long ccatNo) {
+		this.ccatNo = ccatNo;
+	}
+
 	@Override
 	public String toString() {
-		return "PersonalDetails [userId=" + userId + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName
-				+ ", gender=" + gender + ", dob=" + dob + ", email=" + email + ", phone=" + phone + ", qualification="
-				+ qualification + ", photo=" + photo + ", course=" + course + ", guardianName=" + guardianName
-				+ ", guardianPhone=" + guardianPhone + "]";
+		return "PersonalDetails [userId=" + userId + ", ccatNo=" + ccatNo + ", fName=" + fName + ", mName=" + mName
+				+ ", lName=" + lName + ", gender=" + gender + ", dob=" + dob + ", email=" + email + ", phone=" + phone
+				+ ", qualification=" + qualification + ", photo=" + photo + ", course=" + course + ", guardianName="
+				+ guardianName + ", guardianPhone=" + guardianPhone + "]";
 	}
 }

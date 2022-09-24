@@ -74,10 +74,10 @@
                             </div>    
                         </div>
                     </form>
+                    <h5>
+                   		 Not registered? <a id="register" href="${pageContext.request.contextPath}/register">Register</a>
+                	</h5>
                 </div>
-                <h5>
-                    Not registered? <a id="register" href="${pageContext.request.contextPath}/register">Register</a>
-                </h5>
             </div>
         </div>
     </section>

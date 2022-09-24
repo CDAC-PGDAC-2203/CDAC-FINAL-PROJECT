@@ -2,11 +2,8 @@ package com.cdac.app.bean;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,8 +30,6 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	private static Long prnDBDA = 220340130001L;
 	private static Long prnDESD = 220340140001L;
 
-	private final static Logger logger = LoggerFactory.getLogger(RegistrationServiceImpl.class);
-
 	@Autowired
 	private ICCATUserRepository ccatUserRepository;
 
@@ -55,14 +50,13 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	// Method to validate user before registration
 	@Override
-	public String checkIfValid(Long ccatNo, String fName) {
+	public CCATStudent checkIfValid(Long ccatNo, String fName) {
 		CCATStudent validStudent = ccatUserRepository.findByCcatNoAndFName(ccatNo, fName);
-		if (validStudent == null) {
-			return "/register";
-		} else {
+		if (validStudent != null) {
 			saveUser(ccatNo, fName);
-			return "/register/personal_details";
+			return validStudent;
 		}
+		return null;
 	}
 
 	// Method to save user details to dataBase
@@ -80,28 +74,32 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	}
 
 	// Method to fetch user details
-	@Override
-	public HashMap<String, Object> getUserDetails(Long ccatNo) {
-		CCATStudent ccatStudent = ccatUserRepository.findByCcatNo(ccatNo);
-		UserTable uTable = userTableRepository.findByCcatNo(ccatNo);
-		HashMap<String, Object> map = new HashMap<>();
-
-		map.put("userId", uTable.getUserId());
-		map.put("fName", ccatStudent.getfName());
-		map.put("mName", ccatStudent.getmName());
-		map.put("lName", ccatStudent.getlName());
-		map.put("dob", ccatStudent.getDob());
-
-		logger.info("********* DETAILS OF CCAT NO: " + ccatNo + " = " + map + "***********************");
-
-		return map;
-	}
+//	@Override
+//	public HashMap<String, Object> getUserDetails(Long ccatNo) {
+//		CCATStudent ccatStudent = ccatUserRepository.findByCcatNo(ccatNo);
+//		UserTable uTable = userTableRepository.findByCcatNoAnd(ccatNo);
+//		HashMap<String, Object> map = new HashMap<>();
+//
+//		map.put("userId", uTable.getUserId());
+//		map.put("fName", ccatStudent.getfName());
+//		map.put("mName", ccatStudent.getmName());
+//		map.put("lName", ccatStudent.getlName());
+//		map.put("dob", ccatStudent.getDob());
+//
+//		logger.info("********* DETAILS OF CCAT NO: " + ccatNo + " = " + map + "***********************");
+//
+//		return map;
+//	}
 
 	// Method to save user personal details
 	@Override
 	public void savePersonalDetails(PersonalDetails pDetails) {
 		pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),
 				pDetails.getfName() + pDetails.getUserId().toString() + LocalDate.now().toString()));
+		
+		UserTable uTable = userTableRepository.findByFNameAndCCATNo(pDetails.getfName(), pDetails.getCcatNo());
+		pDetails.setUserId(uTable.getUserId());
+		
 		personalDetailsRepository.save(pDetails);
 	}
 

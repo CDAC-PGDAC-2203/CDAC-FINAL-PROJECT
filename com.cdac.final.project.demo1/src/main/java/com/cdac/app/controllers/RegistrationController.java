@@ -1,16 +1,17 @@
 package com.cdac.app.controllers;
 
-import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.cdac.app.domain.CCATStudent;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.UserAddress;
+import com.cdac.app.dto.ValidStudent;
 import com.cdac.app.service.IRegistrationService;
 
 @Controller
@@ -25,17 +26,22 @@ public class RegistrationController {
 	}
 
 	// API to check if student is valid for registration
-	@PostMapping("/register/validate/{ccatNo}/{fName}")
-	public String checkValidStudent(@PathVariable(name = "ccatNo") Long ccatNo,
-			@PathVariable(name = "fName") String fName) {
-		return service.checkIfValid(ccatNo, fName);
+	@PostMapping("/register/validate")
+	public ResponseEntity<?> checkValidStudent(@RequestBody ValidStudent student) {
+		CCATStudent isValidStudent = service.checkIfValid(Long.parseLong(student.getCcatNo()),student.getfName());
+		if(isValidStudent!=null) {
+			return new ResponseEntity<CCATStudent>(isValidStudent, HttpStatus.OK);
+		}
+		return null;
 	}
 
 	// API to fetch data in personal detail page (Ajax call)
-	@GetMapping("/register/details/{ccatNo}")
-	public HashMap<String, Object> getUserDetails(@PathVariable(name = "ccatNo") Long ccatNo) {
-		return service.getUserDetails(ccatNo);
-	}
+	// TODO DELETE IT
+	/*
+	 * @GetMapping("/register/details/{ccatNo}") public HashMap<String, Object>
+	 * getUserDetails(@PathVariable(name = "ccatNo") Long ccatNo) { return
+	 * service.getUserDetails(ccatNo); }
+	 */
 
 	// API to save personal details in dataBase
 	@PostMapping("/register/details")

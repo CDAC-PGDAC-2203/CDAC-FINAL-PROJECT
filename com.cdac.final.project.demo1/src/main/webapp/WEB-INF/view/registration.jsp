@@ -6,6 +6,7 @@
 <title>CDAC APP | Register</title>
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
+<script src="js/jquery-3.6.1.js"></script>
 <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="css/styleRegistration.css" />
 <script src="js/registration.js" defer></script>
@@ -33,10 +34,10 @@
               <!-- Varification -->
               <div class="form-step form-step-active">
                 <div class="input-group form-row">
-                  <input type="text" placeholder="C-CAT No."class="form-control my-3 p-4"> 
+                  <input type="text" placeholder="C-CAT No." id="ccatNo" class="form-control my-3 p-4"> 
                 </div>
                 <div class="input-group form-row">
-                  <input type="text" placeholder="First Name"class="form-control my-3 p-4"> 
+                  <input type="text" placeholder="First Name" id="fName" class="form-control my-3 p-4"> 
                 </div>
                 <div class="form-row">
                   <div> 
@@ -49,64 +50,69 @@
               <div class="form-step">
                 <div class="form-row">
                     <div> 
-                      <input type="text" placeholder="First Name"class="form-control my-3 p-4"> 
+                      <input type="text" placeholder="First Name" id="fNamePd" class="form-control my-3 p-4"> 
                     </div>    
                 </div>
                 <div class="form-row">
                     <div> 
-                      <input type="text" placeholder="Middle Name"class="form-control my-3 p-4"> 
+                      <input type="text" placeholder="Middle Name" id="mName" class="form-control my-3 p-4"> 
                     </div>    
                 </div>
                 <div class="form-row">
                     <div> 
-                      <input type="text" placeholder="Last Name"class="form-control my-3 p-4"> 
+                      <input type="text" placeholder="Last Name" id="lName" class="form-control my-3 p-4"> 
                     </div>    
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gender" id="male">
+                  <input class="form-check-input" type="radio" name="gender" value="M">
                   <label class="form-check-label" for="male">Male</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gender" id="female" checked>
+                  <input class="form-check-input" type="radio" name="gender" value="F">
                   <label class="form-check-label" for="female">Female</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gender" id="others" checked>
+                  <input class="form-check-input" type="radio" name="gender" value="O" checked>
                   <label class="form-check-label" for="others">Others</label>
                 </div>
                 <div class="form-row">
                   <div> 
-                    <input type="date" placeholder="Date of Birth"class="form-control my-3 p-4" style="color:gray"> 
+                    <input type="date" placeholder="Date of Birth" id="dob" class="form-control my-3 p-4" style="color:gray"> 
                   </div>    
                 </div>
                 <div class="form-row">
                   <div> 
-                    <input type="email" placeholder="Email Id"class="form-control my-3 p-4" style="color:gray"> 
+                    <input type="email" placeholder="Email Id" id="email" class="form-control my-3 p-4" style="color:gray"> 
                   </div>    
                 </div>
                 <div class="form-row">
                   <div> 
-                    <input type="text" placeholder="Phone No."class="form-control my-3 p-4"> 
+                    <input type="text" placeholder="Phone No." id="phone" class="form-control my-3 p-4"> 
                   </div>    
                 </div>
                 <div class="form-row">
                   <div> 
-                    <input type="text" placeholder="Qualification"class="form-control my-3 p-4"> 
+                    <input type="text" placeholder="Qualification" id="qualification" class="form-control my-3 p-4"> 
                   </div>    
                 </div>
                 <div class="form-row">
                   <div> 
-                    <input type="file" placeholder="Photo"class="form-control my-3 p-4" style="color:gray"> 
+                    <input type="text" placeholder="Course" id="course" class="form-control my-3 p-4"> 
                   </div>    
                 </div>
                 <div class="form-row">
                   <div> 
-                    <input type="text" placeholder="Guardian Name"class="form-control my-3 p-4"> 
+                    <input type="file" placeholder="Photo" id="photo" class="form-control my-3 p-4" style="color:gray"> 
                   </div>    
                 </div>
                 <div class="form-row">
                   <div> 
-                    <input type="text" placeholder="Guardian Phone No."class="form-control my-3 p-4"> 
+                    <input type="text" placeholder="Guardian Name" id="guardianName" class="form-control my-3 p-4"> 
+                  </div>    
+                </div>
+                <div class="form-row">
+                  <div> 
+                    <input type="text" placeholder="Guardian Phone No." id="guardianPhone" class="form-control my-3 p-4"> 
                   </div>    
                 </div>
                 <div class="form-row">
