@@ -96,34 +96,7 @@ $(document).ready(() => {
             "guardianPhone": guardianPhone,
           }),
           success: function (returnedData) {
-            formStepsNum++;
-            updateFormSteps();
-            updateProgressbar();
-          },
-          error: function (error) {
-            console.log(error);
-          },
-          dataType: "json",
-        });
-      } else {
-        addLine1 = $("#addL1").val();
-        addLine2 = $("#addL2").val();
-        state = $("#state").val();
-        city = $("#city").val();
-        pincode = $("#pincode").val();
-
-        $.ajax({
-          type: "POST",
-          contentType: "application/json",
-          url: "/portal/register/address",
-          data: JSON.stringify({
-            "addLine1": addLine1,
-            "addLine2": addLine2,
-            "state": state,
-            "city": city,
-            "pincode": pincode
-          }),
-          success: function (returnedData) {
+            userId = returnedData.userId;
             formStepsNum++;
             updateFormSteps();
             updateProgressbar();
@@ -136,6 +109,7 @@ $(document).ready(() => {
       }
     });
   });
+
 
   prevBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -168,4 +142,35 @@ $(document).ready(() => {
     progress.style.width =
       ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
   }
+
+  $("#submit").click((e) => {
+    e.preventDefault();
+
+    addLine1 = $("#addL1").val();
+    addLine2 = $("#addL2").val();
+    state = $("#state").val();
+    city = $("#city").val();
+    pincode = $("#pincode").val();
+  
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      url: "/portal/register/address",
+      data: JSON.stringify({
+        "userId": userId,
+        "addLine1": addLine1,
+        "addLine2": addLine2,
+        "state": state,
+        "city": city,
+        "pincode": pincode
+      }),
+      success: function (returnedData) {
+        window.location.href = "/portal/home";
+      },
+      error: function (error) {
+        console.log(error);
+      },
+      dataType: "json",
+    });
+  });
 });

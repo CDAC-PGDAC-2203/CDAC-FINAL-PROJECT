@@ -14,5 +14,4 @@ public interface ICCATUserRepository extends JpaRepository<CCATStudent, Long> {
 				 + "where s.ccatNo = ?1 and fName = ?2")
 	public CCATStudent findByCcatNoAndFName(Long ccatNo,String fName);
 
-	public CCATStudent findByCcatNo(Long ccatNo);
 }

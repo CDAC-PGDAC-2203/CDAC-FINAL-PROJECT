@@ -1,6 +1,5 @@
 package com.cdac.app.bean;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,6 @@ import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.repositories.IUserTableRepository;
 import com.cdac.app.service.IRegistrationService;
-import com.cdac.app.utils.Utils;
 
 @Component
 @Transactional
@@ -45,8 +43,8 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	@Autowired
 	private IUserLoginRepository userLoginRepository;
 
-	@Autowired
-	private Utils utils;
+//	@Autowired
+//	private Utils utils;
 
 	// Method to validate user before registration
 	@Override
@@ -73,40 +71,25 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		userTableRepository.save(uTable);
 	}
 
-	// Method to fetch user details
-//	@Override
-//	public HashMap<String, Object> getUserDetails(Long ccatNo) {
-//		CCATStudent ccatStudent = ccatUserRepository.findByCcatNo(ccatNo);
-//		UserTable uTable = userTableRepository.findByCcatNoAnd(ccatNo);
-//		HashMap<String, Object> map = new HashMap<>();
-//
-//		map.put("userId", uTable.getUserId());
-//		map.put("fName", ccatStudent.getfName());
-//		map.put("mName", ccatStudent.getmName());
-//		map.put("lName", ccatStudent.getlName());
-//		map.put("dob", ccatStudent.getDob());
-//
-//		logger.info("********* DETAILS OF CCAT NO: " + ccatNo + " = " + map + "***********************");
-//
-//		return map;
-//	}
-
 	// Method to save user personal details
 	@Override
-	public void savePersonalDetails(PersonalDetails pDetails) {
-		//pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),pDetails.getfName() + pDetails.getUserId().toString() + LocalDate.now().toString()));
-		
+	public PersonalDetails savePersonalDetails(PersonalDetails pDetails) {
+		// pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),pDetails.getfName()
+		// + pDetails.getUserId().toString() + LocalDate.now().toString()));
+
 		UserTable uTable = userTableRepository.findByFNameAndCCATNo(pDetails.getfName(), pDetails.getCcatNo());
 		pDetails.setUserId(uTable.getUserId());
-		
+
 		personalDetailsRepository.save(pDetails);
+
+		return pDetails;
 	}
 
 	// Method to save user address details
 	@Override
-	public void saveAddressDetails(UserAddress addressDetails) {
-
+	public UserAddress saveAddressDetails(UserAddress addressDetails) {
 		addressDetailsRepository.save(addressDetails);
+		return addressDetails;
 
 	}
 

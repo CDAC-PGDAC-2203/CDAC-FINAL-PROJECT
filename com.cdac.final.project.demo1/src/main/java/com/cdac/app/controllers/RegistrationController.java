@@ -21,38 +21,32 @@ public class RegistrationController {
 	private IRegistrationService service;
 
 	@GetMapping("/register")
-	public String openRegistrationForm(){
+	public String openRegistrationForm() {
 		return "/registration";
 	}
 
 	// API to check if student is valid for registration
 	@PostMapping("/register/validate")
 	public ResponseEntity<?> checkValidStudent(@RequestBody ValidStudent student) {
-		CCATStudent isValidStudent = service.checkIfValid(Long.parseLong(student.getCcatNo()),student.getfName());
-		if(isValidStudent!=null) {
+		CCATStudent isValidStudent = service.checkIfValid(Long.parseLong(student.getCcatNo()), student.getfName());
+		if (isValidStudent != null) {
 			return new ResponseEntity<CCATStudent>(isValidStudent, HttpStatus.OK);
 		}
 		return null;
 	}
 
-	// API to fetch data in personal detail page (Ajax call)
-	// TODO DELETE IT
-	/*
-	 * @GetMapping("/register/details/{ccatNo}") public HashMap<String, Object>
-	 * getUserDetails(@PathVariable(name = "ccatNo") Long ccatNo) { return
-	 * service.getUserDetails(ccatNo); }
-	 */
-
 	// API to save personal details in dataBase
 	@PostMapping("/register/details")
-	public void savePersonalDetails(@RequestBody PersonalDetails pDetails) {
-		service.savePersonalDetails(pDetails);
+	public ResponseEntity<?> savePersonalDetails(@RequestBody PersonalDetails pDetails) {
+		PersonalDetails savedDetails = service.savePersonalDetails(pDetails);
+		return new ResponseEntity<PersonalDetails>(savedDetails, HttpStatus.OK);
 	}
 
 	// API to save address details in database
 	@PostMapping("/register/address")
-	public void saveAddressDetails(@RequestBody UserAddress addressDetails) {
-		service.saveAddressDetails(addressDetails);
+	public ResponseEntity<?> saveAddressDetails(@RequestBody UserAddress addressDetails) {
+		UserAddress savedAddress = service.saveAddressDetails(addressDetails);
+		return new ResponseEntity<UserAddress>(savedAddress, HttpStatus.OK);
 	}
 
 }
