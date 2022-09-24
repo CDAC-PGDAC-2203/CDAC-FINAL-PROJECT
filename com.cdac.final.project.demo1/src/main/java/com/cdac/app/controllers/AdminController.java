@@ -46,6 +46,11 @@ public class AdminController {
 
 	private final static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
+	@GetMapping("/admin")
+	public String loadAdminDashboard() {
+		return "/adminDashboard";
+	}
+
 	// API to upload question paper
 	@PostMapping("/questions")
 	public void uploadExamPaper(@RequestBody String paperPath, String subject) {

@@ -16,7 +16,22 @@ $(document).ready(function(){
                     "password" : password
                 }),
             success: function(returnedData){
-                console.log(returnedData);
+                localStorage.setItem("token",returnedData.token);
+                if(returnedData.uPrn == 11111){
+                    //admin navigation
+                    $.ajax({
+                        type: "GET",
+                        url: "/portal/admin",
+                        headers: {"Authorization": localStorage.getItem("token")}
+                        });
+
+                }else{
+                    $.ajax({
+                        type: "GET",
+                        url: "/portal/admin",
+                        headers: {"Authorization": localStorage.getItem("token")}
+                        });
+                }
             },
             dataType: "json"
           });
