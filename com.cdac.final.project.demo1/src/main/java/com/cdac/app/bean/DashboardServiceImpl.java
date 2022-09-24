@@ -24,7 +24,6 @@ import com.cdac.app.repositories.INoticeRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
 import com.cdac.app.service.IDashboardService;
-import com.cdac.app.utils.Utils;
 
 @Component
 @Transactional
@@ -47,9 +46,6 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private INoticeRepository noticeRepository;
-
-	@Autowired
-	private Utils utils;
 
 	// Method to calculate performance of a student
 	@Override
@@ -135,8 +131,6 @@ public class DashboardServiceImpl implements IDashboardService {
 	@Override
 	public void saveDoubtDetails(DoubtForum doubtDetails) {
 		doubtDetails.setActiveDoubt("Y");
-		doubtDetails.setAttachment(utils.uploadFileAddress(doubtDetails.getAttachment(),
-				doubtDetails.getUserPrn() + doubtDetails.getSubjectName()));
 		doubtForumRepository.save(doubtDetails);
 
 	}

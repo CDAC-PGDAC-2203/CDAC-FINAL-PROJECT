@@ -48,9 +48,6 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	@Autowired
 	private IEmailService emailService;
 
-//	@Autowired
-//	private Utils utils;
-
 	// Method to validate user before registration
 	@Override
 	public CCATStudent checkIfValid(Long ccatNo, String fName) {
@@ -79,9 +76,6 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	// Method to save user personal details
 	@Override
 	public PersonalDetails savePersonalDetails(PersonalDetails pDetails) {
-		// pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),pDetails.getfName()
-		// + pDetails.getUserId().toString() + LocalDate.now().toString()));
-
 		UserTable uTable = userTableRepository.findByFNameAndCCATNo(pDetails.getfName(), pDetails.getCcatNo());
 		pDetails.setUserId(uTable.getUserId());
 

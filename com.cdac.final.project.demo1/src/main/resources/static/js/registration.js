@@ -1,4 +1,14 @@
 $(document).ready(() => {
+  const image_input = document.querySelector("#image_input");
+
+	image_input.addEventListener("change", function() {
+	  const reader = new FileReader();
+	  reader.addEventListener("load", () => {
+	    const uploaded_image = reader.result;
+		$("#photo").val(uploaded_image);
+	  });
+	  reader.readAsDataURL(this.files[0]);
+	});
   const prevBtns = document.querySelectorAll(".btn-prev");
   const nextBtns = document.querySelectorAll(".btn-next");
   const progress = document.getElementById("progress");
@@ -71,12 +81,7 @@ $(document).ready(() => {
         email = $("#email").val();
         phone = $("#phone").val();
         qualification = $("#qualification").val();
-        photo = $("#image_input").val();
-        image_input.addEventListener("change", function() {
-        const reader = new FileReader();
-        reader.addEventListener("load", () => {
-            photo = reader.result;
-        });
+        photo = $("#photo").val();
         guardianName = $("#guardianName").val();
         guardianPhone = $("#guardianPhone").val();
 
