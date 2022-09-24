@@ -31,8 +31,7 @@
                  <hr size="2px">
                  <h4 style="color: rgb(65, 105, 225);">Student Portal</h4>
                  </div>
-
-                 <form id="loginForm" method="POST" action="">
+				<form id="loginForm" method="POST" action="">
                 <div class="form-group">
                     <input id="prnNo" name="prn" class="form-control _ge_de_ol" type="text" placeholder="PRN No" required="" aria-required="true">
                 </div>
@@ -42,25 +41,22 @@
                   <i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
                 </div>
   
-               
                 <div class="form-group">
                   <div class="btn_uy">
                     <button id="login" type="submit">Login</button>
                   </div>
                 </div>
-                <div class="form-group">
+                </form>
                   <div class="check_box_main">
                     Not registered?
-                    <a href="${pageContext.request.contextPath}" class="pas-text" id="register">Register</a>
+                    <a href="${pageContext.request.contextPath}/register" class="pas-text" id="register">Register</a>
                   </div>
-                </div>
-                </form>
-            
               </div>
             </div>
           </div>
         </div>
         </div>
+        </div>>
       </section>
 </body>
 </html>

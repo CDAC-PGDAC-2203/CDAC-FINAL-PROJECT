@@ -31,7 +31,7 @@
                 <div class="progress-step" data-title="Address"></div>
               </div>
         
-              <!-- Varification -->
+              <!-- Verification -->
               <div class="form-step form-step-active">
                 <div class="input-group form-row">
                   <input type="text" placeholder="C-CAT No." id="ccatNo" class="form-control my-3 p-4"> 
