@@ -20,7 +20,7 @@ $(document).ready(() => {
   var qualification = "";
   var photo = "";
   var guardianName = "";
-  var guardianPhone = "";
+  var guardianPhone = 0;
   
   nextBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -92,7 +92,7 @@ $(document).ready(() => {
             "photo": photo,
             "course": course,
             "guardianName": guardianName,
-            "guradianPhone": guardianPhone
+            "guardianPhone": guardianPhone
           }),
           success: function(returnedData){
                     formStepsNum++;

@@ -94,8 +94,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	// Method to save user personal details
 	@Override
 	public void savePersonalDetails(PersonalDetails pDetails) {
-		pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),
-				pDetails.getfName() + pDetails.getUserId().toString() + LocalDate.now().toString()));
+		//pDetails.setPhoto(utils.uploadFileAddress(pDetails.getPhoto(),pDetails.getfName() + pDetails.getUserId().toString() + LocalDate.now().toString()));
 		
 		UserTable uTable = userTableRepository.findByFNameAndCCATNo(pDetails.getfName(), pDetails.getCcatNo());
 		pDetails.setUserId(uTable.getUserId());
