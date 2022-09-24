@@ -71,7 +71,12 @@ $(document).ready(() => {
         email = $("#email").val();
         phone = $("#phone").val();
         qualification = $("#qualification").val();
-        photo = $("#photo").val();
+        photo = $("#image_input").val();
+        image_input.addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            photo = reader.result;
+        });
         guardianName = $("#guardianName").val();
         guardianPhone = $("#guardianPhone").val();
 

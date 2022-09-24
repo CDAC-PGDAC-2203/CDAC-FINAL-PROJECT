@@ -124,7 +124,7 @@
 								</div>
 								<div class="form-row" style="height: 4rem;">
 
-									<input type="file" placeholder="Photo" id="photo"
+									<input type="file" placeholder="Photo" id="image_input"
 										class="form-control p-4">
 
 								</div>
