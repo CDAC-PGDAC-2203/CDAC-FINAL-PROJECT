@@ -42,8 +42,8 @@ $(document).ready(() => {
           contentType: "application/json",
           url: "/portal/register/validate",
           data: JSON.stringify({
-            ccatNo: ccatNo,
-            fName: fName,
+            "ccatNo": ccatNo,
+            "fName": fName,
           }),
           success: function (returnedData) {
             mName = returnedData.mName;
@@ -73,27 +73,27 @@ $(document).ready(() => {
         qualification = $("#qualification").val();
         photo = $("#photo").val();
         guardianName = $("#guardianName").val();
-        guardianPhone = $("guardianPhone").val();
+        guardianPhone = $("#guardianPhone").val();
 
         $.ajax({
           type: "POST",
           contentType: "application/json",
           url: "/portal/register/details",
           data: JSON.stringify({
-            userId: userId,
-            ccatNo: ccatNo,
-            fName: fName,
-            mName: mName,
-            lName: lName,
-            gender: gender,
-            dob: dob,
-            email: email,
-            phone: phone,
-            qualification: qualification,
-            photo: photo,
-            course: course,
-            guardianName: guardianName,
-            guardianPhone: guardianPhone,
+            "userId": userId,
+            "ccatNo": ccatNo,
+            "fName": fName,
+            "mName": mName,
+            "lName": lName,
+            "gender": gender,
+            "dob": dob,
+            "email": email,
+            "phone": phone,
+            "qualification": qualification,
+            "photo": photo,
+            "course": course,
+            "guardianName": guardianName,
+            "guardianPhone": guardianPhone,
           }),
           success: function (returnedData) {
             formStepsNum++;
