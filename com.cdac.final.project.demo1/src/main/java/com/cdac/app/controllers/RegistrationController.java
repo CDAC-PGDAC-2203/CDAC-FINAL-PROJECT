@@ -49,4 +49,8 @@ public class RegistrationController {
 		return new ResponseEntity<UserAddress>(savedAddress, HttpStatus.OK);
 	}
 
+	@GetMapping("/register/success")
+	public String homePage(){
+		return "/success";
+	}
 }

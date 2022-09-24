@@ -165,7 +165,7 @@ $(document).ready(() => {
         "pincode": pincode
       }),
       success: function (returnedData) {
-        window.location.href = "/portal/home";
+        window.location.href = "/portal/register/success";
       },
       error: function (error) {
         console.log(error);
