@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>CDAC APP | Register</title>
+<link rel="icon" type="image/x-icon" href="img/cdac.jpeg">
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
 <script src="js/jquery-3.6.1.js"></script>
