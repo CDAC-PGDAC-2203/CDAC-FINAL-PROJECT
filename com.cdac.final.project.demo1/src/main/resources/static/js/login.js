@@ -17,20 +17,17 @@ $(document).ready(function(){
                 }),
             success: function(returnedData){
                 localStorage.setItem("token",returnedData.token);
-                if(returnedData.uPrn == 11111){
-                    //admin navigation
+                if(returnedData.uPrn == 11111){ 
                     $.ajax({
-                        type: "GET",
                         url: "/portal/admin",
-                        headers: {"Authorization": localStorage.getItem("token")}
-                        });
-
+                        type: "GET",
+                        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+                        success: (data) => {
+                           document.write(data);
+                        }
+                     }); 
                 }else{
-                    $.ajax({
-                        type: "GET",
-                        url: "/portal/admin",
-                        headers: {"Authorization": localStorage.getItem("token")}
-                        });
+                   
                 }
             },
             dataType: "json"
