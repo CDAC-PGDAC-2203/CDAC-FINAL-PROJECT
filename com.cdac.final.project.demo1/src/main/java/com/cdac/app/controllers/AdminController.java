@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.LectureLink;
+import com.cdac.app.dto.ImportFaculty;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IExamService;
 import com.cdac.app.service.IFeedbackService;
@@ -94,8 +95,8 @@ public class AdminController {
 
 	// API to update faculty list
 	@PostMapping("/faculty")
-	public void importFacultyList(@RequestBody String filePath, String course) {
-		feedbackService.importFacultyList(filePath, course);
+	public void importFacultyList(@RequestBody ImportFaculty faculty) {
+		feedbackService.importFacultyList(faculty.getFilePath(), faculty.getCourse());
 	}
 
 	// API to assign faculty to a course

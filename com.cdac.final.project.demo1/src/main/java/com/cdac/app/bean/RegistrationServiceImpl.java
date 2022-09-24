@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.CCATStudent;
+import com.cdac.app.domain.EmailDetails;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.Role;
 import com.cdac.app.domain.UserAddress;
@@ -18,6 +19,7 @@ import com.cdac.app.repositories.ICCATUserRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.repositories.IUserTableRepository;
+import com.cdac.app.service.IEmailService;
 import com.cdac.app.service.IRegistrationService;
 
 @Component
@@ -42,6 +44,9 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	@Autowired
 	private IUserLoginRepository userLoginRepository;
+
+	@Autowired
+	private IEmailService emailService;
 
 //	@Autowired
 //	private Utils utils;
@@ -89,6 +94,8 @@ public class RegistrationServiceImpl implements IRegistrationService {
 	@Override
 	public UserAddress saveAddressDetails(UserAddress addressDetails) {
 		addressDetailsRepository.save(addressDetails);
+		sendRegisterationEmail(addressDetails.getUserId());
+
 		return addressDetails;
 
 	}
@@ -139,4 +146,48 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		return prnList;
 	}
 
+	public void sendRegisterationEmail(Long userId) {
+		PersonalDetails user = personalDetailsRepository.findByUserId(userId);
+		if(user!=null) {
+			EmailDetails email = new EmailDetails();
+			
+			email.setRecipient(user.getEmail());
+
+			String name = user.getfName();
+			if (user.getmName() != null) {
+				name = name + " " + user.getmName();
+			}
+			if (user.getlName() != null) {
+				name = name + " " + user.getlName();
+			}
+
+			email.setSubject("CDAC ACTS PUNE | "
+							+ "Registration Success | "
+							+ name);
+
+			String messageBody = "Hi "+name+"\n"
+							   +"Greetings of the day!\n"
+							   +"Welcome to CDAC ACTS Pune.\n"
+							   +"\n"
+							   +"\n"
+							   +"\n"
+							   +"You are successfully registered over the "
+							   +"Student Portal.\n"
+							   +"Your profile is under review with your "
+							   +"Course Coordinator.\n"
+							   +"You will be mailed with your login "
+							   +"credentials as soon as your profile is "
+							   +"verified and your account at the "
+							   +"Student Portal is functional."
+							   +"\n"
+							   +"\n"
+							   +"\n"
+							   +"Best Regards,\n"
+							   +"Administrator \n"
+							   +"Student Portal Maintainace Team\n"
+							   +"CDAC ACTS Pune.";
+			email.setMsgBody(messageBody);
+			emailService.sendSimpleMail(email);	
+		}
+	}
 }
