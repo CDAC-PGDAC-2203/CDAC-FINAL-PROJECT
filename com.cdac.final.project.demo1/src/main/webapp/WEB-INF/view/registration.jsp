@@ -193,7 +193,7 @@
 				</div>
 			</div>
 		</section>
-
+	<input type="hidden" id="photo" value="">
 	</div>
 </body>
 </html>
