@@ -33,7 +33,8 @@ CREATE TABLE IF NOT EXISTS user_table(
     u_role VARCHAR(10)
 );
 
-INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
+INSERT INTO user_table VALUES (1, 'admin', 1111111, 'ADMIN');
+INSERT INTO user_table VALUES (2, 'Hardik', 2203001, 'STUDENT');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -56,7 +57,7 @@ create table if not exists personal_details(
 );
 
 insert into personal_details values(
-	'1',2203001,'Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com',
+	'2',2203001,'Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com',
 '	8630296896','B.tech','https:///dcjcbbivfvbv','PG-DAC','Mala Agarwal', '8630298749'
 );
 
@@ -73,7 +74,7 @@ CREATE TABLE IF NOT EXISTS user_address(
 	pincode int NOT NULL
 );
                             
-INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
+INSERT INTO user_address VALUES(2,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
                                 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -86,6 +87,8 @@ CREATE TABLE IF NOT EXISTS user_login(
     u_password varchar(20),
     course varchar(10)
 );
+
+insert into user_login values(1,'admin',11111,11111,'PG-DAC');
 
 -- ------------------------------------------------------------------------------------------------------
 
