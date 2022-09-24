@@ -4,9 +4,10 @@
 <html>
 <head>
 <title>CDAC APP | Login</title>
-<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
-	type="text/css">
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.6.1.js"></script>
+<script src="js/login.js"></script>
 	<style>
         *{
             padding: 0;
@@ -56,7 +57,7 @@
                 <div class="col-lg-7 px-5 pt-4">
                     <h1 class="font-weight-bold py-3">CDAC STUDENT PORTAL</h1>
                     <h4>Sign in to your acccout</h4>
-                    <form>
+                    <form id="loginForm" method="POST" action="">
                         <div class="form-row">
                             <div class="col-lg-7"> 
                                 <input id="prnNo" type="text" placeholder="PRN No."class="form-control my-3 p-4"> 
@@ -69,7 +70,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7"> 
-                                <button id="Login" type="button" class="btn1 mt-3 mb-5">Login</button> 
+                                <button id="login" type="submit" class="btn1 mt-3 mb-5">Login</button> 
                             </div>    
                         </div>
                         <h5>

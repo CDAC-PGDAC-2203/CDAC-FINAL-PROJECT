@@ -1,3 +1,8 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Hardik Agarwal [220340120083]
+ * @Date: 23-09-2022 
+ */
 package com.cdac.app.controllers;
 
 import java.util.Date;
@@ -5,15 +10,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.cdac.app.domain.UserLogin;
 import com.cdac.app.domain.UserToken;
+import com.cdac.app.dto.Login;
 import com.cdac.app.service.IAuthenticationService;
 
 import io.jsonwebtoken.Jwts;
@@ -30,16 +38,18 @@ public class HomeController {
 		return "/login";
 	}
 
-	@PostMapping("/home/login")
-	public UserToken login(@RequestParam("user") String username, @RequestParam("password") String password) {
+	@PostMapping("/signin")
+	public ResponseEntity<?> login(@RequestBody Login login) {
 		
+		String username = login.getUser();
+		String password = login.getPassword();
 		UserLogin user = service.validateUser(username, password);
 		if(user!=null) {
 			String token = getJWTToken(username);
 			UserToken userToken = new UserToken();
 			userToken.setuPrn(Long.parseLong(username));
 			userToken.setToken(token);		
-			return userToken;
+			return new ResponseEntity<UserToken>(userToken, HttpStatus.OK) ;
 		}
 		return null;
 	}

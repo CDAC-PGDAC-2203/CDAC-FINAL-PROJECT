@@ -26,7 +26,7 @@ public class Application {
 			http.csrf().disable()
 				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
-				.antMatchers("/home/**","/css/**","/js/**","/img/**")
+				.antMatchers("/home/**","/signin/**","/css/**","/js/**","/img/**")
 				.permitAll()
 				.anyRequest().authenticated();
 		}
