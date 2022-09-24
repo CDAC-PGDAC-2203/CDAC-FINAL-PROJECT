@@ -49,7 +49,7 @@ create table if not exists personal_details(
     email varchar(60) NOT NULL,
     phone bigint NOT NULL,
     qualification varchar(15) NOT NULL,
-    photo varchar(500),
+    photo varchar(5000),
     course varchar(10) NOT NULL,
     guardian_name VARCHAR(50),
     guardian_phone BIGINT
