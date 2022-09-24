@@ -75,7 +75,7 @@
 									Module 1</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Concepts of Programming</td>
+								Core Java</td>
 							<td><button id="mod1exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
@@ -93,7 +93,7 @@
 									Module 3</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Operating Systems</td>
+								Concepts of Programming</td>
 							<td><button id="mod3exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
@@ -111,7 +111,7 @@
 									Module 5</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Core Java</td>
+								Operating Systems</td>
 							<td><button id="mod5exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
@@ -224,7 +224,7 @@
 		<!-- Copyright -->
 		<div class="text-center p-4"
 			style="background-color: rgba(0, 0, 0, 0.05);">
-			© 2022 CDAC. All rights reserved: <a class="text-reset fw-bold"
+			ï¿½ 2022 CDAC. All rights reserved: <a class="text-reset fw-bold"
 				href="https://acts.cdac.in/">acts.cdac.in</a>
 		</div>
 		<!-- Copyright -->
