@@ -10,7 +10,7 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "/portal/signin",
+            url: "/portal/home/sign-in",
             data: JSON.stringify({
                     "user": userName, 
                     "password" : password

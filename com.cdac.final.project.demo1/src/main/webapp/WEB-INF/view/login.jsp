@@ -73,12 +73,11 @@
                                 <button id="login" type="submit" class="btn1 mt-3 mb-5">Login</button> 
                             </div>    
                         </div>
-                        <h5>
-                            <a id="forgotPassword" href="#">Forgot password ?</a>
-                            <p>If not registered -> <a id="register" href="#">Register</a></p>
-                        </h5>
                     </form>
                 </div>
+                <h5>
+                    Not registered? <a id="register" href="${pageContext.request.contextPath}/register">Register</a>
+                </h5>
             </div>
         </div>
     </section>

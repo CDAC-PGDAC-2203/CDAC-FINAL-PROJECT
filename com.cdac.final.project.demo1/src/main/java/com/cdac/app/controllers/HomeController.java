@@ -38,7 +38,7 @@ public class HomeController {
 		return "/login";
 	}
 
-	@PostMapping("/signin")
+	@PostMapping("/home/sign-in")
 	public ResponseEntity<?> login(@RequestBody Login login) {
 		
 		String username = login.getUser();
