@@ -4,280 +4,290 @@
 <html>
 <head>
 <title>CDAC APP | Dashboard</title>
-<link rel="icon" type="image/x-icon" href="img/cdac.jpeg">
-<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="css/dashboard.css" />
+<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/cdac.jpeg">
+<link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css" />
 </head>
 <body>
-	<!-- navbar -->
-     <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
-      <a class="navbar-brand" href="#"><img class="img-responsive" src="./img/cdac-logo.jpeg"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-  
-          <li id="dashboard" class="nav-item active">
-            <a class="nav-link" href="#">Dashboard</a>
-          </li>
-  
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Join Link</a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li id="theory">
-                <a class="dropdown-item" href="#">Theory</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  Lab &raquo;
-                </a>
-                <ul class="dropdown-menu dropdown-submenu">
-                  <li id="b1">
-                    <a class="dropdown-item" href="#">B1</a>
-                  </li>
-                  <li id="b2">
-                    <a class="dropdown-item" href="#">B2</a>
-                  </li>
-                  <li id="b3">
-                    <a class="dropdown-item" href="#">B3</a>
-                  </li>
-                  <li id="b4">
-                    <a class="dropdown-item" href="#">B4</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-  
-          <li id="exam" class="nav-item">
-            <a class="nav-link" href="#">Exam</a>
-          </li>
-          <li id="result" class="nav-item">
-            <a class="nav-link" href="#">Result</a>
-          </li>
-          <li id="feedback" class="nav-item">
-            <a class="nav-link" href="#">Feedback</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false"></a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li id="myprofile"><a class="dropdown-item" href="#">My Profile</a></li>
-              <li id="logout"><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  <!-- Dashboard -->
+	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
+        <a class="navbar-brand" href="#"><img class="img-responsive" src="D:\cdac-logo.jpeg"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+    
+            <li id="dashboard" class="nav-item active">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Join Link</a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li id="theory">
+                  <a class="dropdown-item" href="#">Theory</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    Lab &raquo;
+                  </a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li id="b1">
+                      <a class="dropdown-item" href="#">B1</a>
+                    </li>
+                    <li id="b2">
+                      <a class="dropdown-item" href="#">B2</a>
+                    </li>
+                    <li id="b3">
+                      <a class="dropdown-item" href="#">B3</a>
+                    </li>
+                    <li id="b4">
+                      <a class="dropdown-item" href="#">B4</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+    
+            <li id="exam" class="nav-item">
+              <a class="nav-link" href="#">Exam</a>
+            </li>
+            <li id="result" class="nav-item">
+              <a class="nav-link" href="#">Result</a>
+            </li>
+            <li id="feedback" class="nav-item">
+              <a class="nav-link" href="#">Feedback</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"></a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li id="myprofile"><a class="dropdown-item" href="#">My Profile</a></li>
+                <li id="logout"><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
 
-    <div class="center_div">
-        <div class="container-fluid outer-div">
-            <div class="row">
-                <div class="col-lg-4 col-12 left-div">
-                    <div class="row" style="height: 25vh;">
-                        <h3 class="performance-heading">Performance index</h3>
-                </div>
-               <div class="row" style="height: 30vh">
-                     <!-- <p>performance index start</p> -->
-                     <div class="col-lg-6">
-                           <div class="skill">
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-4">
+              
+                    <div class="card card-margin" style="height: 88%; width:100%;">
+
+                        <h3 class="card-title my-3" style="text-align: center;">Current performance</h3>
+
+                        <div class="card-body pt-0">
+                            <div class="skill">
                                 <div class="outer">
-                                   <div class="inner">
-                                         <div id="number">
-                                             65%
-                                          </div>
-                                   </div>
-                               </div>
-                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                           <defs>
-                         <linearGradient id="GradientColor">
-                            <stop offset="0%" stop-color="#e91e63" />
-                            <stop offset="100%" stop-color="#673ab7" />
-                         </linearGradient>
-                      </defs>
-                      <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                       </svg>
-                    </div>
-                    <h6>Current performance</h6>
-                  </div>
-               </div>
-               <div class="col-lg-6">
-                <div class="skill">
-                  <div class="outer">
-                      <div class="inner">
-                          <div id="number">
-                              65%
-                          </div>
-                      </div>
-                  </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                      <defs>
-                         <linearGradient id="GradientColor">
-                            <stop offset="0%" stop-color="#e91e63" />
-                            <stop offset="100%" stop-color="#673ab7" />
-                         </linearGradient>
-                      </defs>
-                      <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-              </svg>
-              </div>
-              <h6>Overall performance</h6>
-             </div>
-            </div>
-                
-            <!-- right div -->
-            <div class="col-lg-8 col-12 right-div">
-                <div class="row">
-                        <!-- Schedule start -->
-                        <div class="col-lg-4 top_first_div">
-                           <!-- <p>schdeule</p> -->
-                           <div class="container schedule-outer">
-                            <div class="row">
-                              <div class="col theory-div">
-                                <h4 class="schedule-heading">Theory :</h4>
-                              </div>
-                              <div class="col lab-div">
-                                <h4 class="schedule-heading" id="theory-timing">7:30AM</h4>
-                              </div>
-                              <div class="w-100"></div>
-                              <div class="col theory-div">
-                                <h4 class="schedule-heading">Lab :</h4>
-                              </div>
-                              <div class="col lab-div">
-                                <h4 class="schedule-heading" id="lab-timing">3:30PM</h4>
-                              </div>
-                             
-                            </div> 
-                            <div class="row">
-                                <button type="submit" id="submit" class="scheduleButton">Weekly-schedule</button>
+                                    <div class="inner">
+                                        <div id="number1">
+                                            65%
+                                        </div>
+                                    </div>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                    <defs>
+                                        <linearGradient id="GradientColor">
+                                            <stop offset="0%" stop-color="#e91e63" />
+                                            <stop offset="100%" stop-color="#673ab7" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                                </svg>
                             </div>
                         </div>
-                          <!-- Schedule end-->
                 </div>
+            </div>
+           
+            <div class="col-lg-4">
+                <div class="card card-margin" style="height: 88%; width:100%;">
+                    <h3 class="card-title my-3" style="text-align: center;">Overall performance</h3>
 
-                <div class="col-lg-8">
-                    <div class="notice-board-div">
-                        <marquee direction = "down" id="noticeBoard" scrollamount="5" loop="true" onmouseover="stop()" onmouseout="start()">
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                          <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
-                        </marquee>
+                    <div class="card-body pt-0">
+                        <div class="skill">
+                            <div class="outer">
+                                <div class="inner">
+                                    <div id="number2">
+                                        65%
+                                    </div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                    <linearGradient id="GradientColor">
+                                        <stop offset="0%" stop-color="#e91e63" />
+                                        <stop offset="100%" stop-color="#673ab7" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
-
             </div>
+            <div class="col-lg-4">
+                <div class="card card-margin">
+                    <h3 class="card-title my-3" style="text-align: center; width: 100%;">Notice Board</h3>
+                    <div class="card-body pt-0">
+                        <div class="notice-board-div">
+                            <marquee direction="down" id="noticeBoard" scrollamount="5" loop="true" onmouseover="stop()"
+                                onmouseout="start()">
+                                <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
+                                <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
+                                <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
+                                <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
+                                <div class="desc" id="desc">The direction of text will be from bottom to top.</div>
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card card-margin" style="height: 88%; width:100%;">
 
-                <div class="row">
-                    <div class="col-lg-4 bottom_first_div">
-                        <!-- <p>doubt forum</p> -->
-                         <div class="doubt-div">
-                            <h4 class="doubtForum">Doubt Forum</h4>
-                           <form>
+                       
+                        <h3 class="card-title my-3" style="text-align: center;">Schdeule</h3>
+
+                    <div class="card-body pt-0">
+
+                        <!-- <div class="schedule-div" style="display: flex;justify-content: space-evenly;">
+                            <div style="width: 40%;">
+                                <h2>Theory : </h2>
+                            </div>
+                            <div style="width: 40%;">
+                                <h3>7:30PM</h3>
+                            </div>
+                        </div>
+                        <div class="lab-div" style="display: flex;justify-content: space-evenly;">
+                            <div style="width: 40%;">
+                                <h2>Lab : </h2>
+                            </div>
+                            <div style="width: 40%;">
+                                <h3>7:30PM</h3>
+                            </div>
+                        </div> -->
+                        
+                        <table style="margin-top: 10%; margin-left: auto; margin-right: auto; overflow-y: auto;" cellpadding="15">
+                            <tr style="margin-top: auto; margin-bottom: auto; background-color: #f5f5f5;">
+                                <td>
+                                    <h4>Theory: </h4>
+                                </td>
+                                <td>
+                                    <h4 id="theory_time">7:30AM</h4>
+                                </td>
+                            </tr>
+                            <tr style="margin-top: auto; margin-bottom: auto; background-color: #f5f5f5;">
+                                <td>
+                                    <h4>Lab: </h4>
+                                </td>
+                                <td>
+                                    <h4 id="lab_time">3:30PM</h4>
+                                </td>
+                            </tr>
+                        </table>
+                    
+                    </div> 
+                    </div>
+                </div>
+        
+                 <div class="col-lg-4">
+                <div class="card card-margin" style="height: 88%; width:100%;">
+
+                    <h3 class="card-title" style="text-align: center; margin-top: 5px;">Doubt Forum</h3>
+
+                    <div class="card-body pt-0">
+                       
+                        <form>
                             <div class="form-group">
                                 <select class="form-select mt-2" id="chooseSub" required>
-                                   <option selected disabled value="">Choose Subject</option>
-                                   <option value="Cop">Concept of Programming</option>
-                                   <option value="DBT">Database Technologies</option>
-                                   <option value="j2se">J2SE</option>
-                                   <option value="j2ee">J2EE</option>
-                                   <option value="wpt">Web programming</option>
-                                   <option value=".net">MS .NET</option>
+                                    <option selected disabled value="">Choose Subject</option>
+                                    <option value="Cop">Concept of Programming</option>
+                                    <option value="DBT">Database Technologies</option>
+                                    <option value="ADS">Algorithms and Data Structures</option>
+                                    <option value="SDM">Software development methadologies</option>
+                                    <option value="j2se">J2SE</option>
+                                    <option value="j2ee">J2EE</option>
+                                    <option value="wpt">Web programming</option>
+                                    <option value=".net">MS .NET</option>
                                 </select>
-                          </div>
-                        <div class="form-group">
-                             <!-- <label for="Textarea" id="content" class="doubtContent mt-2">Doubt content</label>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="Textarea" id="content" class="doubtContent mt-2">Doubt content</label>
                              -->
-                             <p class="doubtContent mt-1">Doubt Content</p>
-                             <textarea class="form-control" id="Textarea" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="file">
-                            <button type="submit" id="submit" class="doubtSubmit">Submit</button>
-                        </div>
-                       
-                          </form>
-                      </div>
+                                <p class="doubtContent mt-1">Doubt Content</p>
+                                <textarea class="form-control" id="Textarea" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" id="attachment">
+                                <button type="submit" id="submit" class="doubtSubmit">Submit</button>
+                                <p>only png/jpg</p>
+                            </div>
+
+                        </form>
                     </div>
-
-                <!-- attendance bar graph -->
-
-                <div class="col-lg-8 bottom_second_div">
-                        <!-- <p>attendance</p> -->
-              <!-- chart start -->
-              <div class="attendance-div">
-                <div class="chart">
-                  <ul class="numbers">
-                    <li><span>100%</span></li>
-                    <li><span>50%</span></li>
-                    <li><span>0%</span></li>
-                  </ul>
-                  <ul class="bars">
-                    <li>
-                      <div class="bar" data-percentage="50"></div><span>Module 01</span>
-                    </li>
-                    <li>
-                      <div class="bar" data-percentage="30"></div><span>Module 02</span>
-                    </li>
-                    <li>
-                      <div class="bar" data-percentage="60"></div><span>Module 03</span>
-                    </li>
-                    <li>
-                      <div class="bar" data-percentage="100"></div><span>Module 04</span>
-                    </li>
-                    <li>
-                      <div class="bar" data-percentage="80"></div><span>Module 05</span>
-                    </li>
-                  </ul>
                 </div>
-              </div>
-              <!-- <!-- chart end -->
+            </div> 
 
-
-
-        
-                      
+                <div class="col-lg-4">
+                    <div class="card card-margin" style="width: 120%;">
+                        <h3 class="card-title my-3" style="text-align: center;">Attendance</h3>
+                        <div class="card-body pt-0" >
+                            <!-- <div style="height: 60%;"> -->
+                                <div class="chart">
+                                    <!-- <ul class="numbers">
+                                        <li><span>100%</span></li>
+                                        <li><span>50%</span></li>
+                                        <li><span>0%</span></li>
+                                    </ul> -->
+                                    <ul class="bars">
+                                        <li>
+                                            <div class="bar" data-percentage="50"></div><span>COP</span>
+                                        </li>
+                                        <li>
+                                            <div class="bar" data-percentage="30"></div><span>DBT</span>
+                                        </li>
+                                        <li>
+                                            <div class="bar" data-percentage="60"></div><span>J2SE</span>
+                                        </li>
+                                        <li>
+                                            <div class="bar" data-percentage="100"></div><span>ADS</span>
+                                        </li>
+                                        <li>
+                                            <div class="bar" data-percentage="60"></div><span>WPT</span>
+                                        </li>
+                                        <li>
+                                            <div class="bar" data-percentage="80"></div><span>J2EE</span>
+                                        </li>
+                                        <li>
+                                            <div class="bar" data-percentage="30"></div><span>SDM</span>
+                                        </li>
+                                        <li>
+                                            <div class="bar" data-percentage="20"></div><span>MS .NET</span>
+                                        </li>
+                                    </ul>
+                                <!-- </div> -->
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-        </div>
     </div>
-    <script>
-        let number = document.getElementById("number");
-        let counter = 0;
-        setInterval(() => {
-            if(counter == 65){
-                clearInterval();
-            }else{
-            counter += 1;
-            number.innerHTML = counter + "%";
-            }
-        }, 30);
-    </script>
-     <script type="text/javascript">
-        $(function () {
-          $('.bars li .bar').each(function (key, bar) {
-            var percentage = $(this).data('percentage');
-            $(this).animate({
-              'height': percentage + '%'
-            }, 1000)
-          });
-        });
-      </script>
-      <!-- Footer -->
+    </div>
+
+
+    <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted">
 
     <!-- Section: Links  -->
@@ -334,7 +344,7 @@
               Panchwati Road, Pashan,
               Pune, Maharashtra 411008
               <a href="https://www.google.com/maps/place/CENTRE+FOR+DEVELOPMENT+OF+ADVANCED+COMPUTING,+Panchawati+Rd,+Mansarovar,+Pashan,+Pune,+Maharashtra+411008/@18.5349721,73.8105031,19z/data=!4m5!3m4!1s0x3bc2bf0e5dca0f97:0xaed6c14da20b1d0f!8m2!3d18.5350147!4d73.8108441?shorturl=1">
-                <img src="./img/2901214.png" style="height: 13px; width: 13px;" />
+                <img src="D:\CDAC\PG-DAC 0322\11 Project\ui\navbar and footer\2901214.png" style="height: 13px; width: 13px;" />
               </a>
             </p>
             <p>
@@ -361,4 +371,38 @@
   </footer>
   <!-- Footer -->
 </body>
+<script>
+    let number1 = document.getElementById("number1");
+    let counter1 = 0;
+    setInterval(() => {
+        if (counter1 == 65) {
+            clearInterval();
+        } else {
+            counter1 += 1;
+            number1.innerHTML = counter1+ "%";
+        }
+    }, 30);
+    let number2 = document.getElementById("number2");
+    let counter2 = 0;
+    setInterval(() => {
+        if (counter2 == 65) {
+            clearInterval();
+        } else {
+            counter2 += 1;
+            number2.innerHTML = counter2 + "%";
+        }
+    }, 30);
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+      $('.bars li .bar').each(function (key, bar) {
+        var percentage = $(this).data('percentage');
+        $(this).animate({
+          'height': percentage + '%'
+        }, 1000)
+      });
+    });
+  </script>
 </html>

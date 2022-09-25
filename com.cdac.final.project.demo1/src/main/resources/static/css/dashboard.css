@@ -1,82 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
+body{
+  background: linear-gradient(#2EAAFA, #1F2F98);
+    width: 100%;
+}
 
-*, body {
-    font-family: "Google Sans",Roboto,Arial,sans-serif;
-    
-} 
-.center_div{
-    margin: auto;
-    background-color: rgb(65, 105, 225);
-    
-    height: auto;
+.card-margin {
+    margin-bottom: 2.875rem;
+}
 
-}
-.outer-div{
-    height: 90vh;
-}
-.left-div, .right-div{
-    height: 90vh;
-}
-.top_first_div{
-    height: 45vh;
-}
-.top_second_div{
-    height: 45vh;
-}
-.bottom_first_div{
-    height: 45vh;
-   }
-.bottom_second_div{
-    height: 45vh;
+.card {
+    border: 0;
    
 }
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /* background-color: #ffffff; */
+    background-clip: border-box;
+    /* border: 1px solid #e6e4e9; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 #555;
+}
 
- /* Schedule */
- .schedule-outer {
-    height: 240px;
-    width: 270px;
-    margin-top: 26px;
-    background-color: white;
+.card .card-header.no-border {
+    border: 0;
+}
+.card .card-header {
+    background: none;
+    padding: 0 0.9375rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+}
+.card-header:first-child {
+    border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
+}
+/* Doubt forum */
+.doubt-div{
+    height: 30vh;
+    width: 400px;
+    background-color: aliceblue;
     border-radius: 5px;
     /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 10px 0 #555;
+    padding: 5px;
+}
+.doubtForum{
+    color: black;
+    text-align: center;
+    font-size: 27px;
+    font-weight: 300;
+
 }
 
-.theory-div {
-    height: 60px;
-    width: 100%;
+.form-select{
+    border: 0;
+    outline: 0;
+    margin: auto;
+    width: 70%;
+    border-radius: 6px;
+    background-color: #F5F5F5;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
 }
 
-.lab-div {
-    height: 60px;
-    width: 100%;
-}
-.weekly-schedule{
-    height: 30px;
-    width: 100%;
+#Textarea {
+    position: static !important;
+    width: 90%;
+    margin: auto;
+    padding: 8px 20px;
+    border-radius: 6px;
+    /* text-align: left; */
+    background-color: #F5F5F5;
+    border: 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    outline: none;
+    resize: none;
+    height: 120px;
+    /* margin-top: 4px; */
+    -webkit-transition: none;
+    transition: none;
+    margin-bottom: 10px;
 }
 
-.schedule-heading {
-    line-height: 120px;
-    padding-left: 13px;
-    font-size: 17px;
+/* #Textarea:hover, #Textarea:focus {
+    border: 0;
+    background-color: #ebeff8;
+    color: #8D8D8D;
+} */
+
+.doubtContent{
+    text-align: center;
 }
-.scheduleButton{
+.doubtSubmit{
     border: none;
-    width: 10rem;
+    width: 4rem;
     height: 2rem;
-    margin:60px;
     color: #fff;
-   background-color: rgb(65, 105, 225);
-  
+    background-color: rgb(65, 105, 225);
+
 }
-.scheduleButton:hover{
+.doubtSubmit:hover{
     background-color: goldenrod;
-    
 }
-/* performance index css */
 
+/* Schedule css */
 
+.schedule-outer {
+  height: 240px;
+  width: 270px;
+  margin-top: 26px;
+  background-color: white;
+  border-radius: 5px;
+  /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* performance css */
 .skill
 {
     margin: auto;
@@ -84,7 +132,8 @@
     height: 160px;
     /* background: cornflowerblue; */
     position: relative;
-    margin-left: 86px;
+    margin-left: 100px;
+    margin-top: 30px;
    
 }
 
@@ -121,7 +170,7 @@ circle{
     stroke: url(#GradientColor);
     stroke-width: 20px;
     stroke-dasharray: 472;
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 472;
     animation: anim 2s linear forwards;
 }
 
@@ -137,199 +186,101 @@ svg{
     }
 }
 
-.performance-heading{
-    /* text-align: center; */
-    margin: auto;
-    color: white;
-    font-weight: 600;
-    margin-left: 60px;
-    padding-top: 60px; 
+/* notice-board css */
+.notice-board-div{
+  margin: auto;
+  width: 50%;
+  border-radius: 5px;
+  background-color: white;
+}
+.desc{
+  text-align: center;
 }
 
-h6{
-    /* text-align: center; */
-    /* padding: 12px; */
-    padding-top: 10px;
-    margin: auto;
-    margin-left: 75px;
-    color: white;
-}
-
-/* Doubt forum */
-.doubt-div{
-    height: 43vh;
-    width: 400px;
-    background-color: aliceblue;
-    border-radius: 5px;
-    /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
-    box-shadow: 0 0 10px 0 #555;
-    padding: 5px;
-}
-.doubtForum{
-    color: black;
-    text-align: center;
-    font-size: 27px;
-    font-weight: 300;
-
-}
-
-.form-select{
-    border: 0;
-    outline: 0;
-    margin: auto;
-    width: 70%;
-    border-radius: 6px;
-    background-color: #fff;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-}
-
-#Textarea {
-    position: static !important;
-    width: 90%;
-    margin: auto;
-    padding: 8px 20px;
-    border-radius: 6px;
-    /* text-align: left; */
-    background-color: #fff;
-    border: 0;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    outline: none;
-    resize: none;
-    height: 120px;
-    /* margin-top: 4px; */
-    -webkit-transition: none;
-    transition: none;
-    margin-bottom: 10px;
-}
-
-/* #Textarea:hover, #Textarea:focus {
-    border: 0;
-    background-color: #ebeff8;
-    color: #8D8D8D;
-} */
-
-.doubtContent{
-    text-align: center;
-}
-.doubtSubmit{
-    border: none;
-    width: 5rem;
-    color: #fff;
-    background-color: rgb(65, 105, 225);
-}
-.doubtSubmit:hover{
-    background-color: goldenrod;
-}
-
-/* BarGrpah css */
-.attendance-div{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Roboto",sans-serif;
-}
 
 .chart{
-    width: 550px;
-    height: 270px;
-    display: block;
+  width: 520px;
+  height: 270px;
+  display: block;
 }
 
 .numbers{
-    color: #fff;
-    margin-left: 20px;
-    padding: 0;
-    width: 50px;
-    height: 100%;
-    display: inline-block;
-    /* float: left; */
+  color: black;
+  margin-left: -50px;
+  margin-bottom: 35px;
+  padding: 0;
+  width: 50px;
+  height: 100%;
+  display: inline-block;
+  /* float: left; */
 }
 
 .numbers li{
-    list-style: none;
-    height: 140px;
-    position: relative;
-    bottom: 120px;
+  list-style: none;
+  height: 140px;
+  position: relative;
+  bottom: 120px;
 }
 
 .numbers span{
-    font-size: 12px;
-    font-weight: 600;
-    position: absolute;
-    bottom: 0;
-    right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
 }
 
 .bars{
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    background: #fff;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    width: 430px;
-    height: 270px;
-    box-shadow: 0 0 10px 0 #555;
-    border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 450px;
+  height: 270px;
+  /* box-shadow: 0 0 10px 0 #555; */
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .bars li{
-    display: table-cell;
-    width: 100px;
-    height: 270px;
-    position: relative;
+  display: table-cell;
+  width: 70px;
+  height: 270px;
+  position: relative;
 }
 
 .bars span{
-    width: 100%;
-    position: absolute;
-    bottom: -30px;
-    text-align: center;
+  width: 160%;
+  position: absolute;
+  bottom: -30px;
+  text-align: center;
 }
 
 .bars .bar{
-    display: block;
-    background: goldenrod;
-    width: 50px;
-    position: absolute;
-    bottom: 0;
-    margin-left: 25px;
-    text-align: center;
-    box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
-    transition: 0.5s;
-    transition-property: background,box-shadow;
+  display: block;
+  background: goldenrod;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  margin-left: 25px;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
+  transition: 0.5s;
+  transition-property: background,box-shadow;
 }
 
 .bars .bar:hover{
-    background: #55EFC4;
-    box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
-    cursor: pointer;
+  background: #55EFC4;
+  box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
+  cursor: pointer;
 }
 
 .bars .bar:before{
-    color: black;
-    content: attr(data-percentage);
-    position: relative;
-    bottom: 20px;
-}
-
-/* notice-board css */
-.notice-board-div{
-    margin: auto;
-    margin-top: 20px;
-    width: 60%;
-    height: 40vh;
-    border-radius: 5px;
-    background-color: white;
-    /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
-    box-shadow: 0 0 10px 0 #555;
-}
-.desc{
-    text-align: center;
+  color: black;
+  content: attr(data-percentage);
+  position: relative;
+  bottom: 20px;
 }
