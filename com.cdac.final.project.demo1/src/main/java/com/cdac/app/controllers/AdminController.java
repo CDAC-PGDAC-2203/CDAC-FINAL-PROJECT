@@ -140,9 +140,15 @@ public class AdminController {
 
 	// API to get all active doubts
 	@GetMapping("/doubts")
-	public List<DoubtForum> getAllActiveDoubts() {
-		logger.info("************Receiving active doubts*************");
-		return dashboardService.getActiveDoubts();
+	public ResponseEntity<List<DoubtForum>> getAllActiveDoubts() {
+		try {
+			List<DoubtForum> list = dashboardService.getActiveDoubts();
+			logger.info("************Received active doubts*************");
+			return new ResponseEntity<>(list,HttpStatus.OK);
+		}catch(Exception e) {
+			List<DoubtForum> badList = null;
+			return new ResponseEntity<>(badList, HttpStatus.OK);
+		}
 	}
 
 	// API to mark solved doubts

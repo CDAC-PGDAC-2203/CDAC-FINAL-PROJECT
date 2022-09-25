@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/feedBackList.css" />
 <script src="${pageContext.request.contextPath}/js/commonAdminTiles.js"></script>
+<script src="${pageContext.request.contextPath}/js/activeDoubtList.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
@@ -38,7 +39,7 @@
 			</h4>
 			<div class="inner-div" style="overflow-x: auto;">
 				<table class="table table-striped">
-					<tbody>
+					<thead>
 						<tr style="font-family: helvetica;">
 							<th scope="row">PRN No</th>
 							<th scope="row">Name</th>
@@ -47,17 +48,13 @@
 							<th scope="row">Doubt content</th>
 							<th scope="row">Attachment</th>
 						</tr>
-
-						<tr style="font-family: helvetica;">
-							<td scope="row">220340120001</td>
-							<td scope="row">Kamana Mathur</td>
-							<td scope="row">kamana@gmail.com</td>
-							<td scope="row">DBT</td>
-							<td scope="row">What is a Complex View in SQL Server?</td>
-							<td scope="row"></td>
-						</tr>
+					</thead>
+					<tbody id="doubtTable">
+						
 					</tbody>
 				</table>
 			</div>
+		</div>
+	</div>
 </body>
 </html>
