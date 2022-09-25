@@ -131,4 +131,16 @@ $(document).ready(() => {
          });
     });
 
+    $("#notice").click((e)=>{
+        e.preventDefault();
+        $.ajax({
+            url: "/portal/admin/noticeFlag",
+            type: "GET",
+            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+            success: (data) => {
+                $("body").html(data);
+            }
+         });
+    });
+
 });

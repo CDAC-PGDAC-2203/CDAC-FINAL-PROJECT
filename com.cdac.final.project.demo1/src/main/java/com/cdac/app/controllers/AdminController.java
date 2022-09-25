@@ -67,7 +67,7 @@ public class AdminController {
 
 	@GetMapping("/admin/doubts/flag")
 	public String loadUpdateDoubt() {
-		return "";
+		return "adminUpdateDoubtFlag";
 	}
 
 	@GetMapping("/admin/attendance")
@@ -107,6 +107,11 @@ public class AdminController {
 
 	@GetMapping("/admin/notice")
 	public String loadUploadNotice() {
+		return "/adminUploadNotice";
+	}
+
+	@GetMapping("/admin/noticeFlag")
+	public String updateUploadNotice() {
 		return "";
 	}
 
@@ -243,6 +248,7 @@ public class AdminController {
 		}
 	}
 
+	//TODO
 	// API to upload notice
 	@PostMapping("/notice/{name}/{link}")
 	public void setNotice(@PathVariable(name = "name") String noticeName,
@@ -250,6 +256,7 @@ public class AdminController {
 		dashboardService.setNotice(noticeName, noticeLink);
 	}
 
+	//TODO
 	// API to remove an old notice
 	@PostMapping("/notice/{name}")
 	public void removeNotice(@PathVariable(name = "name") String noticeName) {

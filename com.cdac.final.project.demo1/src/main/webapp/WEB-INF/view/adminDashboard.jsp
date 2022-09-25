@@ -89,7 +89,12 @@
             </div>
             <div class="col-sm-4 py-3" style="height:200px;">
                 <div class="card card-body text-white h-100">
-                    <a href=""><button class="admin-button" id="notice">Set Notice</button></a>
+                    <a href=""><button class="admin-button" id="notice">Upload Notice</button></a>
+                </div>
+            </div>
+            <div class="col-sm-4 py-3" style="height:200px;">
+                <div class="card card-body text-white h-100">
+                    <a href=""><button class="admin-button" id="updateNotice">Update Notice Flag</button></a>
                 </div>
             </div>
         </div>
