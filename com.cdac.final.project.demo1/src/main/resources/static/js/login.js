@@ -23,7 +23,7 @@ $(document).ready(function(){
                         type: "GET",
                         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
                         success: (data) => {
-                           document.write(data);
+                           $("body").html(data);
                         }
                      }); 
                 }else{
