@@ -131,7 +131,7 @@ $(document).ready(() => {
          });
     });
 
-    $("#notice").click((e)=>{
+    $("#updateNotice").click((e)=>{
         e.preventDefault();
         $.ajax({
             url: "/portal/admin/noticeFlag",
