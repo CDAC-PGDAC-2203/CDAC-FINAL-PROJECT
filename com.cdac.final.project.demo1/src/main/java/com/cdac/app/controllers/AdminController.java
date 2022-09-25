@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.LectureLink;
-import com.cdac.app.dto.ImportFaculty;
+import com.cdac.app.dto.ImportCSVDataDTO;
 import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IExamService;
@@ -126,9 +126,16 @@ public class AdminController {
 
 	// API to upload question paper
 	@PostMapping("/questions")
-	public void uploadExamPaper(@RequestBody String paperPath, String subject) {
-		examService.uploadExamPaper(paperPath, subject);
-		logger.info("************Uploaded Question Paper*************");
+	public ResponseEntity<?> uploadExamPaper(@RequestBody ImportCSVDataDTO questionPaper) {
+		SimpleString simple = new SimpleString("DONE");
+		try {
+			examService.uploadExamPaper(questionPaper.getFilePath(), questionPaper.getSubject());
+			logger.info("************Uploaded Question Paper*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to get all active doubts
@@ -166,8 +173,8 @@ public class AdminController {
 
 	// API to update faculty list
 	@PostMapping("/faculty")
-	public void importFacultyList(@RequestBody ImportFaculty faculty) {
-		feedbackService.importFacultyList(faculty.getFilePath(), faculty.getCourse());
+	public void importFacultyList(@RequestBody ImportCSVDataDTO faculty) {
+		feedbackService.importFacultyList(faculty.getFilePath(), faculty.getSubject());
 	}
 
 	// API to assign faculty to a course
