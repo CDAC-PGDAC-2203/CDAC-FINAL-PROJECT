@@ -273,4 +273,61 @@ $(document).ready(()=>{
           }
        }); 
   });
+
+  $("#notice_upload").click((e)=>{
+   e.preventDefault();
+   var noticeName = $("#noticeName").val();
+   var noticeLink = $("#noticeLink").val();
+   
+   $.ajax({
+       url: "/portal/notice/"+noticeName+"/"+noticeLink,
+       type: "POST",
+       contentType: "application/json",
+       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+       success: (data) => {
+          if(data.data == "DONE"){
+            $("#message").append(success);
+            $("#noticeName").val("");
+            $("#noticeLink").val("");
+          }else{
+            $("#message").append(failure);
+            $("#noticeName").val("");
+            $("#noticeLink").val("");
+          }
+       },
+       error: (error) => {
+          $("#message").append(failure);
+          $("#noticeName").val("");
+          $("#noticeLink").val("");
+       }
+      }); 
+   });
+
+   $("#notice_update").click((e)=>{
+      e.preventDefault();
+      var noticeNameFlag = $("#noticeNameFlag").val();
+
+      $.ajax({
+          url: "/portal/notice/"+noticeName+"/"+noticeLink,
+          type: "POST",
+          contentType: "application/json",
+          beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+          success: (data) => {
+             if(data.data == "DONE"){
+               $("#message").append(success);
+               $("#noticeName").val("");
+               $("#noticeLink").val("");
+             }else{
+               $("#message").append(failure);
+               $("#noticeName").val("");
+               $("#noticeLink").val("");
+             }
+          },
+          error: (error) => {
+             $("#message").append(failure);
+             $("#noticeName").val("");
+             $("#noticeLink").val("");
+          }
+         }); 
+      });
 });

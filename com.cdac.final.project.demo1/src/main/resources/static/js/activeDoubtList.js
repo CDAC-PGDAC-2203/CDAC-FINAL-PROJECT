@@ -1,6 +1,8 @@
 $(document).ready(()=>{
-    function doubt_update(data){
-        var doubtId = data;
+    $("button").click((e)=>{
+        e.preventDefault();
+        var doubtId = $(this).val();
+        console.log(doubtId);
         $.ajax({
            url: "/portal/doubt/"+doubtId,
            type: "PUT",
@@ -20,7 +22,7 @@ $(document).ready(()=>{
            }
         }); 
      
-    }
+    });
 
     $.ajax({
         url: "/portal/doubts",
@@ -36,7 +38,7 @@ $(document).ready(()=>{
                              + "<td scope='row'>" + element.subjectName + "</td>"
                              + "<td scope='row'>" + element.doubtContent + "</td>"
                              + "<td scope='row'>" + element.attachment +"</td>"
-                             + "<td scope='row'><button id='button_doubt_update' value='" + element.doubtId + "' onclick='doubt_update(this.value)'>Solved</button></td>"
+                             + "<td scope='row'><button id='" + element.doubtId + "' value='" + element.doubtId + "'>Solved</button></td>"
                              + "</tr>";
                 $("#doubtTable").append(tableRow);
             });
