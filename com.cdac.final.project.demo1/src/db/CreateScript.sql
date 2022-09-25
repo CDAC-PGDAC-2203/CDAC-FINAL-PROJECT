@@ -33,8 +33,12 @@ CREATE TABLE IF NOT EXISTS user_table(
     u_role VARCHAR(10)
 );
 
-INSERT INTO user_table VALUES (1, 'admin', 1111111, 'ADMIN');
-INSERT INTO user_table VALUES (2, 'Hardik', 2203001, 'STUDENT');
+INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
+INSERT INTO user_table VALUES (2, 'Joy', 2203002, 'STUDENT');
+INSERT INTO user_table VALUES (3, 'Udit', 2203003, 'STUDENT');
+INSERT INTO user_table VALUES (4, 'Mayank', 2203004, 'STUDENT');
+INSERT INTO user_table VALUES (5, 'Kamana', 2203005, 'STUDENT');
+INSERT INTO user_table VALUES (10000, 'admin', 1111111, 'ADMIN');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -56,10 +60,11 @@ create table if not exists personal_details(
     guardian_phone BIGINT
 );
 
-insert into personal_details values(
-	'2',2203001,'Hardik',NULL,'Agarwal','M','2000-03-17','hardik@gmail.com',
-'	8630296896','B.tech','https:///dcjcbbivfvbv','PG-DAC','Mala Agarwal', '8630298749'
-);
+insert into personal_details values('1',2203001,'Hardik',NULL,'Agarwal','M','2000-03-17','hardikagarwal1703@gmail.com','8630296896','B.tech','https:\\hardik.png','PG-DAC','Mala Agarwal', '8630298749');
+insert into personal_details values('2',2203002,'Joy',NULL,'Pahari','M','1998-09-01','joypahari11@gmail.com','7798003910','B.tech','https:\\joy.png','PG-DAC','SB Pahari', '7499153589');
+insert into personal_details values('3',2203003,'Udit',NULL,'Keskar','M','1999-11-23','udit@gmail.com','9876543212','B.tech','https:\\udit.png','PG-DBDA','Abc', '7548754875');
+insert into personal_details values('4',2203004,'Mayank',NULL,'Sachan','M','1995-03-07','mayank@gmail.com','8426971358','B.tech','https:\\mayank.png','PG-DESC','Abc', '3232323232');
+insert into personal_details values('5',2203005,'Kamana',NULL,'Mathur','F','1997-07-04','kamana.mathur89@gmail.com','9731862459','B.tech','https:\\kamana.png','PG-XYZ','Abc', '5454545454');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -74,7 +79,11 @@ CREATE TABLE IF NOT EXISTS user_address(
 	pincode int NOT NULL
 );
                             
-INSERT INTO user_address VALUES(2,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
+INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
+INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','Goa','Vasco',403802);
+INSERT INTO user_address VALUES(3,'UVW','XYZ','Maharastra','Mumbai',454545);
+INSERT INTO user_address VALUES(4,'DEF','ABC','Delhi','Noida',454545);
+INSERT INTO user_address VALUES(5,'ABC','DEF','Rajasthan','Jodhpur',454545);
                                 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -89,8 +98,7 @@ CREATE TABLE IF NOT EXISTS user_login(
     course varchar(10)
 );
 
-insert into user_login values(1,'admin',11111,11111,'ADMIN','PG-DAC');
-insert into user_login values('2','Hardik Agarwal','220340120001','220340120001','STUDENT','PG-DAC');
+insert into user_login values(10000,'admin',11111,11111,'ADMIN','PG-DAC');
 
 -- ------------------------------------------------------------------------------------------------------
 
