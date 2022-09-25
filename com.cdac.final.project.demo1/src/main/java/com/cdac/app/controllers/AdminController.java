@@ -56,6 +56,57 @@ public class AdminController {
 		return "/adminGeneratePrn";
 	}
 
+	@GetMapping("/admin/doubts")
+	public String loadActiveDoubts() {
+		return "/activeDoubtList";
+	}
+
+	@GetMapping("/admin/doubts/flag")
+	public String loadUpdateDoubt() {
+		return "";
+	}
+
+	@GetMapping("/admin/attendance")
+	public String loadUploadAttendance() {
+		return "/adminAttendance";
+	}
+
+	@GetMapping("/admin/result")
+	public String loadUploadResult() {
+		return "/adminResult";
+	}
+
+	@GetMapping("/admin/feedback")
+	public String loadGetFeedbacks() {
+		return "/feedbackList";
+	}
+
+	@GetMapping("/admin/faculty")
+	public String loadUploadFacultyList() {
+		return "/adminFacultyList";
+	}
+	
+	@GetMapping("/admin/faculty/flag")
+	public String loadUpdateFaculty() {
+		return "/adminFacultyFeedback";
+	}
+
+	@GetMapping("/admin/questions")
+	public String loadUploadQuestion() {
+		return "/adminQuestionPaper";
+	}
+
+	@GetMapping("/admin/links")
+	public String loadUploadLinks() {
+		return "/adminLectureLink";
+	}
+
+	@GetMapping("/admin/notice")
+	public String loadUploadNotice() {
+		return "";
+	}
+
+	
 	// API to generate PRN of students course wise
 	@PostMapping("/generate/{courseName}")
 	public void generatePRN(@PathVariable(name = "courseName") String courseName) {
