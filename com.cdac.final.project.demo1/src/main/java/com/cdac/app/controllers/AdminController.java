@@ -67,7 +67,7 @@ public class AdminController {
 
 	@GetMapping("/admin/doubts/flag")
 	public String loadUpdateDoubt() {
-		return "adminUpdateDoubtFlag";
+		return "/adminUpdateDoubtFlag";
 	}
 
 	@GetMapping("/admin/attendance")
@@ -112,7 +112,7 @@ public class AdminController {
 
 	@GetMapping("/admin/noticeFlag")
 	public String updateUploadNotice() {
-		return "";
+		return "/adminUpdateNoticeFlag";
 	}
 
 	
@@ -157,12 +157,19 @@ public class AdminController {
 		}
 	}
 
-	//TODO UI Screen Pending @Kamana @Mayank
 	// API to mark solved doubts
 	@PutMapping("/doubt/{doubtId}")
-	public void updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
-		dashboardService.updateActiveFlag(doubtId);
-		logger.info("************Doubt:" + doubtId + " inactive*************");
+	public ResponseEntity<?> updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			dashboardService.updateActiveFlag(doubtId);
+			logger.info("************Doubt:" + doubtId + " inactive*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
+
 	}
 
 	// API to upload attendance of students
@@ -248,18 +255,32 @@ public class AdminController {
 		}
 	}
 
-	//TODO
 	// API to upload notice
 	@PostMapping("/notice/{name}/{link}")
-	public void setNotice(@PathVariable(name = "name") String noticeName,
+	public ResponseEntity<?> setNotice(@PathVariable(name = "name") String noticeName,
 			@PathVariable(name = "link") String noticeLink) {
-		dashboardService.setNotice(noticeName, noticeLink);
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			dashboardService.setNotice(noticeName, noticeLink);
+			logger.info("************Uploaded Links*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
-	//TODO
 	// API to remove an old notice
 	@PostMapping("/notice/{name}")
-	public void removeNotice(@PathVariable(name = "name") String noticeName) {
-		dashboardService.removeNotice(noticeName);
+	public ResponseEntity<?> removeNotice(@PathVariable(name = "name") String noticeName) {
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			dashboardService.removeNotice(noticeName);
+			logger.info("************Uploaded Links*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 }
