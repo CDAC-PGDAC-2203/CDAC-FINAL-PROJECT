@@ -1,4 +1,8 @@
 $(document).ready(()=>{
+
+   var success = "<h4 style='color: green;'>Data Processed Successfully!</h4>";
+   var failure = "<h4 style='color: red;'>Some Eror Occured!</h4>"
+
     $("#adminDashboard").click((e)=>{
         e.preventDefault();
         $.ajax({
@@ -19,13 +23,16 @@ $(document).ready(()=>{
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
             success: (data) => {
                if(data.data == "DONE"){
-                //append SUCCESS MESSAGE ON UI.
+                  $("#course_name_gprn").val("");
+                  $("#message").append(success);
                }else{
-                //append FAILURE MESSAGE ON UI
+                  $("#course_name_gprn").val("");
+                  $("#message").append(failure);
                }
             },
             error: (error) => {
-               //append FAILURE MESSAGE ON Ui
+               $("#course_name_gprn").val("");
+               $("#message").append(failure);
             }
          }); 
     });
@@ -45,17 +52,17 @@ $(document).ready(()=>{
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
             success: (data) => {
                if(data.data == "DONE"){
-                //append SUCCESS MESSAGE ON UI.
-                $("#subject").val("");
-                $("#question_ppr").val("");
+                  $("#message").append(success);
+                  $("#subject").val("");
+                  $("#question_ppr").val("");
                }else{
-                //append FAILURE MESSAGE ON UI
-                $("#subject").val("");
-                $("#question_ppr").val("");
+                  $("#message").append(failure);
+                  $("#subject").val("");
+                  $("#question_ppr").val("");
                }
             },
             error: (error) => {
-               //append FAILURE MESSAGE ON Ui
+               $("#message").append(failure);
                $("#subject").val("");
                $("#question_ppr").val("");
             }
@@ -77,19 +84,19 @@ $(document).ready(()=>{
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
-              //append SUCCESS MESSAGE ON UI.
-              $("#subjectAttendance").val("");
-              $("#attendance_file").val("");
+                $("#message").append(success);
+                $("#subjectAttendance").val("");
+                $("#attendance_file").val("");
              }else{
-              //append FAILURE MESSAGE ON UI
-              $("#subjectAttendance").val("");
-              $("#attendance_file").val("");
+               $("#message").append(failure);
+               $("#subjectAttendance").val("");
+               $("#attendance_file").val("");
              }
           },
           error: (error) => {
-             //append FAILURE MESSAGE ON UI
-             $("#subjectAttendance").val("");
-             $("#attendance_file").val("");
+            $("#message").append(failure);
+            $("#subjectAttendance").val("");
+            $("#attendance_file").val("");
           }
        }); 
   });
@@ -111,22 +118,22 @@ $(document).ready(()=>{
        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
        success: (data) => {
           if(data.data == "DONE"){
-           //append SUCCESS MESSAGE ON UI.
-           $("#subjectResult").val("");
-           $("#attendance_file").val("");
-           $("#course_name").val("");
+            $("#message").append(success);
+            $("#subjectResult").val("");
+            $("#attendance_file").val("");
+            $("#course_name").val("");
           }else{
-           //append FAILURE MESSAGE ON UI
-           $("#subjectResult").val("");
-           $("#attendance_file").val("");
-           $("#course_name").val("");
+            $("#message").append(failure);
+            $("#subjectResult").val("");
+            $("#attendance_file").val("");
+            $("#course_name").val("");
           }
        },
        error: (error) => {
-          //append FAILURE MESSAGE ON UI
-          $("#subjectResult").val("");
-          $("#attendance_file").val("");
-          $("#course_name").val("");
+         $("#message").append(failure);
+         $("#subjectResult").val("");
+         $("#attendance_file").val("");
+         $("#course_name").val("");
        }
     }); 
    });
@@ -139,7 +146,7 @@ $(document).ready(()=>{
          type: "GET",
          beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
          success: (data) => {
- 
+             $("#message").append(success);
              data.forEach((element) =>{
                  var tableRow = "<tr style='font-family: helvetica;'>" 
                               + "<td scope='row'>" + element.uPrn + "</td>"
@@ -158,7 +165,8 @@ $(document).ready(()=>{
              $("#courseName").val("");
          },
          error: (error) => {
-            //append FAILURE MESSAGE ON Ui
+            $("#message").append(failure);
+            $("#courseName").val("");
          }
       }); 
    });
@@ -178,17 +186,17 @@ $(document).ready(()=>{
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
-              //append SUCCESS MESSAGE ON UI.
+               $("#message").append(success);
               $("#course_name").val("");
               $("#faculty_list").val("");
              }else{
-              //append FAILURE MESSAGE ON UI
-              $("#course_name").val("");
-              $("#faculty_list").val("");
+               $("#message").append(failure);
+               $("#course_name").val("");
+               $("#faculty_list").val("");
              }
           },
           error: (error) => {
-             //append FAILURE MESSAGE ON UI
+             $("#message").append(failure);
              $("#course_name").val("");
              $("#faculty_list").val("");
           }
@@ -207,17 +215,17 @@ $(document).ready(()=>{
        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
        success: (data) => {
           if(data.data == "DONE"){
-           //append SUCCESS MESSAGE ON UI.
-           $("#course_name").val("");
-           $("#faculty_name").val("");
+            $("#message").append(success);
+            $("#course_name").val("");
+            $("#faculty_name").val("");
           }else{
-           //append FAILURE MESSAGE ON UI
-           $("#course_name").val("");
-           $("#faculty_name").val("");
+            $("#message").append(failure);
+            $("#course_name").val("");
+            $("#faculty_name").val("");
           }
        },
        error: (error) => {
-          //append FAILURE MESSAGE ON UI
+          $("#message").append(failure);
           $("#course_name").val("");
           $("#faculty_name").val("");
        }
@@ -249,19 +257,19 @@ $(document).ready(()=>{
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
-              //append SUCCESS MESSAGE ON UI.
-              $("#course_name").val("");
-              $("#faculty_list").val("");
+               $("#message").append(success);
+               $("#course_name").val("");
+               $("#faculty_list").val("");
              }else{
-              //append FAILURE MESSAGE ON UI
-              $("#course_name").val("");
-              $("#faculty_list").val("");
+               $("#message").append(failure);
+               $("#course_name").val("");
+               $("#faculty_list").val("");
              }
           },
           error: (error) => {
-             //append FAILURE MESSAGE ON UI
-             $("#course_name").val("");
-             $("#faculty_list").val("");
+            $("#message").append(failure);
+            $("#course_name").val("");
+            $("#faculty_list").val("");
           }
        }); 
   });

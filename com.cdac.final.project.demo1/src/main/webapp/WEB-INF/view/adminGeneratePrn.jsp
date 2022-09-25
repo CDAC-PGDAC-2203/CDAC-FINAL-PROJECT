@@ -26,7 +26,7 @@
 			id="navbarNav">
 			<ul class="navbar-nav">
 				<li id="dashboard" class="nav-item active"><a class="nav-link"
-					href="#">Admin Home Page</a></li>
+					href="" id="adminDashboard">Admin Home Page</a></li>
 			</ul>
 		</div>
 	</nav>
