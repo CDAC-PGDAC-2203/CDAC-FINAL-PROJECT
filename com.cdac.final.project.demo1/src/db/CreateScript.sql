@@ -85,10 +85,11 @@ CREATE TABLE IF NOT EXISTS user_login(
     u_name varchar(50),
     u_prn bigint primary key not null,
     u_password varchar(20),
+    u_role varchar(10),
     course varchar(10)
 );
 
-insert into user_login values(1,'admin',11111,11111,'PG-DAC');
+insert into user_login values(1,'admin',11111,11111,'ADMIN','PG-DAC');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -292,7 +293,8 @@ CREATE TABLE IF NOT EXISTS faculty(
 
 CREATE TABLE IF NOT EXISTS user_token(
 	u_prn bigint primary key,
-    token varchar(500)
+    token varchar(500),
+    u_role varchar(10)
 );
 
 -- ------------------------------------------------------------------------------------------------------
