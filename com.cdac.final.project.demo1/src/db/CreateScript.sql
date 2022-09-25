@@ -90,6 +90,7 @@ CREATE TABLE IF NOT EXISTS user_login(
 );
 
 insert into user_login values(1,'admin',11111,11111,'ADMIN','PG-DAC');
+insert into user_login values('2','Hardik Agarwal','220340120001','220340120001','STUDENT','PG-DAC');
 
 -- ------------------------------------------------------------------------------------------------------
 
