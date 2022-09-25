@@ -74,11 +74,8 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20180130</version>
-		</dependency>
+		<!-- <dependency> <groupId>org.json</groupId> <artifactId>json</artifactId> 
+			<version>20180130</version> </dependency> -->
 	</dependencies>
 
 	<dependencyManagement>

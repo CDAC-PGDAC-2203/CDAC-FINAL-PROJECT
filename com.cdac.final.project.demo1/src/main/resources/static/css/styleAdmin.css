@@ -4,7 +4,7 @@
     box-sizing:border-box;
 }
 .body{
-    background:url("${pageContext.request.contextPath}/img/cdacActs.jpeg");
+    background:url("../img/cdacActs.jpeg");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;

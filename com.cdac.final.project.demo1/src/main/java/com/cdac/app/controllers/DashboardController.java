@@ -34,6 +34,19 @@ public class DashboardController {
 		return "/studentDashboard";
 	}
 
+	// API to show user profile details
+	@GetMapping("/profile/{uPrn}")
+	public HashMap<String, String> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
+		HashMap<String,String> map =  service.getProfile(uPrn);
+		return map;
+	}
+
+	// API to update user profile (Address)
+	@PostMapping("/profile")
+	public void updateProfile(@RequestBody UserAddress address, Long uPrn) {
+		service.updateProfile(address, uPrn);
+	}
+
 	// API to get doubt details
 	@PostMapping("/doubt")
 	public void DoubtForumDetails(@RequestBody DoubtForum dobutDetails) {
@@ -56,18 +69,6 @@ public class DashboardController {
 	@GetMapping("/moduleAttendance/{uPrn}")
 	public HashMap<String, Double> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn) {
 		return service.getModuleAttendance(uPrn);
-	}
-
-	// API to show user profile details
-	@GetMapping("/profile/{uPrn}")
-	public HashMap<String, String> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
-		return service.getProfile(uPrn);
-	}
-
-	// API to update user profile (Address)
-	@PostMapping("/profile")
-	public void updateProfile(@RequestBody UserAddress address, Long uPrn) {
-		service.updateProfile(address, uPrn);
 	}
 
 	// API to store feedback

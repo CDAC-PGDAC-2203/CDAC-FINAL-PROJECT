@@ -15,7 +15,7 @@
 	<div class="subBody">
 		<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
 			<a class="navbar-brand" href="#"><img class="img-responsive"
-				src="${pageContext.request.contextPath}/css/img/cdac-logo.jpeg"></a>
+				src="${pageContext.request.contextPath}/img/cdac-logo.jpeg"></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"

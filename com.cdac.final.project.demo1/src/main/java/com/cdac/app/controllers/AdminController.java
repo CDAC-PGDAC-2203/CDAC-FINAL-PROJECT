@@ -51,6 +51,11 @@ public class AdminController {
 		return "/adminDashboard";
 	}
 
+	@GetMapping("/admin/gprn")
+	public String loadGeneratePRN() {
+		return "/adminGeneratePrn";
+	}
+
 	// API to generate PRN of students course wise
 	@PostMapping("/generate/{courseName}")
 	public void generatePRN(@PathVariable(name = "courseName") String courseName) {

@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>CDAC APP | Dashboard</title>
+<link rel="icon" type="image/x-icon" href="img/cdac.jpeg">
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
 <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
