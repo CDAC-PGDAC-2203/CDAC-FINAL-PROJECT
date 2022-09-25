@@ -26,15 +26,15 @@
 			id="navbarNav">
 			<ul class="navbar-nav">
 				<li id="dashboard" class="nav-item active"><a class="nav-link"
-					href="#" id="adminDashboard">Admin Home Page</a></li>
+					href="#">Admin Home Page</a></li>
 			</ul>
 		</div>
 	</nav>
     <section class="mt-2 mx-5">
         <div class="container-fluid" style="display: flex;justify-content: center;">
             <div class="row row1">
-                <h1 class="font-weight-bold py-3">CDAC ADMIN PORTAL</h1>
-                <h4>Upload Lecture Link</h4>
+               
+                <h4 style=" color: rgb(65, 105, 225);text-align: center;">Upload Lecture Link</h4>
                 <div style="display: flex;justify-content: center;">
                     <form>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
@@ -90,6 +90,7 @@
                                 <button id="lecture_link_upload" type="button" class="btn1 mt-3 mb-3">Upload</button> 
                             </div>    
                         </div>
+                        <span id="message"></span>
                     </form>
                 </div>
             </div>
@@ -102,6 +103,5 @@
 				href="https://acts.cdac.in/">acts.cdac.in</a>
 		</div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
 </html>

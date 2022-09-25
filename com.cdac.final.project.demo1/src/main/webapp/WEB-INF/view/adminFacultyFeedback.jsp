@@ -14,9 +14,7 @@
 	<style>
         .row{
             background: white;
-            border-radius: 15px;
-            padding: 5px;
-            box-shadow: 12px 12px 22px rgb(100, 99, 99);
+            padding: 10px;
             display: flex;
             width:50%;
             margin:auto;
@@ -24,7 +22,7 @@
     </style>
 </head>
  <body class="body">
-    <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
+     <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
 		<a class="navbar-brand" href="#"><img class="img-responsive"
 			src="./img/cdac-logo.jpeg"></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -37,33 +35,35 @@
 			id="navbarNav">
 			<ul class="navbar-nav">
 				<li id="dashboard" class="nav-item active"><a class="nav-link"
-					href="#" id="adminDashboard">Admin Home Page</a></li>
+					href="#">Admin Home Page</a></li>
 			</ul>
 		</div>
 	</nav>
-    <section class="my-2 mx-5">
+    <section class="my-5 mx-5">
         <div class="container-fluid" style="display: flex;justify-content: center;">
             <div class="row">
-                <h1 class="font-weight-bold py-3" style="text-align: center;">CDAC ADMIN PORTAL</h1>
-                <h4 style="text-align: center;">Update Faculty Feedback</h4>
+               
+                <h4 style=" color: rgb(65, 105, 225);text-align: center;">Update Faculty Feedback</h4>
                 <div style="display: flex;justify-content: center;">
                     <form>
-                        Flag:
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flag" id="flag_yes" value="Y">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              yes
-                            </label>
-                          </div>
+                        <div style="display: flex;justify-content: space-evenly; margin-top: 10px;">
+                          Flag:
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flag" id="flag_no" checked value="N">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                              No
-                            </label>
-                          </div>
+                              <input class="form-check-input" type="radio" name="flag" id="flag_yes">
+                              <label class="form-check-label" for="flag_yes">
+                                yes
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="flag" id="flag_no" checked>
+                              <label class="form-check-label" for="flag_no">
+                                No
+                              </label>
+                            </div>
+                        </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="faculty_name" type="number" placeholder="Faculty Id"class="form-control my-3 p-4"> 
+                                <input id="faculty_name" type="text" placeholder="Faculty Name"class="form-control my-3 p-4"> 
                             </div>    
                         </div>
                         <div class="form-row">
@@ -76,12 +76,13 @@
                                 <button id="faculty_feedback_upload" type="button" class="btn1 mt-3 mb-5">Update</button> 
                             </div>    
                         </div>
+                        <span id="message"></span>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="text-center text-lg-start bg-light text-muted">
+    <footer class="text-center text-lg-start bg-light text-muted" style="margin-top: 24vh;">
     	<div class="text-center p-3 mt-1"
 			style="background-color: rgba(0, 0, 0, 0.05);">
 			© 2022 CDAC. All rights reserved: <a class="text-reset fw-bold"
