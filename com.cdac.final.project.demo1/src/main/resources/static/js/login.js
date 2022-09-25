@@ -17,7 +17,7 @@ $(document).ready(function(){
                 }),
             success: function(returnedData){
                 localStorage.setItem("token",returnedData.token);
-                if(returnedData.uPrn == 11111){ 
+                if(returnedData.uRole == "ADMIN"){ 
                     $.ajax({
                         url: "/portal/admin",
                         type: "GET",
@@ -27,7 +27,14 @@ $(document).ready(function(){
                         }
                      }); 
                 }else{
-                   
+                    $.ajax({
+                        url: "/portal/dashboard",
+                        type: "GET",
+                        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+                        success: (data) => {
+                            document.write(data);
+                        }
+                     }); 
                 }
             },
             dataType: "json"

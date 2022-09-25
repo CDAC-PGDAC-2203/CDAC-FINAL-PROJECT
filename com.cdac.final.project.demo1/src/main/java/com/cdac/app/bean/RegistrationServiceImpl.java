@@ -118,6 +118,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 			}
 		}
 		for (PersonalDetails pDetail : list) {
+			UserTable userTable = userTableRepository.findByUserId(pDetail.getUserId());
 			UserLogin userLogin = new UserLogin();
 
 			userLogin.setUserId(pDetail.getUserId());
@@ -134,6 +135,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 			userLogin.setuPrn(prnNo);
 			userLogin.setuPassword(prnNo.toString());
 			userLogin.setCourse(pDetail.getCourse());
+			userLogin.setuRole(userTable.getUserRole());
 
 			prnList.add(userLogin);
 		}

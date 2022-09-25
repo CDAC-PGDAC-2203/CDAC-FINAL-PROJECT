@@ -51,18 +51,18 @@ public class AdminController {
 		return "/adminDashboard";
 	}
 
-	// API to upload question paper
-	@PostMapping("/questions")
-	public void uploadExamPaper(@RequestBody String paperPath, String subject) {
-		examService.uploadExamPaper(paperPath, subject);
-		logger.info("************Uploaded Question Paper*************");
-	}
-
 	// API to generate PRN of students course wise
 	@PostMapping("/generate/{courseName}")
 	public void generatePRN(@PathVariable(name = "courseName") String courseName) {
 		registartionService.generatePRN(courseName);
 		logger.info("**************Generated PRN of course: " + courseName + "****************");
+	}
+
+	// API to upload question paper
+	@PostMapping("/questions")
+	public void uploadExamPaper(@RequestBody String paperPath, String subject) {
+		examService.uploadExamPaper(paperPath, subject);
+		logger.info("************Uploaded Question Paper*************");
 	}
 
 	// API to get all active doubts

@@ -48,7 +48,8 @@ public class HomeController {
 			String token = getJWTToken(username);
 			UserToken userToken = new UserToken();
 			userToken.setuPrn(Long.parseLong(username));
-			userToken.setToken(token);		
+			userToken.setToken(token);
+			userToken.setuRole(user.getuRole());
 			return new ResponseEntity<UserToken>(userToken, HttpStatus.OK) ;
 		}
 		return null;

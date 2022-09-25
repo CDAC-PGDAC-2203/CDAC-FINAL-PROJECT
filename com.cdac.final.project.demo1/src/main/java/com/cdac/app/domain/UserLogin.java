@@ -7,6 +7,8 @@ package com.cdac.app.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -27,6 +29,10 @@ public class UserLogin {
 	@Column(name = "u_password")
 	private String uPassword;
 
+	@Enumerated(EnumType.STRING)
+	@Column(name = "u_role")
+	private Role uRole;
+
 	@Column(name = "course")
 	private String course;
 
@@ -34,12 +40,13 @@ public class UserLogin {
 		super();
 	}
 
-	public UserLogin(Long userId, String uName, Long uPrn, String uPassword, String course) {
+	public UserLogin(Long userId, String uName, Long uPrn, String uPassword, Role uRole, String course) {
 		super();
 		this.userId = userId;
 		this.uName = uName;
 		this.uPrn = uPrn;
 		this.uPassword = uPassword;
+		this.uRole = uRole;
 		this.course = course;
 	}
 
@@ -75,6 +82,14 @@ public class UserLogin {
 		this.uPassword = uPassword;
 	}
 
+	public Role getuRole() {
+		return uRole;
+	}
+
+	public void setuRole(Role uRole) {
+		this.uRole = uRole;
+	}
+
 	public String getCourse() {
 		return course;
 	}
@@ -86,7 +101,7 @@ public class UserLogin {
 	@Override
 	public String toString() {
 		return "UserLogin [userId=" + userId + ", uName=" + uName + ", uPrn=" + uPrn + ", uPassword=" + uPassword
-				+ ", course=" + course + "]";
+				+ ", uRole=" + uRole + ", course=" + course + "]";
 	}
 
 }

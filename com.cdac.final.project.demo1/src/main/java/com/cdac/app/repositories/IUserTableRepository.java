@@ -11,4 +11,7 @@ public interface IUserTableRepository extends JpaRepository<UserTable, Long> {
 
 	@Query(value = "select u from UserTable u where u.fName = ?1 and u.ccatNo = ?2")
 	public UserTable findByFNameAndCCATNo(String fName, Long ccatNo);
+
+	@Query(value = "select u from UserTable u where u.userId = ?1")
+	public UserTable findByUserId(Long userId);
 }
