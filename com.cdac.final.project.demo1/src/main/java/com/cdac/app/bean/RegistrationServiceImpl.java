@@ -138,6 +138,8 @@ public class RegistrationServiceImpl implements IRegistrationService {
 			userLogin.setuRole(userTable.getUserRole());
 
 			prnList.add(userLogin);
+			sendCredentialsEmail(prnNo,name,pDetail.getEmail());
+			prnNo += 1;
 		}
 		return prnList;
 	}
@@ -186,4 +188,35 @@ public class RegistrationServiceImpl implements IRegistrationService {
 			emailService.sendSimpleMail(email);	
 		}
 	}
+
+	public void sendCredentialsEmail(Long prnNo,String name, String emailId){
+		EmailDetails email = new EmailDetails();
+		email.setRecipient(emailId);
+		email.setSubject("CDAC ACTS PUNE | " 
+					   + "Registration Success | "
+					   + name);
+		
+		String messageBody = "Hi "+name+"\n"
+					   +"Greetings of the day!\n"
+					   +"Welcome to CDAC ACTS Pune.\n"
+					   +"\n"
+					   +"\n"
+					   +"\n"
+					   +"You are successfully registered over the "
+					   +"Student Portal.\n"
+					   +"Your credentials to login are as follows:-\n"
+					   +"\n"
+					   +"\n"
+					   +"user-id: " + prnNo +"\n"
+					   +"password: " + prnNo +"\n"
+					   +"\n"
+					   +"\n"
+					   +"\n"
+					   +"Best Regards,\n"
+					   +"Administrator \n"
+					   +"Student Portal Maintainace Team\n"
+					   +"CDAC ACTS Pune.";
+			email.setMsgBody(messageBody);
+			emailService.sendSimpleMail(email);	
+		}
 }
