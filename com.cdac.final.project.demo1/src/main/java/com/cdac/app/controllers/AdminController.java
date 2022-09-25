@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,7 @@ import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.LectureLink;
 import com.cdac.app.dto.ImportFaculty;
+import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IExamService;
 import com.cdac.app.service.IFeedbackService;
@@ -109,9 +112,16 @@ public class AdminController {
 	
 	// API to generate PRN of students course wise
 	@PostMapping("/generate/{courseName}")
-	public void generatePRN(@PathVariable(name = "courseName") String courseName) {
-		registartionService.generatePRN(courseName);
-		logger.info("**************Generated PRN of course: " + courseName + "****************");
+	public ResponseEntity<?> generatePRN(@PathVariable(name = "courseName") String courseName) {
+		SimpleString simple = new SimpleString("DONE");
+		try {
+			registartionService.generatePRN(courseName);
+			logger.info("**************Generated PRN of course: " + courseName + "****************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to upload question paper

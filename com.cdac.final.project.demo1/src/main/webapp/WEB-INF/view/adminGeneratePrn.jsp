@@ -41,12 +41,12 @@
                     <form>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="course_name" type="text" placeholder="Course Name"class="form-control my-3 p-4"> 
+                                <input id="course_name_gprn" type="text" placeholder="Course Name"class="form-control my-3 p-4"> 
                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <button id="generate_prn" type="button" class="btn1 mt-3 mb-5">Generate PRN</button> 
+                                <button id="generate_gprn" type="button" class="btn1 mt-3 mb-5">Generate PRN</button> 
                             </div>   
                         </div>
                     </form>
