@@ -40,7 +40,7 @@
                     <form>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="subject" type="text" placeholder="Subject Name"class="form-control my-3 p-4"> 
+                                <input id="subjectAttendance" type="text" placeholder="Subject Name"class="form-control my-3 p-4"> 
                             </div>    
                         </div>
                         <div class="form-row">

@@ -34,7 +34,7 @@
         <div class="container-fluid" style="display: flex;justify-content: center;">
             <div class="row row1">
                 <h1 class="font-weight-bold py-3">CDAC ADMIN PORTAL</h1>
-                <h4>Upload Leacture Link</h4>
+                <h4>Upload Lecture Link</h4>
                 <div style="display: flex;justify-content: center;">
                     <form>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
@@ -42,7 +42,7 @@
                                 <input id="subject" type="text" placeholder="Subject Name"class="form-control my-3 p-3">
                             </div>
                             <div style="width: 40%;">    
-                                <input id="Session_date" type="date" placeholder="Session Date"class="form-control my-3 p-3" style="color: gray;"> 
+                                <input id="session_date" type="date" placeholder="Session Date"class="form-control my-3 p-3" style="color: gray;"> 
                             </div>   
                         </div>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <button id="question_ppr_upload" type="button" class="btn1 mt-3 mb-3">Upload</button> 
+                                <button id="lecture_link_upload" type="button" class="btn1 mt-3 mb-3">Upload</button> 
                             </div>    
                         </div>
                     </form>

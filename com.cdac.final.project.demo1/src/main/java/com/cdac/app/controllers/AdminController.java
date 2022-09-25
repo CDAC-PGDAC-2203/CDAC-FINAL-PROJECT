@@ -18,6 +18,7 @@ import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.LectureLink;
 import com.cdac.app.dto.ImportCSVDataDTO;
+import com.cdac.app.dto.ResultDTO;
 import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IExamService;
@@ -151,6 +152,7 @@ public class AdminController {
 		}
 	}
 
+	//TODO UI Screen Pending @Kamana @Mayank
 	// API to mark solved doubts
 	@PutMapping("/doubt/{doubtId}")
 	public void updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
@@ -160,40 +162,85 @@ public class AdminController {
 
 	// API to upload attendance of students
 	@PostMapping("/attendance")
-	public void uploadAttendance(@RequestBody String filePath, String subject) {
-		dashboardService.uploadAttendance(filePath, subject);
-		logger.info("************Uploaded Attendance Key*************");
+	public ResponseEntity<?> uploadAttendance(@RequestBody ImportCSVDataDTO attendance) {
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			dashboardService.uploadAttendance(attendance.getFilePath(), attendance.getSubject());
+			logger.info("************Uploaded Attendance Key*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to upload results of students
 	@PostMapping("/result")
-	public void setResult(@RequestBody String filePath, String module, String course) {
-		resultService.setResult(filePath, module, course);
+	public ResponseEntity<?> setResult(@RequestBody ResultDTO result) {
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			resultService.setResult(result.getFilePath(), result.getSubject(), result.getCourse());
+			logger.info("****************RESULT UPDATED OF "+result.getSubject()+"*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to get feedback list
 	@GetMapping("/feedback/{course}")
-	public List<Feedback> getFeedbackList(@PathVariable(name = "course") String course) {
-		return feedbackService.getFeedbackList(course);
+	public ResponseEntity<List<Feedback>> getFeedbackList(@PathVariable(name = "course") String course) {
+		try {
+			List<Feedback> list = feedbackService.getFeedbackList(course);
+			logger.info("************Received feedbacks*************");
+			return new ResponseEntity<>(list,HttpStatus.OK);
+		}catch(Exception e) {
+			List<Feedback> badList = null;
+			return new ResponseEntity<>(badList, HttpStatus.OK);
+		}
 	}
 
 	// API to update faculty list
 	@PostMapping("/faculty")
-	public void importFacultyList(@RequestBody ImportCSVDataDTO faculty) {
-		feedbackService.importFacultyList(faculty.getFilePath(), faculty.getSubject());
+	public ResponseEntity<?> importFacultyList(@RequestBody ImportCSVDataDTO faculty) {
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			feedbackService.importFacultyList(faculty.getFilePath(), faculty.getSubject());
+			logger.info("************Uploaded Faculty List*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
-	// API to assign faculty to a course
+	// API to make faculty visible for feedback
 	@PutMapping("/faculty/{flag}/{facultyId}/{course}")
-	public void updateFacultyFlag(@PathVariable(name = "flag") String flag,
+	public ResponseEntity<?> updateFacultyFlag(@PathVariable(name = "flag") String flag,
 			@PathVariable(name = "facultyId") Long facultyId, @PathVariable(name = "course") String course) {
-		feedbackService.updateFacultyFlag(flag, facultyId, course);
-	}
-
-	// API to upload lecture links
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			feedbackService.updateFacultyFlag(flag, facultyId, course);
+			logger.info("************Uploaded Faculty List*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
+	}	
+	
 	@PostMapping("/links")
-	public void uploadLinks(@RequestBody LectureLink lectureLink) {
-		joinLectureService.uploadLectureLinks(lectureLink);
+	public ResponseEntity<?> uploadLinks(@RequestBody LectureLink lectureLink) {
+		SimpleString simple = new SimpleString("DONE");
+		try{
+			joinLectureService.uploadLectureLinks(lectureLink);
+			logger.info("************Uploaded Links*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}catch(Exception e) {
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to upload notice

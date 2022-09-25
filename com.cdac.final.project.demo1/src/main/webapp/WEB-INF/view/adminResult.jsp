@@ -38,7 +38,7 @@
                     <form>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="subject" type="text" placeholder="Subject Name"class="form-control my-3 p-4"> 
+                                <input id="subjectResult" type="text" placeholder="Subject Name"class="form-control my-3 p-4"> 
                             </div>    
                         </div>
                         <div class="form-row">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="result" type="text" placeholder="Result File Path"class="form-control my-3 p-4" style="color:gray"> 
+                                <input id="resultPath" type="text" placeholder="Result File Path"class="form-control my-3 p-4" style="color:gray"> 
                             </div>    
                         </div>
                         <div class="form-row">

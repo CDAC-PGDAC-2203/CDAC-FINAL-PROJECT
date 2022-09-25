@@ -63,7 +63,7 @@
                           </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="faculty_name" type="text" placeholder="Faculty Name"class="form-control my-3 p-4"> 
+                                <input id="faculty_name" type="number" placeholder="Faculty Id"class="form-control my-3 p-4"> 
                             </div>    
                         </div>
                         <div class="form-row">

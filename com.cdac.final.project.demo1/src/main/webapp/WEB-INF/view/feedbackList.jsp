@@ -51,7 +51,7 @@
 			</h4>
 			<div class="inner-div" style="overflow-x: auto;">
 				<table class="table table-striped">
-					<tbody>
+					<thead>
 						<tr style="font-family: helvetica;">
 							<th scope="row">PRN No</th>
 							<th scope="row">Faculty</th>
@@ -64,22 +64,13 @@
 							<th scope="row">Parameter Total</th>
 							<th scope="row">Suggestion</th>
 						</tr>
-
-						<tr style="font-family: helvetica;">
-							<td scope="row">220340120001</td>
-							<td scope="row">Madhura Anturkar</td>
-							<td scope="row">Core Java</td>
-							<td scope="row"></td>
-							<td scope="row"></td>
-							<td scope="row"></td>
-							<td scope="row"></td>
-							<td scope="row"></td>
-							<td scope="row"></td>
-							<td scope="row"></td>
-						</tr>
+					</thead>
+					<tbody id="feedbackTableBody">
 					</tbody>
 				</table>
 
 			</div>
+		</div>
+	</div>
 </body>
 </html>
