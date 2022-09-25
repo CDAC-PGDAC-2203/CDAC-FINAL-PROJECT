@@ -10,12 +10,13 @@
     <link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery-3.6.1.js"></script>
+	<script src="${pageContext.request.contextPath}/js/commonAdminTiles.js"></script>
 </head>
 <body class="body">
     <div class="subBody">
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
 		<a class="navbar-brand" href="#"><img class="img-responsive"
-			src="${pageContext.request.contextPath}/css/img/cdac-logo.jpeg"></a>
+			src="${pageContext.request.contextPath}/img/cdac-logo.jpeg"></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +27,7 @@
 			id="navbarNav">
 			<ul class="navbar-nav">
 				<li id="dashboard" class="nav-item active"><a class="nav-link"
-					href="#">Admin Home Page</a></li>
+					href="#" id="adminDashboard">Admin Home Page</a></li>
 			</ul>
 		</div>
 	</nav>

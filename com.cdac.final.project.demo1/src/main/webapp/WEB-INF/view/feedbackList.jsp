@@ -5,11 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>CDAC APP | Admin Feedback List</title>
-<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"
+<link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="css/feedBackList.css" />
+<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/feedBackList.css" />
+<script src="${pageContext.request.contextPath}/js/commonAdminTiles.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
@@ -23,7 +24,7 @@
 		<div class="collapse navbar-collapse justify-content-end"
 			id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link" href="#">Admin
+				<li class="nav-item active"><a class="nav-link" href="#" id="adminDashboard">Admin
 						Home Page</a></li>
 
 			</ul>

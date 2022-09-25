@@ -42,54 +42,54 @@
             </div>
             <div class="col-sm-4 py-3 h-200">
                 <div class="card card-body h-100 ">
-                  <a href=""><button class="admin-button">Active doubts</button></a>
+                  <a href=""><button class="admin-button" id="getDoubts">Active doubts</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3 h-200">
                 <div class="card h-100 card-body">
-                   <a href=""><button class="admin-button">Update Active flag</button></a>
+                   <a href=""><button class="admin-button" id="updateDoubt">Update Active flag</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3" style="height:200px;">
                 <div class="card card-body h-100 border-primary">
-                    <a href=""><button class="admin-button">Upload Attendance</button></a>
+                    <a href=""><button class="admin-button" id="attendance">Upload Attendance</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3 h-200">
                 <div class="card h-100 card-body">
-                    <a href=""><button class="admin-button">Set Result</button></a>
+                    <a href=""><button class="admin-button" id="result">Set Result</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3 h-200">
                 <div class="card card-body text-white h-100">
-                    <a href=""><button class="admin-button">Feedback List</button></a>
+                    <a href=""><button class="admin-button" id="feedBackList">Feedback List</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3" style="height:200px;">
                 <div class="card card-body h-100 text-white">
-                   <a href=""> <button class="admin-button">Faculty List</button></a>
+                   <a href=""> <button class="admin-button" id="facultyList">Faculty List</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3 h-200">
                 <div class="card card-body h-100 text-white">
-                    <a href=""><button class="admin-button">Update Faculty Flag</button></a>
+                    <a href=""><button class="admin-button" id="facultyFlag">Update Faculty Flag</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3 h-200">
                 <div class="card card-body text-white h-100">
-                    <a href=""><button class="admin-button">Upload Exam Paper</button></a>
+                    <a href=""><button class="admin-button" id="questions">Upload Exam Paper</button></a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-4 py-3" style="height:200px;">
                 <div class="card card-body text-white h-100">
-                   <a href=""><button class="admin-button">Upload links</button></a>
+                   <a href=""><button class="admin-button" id="links">Upload links</button></a>
                 </div>
             </div>
             <div class="col-sm-4 py-3" style="height:200px;">
                 <div class="card card-body text-white h-100">
-                    <a href=""><button class="admin-button">Set Notice</button></a>
+                    <a href=""><button class="admin-button" id="notice">Set Notice</button></a>
                 </div>
             </div>
         </div>

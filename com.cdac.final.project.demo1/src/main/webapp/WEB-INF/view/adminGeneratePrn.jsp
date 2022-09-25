@@ -10,6 +10,7 @@
 	<link href="${pageContext.request.contextPath}/css/styleAdmin.css" rel="stylesheet">
 	<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery-3.6.1.js"></script>
+	<script src="${pageContext.request.contextPath}/js/commonAdminTiles.js"></script>
 </head>
 <body class="body">
 	<div class="subBody">
@@ -26,8 +27,8 @@
 			<div class="collapse navbar-collapse justify-content-end"
 				id="navbarNav">
 				<ul class="navbar-nav">
-					<li id="dashboard" class="nav-item active"><a class="nav-link"
-						href="#">Admin Home Page</a></li>
+					<li id="dashboard" class="nav-item active"><a class="nav-link" id="adminDashboard"
+						href="">Admin Home Page</a></li>
 				</ul>
 			</div>
 		</nav>
