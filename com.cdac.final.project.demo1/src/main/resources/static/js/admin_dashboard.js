@@ -143,4 +143,18 @@ $(document).ready(() => {
          });
     });
 
+    $("#logout").click((e) => {
+        e.preventDefault();
+        $.ajax({
+            url: "/portal/admin/logout",
+            type: "GET",
+            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+            success: (data) => {
+                localStorage.removeItem("token");
+                $("body").html(data);
+            }
+         });
+
+    });
+
 });

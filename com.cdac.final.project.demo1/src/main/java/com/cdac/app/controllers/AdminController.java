@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.LectureLink;
-import com.cdac.app.dto.ImportCSVDataDTO;
+import com.cdac.app.dto.ImportDataDTO;
 import com.cdac.app.dto.ResultDTO;
 import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
@@ -115,6 +115,11 @@ public class AdminController {
 		return "/adminUpdateNoticeFlag";
 	}
 
+	@GetMapping("/admin/logout")
+	public String logout() {
+		return "/login";
+	}
+	
 	
 	// API to generate PRN of students course wise
 	@PostMapping("/generate/{courseName}")
@@ -132,7 +137,7 @@ public class AdminController {
 
 	// API to upload question paper
 	@PostMapping("/questions")
-	public ResponseEntity<?> uploadExamPaper(@RequestBody ImportCSVDataDTO questionPaper) {
+	public ResponseEntity<?> uploadExamPaper(@RequestBody ImportDataDTO questionPaper) {
 		SimpleString simple = new SimpleString("DONE");
 		try {
 			examService.uploadExamPaper(questionPaper.getFilePath(), questionPaper.getSubject());
@@ -186,7 +191,7 @@ public class AdminController {
 
 	// API to upload attendance of students
 	@PostMapping("/attendance")
-	public ResponseEntity<?> uploadAttendance(@RequestBody ImportCSVDataDTO attendance) {
+	public ResponseEntity<?> uploadAttendance(@RequestBody ImportDataDTO attendance) {
 		SimpleString simple = new SimpleString("DONE");
 		try{
 			dashboardService.uploadAttendance(attendance.getFilePath(), attendance.getSubject());
@@ -227,7 +232,7 @@ public class AdminController {
 
 	// API to update faculty list
 	@PostMapping("/faculty")
-	public ResponseEntity<?> importFacultyList(@RequestBody ImportCSVDataDTO faculty) {
+	public ResponseEntity<?> importFacultyList(@RequestBody ImportDataDTO faculty) {
 		SimpleString simple = new SimpleString("DONE");
 		try{
 			feedbackService.importFacultyList(faculty.getFilePath(), faculty.getSubject());
@@ -268,12 +273,11 @@ public class AdminController {
 	}
 
 	// API to upload notice
-	@PostMapping("/notice/{name}/{link}")
-	public ResponseEntity<?> setNotice(@PathVariable(name = "name") String noticeName,
-			@PathVariable(name = "link") String noticeLink) {
+	@PostMapping("/notice")
+	public ResponseEntity<?> setNotice(@RequestBody ImportDataDTO notice ) {
 		SimpleString simple = new SimpleString("DONE");
 		try{
-			dashboardService.setNotice(noticeName, noticeLink);
+			dashboardService.setNotice(notice.getSubject(), notice.getFilePath());
 			logger.info("************Uploaded Links*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}catch(Exception e) {

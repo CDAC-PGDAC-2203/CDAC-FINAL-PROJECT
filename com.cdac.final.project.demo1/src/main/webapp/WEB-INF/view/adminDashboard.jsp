@@ -25,7 +25,7 @@
           <ul class="navbar-nav">
     
             <li id="dashboard" class="nav-item active">
-              <a class="nav-link" href="#">Logout</a>
+              <a class="nav-link" href="" id="logout">Logout</a>
             </li>
             
           </ul>

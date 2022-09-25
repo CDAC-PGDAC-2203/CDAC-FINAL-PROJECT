@@ -280,9 +280,13 @@ $(document).ready(()=>{
    var noticeLink = $("#noticeLink").val();
    
    $.ajax({
-       url: "/portal/notice/"+noticeName+"/"+noticeLink,
+       url: "/portal/notice",
        type: "POST",
        contentType: "application/json",
+       data: JSON.stringify({
+         "subject": noticeName, 
+         "filePath" : noticeLink
+       }),
        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
        success: (data) => {
           if(data.data == "DONE"){
@@ -308,25 +312,23 @@ $(document).ready(()=>{
       var noticeNameFlag = $("#noticeNameFlag").val();
 
       $.ajax({
-          url: "/portal/notice/"+noticeName+"/"+noticeLink,
+          url: "/portal/notice/"+noticeNameFlag,
           type: "POST",
           contentType: "application/json",
+          
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
                $("#message").append(success);
-               $("#noticeName").val("");
-               $("#noticeLink").val("");
+               $("#noticeNameFlag").val("");
              }else{
                $("#message").append(failure);
-               $("#noticeName").val("");
-               $("#noticeLink").val("");
+               $("#noticeNameFlag").val("");
              }
           },
           error: (error) => {
              $("#message").append(failure);
-             $("#noticeName").val("");
-             $("#noticeLink").val("");
+             $("#noticeNameFlag").val("");
           }
          }); 
       });

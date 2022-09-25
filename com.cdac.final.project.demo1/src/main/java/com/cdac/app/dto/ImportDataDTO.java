@@ -1,6 +1,6 @@
 package com.cdac.app.dto;
 
-public class ImportCSVDataDTO {
+public class ImportDataDTO {
 	private String filePath;
 	private String subject;
 
@@ -20,11 +20,11 @@ public class ImportCSVDataDTO {
 		this.subject = subject;
 	}
 
-	public ImportCSVDataDTO() {
+	public ImportDataDTO() {
 		super();
 	}
 
-	public ImportCSVDataDTO(String filePath, String subject) {
+	public ImportDataDTO(String filePath, String subject) {
 		super();
 		this.filePath = filePath;
 		this.subject = subject;
