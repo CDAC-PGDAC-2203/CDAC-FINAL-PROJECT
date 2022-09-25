@@ -32,37 +32,27 @@
 			</div>
 		</nav>
 		<section class="mt-4 mx-5">
-			<div class="container-fluid"
-				style="display: flex; justify-content: center;">
-				<div class="row row1">
-					<h1 class="font-weight-bold py-3">CDAC ADMIN PORTAL</h1>
-					<h4>Upload Attendance</h4>
-					<div style="display: flex; justify-content: center;">
-						<form>
-							<div class="form-row">
-								<div style="width: 100%;">
-									<input id="subject" type="text" placeholder="Subject Name"
-										class="form-control my-3 p-4">
-								</div>
-							</div>
-							<div class="form-row">
-								<div style="width: 100%;">
-									<input id="attendance_file" type="text"
-										placeholder="Attendance file Path"
-										class="form-control my-3 p-4" style="color: gray">
-								</div>
-							</div>
-							<div class="form-row">
-								<div style="width: 100%;">
-									<button id="attendance_file_upload" type="button"
-										class="btn1 mt-3 mb-5">Upload</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div class="container-fluid" style="display: flex;justify-content: center;">
+            <div class="row row1">
+                <h1 class="font-weight-bold py-3">CDAC ADMIN PORTAL</h1>
+                <h4>Generate PRN List</h4>
+                <div style="display: flex;justify-content: center;">
+                    <form>
+                        <div class="form-row">
+                            <div style="width: 100%;"> 
+                                <input id="course_name" type="text" placeholder="Course Name"class="form-control my-3 p-4"> 
+                            </div>    
+                        </div>
+                        <div class="form-row">
+                            <div style="width: 100%;"> 
+                                <button id="generate_prn" type="button" class="btn1 mt-3 mb-5">Generate PRN</button> 
+                            </div>   
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 		<footer class="text-center text-lg-start bg-light text-muted"
 			style="margin-top: 11vh;">
 			<div class="text-center p-3 mt-1"
