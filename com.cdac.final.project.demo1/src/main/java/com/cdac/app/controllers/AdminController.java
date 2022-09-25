@@ -158,16 +158,28 @@ public class AdminController {
 	}
 
 	// API to mark solved doubts
+//	@PutMapping("/doubt/{doubtId}")
+//	public ResponseEntity<?> updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
+//		SimpleString simple = new SimpleString("DONE");
+//		try{
+//			dashboardService.updateActiveFlag(doubtId);
+//			logger.info("************Doubt:" + doubtId + " inactive*************");
+//			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+//		}catch(Exception e) {
+//			simple = new SimpleString("FAILED");
+//			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+//		}
+//
+//	}
+	
 	@PutMapping("/doubt/{doubtId}")
-	public ResponseEntity<?> updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
-		SimpleString simple = new SimpleString("DONE");
+	public String updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
 		try{
 			dashboardService.updateActiveFlag(doubtId);
 			logger.info("************Doubt:" + doubtId + " inactive*************");
-			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+			return "/activeDoubtList";
 		}catch(Exception e) {
-			simple = new SimpleString("FAILED");
-			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+			return null;
 		}
 
 	}

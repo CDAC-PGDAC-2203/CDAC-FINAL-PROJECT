@@ -47,6 +47,7 @@
 							<th scope="row">Subject Name</th>
 							<th scope="row">Doubt content</th>
 							<th scope="row">Attachment</th>
+							<th scope="row"></th>
 						</tr>
 					</thead>
 					<tbody id="doubtTable">
