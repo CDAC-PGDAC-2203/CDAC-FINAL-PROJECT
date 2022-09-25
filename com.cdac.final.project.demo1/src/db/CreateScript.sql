@@ -11,7 +11,7 @@ create table if not exists ccat_student(
     f_name varchar(25) NOT NULL, 
 	m_name varchar(25),
     l_name varchar(25),
-    dob date NOT NULL,		-- Date format YYYY-MM-DD 
+    dob date NOT NULL,
     course varchar(10) NOT NULL
 );
 
@@ -50,7 +50,7 @@ create table if not exists personal_details(
     f_name varchar(25) NOT NULL,
     m_name varchar(25), l_name varchar(25),
     gender varchar(1) NOT NULL,
-    dob date NOT NULL,		-- Date format YYYY-MM-DD
+    dob date NOT NULL,
     email varchar(60) NOT NULL,
     phone bigint NOT NULL,
     qualification varchar(15) NOT NULL,
