@@ -248,13 +248,13 @@ CREATE TABLE IF NOT EXISTS lecture_link(
 -- question_paper table
 
 CREATE TABLE IF NOT EXISTS question_paper(
-	question varchar(2000) PRIMARY KEY NOT NULL,
-    option1 varchar(50),
-    option2 varchar(50),
-    option3 varchar(50),
-    option4 varchar(50),
-    answer varchar(50),
-    module varchar(50)
+	question varchar(700) PRIMARY KEY NOT NULL,
+    option1 varchar(700),
+    option2 varchar(700),
+    option3 varchar(700),
+    option4 varchar(700),
+    answer varchar(700),
+    module varchar(700)
 );
 
 -- ------------------------------------------------------------------------------------------------------
