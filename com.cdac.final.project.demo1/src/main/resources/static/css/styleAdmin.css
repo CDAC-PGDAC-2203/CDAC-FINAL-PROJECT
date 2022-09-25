@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+.body{
+    background:url("${pageContext.request.contextPath}/img/cdacActs.jpeg");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    width:100%;
+    z-index: 1;
+}
+.row1{
+    background: white;
+    /* border-radius: 15px; */
+    padding: 5px;
+    /* box-shadow: 12px 12px 22px rgb(100, 99, 99); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:40%;
+    margin:auto;
+}
+.subBody{
+    background: rgba(0, 0, 0, 0.8);
+}
+.btn1{
+    border: none;
+    outline: none;
+    height: 50px;
+    width:100%;
+    background-color:rgb(65, 105, 225);
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.btn1:hover{
+    background:rgb(35, 81, 221);
+    border:1px solid;
+}
+footer {
+    clear: both;
+    position: relative;
+    
+}
