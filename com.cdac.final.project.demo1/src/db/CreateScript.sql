@@ -221,20 +221,6 @@ CREATE TABLE IF NOT EXISTS total_attendance(
 
 -- ------------------------------------------------------------------------------------------------------
 
--- schedule_table table
-
-CREATE TABLE IF NOT EXISTS schedule_table(
-	today_date date primary key not null,
-    module varchar(10) not null,
-	lect_link varchar(500),
-    lab_b1_link varchar(500),
-    lab_b2_link varchar(500),
-    lab_b3_link varchar(500),
-    lab_b4_link varchar(500)
-);
-
--- ------------------------------------------------------------------------------------------------------
-
 -- lecture_link table
 
 CREATE TABLE IF NOT EXISTS lecture_link(
@@ -290,6 +276,9 @@ CREATE TABLE IF NOT EXISTS feedback(
     suggestion varchar(300)
 );
 
+INSERT INTO feedback VALUES(220340120001,'PG-DAC','Madhura','mod1',2,3,5,5,5,20,'Excellent');
+INSERT INTO feedback VALUES(220340120002,'PG-DAC','Madhura','mod1',3,4,5,5,5,20,'Excellent');
+
 -- ------------------------------------------------------------------------------------------------------
 
 -- faculty table
@@ -300,6 +289,10 @@ CREATE TABLE IF NOT EXISTS faculty(
     visibility_flag varchar(1),
     course varchar(10)
 );
+
+INSERT INTO faculty VALUES(1,'A','N','PG-DAC');
+INSERT INTO faculty VALUES(2,'B','N','PG-XYZ');
+INSERT INTO faculty VALUES(3,'C','N','PG-DAC');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -320,5 +313,9 @@ CREATE TABLE IF NOT EXISTS notice(
     notice_link varchar(100),
     visibility varchar(100)
 );
+
+INSERT INTO notice VALUES('ABCD','http://link1','N');
+INSERT INTO notice VALUES('EFGH','http://link2','N');
+INSERT INTO notice VALUES('IJKL','http://link3','N');
 
 -- ------------------------------------------------------------------------------------------------------
