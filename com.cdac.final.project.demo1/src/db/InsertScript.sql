@@ -3,8 +3,8 @@
 insert into ccat_student values('2203001','Hardik',NULL,'Agarwal','2000-03-17','PG-DAC');
 insert into ccat_student values('2203002','Joy',NULL,'Pahari','1998-09-01','PG-DAC');
 insert into ccat_student values('2203003','Udit',NULL,'Keskar','1999-11-23','PG-DBDA');
-insert into ccat_student values('2203004','Mayank',NULL,'Sachan','1994-03-07','PG-DESC');
-insert into ccat_student values('2203005','Kamana',NULL,'Mathur','1997-07-04','PG-XYZ');
+insert into ccat_student values('2203004','Mayank',NULL,'Sachan','1994-03-07','PG-DBDA');
+insert into ccat_student values('2203005','Kamana',NULL,'Mathur','1997-07-04','PG-DESD');
 insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','PG-DAC');
 
 -- --------------------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ insert into personal_details values('1',2203001,'Hardik',NULL,'Agarwal','M','200
 insert into personal_details values('2',2203002,'Joy',NULL,'Pahari','M','1998-09-01','joypahari11@gmail.com','7798003910','B.tech','https:\\joy.png','PG-DAC','SB Pahari', '7499153589');
 
 -- --------------------------------------------------------------------------------------------
-
+select * from personal_details
 -- user_address table
 
 INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
@@ -32,7 +32,7 @@ INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','
 -- --------------------------------------------------------------------------------------------
 
 -- user_login table
-
+select * from user_login
 insert into user_login values(10000,'admin',11111,11111,'ADMIN','PG-DAC');
 
 -- --------------------------------------------------------------------------------------------
@@ -76,3 +76,7 @@ INSERT INTO notice VALUES('EFGH','http://link2','N');
 INSERT INTO notice VALUES('IJKL','http://link3','N');
 
 -- --------------------------------------------------------------------------------------------
+
+-- lecture_link table
+
+INSERT INTO lecture_link VALUES(1,'PG-D','2022-09-22','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');
