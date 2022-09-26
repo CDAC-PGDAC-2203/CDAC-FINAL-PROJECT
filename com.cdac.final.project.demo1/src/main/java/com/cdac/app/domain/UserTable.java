@@ -13,12 +13,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "user_table")
+@IdClass(UserId.class)
 public class UserTable {
 
+	@Id
 	@Column(name = "u_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
