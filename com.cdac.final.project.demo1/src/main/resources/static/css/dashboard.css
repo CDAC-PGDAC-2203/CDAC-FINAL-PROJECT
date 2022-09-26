@@ -1,14 +1,42 @@
-@import
-	url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700)
-	;
-
-@import
-	url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic)
-	;
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
 
 body {
 	background: linear-gradient(#2EAAFA, #1F2F98);
-	width: 100%;
+	background-attachment: fixed;
+}
+
+.circular-progress-1,
+.circular-progress-2 {
+    position: relative;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+	box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px
+		rgba(255, 255, 255, 0.7);
+}
+
+.circular-progress-1:before,
+.circular-progress-2:before {
+    content: "";
+    position: absolute;
+    height: 78%;
+    width: 78%;
+    background-color: white;
+    border-radius: 50%;
+	box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset 4px 4px 6px
+		-1px rgba(255, 255, 255, 0.7), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+		0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+
+.value-container-1,
+.value-container-2 {
+    position: relative;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 30px;
+    color: black;
 }
 
 .card-margin {

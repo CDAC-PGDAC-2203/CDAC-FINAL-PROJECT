@@ -23,7 +23,6 @@ insert into personal_details values('1',2203001,'Hardik',NULL,'Agarwal','M','200
 insert into personal_details values('2',2203002,'Joy',NULL,'Pahari','M','1998-09-01','joypahari11@gmail.com','7798003910','B.tech','https:\\joy.png','PG-DAC','SB Pahari', '7499153589');
 
 -- --------------------------------------------------------------------------------------------
-select * from personal_details
 -- user_address table
 
 INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
@@ -32,7 +31,6 @@ INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','
 -- --------------------------------------------------------------------------------------------
 
 -- user_login table
-select * from user_login
 insert into user_login values(10000,'admin',11111,11111,'ADMIN','PG-DAC');
 
 -- --------------------------------------------------------------------------------------------
