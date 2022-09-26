@@ -162,31 +162,17 @@ public class AdminController {
 		}
 	}
 
-	// API to mark solved doubts
-//	@PutMapping("/doubt/{doubtId}")
-//	public ResponseEntity<?> updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
-//		SimpleString simple = new SimpleString("DONE");
-//		try{
-//			dashboardService.updateActiveFlag(doubtId);
-//			logger.info("************Doubt:" + doubtId + " inactive*************");
-//			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-//		}catch(Exception e) {
-//			simple = new SimpleString("FAILED");
-//			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-//		}
-//
-//	}
-	
 	@PutMapping("/doubt/{doubtId}")
-	public String updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
+	public ResponseEntity<?> updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
+		SimpleString simple = new SimpleString("DONE");
 		try{
 			dashboardService.updateActiveFlag(doubtId);
 			logger.info("************Doubt:" + doubtId + " inactive*************");
-			return "/activeDoubtList";
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}catch(Exception e) {
-			return null;
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
-
 	}
 
 	// API to upload attendance of students

@@ -23,18 +23,6 @@ $(document).ready(() => {
          });
     });
 
-    $("#updateDoubt").click((e)=>{
-        e.preventDefault();
-        $.ajax({
-            url: "/portal/admin/doubts/flag",
-            type: "GET",
-            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-            success: (data) => {
-                $("body").html(data);
-            }
-         });
-    });
-
     $("#attendance").click((e)=>{
         e.preventDefault();
         $.ajax({

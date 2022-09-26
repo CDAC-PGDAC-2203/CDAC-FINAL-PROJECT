@@ -42,5 +42,67 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/activeDoubtList.js"></script>
+	<!-- <script src="js/activeDoubtList.js" type="text/javascript"></script> -->
+	<script>
+	$(document).ready(()=>{
+	    $.ajax({
+	        url: "/portal/doubts",
+	        type: "GET",
+	        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+	        success: (data) => {
+
+	            data.forEach((element) =>{
+	                var tableRow = "<tr style='font-family: helvetica;'>" 
+	                             + "<td scope='row'>" + element.userPrn + "</td>"
+	                             + "<td scope='row'>" + element.userName + "</td>"
+	                             + "<td scope='row'>" + element.email + "</td>"
+	                             + "<td scope='row'>" + element.subjectName + "</td>"
+	                             + "<td scope='row'>" + element.doubtContent + "</td>"
+	                             + "<td scope='row'>" + element.attachment +"</td>"
+	                             + "<td scope='row'><button id='" + element.doubtId + "' onclick='update_doubt_flag(" +  element.doubtId + ")'>Solved</button></td>"
+	                             + "</tr>";
+	                $("#doubtTable").append(tableRow);
+	            });
+	        },
+	        error: (error) => {
+	           //append FAILURE MESSAGE ON Ui
+	        }
+	     });
+
+	    $("#adminDashboard").click((e)=>{
+	        e.preventDefault();
+	        $.ajax({
+	            url: "/portal/admin",
+	            type: "GET",
+	            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+	            success: (data) => {
+	               $("body").html(data);
+	            }
+	         }); 
+	    });
+
+	});
+	
+	function update_doubt_flag(value){
+        var doubtId = value;
+        $.ajax({
+           url: "/portal/doubt/"+doubtId,
+           type: "PUT",
+           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+           success: (data) => {
+        	   $.ajax({
+                   url: "/portal/admin/doubts",
+                   type: "GET",
+                   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+                   success: (data) => {
+                       $("body").html(data);
+                   }
+                });
+           },
+           error: (error) => {
+              alert("Internal Server Error!");
+           }
+        }); 
+    }
+	</script>
 </body>
