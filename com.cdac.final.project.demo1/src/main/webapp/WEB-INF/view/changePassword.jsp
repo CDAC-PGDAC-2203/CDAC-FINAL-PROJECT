@@ -119,17 +119,18 @@
     <div class="main-container">
         <div class="login-box">
             <div class="input-block">
-           <input type="password" placeholder="Current Password" class="input-control" required>
+           <input id="oldPassword" type="password" placeholder="Current Password" class="input-control" required>
            </div>
            <div class="input-block">
-           <input type="password" placeholder="New Password" class="input-control">
+           <input id="newPassword" type="password" placeholder="New Password" class="input-control">
         </div>
         <div class="input-block">
-            <input type="password" placeholder="Retype New Password" class="input-control">
+            <input id="newRetypePassword" type="password" placeholder="Retype New Password" class="input-control">
          </div>
         <div class="input-box">
             <button class="btn" id="chPassword">Change Password</button>
         </div>
+        <span id="message"></span>
        
         </div>
     </div>

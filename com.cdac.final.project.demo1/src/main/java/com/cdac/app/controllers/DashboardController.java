@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
-import com.cdac.app.domain.UserAddress;
+import com.cdac.app.dto.ChangePasswordDTO;
+import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IFeedbackService;
 import com.cdac.app.service.IJoinLectureService;
@@ -25,6 +26,7 @@ import com.cdac.app.service.IJoinLectureService;
 public class DashboardController {
 
 	private final static Logger logger = LoggerFactory.getLogger(DashboardController.class);
+
 	@Autowired
 	private IDashboardService service;
 
@@ -35,12 +37,12 @@ public class DashboardController {
 	private IJoinLectureService joinLectureService;
 
 	@GetMapping("/dashboard")
-	public String loadUserDashboard(){
+	public String loadUserDashboard() {
 		return "/studentDashboard";
 	}
 
 	@GetMapping("/profile")
-	public String loadProfilePage(){
+	public String loadProfilePage() {
 		return "/myProfile";
 	}
 
@@ -53,19 +55,31 @@ public class DashboardController {
 	@GetMapping("/profile/{uPrn}")
 	public ResponseEntity<HashMap<String, String>> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
-			HashMap<String,String> map =  service.getProfile(uPrn);
-			logger.info("************Received profile of" + uPrn +"*************");
-			return new ResponseEntity<>(map,HttpStatus.OK);
-		}catch(Exception e) {
-			HashMap<String,String> badMap= null;
+			HashMap<String, String> map = service.getProfile(uPrn);
+			logger.info("************Received profile of" + uPrn + "*************");
+			return new ResponseEntity<>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			HashMap<String, String> badMap = null;
 			return new ResponseEntity<>(badMap, HttpStatus.OK);
 		}
 	}
 
-	// API to update user profile (Address)
+	// API to update user password
 	@PostMapping("/profile")
-	public void updateProfile(@RequestBody UserAddress address, Long uPrn) {
-		service.updateProfile(address, uPrn);
+	public ResponseEntity<?> updateProfile(@RequestBody ChangePasswordDTO password) {
+		SimpleString simple = new SimpleString("DONE");
+		try {
+			service.updateProfile(password.getOldPassword(), password.getNewPassword(), password.getuPrn());
+			logger.info("************Uploaded Attendance Key*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to get doubt details

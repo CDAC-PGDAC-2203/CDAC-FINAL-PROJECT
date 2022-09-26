@@ -17,12 +17,15 @@ import com.cdac.app.domain.Notice;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.domain.UserAddress;
+import com.cdac.app.domain.UserLogin;
+import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.IDoubtForumRepository;
 import com.cdac.app.repositories.IFinalResultRepository;
 import com.cdac.app.repositories.INoticeRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
+import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.service.IDashboardService;
 
 @Component
@@ -46,6 +49,9 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private INoticeRepository noticeRepository;
+
+	@Autowired
+	private IUserLoginRepository userLoginRepository;
 
 	// Method to calculate performance of a student
 	@Override
@@ -179,11 +185,14 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to fetch personal details
 	@Override
-	public HashMap<String, String> getProfile(Long uPrn) {
+	public HashMap<String, String> getProfile(Long uPrn) throws Exception {
 
 		PersonalDetails pDetail = personalDetailsRepository.findByUPrn(uPrn);
 		UserAddress address = addressDetailsRepository.findByUPrn(uPrn);
 
+		if ((pDetail == null) || (address == null)) {
+			throw new CDACAppException("USER DETAILS NOT FOUND!!");
+		}
 		HashMap<String, String> map = new HashMap<>();
 
 		map.put("u_prn", uPrn.toString());
@@ -211,13 +220,13 @@ public class DashboardServiceImpl implements IDashboardService {
 		return map;
 	}
 
-	// Method to update profile details (Address)
 	@Override
-	public void updateProfile(UserAddress address, Long uPrn) {
-		UserAddress addressSaved = addressDetailsRepository.findByUPrn(uPrn);
-		if ((!(address.getAddLine1()).equals(addressSaved.getAddLine1()))
-				|| !(address.getPincode()).equals(addressSaved.getPincode())) {
-			addressDetailsRepository.save(address);
+	public void updateProfile(String oldPassword, String newPassword, Long uPrn) throws Exception {
+		UserLogin user = userLoginRepository.findByUserPassword(uPrn, oldPassword);
+		if (user != null) {
+			user.setuPassword(newPassword);
+		} else {
+			throw new CDACAppException("WRONG OLD PASSWORD!");
 		}
 	}
 
