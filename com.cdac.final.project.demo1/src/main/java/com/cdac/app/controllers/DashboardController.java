@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
+import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.dto.ChangePasswordDTO;
 import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
@@ -90,8 +91,16 @@ public class DashboardController {
 
 	// API to show student performance
 	@GetMapping("/performance/{uPrn}")
-	public Double getFinalPerformance(@PathVariable(name = "uPrn") Long uPrn) {
-		return service.getPerformance(uPrn);
+	public ResponseEntity<?> getFinalPerformance(@PathVariable(name = "uPrn") Long uPrn) {
+		try {
+			Long finalPerformance = Math.round(service.getPerformance(uPrn));
+			return new ResponseEntity<Long>(finalPerformance,HttpStatus.OK);
+		}catch(Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			Long bad = 0L;
+			return new ResponseEntity<Long>(bad,HttpStatus.ACCEPTED);
+		}
 	}
 
 	// API to show student attendance report
@@ -100,10 +109,19 @@ public class DashboardController {
 		return service.getTotalAttendance(uPrn);
 	}
 
-	// API to show student module wise attendance report
+	// API to show stuRdent module wise attendance report
 	@GetMapping("/moduleAttendance/{uPrn}")
-	public HashMap<String, Double> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn) {
-		return service.getModuleAttendance(uPrn);
+	public  ResponseEntity<List<TotalAttendance>> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn) {
+		try {
+			List<TotalAttendance> list = service.getModuleAttendance(uPrn);;
+			logger.info("************Received profile of" + uPrn + "*************");
+			return new ResponseEntity<>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			List<TotalAttendance> badList = null;
+			return new ResponseEntity<>(badList, HttpStatus.OK);
+		}
 	}
 
 	// API to store feedback

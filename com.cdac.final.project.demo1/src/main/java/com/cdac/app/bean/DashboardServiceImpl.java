@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.DoubtForum;
+import com.cdac.app.domain.EmailDetails;
 import com.cdac.app.domain.FinalResult;
 import com.cdac.app.domain.Notice;
 import com.cdac.app.domain.PersonalDetails;
@@ -27,6 +28,7 @@ import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
 import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.service.IDashboardService;
+import com.cdac.app.service.IEmailService;
 
 @Component
 @Transactional
@@ -53,13 +55,19 @@ public class DashboardServiceImpl implements IDashboardService {
 	@Autowired
 	private IUserLoginRepository userLoginRepository;
 
+	@Autowired
+	private IEmailService emailService;
+
 	// Method to calculate performance of a student
 	@Override
-	public Double getPerformance(Long uPrn) {
+	public Double getPerformance(Long uPrn) throws Exception{
 		Double performancePercentage = 0.0;
 		int total = 0, obtained = 0;
 
 		FinalResult uResult = finalResultRepositiry.findByUPrn(uPrn);
+		if(uResult == null) {
+			throw new CDACAppException("PERFORMANCE CALCULATION ERROR");
+		}
 
 		if (uResult.getMod1() != null) {
 			obtained += uResult.getMod1();
@@ -124,13 +132,9 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to get module wise attendance of a student
 	@Override
-	public HashMap<String, Double> getModuleAttendance(Long uPrn) {
+	public List<TotalAttendance> getModuleAttendance(Long uPrn) {
 		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
-		HashMap<String, Double> map = new HashMap<>();
-		for (TotalAttendance ta : list) {
-			map.put(ta.getModule(), ((ta.getAttendedLecture() * 1.0) / ta.getTotalLecture()) * 100);
-		}
-		return map;
+		return list;
 	}
 
 	// Method to store doubt details in dataBase
@@ -225,6 +229,7 @@ public class DashboardServiceImpl implements IDashboardService {
 		UserLogin user = userLoginRepository.findByUserPassword(uPrn, oldPassword);
 		if (user != null) {
 			user.setuPassword(newPassword);
+			sendPasswordChangeMail(newPassword, uPrn);
 		} else {
 			throw new CDACAppException("WRONG OLD PASSWORD!");
 		}
@@ -265,4 +270,45 @@ public class DashboardServiceImpl implements IDashboardService {
 		return listMap;
 	}
 
+	public void sendPasswordChangeMail(String newPassword, Long uPrn) {
+		EmailDetails email = new EmailDetails();
+		PersonalDetails user = personalDetailsRepository.findByUPrn(uPrn);
+		email.setRecipient(user.getEmail());
+
+		String name = user.getfName();
+		if (user.getmName() != null) {
+			name = name + " " + user.getmName();
+		}
+		if (user.getlName() != null) {
+			name = name + " " + user.getlName();
+		}
+
+		email.setSubject("CDAC ACTS PUNE | " + "Password Change Alert | " + name);
+
+		String messageBody = "Hi "+name+"\n"
+					   +"Greetings of the day!\n"
+					   +"\n"
+					   +"\n"
+					   +"\n"
+					   +"This is to bring to your kind notice "
+					   +"that your login credentials have been recently modified at the "
+					   +"CDAC Student Portal.\n"
+					   +"Your new credentials to login are as follows:-\n"
+					   +"\n"
+					   +"\n"
+					   +"user-id: " + uPrn +"\n"
+					   +"password: " + newPassword +"\n"
+					   +"\n"
+					   +"\n"
+					   +"\n"
+					   +"Please get in touch with your Course "
+					   +"Coordinator if not done by you.\n"
+					   +"Best Regards,\n"
+					   +"Administrator \n"
+					   +"Student Portal Maintainace Team\n"
+					   +"CDAC ACTS Pune.";
+
+		email.setMsgBody(messageBody);
+		emailService.sendSimpleMail(email);
+	}
 }

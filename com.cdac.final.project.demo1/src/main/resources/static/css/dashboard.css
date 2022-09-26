@@ -1,94 +1,102 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
-body{
-  background: linear-gradient(#2EAAFA, #1F2F98);
-    width: 100%;
+@import
+	url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700)
+	;
+
+@import
+	url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic)
+	;
+
+body {
+	background: linear-gradient(#2EAAFA, #1F2F98);
+	width: 100%;
 }
 
 .card-margin {
-    margin-bottom: 2.875rem;
+	margin-bottom: 2.875rem;
 }
 
 .card {
-    border: 0;
-   
+	border: 0;
 }
+
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    /* background-color: #ffffff; */
-    background-clip: border-box;
-    /* border: 1px solid #e6e4e9; */
-    border-radius: 8px;
-    box-shadow: 0 0 10px 0 #555;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	/* background-color: #ffffff; */
+	background-clip: border-box;
+	/* border: 1px solid #e6e4e9; */
+	border-radius: 8px;
+	box-shadow: 0 0 10px 0 #555;
 }
 
 .card .card-header.no-border {
-    border: 0;
+	border: 0;
 }
+
 .card .card-header {
-    background: none;
-    padding: 0 0.9375rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    min-height: 80px;
+	background: none;
+	padding: 0 0.9375rem;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	min-height: 80px;
 }
+
 .card-header:first-child {
-    border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
+	border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
 }
 /* Doubt forum */
-.doubt-div{
-    height: 30vh;
-    width: 400px;
-    background-color: aliceblue;
-    border-radius: 5px;
-    /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
-    box-shadow: 0 0 10px 0 #555;
-    padding: 5px;
-}
-.doubtForum{
-    color: black;
-    text-align: center;
-    font-size: 27px;
-    font-weight: 300;
-
+.doubt-div {
+	height: 30vh;
+	width: 400px;
+	background-color: aliceblue;
+	border-radius: 5px;
+	/* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
+	box-shadow: 0 0 10px 0 #555;
+	padding: 5px;
 }
 
-.form-select{
-    border: 0;
-    outline: 0;
-    margin: auto;
-    width: 70%;
-    border-radius: 6px;
-    background-color: #F5F5F5;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
+.doubtForum {
+	color: black;
+	text-align: center;
+	font-size: 27px;
+	font-weight: 300;
+}
+
+.form-select {
+	border: 0;
+	outline: 0;
+	margin: auto;
+	width: 70%;
+	border-radius: 6px;
+	background-color: #F5F5F5;
+	font-size: 15px;
+	font-weight: 300;
+	color: #8D8D8D;
 }
 
 #Textarea {
-    position: static !important;
-    width: 90%;
-    margin: auto;
-    padding: 8px 20px;
-    border-radius: 6px;
-    /* text-align: left; */
-    background-color: #F5F5F5;
-    border: 0;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    outline: none;
-    resize: none;
-    height: 120px;
-    /* margin-top: 4px; */
-    -webkit-transition: none;
-    transition: none;
-    margin-bottom: 10px;
+	position: static !important;
+	width: 90%;
+	margin: auto;
+	padding: 8px 20px;
+	border-radius: 6px;
+	/* text-align: left; */
+	background-color: #F5F5F5;
+	border: 0;
+	font-size: 15px;
+	font-weight: 300;
+	color: #8D8D8D;
+	outline: none;
+	resize: none;
+	height: 120px;
+	/* margin-top: 4px; */
+	-webkit-transition: none;
+	transition: none;
+	margin-bottom: 10px;
 }
 
 /* #Textarea:hover, #Textarea:focus {
@@ -96,191 +104,228 @@ body{
     background-color: #ebeff8;
     color: #8D8D8D;
 } */
-
-.doubtContent{
-    text-align: center;
+.doubtContent {
+	text-align: center;
 }
-.doubtSubmit{
-    border: none;
-    width: 4rem;
-    height: 2rem;
-    color: #fff;
-    background-color: rgb(65, 105, 225);
 
+.doubtSubmit {
+	border: none;
+	width: 4rem;
+	height: 2rem;
+	color: #fff;
+	background-color: rgb(65, 105, 225);
 }
-.doubtSubmit:hover{
-    background-color: goldenrod;
+
+.doubtSubmit:hover {
+	background-color: goldenrod;
 }
 
 /* Schedule css */
-
 .schedule-outer {
-  height: 240px;
-  width: 270px;
-  margin-top: 26px;
-  background-color: white;
-  border-radius: 5px;
-  /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+	height: 240px;
+	width: 270px;
+	margin-top: 26px;
+	background-color: white;
+	border-radius: 5px;
+	/* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15); */
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* performance css */
-.skill
-{
-    margin: auto;
-    width: 160px;
-    height: 160px;
-    /* background: cornflowerblue; */
-    position: relative;
-    margin-left: 100px;
-    margin-top: 30px;
-   
+.skill {
+	margin: auto;
+	width: 160px;
+	height: 160px;
+	/* background: cornflowerblue; */
+	position: relative;
+	margin-left: 100px;
+	margin-top: 30px;
 }
 
-.outer{
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-                 -6px -6px 10px -1px rgba(255,255,255,0.7);
-                
+.outer {
+	height: 160px;
+	width: 160px;
+	border-radius: 50%;
+	padding: 20px;
+	box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px
+		rgba(255, 255, 255, 0.7);
 }
 
-.inner{
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-                 inset 4px 4px 6px -1px rgba(255,255,255,0.7),
-                 0.5px 0.5px 0px rgba(0,0,0,0.15),
-                 0px 12px 10px -10px rgba(0,0,0,0.05);
+.inner {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset 4px 4px 6px
+		-1px rgba(255, 255, 255, 0.7), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+		0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 
-#number{
-    font-weight: 600;
-    color: #555;
+#number {
+	font-weight: 600;
+	color: #555;
 }
 
-circle{
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 472;
-    stroke-dashoffset: 472;
-    animation: anim 2s linear forwards;
+circle {
+	fill: none;
+	stroke: url(#GradientColor);
+	stroke-width: 20px;
+	stroke-dasharray: 472;
+	stroke-dashoffset: 472;
+	animation: anim 2s linear forwards;
 }
 
-svg{
-    position: absolute;
-    top: 0;
-    left: 0;
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
-@keyframes anim{
-    100%{
-        stroke-dashoffset: 165;
-    }
+@
+keyframes anim { 100%{
+	stroke-dashoffset: 165;
+}
+
 }
 
 /* notice-board css */
-.notice-board-div{
-  margin: auto;
-  width: 50%;
-  border-radius: 5px;
-  background-color: white;
-}
-.desc{
-  text-align: center;
+.notice-board-div {
+	margin: auto;
+	width: 50%;
+	border-radius: 5px;
+	background-color: white;
 }
 
-
-.chart{
-  width: 520px;
-  height: 270px;
-  display: block;
+.desc {
+	text-align: center;
 }
 
-.numbers{
-  color: black;
-  margin-left: -50px;
-  margin-bottom: 35px;
-  padding: 0;
-  width: 50px;
-  height: 100%;
-  display: inline-block;
-  /* float: left; */
+.chart {
+	width: 520px;
+	height: 270px;
+	display: block;
 }
 
-.numbers li{
-  list-style: none;
-  height: 140px;
-  position: relative;
-  bottom: 120px;
+.numbers {
+	color: black;
+	margin-left: -50px;
+	margin-bottom: 35px;
+	padding: 0;
+	width: 50px;
+	height: 100%;
+	display: inline-block;
+	/* float: left; */
 }
 
-.numbers span{
-  font-size: 12px;
-  font-weight: 600;
-  position: absolute;
-  bottom: 0;
-  right: 10px;
+.numbers li {
+	list-style: none;
+	height: 140px;
+	position: relative;
+	bottom: 120px;
 }
 
-.bars{
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  background: #fff;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  width: 450px;
-  height: 270px;
-  /* box-shadow: 0 0 10px 0 #555; */
-  border-radius: 5px;
-  margin-bottom: 20px;
+.numbers span {
+	font-size: 12px;
+	font-weight: 600;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
 }
 
-.bars li{
-  display: table-cell;
-  width: 70px;
-  height: 270px;
-  position: relative;
+.bars {
+	color: black;
+	font-size: 12px;
+	font-weight: 600;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	width: 400px;
+	height: 200px;
+	/* box-shadow: 0 0 10px 0 #555; */
+	border-radius: 5px;
+	margin-bottom: 20px;
 }
 
-.bars span{
-  width: 160%;
-  position: absolute;
-  bottom: -30px;
-  text-align: center;
+.bars li {
+	display: table-cell;
+	width: 45px;
+	height: 200px;
+	position: relative
 }
 
-.bars .bar{
-  display: block;
-  background: goldenrod;
-  width: 40px;
-  position: absolute;
-  bottom: 0;
-  margin-left: 25px;
-  text-align: center;
-  box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
-  transition: 0.5s;
-  transition-property: background,box-shadow;
+.bars span {
+	width: 160%;
+	position: absolute;
+	bottom: -30px;
+	text-align: center;
 }
 
-.bars .bar:hover{
-  background: #55EFC4;
-  box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
-  cursor: pointer;
+.bars .bar {
+	display: block;
+	background: goldenrod;
+	width: 40px;
+	position: absolute;
+	bottom: 0;
+	margin-left: 25px;
+	text-align: center;
+	box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
+	transition: 0.5s;
+	transition-property: background, box-shadow;
 }
 
-.bars .bar:before{
-  color: black;
-  content: attr(data-percentage);
-  position: relative;
-  bottom: 20px;
+.bars .bar:hover {
+	background: #55EFC4;
+	box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
+	cursor: pointer;
+}
+
+.bars .bar:before {
+	color: black;
+	content: attr(data-percentage);
+	position: relative;
+	bottom: 20px;
+}
+
+/* media queries */
+@media ( max-width : 768px) {
+	.chart {
+		width: 520px;
+		height: 270px;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 1199px) {
+	/* .card-title{
+    width: 50%;
+  } */
+	.card {
+		width: 400px;
+	}
+	.chart {
+		width: 50%;
+	}
+	.attendance-card {
+		width: 50%;
+	}
+	.bars {
+		width: 250px;
+	}
+}
+
+@media ( min-width : 1200px) and (max-width: 1400px) {
+	/* .card{
+    width: 50%;
+  } */
+	/* .chart{
+    width: 50%;
+  }
+  .attendance-card{
+    width: 50%;
+  } */
+	.bars {
+		width: 360px;
+	}
 }

@@ -222,48 +222,10 @@
 					<div class="card card-margin" style="width: 120%;">
 						<h3 class="card-title my-3" style="text-align: center;">Attendance</h3>
 						<div class="card-body pt-0">
-							<!-- <div style="height: 60%;"> -->
 							<div class="chart">
-								<!-- <ul class="numbers">
-                                        <li><span>100%</span></li>
-                                        <li><span>50%</span></li>
-                                        <li><span>0%</span></li>
-                                    </ul> -->
-								<ul class="bars">
-									<li>
-										<div class="bar" data-percentage="50"></div>
-										<span>COP</span>
-									</li>
-									<li>
-										<div class="bar" data-percentage="30"></div>
-										<span>DBT</span>
-									</li>
-									<li>
-										<div class="bar" data-percentage="60"></div>
-										<span>J2SE</span>
-									</li>
-									<li>
-										<div class="bar" data-percentage="100"></div>
-										<span>ADS</span>
-									</li>
-									<li>
-										<div class="bar" data-percentage="60"></div>
-										<span>WPT</span>
-									</li>
-									<li>
-										<div class="bar" data-percentage="80"></div>
-										<span>J2EE</span>
-									</li>
-									<li>
-										<div class="bar" data-percentage="30"></div>
-										<span>SDM</span>
-									</li>
-									<li>
-										<div class="bar" data-percentage="20"></div>
-										<span>MS .NET</span>
-									</li>
+								<ul class="bars" id="attendaceBars">
+									
 								</ul>
-								<!-- </div> -->
 							</div>
 						</div>
 					</div>
@@ -354,20 +316,11 @@
 	</footer>
 	<!-- Footer -->
 	<script>
-    let number1 = document.getElementById("number1");
-    let counter1 = 0;
-    setInterval(() => {
-        if (counter1 == 65) {
-            clearInterval();
-        } else {
-            counter1 += 1;
-            number1.innerHTML = counter1+ "%";
-        }
-    }, 30);
+
     let number2 = document.getElementById("number2");
     let counter2 = 0;
     setInterval(() => {
-        if (counter2 == 65) {
+        if (counter2 == 5) {
             clearInterval();
         } else {
             counter2 += 1;
@@ -375,14 +328,7 @@
         }
     }, 30);
 
-    $(function () {
-      $('.bars li .bar').each(function (key, bar) {
-        var percentage = $(this).data('percentage');
-        $(this).animate({
-          'height': percentage + '%'
-        }, 1000)
-      });
-    });
+    
   </script>
   <script src="js/dashboard.js"></script>
 </body>

@@ -4,15 +4,16 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.cdac.app.domain.DoubtForum;
+import com.cdac.app.domain.TotalAttendance;
 
 public interface IDashboardService {
 	void saveDoubtDetails(DoubtForum doubtDetails);
 
-	Double getPerformance(Long uPrn);
+	Double getPerformance(Long uPrn) throws Exception;
 
 	Double getTotalAttendance(Long uPrn);
 
-	HashMap<String, Double> getModuleAttendance(Long uPrn);
+	List<TotalAttendance> getModuleAttendance(Long uPrn);
 
 	List<DoubtForum> getActiveDoubts();
 
