@@ -17,6 +17,7 @@ $(document).ready(function(){
                 }),
             success: function(returnedData){
                 localStorage.setItem("token",returnedData.token);
+                localStorage.setItem("uPrn",returnedData.uPrn);
                 if(returnedData.uRole == "ADMIN"){ 
                     $.ajax({
                         url: "/portal/admin",

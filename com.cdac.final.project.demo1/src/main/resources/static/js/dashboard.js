@@ -1,10 +1,13 @@
 $(document).ready(() => {
-    $("#btn-menu-search").click(function () {
+    $("#student_profile").click(function () {
         var searchKey = $("#txt-menu-search").val();
         $.ajax({
-            type: 'GET',
-            url: '/web-selfcare/search-menu/'+searchKey,
-            success: function (result) {
-        }
+            type: "GET",
+            url: "/portal/profile",
+            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+            success: (data) => {
+                $("body").html(data);
+            }
+         });
     });
 });

@@ -30,8 +30,13 @@ public class DashboardController {
 	private IJoinLectureService joinLectureService;
 
 	@GetMapping("/dashboard")
-	public String loadUserDashboard() {
+	public String loadUserDashboard(){
 		return "/studentDashboard";
+	}
+
+	@GetMapping("/profile")
+	public String loadProfilePage(){
+		return "/myProfile";
 	}
 
 	// API to show user profile details

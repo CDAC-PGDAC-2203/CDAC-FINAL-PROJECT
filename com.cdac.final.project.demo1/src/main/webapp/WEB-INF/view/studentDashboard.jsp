@@ -7,12 +7,13 @@
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/cdac.jpeg">
 <link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
 <script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css" type="text/css"/>
+<script src="${pageContext.request.contextPath}/js/dashboard.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
-        <a class="navbar-brand" href="#"><img class="img-responsive" src="D:\cdac-logo.jpeg"></a>
+        <a class="navbar-brand" href=""><img class="img-responsive" src="${pageContext.request.contextPath}/img/cdac-logo.jpeg"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -67,7 +68,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false"></a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li id="myprofile"><a class="dropdown-item" href="#">My Profile</a></li>
+                <li id="myprofile"><a class="dropdown-item" href="" id="student_profile">My Profile</a></li>
                 <li id="logout"><a class="dropdown-item" href="#">Logout</a></li>
               </ul>
             </li>
@@ -283,7 +284,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
