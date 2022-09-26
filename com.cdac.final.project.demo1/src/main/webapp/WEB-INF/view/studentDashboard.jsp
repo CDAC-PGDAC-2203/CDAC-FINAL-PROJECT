@@ -1,16 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>CDAC APP | Dashboard</title>
-<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/cdac.jpeg">
-<link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
-<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" type="text/css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css" type="text/css"/>
-<script src="${pageContext.request.contextPath}/js/dashboard.js"></script>
-</head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
         <a class="navbar-brand" href=""><img class="img-responsive" src="${pageContext.request.contextPath}/img/cdac-logo.jpeg"></a>
@@ -65,7 +54,7 @@
               <a class="nav-link" href="#">Feedback</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false"></a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li id="myprofile"><a class="dropdown-item" href="" id="student_profile">My Profile</a></li>
@@ -370,7 +359,6 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
-</body>
 <script>
     let number1 = document.getElementById("number1");
     let counter1 = 0;
@@ -405,4 +393,4 @@
       });
     });
   </script>
-</html>
+</body>

@@ -1,17 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>CDAC APP | Admin ActiveDoubt List</title>
-<link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/feedBackList.css" />
-<script src="${pageContext.request.contextPath}/js/commonAdminTiles.js"></script>
-<script src="${pageContext.request.contextPath}/js/activeDoubtList.js"></script>
-</head>
+
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
 		<a class="navbar-brand" href="#"><img class="img-responsive"
@@ -26,12 +15,9 @@
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link" id="adminDashboard" href="#">Admin
 						Home Page</a></li>
-
 			</ul>
 		</div>
 	</nav>
-
-
 	<div class="feedback-table">
 		<div class="container outerdiv">
 			<h4 style="color: white;">
@@ -50,12 +36,10 @@
 							<th scope="row"></th>
 						</tr>
 					</thead>
-					<tbody id="doubtTable">
-						
+					<tbody id="doubtTable">				
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
 </body>
-</html>

@@ -7,8 +7,8 @@
 	<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/cdac.jpeg">
 
 	<link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<script src="${pageContext.request.contextPath}/js/jquery-3.6.1.js"></script>
 	<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/jquery-3.6.1.js"></script>
 	<link href="${pageContext.request.contextPath}/css/styleAdmin.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/css/styleNavbarAndFooter.css" rel="stylesheet">
 	<script src="${pageContext.request.contextPath}/js/commonAdminTiles.js"></script>

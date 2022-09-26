@@ -3,13 +3,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CDAC APP | Login</title>
+
+<title>CDAC APP | Student Portal </title>
 <link rel="icon" type="image/x-icon" href="img/cdac.jpeg">
+
+<!-- Framework Links -->
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="css/login.css" />
 <script src="js/jquery-3.6.1.js"></script>
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/login.css" />
+<link rel="stylesheet" href="css/styleNavbarAndFooter.css" type="text/css" />
+<link rel="stylesheet" href="css/feedBackList.css" />
+<link rel="stylesheet" href="css/dashboard.css" type="text/css"/>
+
+<!-- Custom JS -->
 <script src="js/login.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/commonAdminTiles.js"></script>
+<script src="js/activeDoubtList.js"></script>
 	
 </head>
 <body>
