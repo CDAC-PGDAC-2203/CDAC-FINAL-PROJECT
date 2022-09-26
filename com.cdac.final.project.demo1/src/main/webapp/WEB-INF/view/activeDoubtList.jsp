@@ -13,7 +13,7 @@
 		<div class="collapse navbar-collapse justify-content-end"
 			id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link" id="adminDashboard" href="#">Admin
+				<li class="nav-item active"><a class="nav-link" id="adminDashboard" href="">Admin
 						Home Page</a></li>
 			</ul>
 		</div>
@@ -42,4 +42,5 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/activeDoubtList.js"></script>
 </body>

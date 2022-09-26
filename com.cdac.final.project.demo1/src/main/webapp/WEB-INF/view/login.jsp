@@ -16,14 +16,12 @@
 <link rel="stylesheet" href="css/login.css" />
 <link rel="stylesheet" href="css/feedBackList.css" />
 <link rel="stylesheet" href="css/dashboard.css" type="text/css"/>
+<link rel="stylesheet" href="css/adminDashboard.css" />
 <link rel="stylesheet" href="css/styleNavbarAndFooter.css" type="text/css" />
 
-<!-- Custom JS -->
-<script src="js/activeDoubtList.js"></script>
-<script src="js/login.js"></script>
-<script src="js/dashboard.js"></script>
-<script src="js/commonAdminTiles.js"></script>
 
+<!-- Custom JS -->
+<script src="js/login.js"></script>
 	
 </head>
 <body>

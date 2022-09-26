@@ -45,8 +45,8 @@
 					role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
 					<ul class="dropdown-menu dropdown-menu-end"
 						aria-labelledby="navbarDropdown">
-						<li id="myprofile"><a class="dropdown-item" href=""
-							id="student_profile">My Profile</a></li>
+						<li id="student_profile"><button class="dropdown-item"
+							type="button">My Profile</button></li>
 						<li id="logout"><a class="dropdown-item" href="">Logout</a></li>
 					</ul></li>
 			</ul>
@@ -384,4 +384,5 @@
       });
     });
   </script>
+  <script src="js/dashboard.js"></script>
 </body>

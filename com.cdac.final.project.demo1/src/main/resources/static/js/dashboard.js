@@ -1,5 +1,6 @@
 $(document).ready(() => {
-    $("#student_profile").click(function () {
+    $("#student_profile").click((e)=>{
+        e.preventDefault();
         $.ajax({
             type: "GET",
             url: "/portal/profile",
