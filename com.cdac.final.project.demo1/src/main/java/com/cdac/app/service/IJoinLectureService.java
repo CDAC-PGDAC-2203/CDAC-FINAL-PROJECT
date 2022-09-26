@@ -9,5 +9,5 @@ public interface IJoinLectureService {
 
 	HashMap<String, String> getLectureTime(String date, String course);
 
-	HashMap<String, String> getLectureLink(String date, String course);
+	HashMap<String, String> getLectureLink(String date, String course) throws Exception;
 }

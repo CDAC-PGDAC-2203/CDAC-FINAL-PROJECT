@@ -18,6 +18,7 @@ import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.dto.ChangePasswordDTO;
+import com.cdac.app.dto.LectureDTO;
 import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
 import com.cdac.app.service.IFeedbackService;
@@ -132,16 +133,33 @@ public class DashboardController {
 
 	// API to get lecture timings
 	@GetMapping("/time/{date}/{course}")
-	public HashMap<String, String> lectureTime(@PathVariable(name = "date") String date,
+	public ResponseEntity<HashMap<String, String>> lectureTime(@PathVariable(name = "date") String date,
 			@PathVariable(name = "course") String course) {
-		return joinLectureService.getLectureTime(date, course);
+		try {
+			HashMap<String, String> map = joinLectureService.getLectureTime(date, course);
+			logger.info("************Received Links of" + date + "*************");
+			return new ResponseEntity<>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			HashMap<String, String> badMap = null;
+			return new ResponseEntity<>(badMap, HttpStatus.OK);
+		}
 	}
 
 	// API to get lecture links
-	@GetMapping("/links/{date}/{course}")
-	public HashMap<String, String> lectureLink(@PathVariable(name = "date") String date,
-			@PathVariable(name = "course") String course) {
-		return joinLectureService.getLectureLink(date, course);
+	@PostMapping("/dashboard/links")
+	public ResponseEntity<HashMap<String, String>> lectureLink(@RequestBody LectureDTO lecture) {
+		try {
+			HashMap<String, String> map = joinLectureService.getLectureLink(lecture.getYear()+"-"+lecture.getMonth()+"-"+lecture.getDay(), lecture.getCourse());
+			logger.info("************Received Links of" + lecture.getYear()+"-"+lecture.getMonth()+"-"+lecture.getDay() + "*************");
+			return new ResponseEntity<>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			HashMap<String, String> badMap = null;
+			return new ResponseEntity<>(badMap, HttpStatus.OK);
+		}
 	}
 
 	// API to get notice details on dashBoard

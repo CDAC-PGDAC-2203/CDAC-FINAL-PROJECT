@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.LectureLink;
+import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.ILectureLinkRepository;
 import com.cdac.app.service.IJoinLectureService;
 
@@ -42,11 +43,15 @@ public class JoinLectureServiceImpl implements IJoinLectureService {
 
 	// Method to get lecture links
 	@Override
-	public HashMap<String, String> getLectureLink(String date, String course) {
+	public HashMap<String, String> getLectureLink(String date, String course) throws Exception{
 
 		HashMap<String, String> map = new HashMap<>();
 		LectureLink lectureLink = repository.findByDate(LocalDate.parse(date), course);
-
+		
+		if(lectureLink == null) {
+			throw new CDACAppException("NO LINK FOUND");
+		}
+		
 		map.put("theory", lectureLink.getTheoryLink().split("_")[1].toString());
 		map.put("b1", lectureLink.getB1Link().split("_")[1].toString());
 		map.put("b2", lectureLink.getB2Link().split("_")[1].toString());
