@@ -27,9 +27,9 @@ insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','
 -- user_table
 
 CREATE TABLE IF NOT EXISTS user_table(
-	u_id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	u_id BIGINT,
     f_name VARCHAR(25),
-    ccat_no BIGINT NOT NULL,
+    ccat_no BIGINT PRIMARY KEY NOT NULL,
     u_role VARCHAR(10)
 );
 
