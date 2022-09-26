@@ -13,6 +13,7 @@
 <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
 
 <!-- Custom CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <link rel="stylesheet" href="css/login.css" />
 <link rel="stylesheet" href="css/feedBackList.css" />
 <link rel="stylesheet" href="css/dashboard.css" type="text/css"/>
