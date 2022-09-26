@@ -38,6 +38,11 @@ $(document).ready(function(){
                      }); 
                 }
             },
+             error: (error)=>{
+               $("#login_failure").html("<i class='bi bi-info-square'></i>" + " Invalid Login Credentials!")
+               $("#prnNo").val("");
+               $("#password").val("");
+            },
             dataType: "json"
           });
     });
@@ -56,4 +61,13 @@ $(document).ready(function(){
          });
 
     });
+     //Validation
+    $("#prnNo").blur(function(){
+            var prnNo = $("#prnNo").val()
+            if (isNaN(prnNo)){
+                $("#login_message_prn").html(" PRN must be a number!");
+            }else{
+                $("#login_message_prn").html("");
+            }
+     });
 });

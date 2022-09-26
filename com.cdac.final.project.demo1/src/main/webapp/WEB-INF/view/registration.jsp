@@ -42,13 +42,18 @@
 
 							<!-- Verification -->
 							<div class="form-step form-step-active" style="margin-top: 50px;">
+							 <h6 id="register_message_ccatNo" style="color: red; margin-right: 280px"></h6>
 								<div class="input-group form-row" style="height: 4rem;">
-									<input type="text" placeholder="C-CAT No." id="ccatNo"
-										class="form-control my-3 p-4">
+								    
+									<input type="text" placeholder="C-CAT No." id="ccatNo" required="required" 
+				                          aria-required="true" class="form-control my-3 p-4">
+				                  
 								</div>
+								 <h6 id="register_message_name" style="color: red; margin-right: 140px"></h6>
 								<div class="input-group form-row">
-									<input type="text" placeholder="First Name" id="fName"
-										class="form-control my-3 p-4">
+								   
+									<input type="text" placeholder="First Name" id="fName" required="required" 
+				                            aria-required="true" class="form-control my-3 p-4">
 								</div>
 								<div class="form-row">
 									<div>
@@ -105,15 +110,17 @@
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
+					                 <h6 id="register_message_phone" style="color: red;"></h6>
 									<div>
-										<input type="text" placeholder="Phone No." id="phone"
-											class="form-control my-3 p-4">
+										<input type="text" placeholder="Phone No." id="phone" required="required" 
+				                            aria-required="true" class="form-control my-3 p-4">
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
 									<div>
 										<input type="text" placeholder="Qualification"
-											id="qualification" class="form-control my-3 p-4">
+											id="qualification" required="required" 
+				                            aria-required="true" class="form-control my-3 p-4">
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
@@ -123,21 +130,27 @@
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
-
+                                   
 									<input type="file" placeholder="Photo" id="image_input"
-										class="form-control p-4">
+										class="form-control p-4" required="required" 
+				                            aria-required="true">
 
 								</div>
 								<div class="form-row" style="height: 4rem;">
+								   <h6 id="register_message_gName" style="color: red;"></h6>
 									<div>
 										<input type="text" placeholder="Guardian Name"
-											id="guardianName" class="form-control my-3 p-4">
+											id="guardianName" class="form-control my-3 p-4" required="required" 
+				                            aria-required="true">
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
+								   <h6 id="register_message_gPhone" style="color: red;"></h6>
 									<div>
 										<input type="text" placeholder="Guardian Phone No."
-											id="guardianPhone" class="form-control my-3 p-4">
+											id="guardianPhone" class="form-control my-3 p-4"
+											required="required" 
+				                            aria-required="true">
 									</div>
 								</div>
 								<div class="form-row">
@@ -153,7 +166,8 @@
 								<div class="form-row" style="height: 4rem;">
 									<div>
 										<input type="text" placeholder="Address Line 1" id="addL1"
-											class="form-control my-3 p-4">
+											class="form-control my-3 p-4" required="required" 
+				                            aria-required="true">
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
@@ -163,21 +177,27 @@
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
+								  <h6 id="register_message_state" style="color: red;"></h6>
 									<div>
 										<input type="text" placeholder="State" id="state"
-											class="form-control my-3 p-4">
+											class="form-control my-3 p-4" required="required" 
+				                            aria-required="true">
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
+								  <h6 id="register_message_city" style="color: red;"></h6>
 									<div>
 										<input type="text" placeholder="City" id="city"
-											class="form-control my-3 p-4">
+											class="form-control my-3 p-4" required="required" 
+				                            aria-required="true">
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
+								   <h6 id="register_message_pincode" style="color: red;"></h6>
 									<div>
 										<input type="text" placeholder="Pin code" id="pincode"
-											class="form-control my-3 p-4">
+											class="form-control my-3 p-4" required="required" 
+				                            aria-required="true">
 									</div>
 								</div>
 								<div class="form-row">

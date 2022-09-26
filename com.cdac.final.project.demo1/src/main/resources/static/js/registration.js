@@ -44,7 +44,7 @@ $(document).ready(() => {
         fName = $("#fName").val();
 
         if (ccatNo == "" || fName == "") {
-          window.alert("All fields are mandatory!");
+         window.alert("All fields are mandatory!");
           return;
         }
         $.ajax({
@@ -77,46 +77,51 @@ $(document).ready(() => {
           dataType: "json",
         });
       } else if (formStepsNum == 1) {
-        gender = $("input[name='gender']:checked").val();
-        email = $("#email").val();
-        phone = $("#phone").val();
-        qualification = $("#qualification").val();
-        photo = $("#photo").val();
-        guardianName = $("#guardianName").val();
-        guardianPhone = $("#guardianPhone").val();
+        if(validPhone && validGuardianName && validGuardianPhone){
+          gender = $("input[name='gender']:checked").val();
+          email = $("#email").val();
+          phone = $("#phone").val();
+          qualification = $("#qualification").val();
+          photo = $("#photo").val();
+          guardianName = $("#guardianName").val();
+          guardianPhone = $("#guardianPhone").val();
+          $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/portal/register/details",
+            data: JSON.stringify({
+              "userId": userId,
+              "ccatNo": ccatNo,
+              "fName": fName,
+              "mName": mName,
+              "lName": lName,
+              "gender": gender,
+              "dob": dob,
+              "email": email,
+              "phone": phone,
+              "qualification": qualification,
+              "photo": photo,
+              "course": course,
+              "guardianName": guardianName,
+              "guardianPhone": guardianPhone,
+            }),
+            success: function (returnedData) {
+              userId = returnedData.userId;
+              formStepsNum++;
+              updateFormSteps();
+              updateProgressbar();
+            },
+            error: function (error) {
+              console.log(error);
+            },
+            dataType: "json",
+          });
+        }else{
+          window.alert("Enter Valid Details!");
+        }
+       
 
-        $.ajax({
-          type: "POST",
-          contentType: "application/json",
-          url: "/portal/register/details",
-          data: JSON.stringify({
-            "userId": userId,
-            "ccatNo": ccatNo,
-            "fName": fName,
-            "mName": mName,
-            "lName": lName,
-            "gender": gender,
-            "dob": dob,
-            "email": email,
-            "phone": phone,
-            "qualification": qualification,
-            "photo": photo,
-            "course": course,
-            "guardianName": guardianName,
-            "guardianPhone": guardianPhone,
-          }),
-          success: function (returnedData) {
-            userId = returnedData.userId;
-            formStepsNum++;
-            updateFormSteps();
-            updateProgressbar();
-          },
-          error: function (error) {
-            console.log(error);
-          },
-          dataType: "json",
-        });
-      }
+       }
     });
   });
 
@@ -155,32 +160,132 @@ $(document).ready(() => {
 
   $("#submit").click((e) => {
     e.preventDefault();
+    if(validState && validCity && validPinCode){
+      addLine1 = $("#addL1").val();
+      addLine2 = $("#addL2").val();
+      state = $("#state").val();
+      city = $("#city").val();
+      pincode = $("#pincode").val();
+    
+      $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "/portal/register/address",
+        data: JSON.stringify({
+          "userId": userId,
+          "addLine1": addLine1,
+          "addLine2": addLine2,
+          "state": state,
+          "city": city,
+          "pincode": pincode
+        }),
+        success: function (returnedData) {
+          window.location.href = "/portal/register/success";
+        },
+        error: function (error) {
+          console.log(error);
+        },
+        dataType: "json",
+      });
+    }else{
+      window.alert("Enter Valid Details!");
+    }
 
-    addLine1 = $("#addL1").val();
-    addLine2 = $("#addL2").val();
-    state = $("#state").val();
-    city = $("#city").val();
-    pincode = $("#pincode").val();
-  
-    $.ajax({
-      type: "POST",
-      contentType: "application/json",
-      url: "/portal/register/address",
-      data: JSON.stringify({
-        "userId": userId,
-        "addLine1": addLine1,
-        "addLine2": addLine2,
-        "state": state,
-        "city": city,
-        "pincode": pincode
-      }),
-      success: function (returnedData) {
-        window.location.href = "/portal/register/success";
-      },
-      error: function (error) {
-        console.log(error);
-      },
-      dataType: "json",
-    });
+   
+     
+  }); 
+   //Validation
+   $("#ccatNo").blur(function(){
+    var ccatNo = $("#ccatNo").val()
+    if (isNaN(ccatNo)){
+     $("#register_message_ccatNo").html(" CcatNo must be a number!");
+    }else{
+     $("#register_message_ccatNo").html("");
+     return true;
+    }
+ });
+ 
+$("#fName").blur(function(){
+    var fName = $("#fName").val()
+    if (!fName.match(/^[a-zA-Z]+$/)){
+     $("#register_message_name").html(" For your name please use alphabets only!");
+    }else{
+     $("#register_message_name").html("");
+     return true;
+    }
   });
+   var validPhone  = false;
+    $("#phone").blur(function(){
+    var phone = $("#phone").val()
+    if (isNaN(phone) || (phone.length != 10)){
+     $("#register_message_phone").html(" Please enter a valid phone number!");
+    }else{
+     $("#register_message_phone").html("");
+      validPhone =  true;
+    }
+ });
+//   var validImage = false;
+//    $("#image_input").blur(function(){
+//   var image_input = $("#image_input").val()
+//   var Extension = image_input.substring(
+//     image_input.lastIndexOf('.') + 1).toLowerCase();
+//   if (Extension != "png" || !Extension != "jpeg" || Extension != "jpg"){
+//    $("#register_message_photo").html("Upload PNG,JPEG or JPG file only!");
+//   }else{
+//    $("#register_message_photo").html("");
+//      validImage =  true;
+//   }
+// });
+
+var validGuardianName = false;
+$("#guardianName").blur(function(){
+  var guardianName = $("#guardianName").val()
+  if (!guardianName.match(/^[a-zA-Z]+$/)){
+   $("#register_message_gName").html(" For your name please use alphabets only!");
+  }else{
+   $("#register_message_gName").html("");
+        validGuardianName = true;
+  }
+});
+
+var validGuardianPhone  = false;
+ $("#guardianPhone").blur(function(){
+  var guardianPhone = $("#guardianPhone").val()
+  if (isNaN(guardianPhone) || (guardianPhone.length != 10)){
+   $("#register_message_gPhone").html(" Please enter a valid phone number!");
+   
+  }else{
+   $("#register_message_gPhone").html("");
+      validGuardianPhone = true;
+  }
+});
+
+var validState = $("#state").blur(function(){
+  var state = $("#state").val()
+  if (!state.match(/^[a-zA-Z]+$/)){
+   $("#register_message_state").html(" For your state please use alphabets only!");
+  }else{
+   $("#register_message_state").html("");
+   return true;
+  }
+});
+ var validCity = $("#city").blur(function(){
+  var city = $("#city").val()
+  if (!city.match(/^[a-zA-Z]+$/)){
+   $("#register_message_city").html(" For your city please use alphabets only!");
+  }else{
+   $("#register_message_city").html("");
+   return true;
+  }
+});
+var validPinCode  = false;
+    $("#pincode").blur(function(){
+    var pincode = $("#pincode").val()
+    if (isNaN(pincode) || (pincode.length != 6)){
+     $("#register_message_pincode").html(" Please enter a valid Pincode!");
+    }else{
+     $("#register_message_pincode").html("");
+      validPhone =  true;
+    }
+ });
 });

@@ -47,7 +47,10 @@
                  </div>
 				<form id="loginForm" method="POST" action="">
                 <div class="form-group">
-                    <input id="prnNo" name="prn" class="form-control _ge_de_ol" type="text" placeholder="PRN No" required="" aria-required="true">
+                    <h6 id="login_message_prn" style="color: red; padding:0px"></h6>
+                    <input id="prnNo" name="prn" class="form-control _ge_de_ol" type="text" placeholder="PRN No" required="required" aria-required="true">
+                    
+                    
                 </div>
   
                 <div class="form-group">                                              
@@ -61,6 +64,7 @@
                   </div>
                 </div>
                 </form>
+                <span id="login_failure" style="color: red;"></span>
                   <div class="check_box_main">
                     Not registered?
                     <a href="${pageContext.request.contextPath}/register" class="pas-text" id="register">Register</a>
