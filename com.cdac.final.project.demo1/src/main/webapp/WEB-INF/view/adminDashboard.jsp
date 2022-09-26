@@ -33,11 +33,6 @@
                   <a href=""><button class="admin-button" id="getDoubts">Active doubts</button></a>
                 </div>
             </div>
-            <div class="col-sm-4 py-3 h-200">
-                <div class="card h-100 card-body">
-                   <a href=""><button class="admin-button" id="updateDoubt">Update Active flag</button></a>
-                </div>
-            </div>
             <div class="col-sm-4 py-3" style="height:200px;">
                 <div class="card card-body h-100 border-primary">
                     <a href=""><button class="admin-button" id="attendance">Upload Attendance</button></a>
