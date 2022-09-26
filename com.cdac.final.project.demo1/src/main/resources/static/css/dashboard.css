@@ -298,9 +298,6 @@ keyframes anim { 100%{
 }
 
 @media ( min-width : 768px) and (max-width: 1199px) {
-	/* .card-title{
-    width: 50%;
-  } */
 	.card {
 		width: 400px;
 	}
@@ -316,15 +313,6 @@ keyframes anim { 100%{
 }
 
 @media ( min-width : 1200px) and (max-width: 1400px) {
-	/* .card{
-    width: 50%;
-  } */
-	/* .chart{
-    width: 50%;
-  }
-  .attendance-card{
-    width: 50%;
-  } */
 	.bars {
 		width: 360px;
 	}
