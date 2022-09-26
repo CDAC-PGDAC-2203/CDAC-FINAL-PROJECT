@@ -56,11 +56,13 @@
 				                            aria-required="true" class="form-control my-3 p-4">
 								</div>
 								<div class="form-row">
+								  
 									<div>
 										<button id="btn-next" type="button"
 											class="btn1 btn-next mt-3 mb-5">Next</button>
+										<span id="register_failure" style="color: red;"></span>
 									</div>
-								</div>
+								 </div>
 							</div>
 
 							<!-- Personal Details -->
@@ -201,7 +203,7 @@
 									</div>
 								</div>
 								<div class="form-row">
-									<div>
+							       <div>
 										<button id="submit" type="submit" value="Submit"
 											class="btn1 mt-3 mb-5">Submit</button>
 									</div>

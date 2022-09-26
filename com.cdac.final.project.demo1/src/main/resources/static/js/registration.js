@@ -71,9 +71,11 @@ $(document).ready(() => {
             updateFormSteps();
             updateProgressbar();
           },
-          error: function (error) {
-            console.log(error);
-          },
+          error: (error)=>{
+            $("#register_failure").html("<i class='bi bi-info-square'></i>" + " Invalid Credentials!")
+            $("#ccatNo").val("");
+            $("#fName").val("");
+            },
           dataType: "json",
         });
       } else if (formStepsNum == 1) {

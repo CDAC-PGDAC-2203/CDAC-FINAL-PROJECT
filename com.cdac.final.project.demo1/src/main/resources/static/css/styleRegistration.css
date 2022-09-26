@@ -6,8 +6,8 @@
 	url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic)
 	;
 
-:root { -
-	-primary-color: rgb(11, 78, 179);
+:root { 
+	--primary-color: rgb(11, 78, 179);
 }
 
 *, *::before, *::after {
@@ -53,7 +53,7 @@
 }
 
 .progress {
-	background-color: var(- -primary-color);
+	background-color: var(--primary-color);
 	width: 0%;
 	transition: 0.3s;
 }
@@ -82,7 +82,7 @@
 }
 
 .progress-step-active {
-	background-color: var(- -primary-color);
+	background-color: var(--primary-color);
 	color: #f3f3f3;
 }
 
@@ -131,8 +131,7 @@
 /* .input-group {
     margin: 2rem 0;
   } */
-@
-keyframes animate {from { transform:scale(1, 0);
+@keyframes animate {from { transform:scale(1, 0);
 	opacity: 0;
 }
 
