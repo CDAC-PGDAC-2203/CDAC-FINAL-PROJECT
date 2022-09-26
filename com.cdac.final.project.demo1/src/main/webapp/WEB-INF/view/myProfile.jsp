@@ -2,7 +2,9 @@
 	pageEncoding="ISO-8859-1"%>
 <body>
 	<style>
-	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap')
+	;
 
 body {
 	background: linear-gradient(#2EAAFA, #1F2F98);
@@ -154,8 +156,8 @@ body {
 			id="navbarNav">
 			<ul class="navbar-nav">
 
-				<li id="dashboard" class="nav-item active"><a class="nav-link"
-					href="#">Dashboard</a></li>
+				<li id="dashboardNav" class="nav-item active"><a class="nav-link"
+					href="">Dashboard</a></li>
 
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -185,7 +187,7 @@ body {
 					role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
 					<ul class="dropdown-menu dropdown-menu-end"
 						aria-labelledby="navbarDropdown">
-						<li id="myprofile"><a class="dropdown-item" href="#">My
+						<li id="student_profile"><a class="dropdown-item" href="">My
 								Profile</a></li>
 						<li id="logout"><a class="dropdown-item" href="#">Logout</a></li>
 					</ul></li>
@@ -196,25 +198,21 @@ body {
 	<div class="container student-profile">
 		<form method="post">
 			<div class="row">
-				<div class="col-md-4">
-					<div class="profile-img">
-						<img
-							src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-							alt="" />
-						<div class="file btn btn-lg btn-primary" id="imageFile">
-							Change Photo <input type="file" name="file" />
-						</div>
-					</div>
+				<div class="col-md-4" id="photo">
 				</div>
+
 				<div class="col-md-6">
 					<div class="profile-head" id="profileHead">
-						<h5 id="uName">Kamana Mathur</h5>
+
+						<h5 id="uName"></h5>
 						<h6 id="centerName">CDAC ACTS Pune</h6>
-						<h3 class="profile-course" id="profileCourseName">PG-DAC</h3>
-						<h6 id="uPrn">2203401200097</h6>
+
+						<h3 class="profile-course" id="profileCourseName"></h3>
+						<h6 id="uPrn"></h6>
+
 						<ul class="nav nav-tabs" id="myTab" role="tablist">
 							<li class="nav-item"><a class="nav-link active"
-								id="home-tab" data-toggle="tab" href="#" role="tab"
+								id="home-tab" data-toggle="tab" href="" role="tab"
 								aria-controls="home" aria-selected="true">About</a></li>
 
 						</ul>
@@ -222,10 +220,12 @@ body {
 				</div>
 				<div class="col-md-2">
 					<input type="submit" class="profile-edit-btn" name="btnAddMore"
-						value="Edit Profile" id="editBtn" /> <a id="changePassword"
-						href="#">Change Password</a>
+						value="Edit Profile" id="editBtn" disabled /> <a id="changePassword"
+						href="">Change Password</a>
 				</div>
 			</div>
+
+
 			<div class="row">
 				<div class="col-md-4">
 					<div class="profile-work"></div>
@@ -239,7 +239,8 @@ body {
 									<label>Gender</label>
 								</div>
 								<div class="col-md-6" id="profileGender">
-									<p id="genderId">Female</p>
+
+									<p id="genderId"></p>
 								</div>
 							</div>
 							<div class="row">
@@ -247,7 +248,8 @@ body {
 									<label>Date of Birth</label>
 								</div>
 								<div class="col-md-6" id="profileDob">
-									<p id="dobId">04-07-1997</p>
+
+									<p id="dobId"></p>
 								</div>
 							</div>
 							<div class="row">
@@ -255,7 +257,8 @@ body {
 									<label>Email</label>
 								</div>
 								<div class="col-md-6" id="profileEmail">
-									<p id="emailId">kamana.mathur89@gmail.com</p>
+
+									<p id="emailId"></p>
 								</div>
 							</div>
 							<div class="row">
@@ -263,7 +266,8 @@ body {
 									<label>Phone</label>
 								</div>
 								<div class="col-md-6" id="profilePhone">
-									<p id="phoneNo">8976145876</p>
+
+									<p id="phoneNo"></p>
 								</div>
 							</div>
 							<div class="row">
@@ -271,7 +275,7 @@ body {
 									<label>Address</label>
 								</div>
 								<div class="col-md-6" id="adr">
-									<p id="addressId">Aakriti heights,Jodhpur</p>
+									<p id="addressId"></p>
 								</div>
 							</div>
 						</div>
@@ -360,4 +364,5 @@ body {
 		<!-- Copyright -->
 	</footer>
 	<!-- Footer -->
+	<script src="js/myProfile.js"></script>
 </body>

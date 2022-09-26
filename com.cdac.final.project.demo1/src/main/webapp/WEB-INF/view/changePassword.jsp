@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>CDAC APP | Change Password</title>
-<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
 
+<body>
 <style>
     body{
         background-color: rgb(65, 105, 225);
@@ -57,9 +51,7 @@
   
    
 </style>
-</head>
 
-<body>
   <!-- navbar -->
      <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
       <a class="navbar-brand" href="#"><img class="img-responsive" src="./img/cdac-logo.jpeg"></a>
@@ -71,8 +63,8 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
   
-          <li id="dashboard" class="nav-item active">
-            <a class="nav-link" href="#">Dashboard</a>
+          <li id="dashboardNav" class="nav-item active">
+            <a class="nav-link" href="">Dashboard</a>
           </li>
   
           <li class="nav-item dropdown">
@@ -117,8 +109,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false"></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li id="myprofile"><a class="dropdown-item" href="#">My Profile</a></li>
-              <li id="logout"><a class="dropdown-item" href="#">Logout</a></li>
+              <li id="logout"><a class="dropdown-item" href="">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -176,7 +167,7 @@
               Links
             </h5>
             <p id="dashboard">
-              <a href="#!" class="text-reset">Dashboard</a>
+              <a href="" class="text-reset">Dashboard</a>
             </p>
             <p id="exam">
               <a href="#!" class="text-reset">Exam</a>
@@ -226,5 +217,5 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
+  <script src="js/changePassword.js"></script>
 </body>
-</html>

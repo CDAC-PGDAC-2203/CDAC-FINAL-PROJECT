@@ -3,7 +3,11 @@ package com.cdac.app.controllers;
 import java.util.HashMap;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +24,7 @@ import com.cdac.app.service.IJoinLectureService;
 @Controller
 public class DashboardController {
 
+	private final static Logger logger = LoggerFactory.getLogger(DashboardController.class);
 	@Autowired
 	private IDashboardService service;
 
@@ -39,11 +44,22 @@ public class DashboardController {
 		return "/myProfile";
 	}
 
+	@GetMapping("/profile/change")
+	public String changePassword() {
+		return "/changePassword";
+	}
+
 	// API to show user profile details
 	@GetMapping("/profile/{uPrn}")
-	public HashMap<String, String> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
-		HashMap<String,String> map =  service.getProfile(uPrn);
-		return map;
+	public ResponseEntity<HashMap<String, String>> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
+		try {
+			HashMap<String,String> map =  service.getProfile(uPrn);
+			logger.info("************Received profile of" + uPrn +"*************");
+			return new ResponseEntity<>(map,HttpStatus.OK);
+		}catch(Exception e) {
+			HashMap<String,String> badMap= null;
+			return new ResponseEntity<>(badMap, HttpStatus.OK);
+		}
 	}
 
 	// API to update user profile (Address)
