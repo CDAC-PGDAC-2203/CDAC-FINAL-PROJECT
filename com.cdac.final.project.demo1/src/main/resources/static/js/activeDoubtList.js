@@ -1,28 +1,28 @@
 $(document).ready(()=>{
-    $("button").click((e)=>{
-        e.preventDefault();
-        var doubtId = $(this).val();
-        console.log(doubtId);
-        $.ajax({
-           url: "/portal/doubt/"+doubtId,
-           type: "PUT",
-           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-           success: (data) => {
-              if(data.data == "DONE"){
-                 $("#course_name_gprn").val("");
-                 $("#message").append(success);
-              }else{
-                 $("#course_name_gprn").val("");
-                 $("#message").append(failure);
-              }
-           },
-           error: (error) => {
-              $("#course_name_gprn").val("");
-              $("#message").append(failure);
-           }
-        }); 
+   //  $("button").click((e)=>{
+   //      e.preventDefault();
+   //      var doubtId = $(this).val();
+   //      console.log(doubtId);
+   //      $.ajax({
+   //         url: "/portal/doubt/"+doubtId,
+   //         type: "PUT",
+   //         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+   //         success: (data) => {
+   //            if(data.data == "DONE"){
+   //               $("#course_name_gprn").val("");
+   //               $("#message").append(success);
+   //            }else{
+   //               $("#course_name_gprn").val("");
+   //               $("#message").append(failure);
+   //            }
+   //         },
+   //         error: (error) => {
+   //            $("#course_name_gprn").val("");
+   //            $("#message").append(failure);
+   //         }
+   //      }); 
      
-    });
+   //  });
 
     $.ajax({
         url: "/portal/doubts",
