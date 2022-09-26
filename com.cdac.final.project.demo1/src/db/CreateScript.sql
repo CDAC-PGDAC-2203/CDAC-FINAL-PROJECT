@@ -40,7 +40,7 @@ create table if not exists personal_details(
     email varchar(60) NOT NULL,
     phone bigint NOT NULL,
     qualification varchar(15) NOT NULL,
-    photo varchar(5000),
+    photo longtext,
     course varchar(10) NOT NULL,
     guardian_name VARCHAR(50),
     guardian_phone BIGINT
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS total_attendance(
     total_lecture int not null,
     PRIMARY KEY (u_prn, module)
 );
-
+INSERT INTO total_attendance VALUES(220340140001,'mod1',8,10);
 -- ------------------------------------------------------------------------------------------------------
 
 -- lecture_link table
