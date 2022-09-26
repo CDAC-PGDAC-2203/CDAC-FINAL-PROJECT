@@ -15,13 +15,6 @@ create table if not exists ccat_student(
     course varchar(10) NOT NULL
 );
 
-insert into ccat_student values('2203001','Hardik',NULL,'Agarwal','2000-03-17','PG-DAC');
-insert into ccat_student values('2203002','Joy',NULL,'Pahari','1998-09-01','PG-DAC');
-insert into ccat_student values('2203003','Udit',NULL,'Keskar','1999-11-23','PG-DBDA');
-insert into ccat_student values('2203004','Mayank',NULL,'Sachan','1994-03-07','PG-DESC');
-insert into ccat_student values('2203005','Kamana',NULL,'Mathur','1997-07-04','PG-XYZ');
-insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','PG-DAC');
-
 -- ------------------------------------------------------------------------------------------------------
 
 -- user_table
@@ -32,13 +25,6 @@ CREATE TABLE IF NOT EXISTS user_table(
     ccat_no BIGINT PRIMARY KEY NOT NULL,
     u_role VARCHAR(10)
 );
-
-INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
-INSERT INTO user_table VALUES (2, 'Joy', 2203002, 'STUDENT');
-INSERT INTO user_table VALUES (3, 'Udit', 2203003, 'STUDENT');
-INSERT INTO user_table VALUES (4, 'Mayank', 2203004, 'STUDENT');
-INSERT INTO user_table VALUES (5, 'Kamana', 2203005, 'STUDENT');
-INSERT INTO user_table VALUES (10000, 'admin', 1111111, 'ADMIN');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -60,12 +46,6 @@ create table if not exists personal_details(
     guardian_phone BIGINT
 );
 
-insert into personal_details values('1',2203001,'Hardik',NULL,'Agarwal','M','2000-03-17','hardikagarwal1703@gmail.com','8630296896','B.tech','https:\\hardik.png','PG-DAC','Mala Agarwal', '8630298749');
-insert into personal_details values('2',2203002,'Joy',NULL,'Pahari','M','1998-09-01','joypahari11@gmail.com','7798003910','B.tech','https:\\joy.png','PG-DAC','SB Pahari', '7499153589');
-insert into personal_details values('3',2203003,'Udit',NULL,'Keskar','M','1999-11-23','udit@gmail.com','9876543212','B.tech','https:\\udit.png','PG-DBDA','Abc', '7548754875');
-insert into personal_details values('4',2203004,'Mayank',NULL,'Sachan','M','1995-03-07','mayank@gmail.com','8426971358','B.tech','https:\\mayank.png','PG-DESC','Abc', '3232323232');
-insert into personal_details values('5',2203005,'Kamana',NULL,'Mathur','F','1997-07-04','kamana.mathur89@gmail.com','9731862459','B.tech','https:\\kamana.png','PG-XYZ','Abc', '5454545454');
-
 -- ------------------------------------------------------------------------------------------------------
 
 -- user_address table
@@ -78,12 +58,6 @@ CREATE TABLE IF NOT EXISTS user_address(
 	city varchar(20) NOT NULL,
 	pincode int NOT NULL
 );
-                            
-INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
-INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','Goa','Vasco',403802);
-INSERT INTO user_address VALUES(3,'UVW','XYZ','Maharastra','Mumbai',454545);
-INSERT INTO user_address VALUES(4,'DEF','ABC','Delhi','Noida',454545);
-INSERT INTO user_address VALUES(5,'ABC','DEF','Rajasthan','Jodhpur',454545);
                                 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -98,8 +72,6 @@ CREATE TABLE IF NOT EXISTS user_login(
     course varchar(10)
 );
 
-insert into user_login values(10000,'admin',11111,11111,'ADMIN','PG-DAC');
-
 -- ------------------------------------------------------------------------------------------------------
 
 -- module tables
@@ -111,7 +83,6 @@ CREATE TABLE IF NOT EXISTS module_1(
     assessment bigint,
     attendance bigint
 );
-insert into module_1 values(220340120003,35,15,5);
 
 CREATE TABLE IF NOT EXISTS module_2(
 	u_prn bigint primary key not null,
@@ -120,7 +91,6 @@ CREATE TABLE IF NOT EXISTS module_2(
     assessment bigint,
     attendance bigint
 );
-insert into module_2 values(220340120003,34,15,5);
 
 CREATE TABLE IF NOT EXISTS module_3(
 	u_prn bigint primary key not null,
@@ -189,7 +159,7 @@ CREATE TABLE IF NOT EXISTS final_result(
 
 -- ------------------------------------------------------------------------------------------------------
 
--- doubt Forum table
+-- doubt_forum table
 
 CREATE TABLE IF NOT EXISTS doubt_forum(
 	d_id bigint primary key not null,
@@ -201,11 +171,6 @@ CREATE TABLE IF NOT EXISTS doubt_forum(
     attachment varchar(500),
     active_doubt char(1) not null -- (Y/N)
 );
-
-INSERT INTO doubt_forum VALUES(1, 220340120001, 'Hardik', 'hardikagarwal1703@gmail.com', 'mod1', 'xyz', 'xyz', 'Y');
-INSERT INTO doubt_forum VALUES(2, 220340120002, 'Joy', 'joypahari11@gmail.com', 'mod2', 'abc', 'abc', 'Y');
-INSERT INTO doubt_forum VALUES(3, 220340120001, 'Hardik', 'hardikagarwal1703@gmail.com', 'mod2', 'abc', 'abc', 'N');
-INSERT INTO doubt_forum VALUES(4, 220340120002, 'Joy', 'joypahari11@gmail.com', 'mod2', 'abc', 'abc', 'Y');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -276,9 +241,6 @@ CREATE TABLE IF NOT EXISTS feedback(
     suggestion varchar(300)
 );
 
-INSERT INTO feedback VALUES(220340120001,'PG-DAC','Madhura','mod1',2,3,5,5,5,20,'Excellent');
-INSERT INTO feedback VALUES(220340120002,'PG-DAC','Madhura','mod1',3,4,5,5,5,20,'Excellent');
-
 -- ------------------------------------------------------------------------------------------------------
 
 -- faculty table
@@ -289,10 +251,6 @@ CREATE TABLE IF NOT EXISTS faculty(
     visibility_flag varchar(1),
     course varchar(10)
 );
-
-INSERT INTO faculty VALUES(1,'A','N','PG-DAC');
-INSERT INTO faculty VALUES(2,'B','N','PG-XYZ');
-INSERT INTO faculty VALUES(3,'C','N','PG-DAC');
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -313,9 +271,5 @@ CREATE TABLE IF NOT EXISTS notice(
     notice_link varchar(100),
     visibility varchar(100)
 );
-
-INSERT INTO notice VALUES('ABCD','http://link1','N');
-INSERT INTO notice VALUES('EFGH','http://link2','N');
-INSERT INTO notice VALUES('IJKL','http://link3','N');
 
 -- ------------------------------------------------------------------------------------------------------
