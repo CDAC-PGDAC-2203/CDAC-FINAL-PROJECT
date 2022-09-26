@@ -64,11 +64,13 @@
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="faculty_name" type="text" placeholder="Faculty Name"class="form-control my-3 p-4"> 
+                                <h6 id="validFacultyNameMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="course_name" type="text" placeholder="Course Name"class="form-control my-3 p-4" style="color:gray"> 
+                                <h6 id="validFacultyCourseNameMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">

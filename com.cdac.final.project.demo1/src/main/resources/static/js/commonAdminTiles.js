@@ -1,7 +1,7 @@
 $(document).ready(()=>{
 
    var success = "<h4 style='color: green;'>Data Processed Successfully!</h4>";
-   var failure = "<h4 style='color: red;'>Some Eror Occured!</h4>"
+   var failure = "<h4 style='color: red;'>Some Error Occured!</h4>"
 
     $("#adminDashboard").click((e)=>{
         e.preventDefault();
@@ -39,141 +39,168 @@ $(document).ready(()=>{
 
     $("#question_ppr_upload").click((e)=>{
         e.preventDefault();
-        var subject = $("#subject").val();
-        var path = $("#question_ppr").val();
-        $.ajax({
-            url: "/portal/questions",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-                "subject": subject, 
-                "filePath" : path
-            }),
-            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-            success: (data) => {
-               if(data.data == "DONE"){
-                  $("#message").append(success);
-                  $("#subject").val("");
-                  $("#question_ppr").val("");
-               }else{
-                  $("#message").append(failure);
-                  $("#subject").val("");
-                  $("#question_ppr").val("");
-               }
-            },
-            error: (error) => {
-               $("#message").append(failure);
-               $("#subject").val("");
-               $("#question_ppr").val("");
-            }
-         }); 
+        if(validQuestionSubject && validQuestionFile){
+         var subject = $("#subject").val();
+         var path = $("#question_ppr").val();
+         $.ajax({
+             url: "/portal/questions",
+             type: "POST",
+             contentType: "application/json",
+             data: JSON.stringify({
+                 "subject": subject, 
+                 "filePath" : path
+             }),
+             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+             success: (data) => {
+                if(data.data == "DONE"){
+                   $("#message").append(success);
+                   $("#subject").val("");
+                   $("#question_ppr").val("");
+                }else{
+                   $("#message").append(failure);
+                   $("#subject").val("");
+                   $("#question_ppr").val("");
+                }
+             },
+             error: (error) => {
+                $("#message").append(failure);
+                $("#subject").val("");
+                $("#question_ppr").val("");
+             }
+          }); 
+        }else{
+         $("#message").append(failure);
+         $("#subject").val("");
+         $("#question_ppr").val("");
+        }
+       
     });
 
     $("#attendance_file_upload").click((e)=>{
       e.preventDefault();
-      var subject = $("#subjectAttendance").val();
-      var path = $("#attendance_file").val();
-      $.ajax({
-          url: "/portal/attendance",
-          type: "POST",
-          contentType: "application/json",
-          data: JSON.stringify({
-              "subject": subject, 
-              "filePath" : path
-          }),
-          beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-          success: (data) => {
-             if(data.data == "DONE"){
-                $("#message").append(success);
-                $("#subjectAttendance").val("");
-                $("#attendance_file").val("");
-             }else{
+      if(validAttendanceSubject && validAttendanceFile){
+         var subject = $("#subjectAttendance").val();
+         var path = $("#attendance_file").val();
+         $.ajax({
+             url: "/portal/attendance",
+             type: "POST",
+             contentType: "application/json",
+             data: JSON.stringify({
+                 "subject": subject, 
+                 "filePath" : path
+             }),
+             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+             success: (data) => {
+                if(data.data == "DONE"){
+                   $("#message").append(success);
+                   $("#subjectAttendance").val("");
+                   $("#attendance_file").val("");
+                }else{
+                  $("#message").append(failure);
+                  $("#subjectAttendance").val("");
+                  $("#attendance_file").val("");
+                }
+             },
+             error: (error) => {
                $("#message").append(failure);
                $("#subjectAttendance").val("");
                $("#attendance_file").val("");
              }
-          },
-          error: (error) => {
-            $("#message").append(failure);
-            $("#subjectAttendance").val("");
-            $("#attendance_file").val("");
-          }
-       }); 
+          }); 
+      }else{
+         $("#message").append(failure);
+         $("#subjectAttendance").val("");
+         $("#attendance_file").val("");
+      }
+      
   });
 
   $("#result_upload").click((e)=>{
    e.preventDefault();
-   var subject = $("#subjectResult").val();
-   var course = $("#course_name").val();
-   var path = $("#resultPath").val();
-   $.ajax({
-       url: "/portal/result",
-       type: "POST",
-       contentType: "application/json",
-       data: JSON.stringify({
-           "subject": subject, 
-           "filePath" : path,
-           "course": course
-       }),
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-       success: (data) => {
-          if(data.data == "DONE"){
-            $("#message").append(success);
-            $("#subjectResult").val("");
-            $("#attendance_file").val("");
-            $("#course_name").val("");
-          }else{
+   if(validResultSubject && validResultCourseName && validResultFile){
+      var subject = $("#subjectResult").val();
+      var course = $("#course_name").val();
+      var path = $("#resultPath").val();
+      $.ajax({
+          url: "/portal/result",
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify({
+              "subject": subject, 
+              "filePath" : path,
+              "course": course
+          }),
+          beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+          success: (data) => {
+             if(data.data == "DONE"){
+               $("#message").append(success);
+               $("#subjectResult").val("");
+               $("#course_name").val("");
+               $("#resultPath").val("");
+             }else{
+               $("#message").append(failure);
+               $("#subjectResult").val("");
+               $("#course_name").val("");
+               $("#resultPath").val("");
+             }
+          },
+          error: (error) => {
             $("#message").append(failure);
             $("#subjectResult").val("");
-            $("#attendance_file").val("");
             $("#course_name").val("");
+            $("#resultPath").val("");
           }
-       },
-       error: (error) => {
-         $("#message").append(failure);
-         $("#subjectResult").val("");
-         $("#attendance_file").val("");
-         $("#course_name").val("");
-       }
-    }); 
+       }); 
+   }else{
+      $("#message").append(failure);
+   }
+   
    });
 
    $("#courseSubmit").click((e)=>{
       e.preventDefault();
-      var course = $("#courseName").val();
-      $.ajax({
-         url: "/portal/feedback/"+course,
-         type: "GET",
-         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-         success: (data) => {
-             $("#message").append(success);
-             data.forEach((element) =>{
-                 var tableRow = "<tr style='font-family: helvetica;'>" 
-                              + "<td scope='row'>" + element.uPrn + "</td>"
-                              + "<td scope='row'>" + element.faculty + "</td>"
-                              + "<td scope='row'>" + element.module + "</td>"
-                              + "<td scope='row'>" + element.parameter1 + "</td>"
-                              + "<td scope='row'>" + element.parameter2 + "</td>"
-                              + "<td scope='row'>" + element.parameter3 +"</td>"
-                              + "<td scope='row'>" + element.parameter4 +"</td>"
-                              + "<td scope='row'>" + element.parameter5 +"</td>"
-                              + "<td scope='row'>" + element.parameterTotal +"</td>"
-                              + "<td scope='row'>" + element.suggestion +"</td>"
-                              + "</tr>";
-                 $("#feedbackTableBody").append(tableRow);
-             });
-             $("#courseName").val("");
-         },
-         error: (error) => {
-            $("#message").append(failure);
-            $("#courseName").val("");
-         }
-      }); 
+      if(validFeedbackListCourseName){
+         var course = $("#courseName").val();
+
+         $.ajax({
+            url: "/portal/feedback/"+course,
+            type: "GET",
+            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+            success: (data) => {
+                $("#message").append(success);
+                data.forEach((element) =>{
+                    var tableRow = "<tr style='font-family: helvetica;'>" 
+                                 + "<td scope='row'>" + element.uPrn + "</td>"
+                                 + "<td scope='row'>" + element.faculty + "</td>"
+                                 + "<td scope='row'>" + element.module + "</td>"
+                                 + "<td scope='row'>" + element.parameter1 + "</td>"
+                                 + "<td scope='row'>" + element.parameter2 + "</td>"
+                                 + "<td scope='row'>" + element.parameter3 +"</td>"
+                                 + "<td scope='row'>" + element.parameter4 +"</td>"
+                                 + "<td scope='row'>" + element.parameter5 +"</td>"
+                                 + "<td scope='row'>" + element.parameterTotal +"</td>"
+                                 + "<td scope='row'>" + element.suggestion +"</td>"
+                                 + "</tr>";
+                    $("#feedbackTableBody").append(tableRow);
+                });
+                $("#courseName").val("");
+            },
+            error: (error) => {
+               $("#message").append(failure);
+               $("#courseName").val("");
+            }
+         }); 
+      }else{
+         $("#message").append(failure);
+         $("#courseName").val("");
+      }
+      
    });
 
    $("#faculty_list_upload").click((e)=>{
       e.preventDefault();
-      var subject = $("#course_name").val();
+      if(validFacultyCourseName && validFacultyListFile){
+         var subject = $("#course_name").val();
       var path = $("#faculty_list").val();
       $.ajax({
           url: "/portal/faculty",
@@ -201,6 +228,12 @@ $(document).ready(()=>{
              $("#faculty_list").val("");
           }
        }); 
+      }else{
+         $("#message").append(failure);
+         $("#course_name").val("");
+         $("#faculty_list").val("");
+      }
+      
   });
 
   $("#faculty_feedback_upload").click((e)=>{
@@ -332,4 +365,135 @@ $(document).ready(()=>{
           }
          }); 
       });
+
+      //Validation : Generate PRN
+      $("#course_name_gprn").blur(function(){
+         var course_name_gprn = $("#course_name_gprn").val()
+         if (!isNaN(course_name_gprn)){
+          $("#generatePrnValidMsg").html(" Course Name can not be a number!");
+         }else{
+          $("#generatePrnValidMsg").html("");
+         }
+      });
+
+      //Validation : set result
+      var validResultCourseName = false;
+      var validFacultyCourseName = false;
+      $("#course_name").blur(function(){
+         var course_name = $("#course_name").val()
+         if (!isNaN(course_name) || course_name == ""){
+          $("#validCourseResultMsg").html(" Course Name can not be a number or empty!");
+          $("#validFacultyListMsg").html(" Course Name can not be a number or empty!");
+          $("#validFacultyCourseNameMsg").html(" Course Name can not be a number or empty!");
+         }else{
+          $("#validCourseResultMsg").html("");
+          $("#validFacultyListMsg").html("");
+          $("#validFacultyCourseNameMsg").html("");
+            validResultCourseName = true;
+            validFacultyCourseName = true;
+         }
+      });
+      var validResultFile= false;
+      $("#resultPath").blur(function(){
+         var resultPath = $("#resultPath").val()
+         if (resultPath== ""){
+          $("#validResultPathMsg").html(" Please enter file path!");
+         }else{
+          $("#validResultPathMsg").html("");
+            validResultFile= true;
+         }
+      });
+      var validResultSubject= false;
+      $("#subjectResult").blur(function(){
+         var subjectResult = $("#subjectResult").val()
+         if (!isNaN( subjectResult) || subjectResult == ""){
+          $("#validSubjectResultMsg").html(" Subject Name can not be a number or empty!");
+         }else{
+          $("#validSubjectResultMsg").html("");
+            validResultSubject= true;
+         }
+      });
+
+       //Validation : feedback list
+       var validFeedbackListCourseName = false;
+       $("#courseName").blur(function(){
+         var courseName = $("#courseName").val()
+         if (!isNaN(courseName)){
+          $("#feedbackListValidMsg").html(" Course Name can not be a number!");
+         }else{
+          $("#feedbackListValidMsg").html("");
+          validFeedbackListCourseName = true;
+         }
+      });
+
+      //Validation : attendance
+      var validAttendanceSubject= false;
+      $("#subjectAttendance").blur(function(){
+         var subjectAttendance = $("#subjectAttendance").val()
+         if (!isNaN(subjectAttendance) || subjectAttendance == ""){
+          $("#validSubjectAttendanceMsg").html(" Subject Name can not be a number or empty!");
+         }else{
+          $("#validSubjectAttendanceMsg").html("");
+            validAttendanceSubject= true;
+         }
+      });
+
+      var validAttendanceFile= false;
+      $("#attendance_file").blur(function(){
+         var attendance_file = $("#attendance_file").val()
+         if (attendance_file == ""){
+          $("#validAttendanceFileMsg").html(" Please enter file path!");
+         }else{
+          $("#validAttendanceFileMsg").html("");
+            validAttendanceFile= true;
+         }
+      });
+
+      //Validation : faculty list
+     
+     var validFacultyListFile= false;
+      $("#faculty_list").blur(function(){
+         var faculty_list = $("#faculty_list").val()
+         if (faculty_list == ""){
+          $("#validFacultyListFileMsg").html(" Please enter file path!");
+         }else{
+          $("#validFacultyListFileMsg").html("");
+            validFacultyListFile= true;
+         }
+      });
+
+      //validation: faculty_feedback
+      $("#faculty_name").blur(function(){
+         var faculty_name = $("#faculty_name").val()
+         if (!isNaN(faculty_name) || faculty_name == ""){
+          $("#validFacultyNameMsg").html(" Faculty name can not contain number or be empty!");
+         }else{
+          $("#validFacultyNameMsg").html("");
+         }
+      });
+
+       //validation: question paper
+
+       var validQuestionSubject= false;
+      $("#subject").blur(function(){
+         var subject = $("#subject").val()
+         if (!isNaN(subject) || subject == ""){
+          $("#validSubjectQuestionMsg").html(" Subject Name can not be a number or empty!");
+         }else{
+          $("#validSubjectQuestionMsg").html("");
+            validQuestionSubject= true;
+         }
+      });
+
+       var validQuestionFile= false;
+      $("#question_ppr").blur(function(){
+         var question_ppr = $("#question_ppr").val()
+         if (question_ppr == ""){
+          $("#validQuestionFileMsg").html(" Please enter file path!");
+         }else{
+          $("#validQuestionFileMsg").html("");
+            validQuestionFile= true;
+         }
+      });
+
 });

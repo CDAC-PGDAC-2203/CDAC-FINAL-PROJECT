@@ -63,8 +63,8 @@
                     <a href=""><button class="admin-button" id="questions">Upload Exam Paper</button></a>
                 </div>
             </div>
-        </div>
-        <div class="row">
+       
+       
             <div class="col-sm-4 py-3" style="height:200px;">
                 <div class="card card-body text-white h-100">
                    <a href=""><button class="admin-button" id="links">Upload links</button></a>
@@ -81,7 +81,8 @@
                 </div>
             </div>
         </div>
-    </div>
+     </div>
+    
 
     <footer class="text-center text-lg-start bg-light text-muted">
     	<div class="text-center p-4"

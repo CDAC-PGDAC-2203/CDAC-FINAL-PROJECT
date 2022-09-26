@@ -39,17 +39,20 @@
                     <form>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="subjectResult" type="text" placeholder="Subject Name"class="form-control my-3 p-4"> 
+                                <input id="subjectResult" type="text" placeholder="Subject Name" class="form-control my-3 p-4" required="required"> 
+                                 <h6 id="validSubjectResultMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="course_name" type="text" placeholder="Course Name"class="form-control my-3 p-4"> 
+                                <input id="course_name" type="text" placeholder="Course Name" class="form-control my-3 p-4" required="required"> 
+                                 <h6 id="validCourseResultMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="resultPath" type="text" placeholder="Result File Path"class="form-control my-3 p-4" style="color:gray"> 
+                                <input id="resultPath" type="text" placeholder="Result File Path"class="form-control my-3 p-4" style="color:gray" required="required"> 
+                                <h6 id="validResultPathMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">

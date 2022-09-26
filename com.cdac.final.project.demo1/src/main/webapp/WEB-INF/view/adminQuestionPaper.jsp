@@ -40,11 +40,13 @@
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="subject" type="text" placeholder="Subject Name"class="form-control my-3 p-4"> 
+                                <h6 id="validSubjectQuestionMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="question_ppr" type="text" placeholder="Question Paper File Path"class="form-control my-3 p-4" style="color:gray"> 
+                                <h6 id="validQuestionFileMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">

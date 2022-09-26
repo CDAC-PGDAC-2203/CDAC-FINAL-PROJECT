@@ -3,6 +3,7 @@
 body{
      background: linear-gradient(#2EAAFA, #1F2F98);
     font-family: "Google Sans",Roboto,Arial,sans-serif;
+    background-attachment: fixed;
 }
 
 .admin-button{

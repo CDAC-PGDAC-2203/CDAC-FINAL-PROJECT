@@ -10,7 +10,7 @@
     <link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery-3.6.1.js"></script>
-	<script src="${pageContext.request.contextPath}/js/commonAdminTiles.js"></script>
+	
 </head>
 <body class="body">
      <nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
@@ -36,20 +36,23 @@
                
                 <h4 style="color: rgb(65, 105, 225);text-align: center;">Upload Attendance</h4>
                 <div style="display: flex;justify-content: center;">
-                    <form>
+                    <form action="">
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="subjectAttendance" type="text" placeholder="Subject Name"class="form-control my-3 p-4"> 
+                                <input id="subjectAttendance" type="text" placeholder="Subject Name"class="form-control my-3 p-4" required/> 
+                                <h6 id="validSubjectAttendanceMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="attendance_file" type="text" placeholder="Attendance file Path"class="form-control my-3 p-4" style="color:gray"> 
+                                <input id="attendance_file" type="text" placeholder="Attendance file Path"class="form-control my-3 p-4" style="color:gray"
+                                 required/> 
+                                 <h6 id="validAttendanceFileMsg" style="color: red;"></h6>
                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <button id="attendance_file_upload" type="button" class="btn1 mt-3 mb-5">Upload</button> 
+                                <button id="attendance_file_upload" type="submit" class="btn1 mt-3 mb-5">Upload</button> 
                             </div>    
                         </div>
                         <span id="message"></span>
@@ -65,5 +68,6 @@
 				href="https://acts.cdac.in/">acts.cdac.in</a>
 		</div>
     </footer>
+    <script src="js/commonAdminTiles.js"></script>
 </body>
 </html>

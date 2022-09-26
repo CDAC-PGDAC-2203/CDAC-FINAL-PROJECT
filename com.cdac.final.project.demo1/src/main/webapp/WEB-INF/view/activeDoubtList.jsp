@@ -20,9 +20,11 @@
 	</nav>
 	<div class="feedback-table">
 		<div class="container outerdiv">
+		  <div class="mt-5">
 			<h4 style="color: white;">
 				<b>All Active Doubts :</b>
 			</h4>
+		  </div>
 			<div class="inner-div" style="overflow-x: auto;">
 				<table class="table table-striped">
 					<thead>

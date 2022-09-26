@@ -40,8 +40,10 @@
                     <form>
                         <div class="form-row">
                             <div style="width: 100%;"> 
-                                <input id="course_name_gprn" type="text" placeholder="Course Name"class="form-control my-3 p-4"> 
-                            </div>    
+                                <input id="course_name_gprn" type="text" placeholder="Course Name"class="form-control my-3 p-4"
+                                  required="required"> 
+                                <h6 id="generatePrnValidMsg" style="color: red;"></h6>
+                             </div>    
                         </div>
                         <div class="form-row">
                             <div style="width: 100%;"> 
