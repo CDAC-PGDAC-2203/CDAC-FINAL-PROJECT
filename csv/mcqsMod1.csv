@@ -1,15 +1,10 @@
-What is the number of primitive data types in Java?,6,7,8,9,8,mod1
-What is the size of float and double in java?,32 and 64,32 and 32,64 and 64,64 and 32,32 and 64,mod1
-Automatic type conversion is possible in which of the cases?,byte to int,int to long,long to int,double to int,int to long,mod1
-Select the valid statement.,char[] ch = new char(5),char[] ch = new char[5],char[] ch = new char,char[] ch = new char[],char[] ch = new char[5],mod1
-When an array is passed to a method, what does the method receive?,Reference of array,Copy of array,Length of array,None of the above,Reference of array,mod1
-What is the implicit return type of constructor?,No return type,A class object in which it is defined,int,All of the above,A class object in which it is defined,mod1
-Arrays in java are,Object refereces,Objects,Primitive data type,None of the above,Objects,mod1
-A package is a collection of,Editing tools,Classes,Classes and interfaces,Interfaces,Classes and interfaces,mod1 
-When is the object created with new keyword?,At run time,At compile time,Depends on code,All of the above,At run time,mod1
-Identify the keyword among the following that makes a variable belong to a class,rather than being defined for each instance of the class.,Final,Static,Volatile,Abstract,Static,mod1
-In which of the following is toString() method defined?,java.lang.Object,java.lang.String,java.lang.util,None of the above,java.lang.Object,mod1
-compareTo() returns,True,False,An int value,A double value,An int value,mod1
-Identify the return type of a method that does not return any value.,int,void,double,char,void,mod1
-To which of the following does the class string belong to?,java.lang,java.util,java.awt,java.applet,java.lang,mod1
-Output of Math.floor(3.6)?,3,3.0,4,4.0,3.0,mod1
+1,What is the number of primitive data types in Java?,6,7,8,9,8,mod1
+2,What is the size of float and double in java?,32 and 64,32 and 32,64 and 64,64 and 32,32 and 64,mod1
+3,Automatic type conversion is possible in which of the cases?,byte to int,int to long,long to int,double to int,int to long,mod1
+4,Select the valid statement.,char[] ch = new char(5),char[] ch = new char[5],char[] ch = new char,char[] ch = new char[],char[] ch = new char[5],mod1
+5,When an array is passed to a method, what does the method receive?,Reference of array,Copy of array,Length of array,None of the above,Reference of array,mod1
+6,What is the implicit return type of constructor?,No return type,A class object in which it is defined,int,All of the above,A class object in which it is defined,mod1
+7,Arrays in java are,Object refereces,Objects,Primitive data type,None of the above,Objects,mod1
+8,A package is a collection of,Editing tools,Classes,Classes and interfaces,Interfaces,Classes and interfaces,mod1
+9,When is the object created with new keyword?,At run time,At compile time,Depends on code,All of the above,At run time,mod1
+10,Identify the keyword among the following that makes a variable belong to a class,rather than being defined for each instance of the class.,Final,Static,Volatile,Abstract,Static,mod1
