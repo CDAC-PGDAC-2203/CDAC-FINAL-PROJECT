@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.cdac.app.domain.QuestionPaper;
 import com.cdac.app.dto.ExamAttemptDTO;
+import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IExamService;
 
 @Controller
@@ -40,10 +41,10 @@ public class ExamController {
 	public String loadExamMod2() {
 		return "/examPageMod2";
 	}
-	
+
 	// API to get question paper
 	@GetMapping("/exam/questions/{module}")
-	public ResponseEntity<?> getQuestions(@PathVariable(name="module") String module){
+	public ResponseEntity<?> getQuestions(@PathVariable(name = "module") String module) {
 		try {
 			List<QuestionPaper> list = service.getQuestionPaper(module);
 			logger.info("*******Received Question Paper***********");
@@ -56,10 +57,20 @@ public class ExamController {
 		}
 	}
 
-	// API to get attempt exam
+	// API to give attempt exam
 	@PostMapping("/exam/attempt")
-	public void examAttempt(@RequestBody ExamAttemptDTO exam) {
-		service.examAttempt(exam.getMap(),exam.getModule(),Long.parseLong(exam.getuPrn()));
+	public ResponseEntity<?> examAttempt(@RequestBody ExamAttemptDTO exam) {
+		SimpleString simple = new SimpleString("DONE");
+		try {
+			service.examAttempt(exam.getMap(), exam.getModule(), Long.parseLong(exam.getuPrn()));
+			logger.info("************Exam Submitted of " + exam.getuPrn() + " " + "of " + exam.getModule()
+					+ "*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
-
 }

@@ -9,12 +9,18 @@ package com.cdac.app.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "question_paper")
+@IdClass(QuestionPaperId.class)
 public class QuestionPaper {
+
 	@Id
+	@Column(name = "question_no")
+	private Integer qId;
+
 	@Column(name = "question")
 	private String question;
 
@@ -33,6 +39,7 @@ public class QuestionPaper {
 	@Column(name = "answer")
 	private String answer;
 
+	@Id
 	@Column(name = "module")
 	private String module;
 
@@ -40,8 +47,12 @@ public class QuestionPaper {
 		return question;
 	}
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public Integer getqId() {
+		return qId;
+	}
+
+	public void setqId(Integer qId) {
+		this.qId = qId;
 	}
 
 	public String getOption1() {
@@ -92,13 +103,14 @@ public class QuestionPaper {
 		this.module = module;
 	}
 
-	public QuestionPaper() {
-		super();
+	public void setQuestion(String question) {
+		this.question = question;
 	}
 
-	public QuestionPaper(String question, String option1, String option2, String option3, String option4, String answer,
-			String module) {
+	public QuestionPaper(Integer qId, String question, String option1, String option2, String option3, String option4,
+			String answer, String module) {
 		super();
+		this.qId = qId;
 		this.question = question;
 		this.option1 = option1;
 		this.option2 = option2;
@@ -108,10 +120,8 @@ public class QuestionPaper {
 		this.module = module;
 	}
 
-	@Override
-	public String toString() {
-		return "QuestionPaper [question=" + question + ", option1=" + option1 + ", option2=" + option2 + ", option3="
-				+ option3 + ", option4=" + option4 + ", answer=" + answer + ", module=" + module + "]";
+	public QuestionPaper() {
+		super();
 	}
 
 }

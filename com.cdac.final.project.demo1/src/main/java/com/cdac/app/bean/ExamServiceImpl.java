@@ -46,13 +46,14 @@ public class ExamServiceImpl implements IExamService {
 				String[] record = line.split(splitBy);
 				QuestionPaper question = new QuestionPaper();
 
-				question.setQuestion(record[0]);
-				question.setOption1(record[1]);
-				question.setOption2(record[2]);
-				question.setOption3(record[3]);
-				question.setOption4(record[4]);
-				question.setAnswer(record[5]);
-				question.setModule(record[6]);
+				question.setqId(Integer.parseInt(record[0]));
+				question.setQuestion(record[1]);
+				question.setOption1(record[2]);
+				question.setOption2(record[3]);
+				question.setOption3(record[4]);
+				question.setOption4(record[5]);
+				question.setAnswer(record[6]);
+				question.setModule(record[7]);
 
 				list.add(question);
 			}
@@ -77,8 +78,8 @@ public class ExamServiceImpl implements IExamService {
 
 		for (int i = 0; i < paper.size(); i++) {
 			String answer = paper.get(i).getAnswer().toLowerCase();
-			String question = paper.get(i).getQuestion();
-			String markedAnswer = map.get(question).toLowerCase();
+			String question_no = paper.get(i).getqId().toString();
+			String markedAnswer = map.get(question_no).toLowerCase();
 
 			if (markedAnswer.equals(answer)) {
 				marks += 1;

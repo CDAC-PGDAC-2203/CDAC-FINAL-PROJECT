@@ -17,6 +17,6 @@ import com.cdac.app.domain.QuestionPaper;
 @Repository
 public interface IExamRepository extends JpaRepository<QuestionPaper, String> {
 
-	@Query(value = "select q from QuestionPaper q where q.module = ?1 order by q.question")
+	@Query(value = "select q from QuestionPaper q where q.module = ?1 order by q.qId")
 	List<QuestionPaper> findAllByModule(String module);
 }

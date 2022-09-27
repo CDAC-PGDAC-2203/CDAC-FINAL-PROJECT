@@ -127,6 +127,7 @@
 				<button class="btn btn-primary" id="submitExam">Submit</button>
 			</div>
 		</div>
+		<span id="msg"></span>
 	</div>
 
 

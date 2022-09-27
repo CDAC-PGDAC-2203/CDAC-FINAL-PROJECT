@@ -176,10 +176,7 @@ $(document).ready(() => {
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({
-            "day": dd.toString(),
-            "month": mm.toString(),
-            "year": yyyy.toString(),
-            "course": courseLink
+            
         }),
         beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', localStorage.getItem("token")) },
         success: (data) => {
