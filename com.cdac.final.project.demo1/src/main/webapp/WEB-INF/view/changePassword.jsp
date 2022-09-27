@@ -58,13 +58,16 @@
     <div class="main-container">
         <div class="login-box">
             <div class="input-block">
-           <input id="oldPassword" type="password" placeholder="Current Password" class="input-control" required>
+           <input id="oldPassword" type="password" placeholder="Current Password" class="input-control" required="required" aria-required="true">
+             <p id="changeOldPassword_message" style="color: red;font-size: 11px; margin-top: 0px;"></p>
            </div>
            <div class="input-block">
-           <input id="newPassword" type="password" placeholder="New Password" class="input-control">
+           <input id="newPassword" type="password" placeholder="New Password" class="input-control" required="required" aria-required="true">
+           <p id="changeNewPassword_message" style="color: red;font-size: 11px; margin-top: 0px;"></p>
         </div>
         <div class="input-block">
-            <input id="newRetypePassword" type="password" placeholder="Retype New Password" class="input-control">
+            <input id="newRetypePassword" type="password" placeholder="Retype New Password" class="input-control" required="required" aria-required="true">
+            <p id="changeRetypePassword_message" style="color: red;font-size: 11px; margin-top: 0px;"></p>
          </div>
         <div class="input-box">
             <button class="btn" id="chPassword">Change Password</button>
