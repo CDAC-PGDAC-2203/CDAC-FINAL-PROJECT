@@ -51,20 +51,20 @@
 					<div class="card card-margin" style="height: 88%; width: 100%;">
 						<h3 class="card-title my-3" style="text-align: center;">Schedule</h3>
 						<div class="card-body pt-0">
-							<table style = "margin-top: 10%; margin-left: auto; margin-right: auto; overflow-y: auto;" cellpadding="15">
+							<table style = "margin-top: 10%; margin-left: auto; margin-right: auto; overflow-y: auto; box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);">
 								<tr style="margin-top: auto; margin-bottom: auto; background-color: #f5f5f5;">
-									<td>
+									<td style="padding: 20px;border:none;">
 										<h4>Theory:</h4>
 									</td>
-									<td>
+									<td style="padding: 20px;border:none;">
 										<h4 id="theory_time"></h4>
 									</td>
 								</tr>
 								<tr style="margin-top: auto; margin-bottom: auto; background-color: #f5f5f5;">
-									<td>
+									<td style="padding: 20px;border:none;">
 										<h4>Lab:</h4>
 									</td>
-									<td>
+									<td style="padding: 20px;border:none;">
 										<h4 id="lab_time"></h4>
 									</td>
 								</tr>
