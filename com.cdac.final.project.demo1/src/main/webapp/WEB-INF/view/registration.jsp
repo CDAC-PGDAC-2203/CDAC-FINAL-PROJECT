@@ -25,7 +25,7 @@
 						</a>
 					</div>
 
-					<h2 class="font-weight-bold py-1" style="color: rgb(65, 105, 225);">CDAC
+					<h2 class="font-weight-bold py-2" style="color: rgb(65, 105, 225);">CDAC
 						STUDENT PORTAL</h2>
 					<h4 style="color: rgb(65, 105, 225);">Registration Form</h4>
 					<div class="px-5">
@@ -42,25 +42,28 @@
 
 							<!-- Verification -->
 							<div class="form-step form-step-active" style="margin-top: 50px;">
-							 <h6 id="register_message_ccatNo" style="color: red; margin-right: 280px"></h6>
+							 
 								<div class="input-group form-row" style="height: 4rem;">
-								    
-									<input type="text" placeholder="C-CAT No." id="ccatNo" required="required" 
-				                          aria-required="true" class="form-control my-3 p-4">
-				                  
-								</div>
-								 <h6 id="register_message_name" style="color: red; margin-right: 140px"></h6>
+								    <input type="text" placeholder="C-CAT No." id="ccatNo" required="required" 
+				                          aria-required="true" class="form-control my-3 p-4"/>
+				                </div>
+				                <div style="margin-top: -15px">
+								   <p id="register_message_ccatNo" style="color: red;font-size: 11px; margin-top: 0px; margin-left:-350px"></p>
+								 </div>
 								<div class="input-group form-row">
-								   
-									<input type="text" placeholder="First Name" id="fName" required="required" 
-				                            aria-required="true" class="form-control my-3 p-4">
-								</div>
-								<div class="form-row">
-								  
-									<div>
+								    <input type="text" placeholder="First Name" id="fName" required="required" 
+				                            aria-required="true" class="form-control my-3 p-4"/>
+								 </div>
+								 <div style="margin-top: -35px">
+								   <p id="register_message_name" style="color: red;font-size: 11px; margin-top: 0px; margin-left:-275px"></p>
+								 </div>
+							    <div class="form-row">
+								    <div>	
 										<button id="btn-next" type="button"
-											class="btn1 btn-next mt-3 mb-5">Next</button>
-										<span id="register_failure" style="color: red;"></span>
+											class="btn1 btn-next mt-3">Next</button>
+								    </div>
+								     <div>
+									<h5 id="register_failure" style="color: red; margin-top: 5px"></h5>
 									</div>
 								 </div>
 							</div>

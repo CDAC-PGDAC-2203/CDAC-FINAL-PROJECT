@@ -1,10 +1,5 @@
-@import
-	url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700)
-	;
-
-@import
-	url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic)
-	;
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
 
 :root { 
 	--primary-color: rgb(11, 78, 179);
@@ -128,7 +123,7 @@
 	border-radius: 50px;
 }
 
-/* .input-group {
+/*.input-group {
     margin: 2rem 0;
   } */
 @keyframes animate {from { transform:scale(1, 0);
@@ -153,8 +148,8 @@ body {
 	/* background-color: rgb(65, 105, 225); */
 	background:
 		url("../img/cdacActs.jpeg");
-	background-position: center;
-	background-size: 100%;
+    background-position: center;
+	background-size: 100%; 
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	position: relative;
