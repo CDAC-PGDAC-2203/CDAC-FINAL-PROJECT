@@ -22,6 +22,7 @@ import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.domain.UserAddress;
 import com.cdac.app.domain.UserLogin;
+import com.cdac.app.dto.DoubtDTO;
 import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.IDoubtForumRepository;
@@ -156,10 +157,31 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to store doubt details in dataBase
 	@Override
-	public void saveDoubtDetails(DoubtForum doubtDetails) {
-		doubtDetails.setActiveDoubt("Y");
-		doubtForumRepository.save(doubtDetails);
-
+	public void saveDoubtDetails(DoubtDTO doubtDetails) throws Exception{
+		PersonalDetails pDetail = personalDetailsRepository.findByUPrn(doubtDetails.getuPrn());
+		if(pDetail!=null) {
+			String name = pDetail.getfName();
+			if (pDetail.getmName() != null) {
+				name = name + " " + pDetail.getmName();
+			}
+			if (pDetail.getlName() != null) {
+				name = name + " " + pDetail.getlName();
+			}
+			
+			DoubtForum doubt = new DoubtForum();
+			
+			doubt.setUserPrn(doubtDetails.getuPrn());
+			doubt.setUserName(name);
+			doubt.setEmail(pDetail.getEmail());
+			doubt.setSubjectName(doubtDetails.getSubjectName());
+			doubt.setDoubtContent(doubtDetails.getDoubtContent());
+			doubt.setAttachment(doubtDetails.getAttachment());
+			doubt.setActiveDoubt("Y");
+			
+			doubtForumRepository.save(doubt);
+		}else {
+			throw new CDACAppException("ERROR IN SAVING DOUBT");
+		}
 	}
 
 	// Method to fetch active doubts

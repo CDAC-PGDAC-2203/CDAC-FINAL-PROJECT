@@ -6,9 +6,10 @@ import java.util.List;
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.TotalAttendance;
+import com.cdac.app.dto.DoubtDTO;
 
 public interface IDashboardService {
-	void saveDoubtDetails(DoubtForum doubtDetails);
+	void saveDoubtDetails(DoubtDTO doubtDetails) throws Exception;
 
 	Double getPerformance(Long uPrn) throws Exception;
 

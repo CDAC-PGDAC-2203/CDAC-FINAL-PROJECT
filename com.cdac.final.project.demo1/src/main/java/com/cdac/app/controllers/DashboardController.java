@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.dto.ChangePasswordDTO;
+import com.cdac.app.dto.DoubtDTO;
 import com.cdac.app.dto.LectureDTO;
 import com.cdac.app.dto.SimpleString;
 import com.cdac.app.service.IDashboardService;
@@ -102,8 +102,18 @@ public class DashboardController {
 
 	// API to get doubt details
 	@PostMapping("/doubt")
-	public void DoubtForumDetails(@RequestBody DoubtForum dobutDetails) {
-		service.saveDoubtDetails(dobutDetails);
+	public ResponseEntity<?> DoubtForumDetails(@RequestBody DoubtDTO dobutDetails) {
+		SimpleString simple = new SimpleString("DONE");
+		try {
+			service.saveDoubtDetails(dobutDetails);
+			logger.info("************Uploaded Attendance Key*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to show student performance
@@ -111,12 +121,12 @@ public class DashboardController {
 	public ResponseEntity<?> getFinalPerformance(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
 			Double finalPerformance = service.getPerformance(uPrn);
-			return new ResponseEntity<Double>(finalPerformance,HttpStatus.OK);
-		}catch(Exception e) {
+			return new ResponseEntity<Double>(finalPerformance, HttpStatus.OK);
+		} catch (Exception e) {
 			logger.info(e.getMessage());
 			e.printStackTrace();
 			Double bad = 0.0;
-			return new ResponseEntity<Double>(bad,HttpStatus.ACCEPTED);
+			return new ResponseEntity<Double>(bad, HttpStatus.ACCEPTED);
 		}
 	}
 
@@ -125,20 +135,21 @@ public class DashboardController {
 	public ResponseEntity<?> getTotalAttendance(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
 			Double finalAttendance = service.getTotalAttendance(uPrn);
-			return new ResponseEntity<Double>(finalAttendance,HttpStatus.OK);
-		}catch(Exception e) {
+			return new ResponseEntity<Double>(finalAttendance, HttpStatus.OK);
+		} catch (Exception e) {
 			logger.info(e.getMessage());
 			e.printStackTrace();
 			Double bad = 0.0;
-			return new ResponseEntity<Double>(bad,HttpStatus.ACCEPTED);
+			return new ResponseEntity<Double>(bad, HttpStatus.ACCEPTED);
 		}
 	}
 
 	// API to show stuRdent module wise attendance report
 	@GetMapping("/moduleAttendance/{uPrn}")
-	public  ResponseEntity<List<TotalAttendance>> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn) {
+	public ResponseEntity<List<TotalAttendance>> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
-			List<TotalAttendance> list = service.getModuleAttendance(uPrn);;
+			List<TotalAttendance> list = service.getModuleAttendance(uPrn);
+			;
 			logger.info("************Received profile of" + uPrn + "*************");
 			return new ResponseEntity<>(list, HttpStatus.OK);
 		} catch (Exception e) {
@@ -156,12 +167,13 @@ public class DashboardController {
 	}
 
 	// API to get lecture timings
-	@GetMapping("/time/{date}/{course}")
-	public ResponseEntity<HashMap<String, String>> lectureTime(@PathVariable(name = "date") String date,
-			@PathVariable(name = "course") String course) {
+	@PostMapping("/dashboard/time")
+	public ResponseEntity<HashMap<String, String>> lectureTime(@RequestBody LectureDTO lecture) {
 		try {
-			HashMap<String, String> map = joinLectureService.getLectureTime(date, course);
-			logger.info("************Received Links of" + date + "*************");
+			HashMap<String, String> map = joinLectureService.getLectureTime(
+					lecture.getYear() + "-" + lecture.getMonth() + "-" + lecture.getDay(), lecture.getCourse());
+			logger.info("************Received Links of" + lecture.getYear() + "-" + lecture.getMonth() + "-"
+					+ lecture.getDay() + "*************");
 			return new ResponseEntity<>(map, HttpStatus.OK);
 		} catch (Exception e) {
 			logger.info(e.getMessage());
@@ -175,8 +187,10 @@ public class DashboardController {
 	@PostMapping("/dashboard/links")
 	public ResponseEntity<HashMap<String, String>> lectureLink(@RequestBody LectureDTO lecture) {
 		try {
-			HashMap<String, String> map = joinLectureService.getLectureLink(lecture.getYear()+"-"+lecture.getMonth()+"-"+lecture.getDay(), lecture.getCourse());
-			logger.info("************Received Links of" + lecture.getYear()+"-"+lecture.getMonth()+"-"+lecture.getDay() + "*************");
+			HashMap<String, String> map = joinLectureService.getLectureLink(
+					lecture.getYear() + "-" + lecture.getMonth() + "-" + lecture.getDay(), lecture.getCourse());
+			logger.info("************Received Links of" + lecture.getYear() + "-" + lecture.getMonth() + "-"
+					+ lecture.getDay() + "*************");
 			return new ResponseEntity<>(map, HttpStatus.OK);
 		} catch (Exception e) {
 			logger.info(e.getMessage());
@@ -200,13 +214,13 @@ public class DashboardController {
 		}
 	}
 
-	@GetMapping("/modules")
-	public ResponseEntity<Modules> getModulesList(@PathVariable (name = "course") String course){
+	@GetMapping("/modules/{course}")
+	public ResponseEntity<Modules> getModulesList(@PathVariable(name = "course") String course) {
 		try {
 			Modules moduleList = service.getModulesList(course);
 			logger.info("************Received Notices*************");
 			return new ResponseEntity<>(moduleList, HttpStatus.OK);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			logger.info(e.getMessage());
 			Modules badModuleList = null;
 			return new ResponseEntity<>(badModuleList, HttpStatus.OK);
