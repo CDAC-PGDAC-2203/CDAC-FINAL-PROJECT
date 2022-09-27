@@ -8,12 +8,34 @@ $(document).ready(() => {
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
             success: (data) => {
                 totalPerformance = data.toFixed(2); 
-                $("#currentPerformance").append(totalPerformance+"%");
             },
             error: (error) => {
                 alert("Internal Server Error!");
             }
     });
+
+    let progressBar1 = document.querySelector(".circular-progress-1");
+    let valueContainer1 = document.querySelector(".value-container-1");
+ 
+    var progressValue1 = "0.00";
+    progressValue1 = parseFloat(progressValue1);
+    var progressEndValue1 = totalPerformance;
+    var speed1 = 10;
+ 
+    let progress1 = setInterval(() => {
+        progressValue1 = progressValue1 + 0.01;
+        console.log(progressValue1);
+        valueContainer1.textContent = `${progressValue1}%`;
+        progressBar1.style.background = `conic-gradient(
+             #804FB3 ${progressValue1 * 0.6}deg,
+             #9969C7 ${progressValue1 * 1.2}deg,
+                #e91e63 ${progressValue1 * 2.7}deg,
+                white ${progressValue1 * 3.6}deg
+        )`;
+        if(progressValue1 == progressEndValue1){
+            clearInterval(progress1);
+        }
+    }, speed1);
 
     // AJAX to get current attendance of student
     $.ajax({
@@ -21,7 +43,7 @@ $(document).ready(() => {
             url: "/portal/attendance/"+localStorage.getItem("uPrn"),
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
             success: (data) => {
-               $("#currentAttendance").append(data+"%");
+               //$("#currentAttendance").append(data+"%");
             },
             error: (error) => {
                 alert("Internal Server Error!");
