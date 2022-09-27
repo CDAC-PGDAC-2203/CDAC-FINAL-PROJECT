@@ -19,6 +19,7 @@ html, body {
 	place-items: center;
 	text-align: center;
 	background: linear-gradient(#2EAAFA, #1F2F98);
+	background-attachment: fixed;
 }
 
 .row {
