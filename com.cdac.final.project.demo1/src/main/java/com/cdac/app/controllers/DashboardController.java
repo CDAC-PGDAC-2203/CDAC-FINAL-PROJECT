@@ -63,6 +63,11 @@ public class DashboardController {
 		return "/moduleResult";
 	}
 
+	@GetMapping("/feedback")
+	public String loadFeedbackPage() {
+		return "/feedback";
+	}
+
 	// API to show user profile details
 	@GetMapping("/profile/{uPrn}")
 	public ResponseEntity<HashMap<String, String>> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
