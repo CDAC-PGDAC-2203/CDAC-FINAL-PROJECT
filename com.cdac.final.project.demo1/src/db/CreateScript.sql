@@ -1,6 +1,6 @@
-drop database if exists cdac_app_final;
 create database cdac_app_final;
 use cdac_app_final;
+-- drop database cdac_app_final
 
 -- ------------------------------------------------------------------------------------------------------
 
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS doubt_forum(
     email varchar(60) not null,
     sub_name varchar(10) not null,
     doubt_content varchar(250) not null,
-    attachment varchar(500),
+    attachment longtext,
     active_doubt char(1) not null -- (Y/N)
 );
 
@@ -273,3 +273,16 @@ CREATE TABLE IF NOT EXISTS notice(
 );
 
 -- ------------------------------------------------------------------------------------------------------
+
+-- modules table
+
+create table modules(
+	course varchar(20) primary key not null, 
+    mod1 varchar(10), 
+    mod2 varchar(10), 
+    mod3 varchar(10), 
+    mod4 varchar(10),
+    mod5 varchar(10),
+    mod6 varchar(10),
+    mod7 varchar(10),
+    mod8 varchar(10));

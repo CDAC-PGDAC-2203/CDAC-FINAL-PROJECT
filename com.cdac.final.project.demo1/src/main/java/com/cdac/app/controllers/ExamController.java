@@ -6,7 +6,6 @@
 
 package com.cdac.app.controllers;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -21,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.cdac.app.domain.QuestionPaper;
+import com.cdac.app.dto.ExamAttemptDTO;
 import com.cdac.app.service.IExamService;
 
 @Controller
@@ -59,7 +59,7 @@ public class ExamController {
 	// API to get attempt exam
 	@PostMapping("/exam/attempt")
 	public void examAttempt(@RequestBody ExamAttemptDTO exam) {
-		service.examAttempt(map, module, uPrn);
+		service.examAttempt(exam.getMap(),exam.getModule(),Long.parseLong(exam.getuPrn()));
 	}
 
 }
