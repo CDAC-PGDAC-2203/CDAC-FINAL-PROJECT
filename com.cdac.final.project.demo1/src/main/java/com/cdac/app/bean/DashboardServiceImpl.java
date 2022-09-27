@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.EmailDetails;
 import com.cdac.app.domain.FinalResult;
+import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.Notice;
 import com.cdac.app.domain.PersonalDetails;
 import com.cdac.app.domain.TotalAttendance;
@@ -25,6 +26,7 @@ import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.IDoubtForumRepository;
 import com.cdac.app.repositories.IFinalResultRepository;
+import com.cdac.app.repositories.IModulesRepository;
 import com.cdac.app.repositories.INoticeRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
@@ -59,6 +61,9 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private IEmailService emailService;
+
+	@Autowired
+	private IModulesRepository modulesRepository;
 
 	private PasswordEncoder passwordEncoder;
 
@@ -334,5 +339,14 @@ public class DashboardServiceImpl implements IDashboardService {
 
 		email.setMsgBody(messageBody);
 		emailService.sendSimpleMail(email);
+	}
+
+	@Override
+	public Modules getModulesList(String course) throws Exception {
+		Modules moduleList = modulesRepository.findByCourse(course);
+		if(moduleList != null) {
+			return moduleList;
+		}
+		throw new CDACAppException("Invalid Course");
 	}
 }

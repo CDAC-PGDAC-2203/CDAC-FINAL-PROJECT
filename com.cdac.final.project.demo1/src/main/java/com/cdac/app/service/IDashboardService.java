@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.cdac.app.domain.DoubtForum;
+import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.TotalAttendance;
 
 public interface IDashboardService {
@@ -30,4 +31,6 @@ public interface IDashboardService {
 	void removeNotice(String noticeName);
 
 	List<HashMap<String, String>> getNotice() throws Exception;
+
+	Modules getModulesList(String course) throws Exception;
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.Feedback;
+import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.dto.ChangePasswordDTO;
 import com.cdac.app.dto.LectureDTO;
@@ -196,6 +197,19 @@ public class DashboardController {
 			logger.info(e.getMessage());
 			HashMap<String, String> badMap = null;
 			return new ResponseEntity<>(badMap, HttpStatus.OK);
+		}
+	}
+
+	@GetMapping("/modules")
+	public ResponseEntity<Modules> getModulesList(@PathVariable (name = "course") String course){
+		try {
+			Modules moduleList = service.getModulesList(course);
+			logger.info("************Received Notices*************");
+			return new ResponseEntity<>(moduleList, HttpStatus.OK);
+		} catch(Exception e) {
+			logger.info(e.getMessage());
+			Modules badModuleList = null;
+			return new ResponseEntity<>(badModuleList, HttpStatus.OK);
 		}
 	}
 }
