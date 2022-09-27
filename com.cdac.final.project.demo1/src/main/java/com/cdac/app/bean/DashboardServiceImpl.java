@@ -370,18 +370,17 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Override
 	public Modules getModulesList(String course) throws Exception {
-		Modules moduleList = modulesRepository.findByCourse(course);
-		if(moduleList != null) {
-			return moduleList;
+		Modules module = modulesRepository.findByCourse(course);
+		if(module == null) {
+			return module;
 		}
 		throw new CDACAppException("Invalid Course");
 	}
 
 	@Override
 	public List<Faculty> getFacultyList(String course) throws Exception {
-		List<Faculty> list = facultyRepository.findByCourse(course, "Y");
-		
-		if(list != null) {
+		List<Faculty> list = facultyRepository.findByCourse("Y",course);
+		if(list.size()>0) {
 			return list;	
 		}
 		throw new CDACAppException("Faculty list is empty");

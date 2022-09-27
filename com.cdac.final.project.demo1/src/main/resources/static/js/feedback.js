@@ -60,7 +60,9 @@ $(document).ready(()=>{
             contentType: "application/json",
             data: JSON.stringify({
                 "uPrn": uPrn,
-                "course": course,
+                "faculty": faculty,
+                "course": courseModules,
+                "module": courseModules,
                 "parameter1": parameter1,
                 "parameter2": parameter2,
                 "parameter3": parameter3,
