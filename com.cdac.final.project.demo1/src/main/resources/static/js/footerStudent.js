@@ -47,7 +47,7 @@ $(document).ready(() => {
         +"<i class='fas fa-home'></i> Centre for Development of Advanced "
         +"Computing, C-DAC Innovation Park 34, B/1, Panchwati Road, Pashan, "
         +"Pune, Maharashtra 411008 <a href='https://www.google.com/maps/place/CENTRE+FOR+DEVELOPMENT+OF+ADVANCED+COMPUTING,+Panchawati+Rd,+Mansarovar,+Pashan,+Pune,+Maharashtra+411008/@18.5349721,73.8105031,19z/data=!4m5!3m4!1s0x3bc2bf0e5dca0f97:0xaed6c14da20b1d0f!8m2!3d18.5350147!4d73.8108441?shorturl=1'> "
-        +"<img src='img\2901214.png' style='height: 13px; width: 13px;' /> "
+        +"<img src='img/2901214.png' style='height: 13px; width: 13px;' /> "
         +"</a> "
         +"</p> "
         +"<p> "
