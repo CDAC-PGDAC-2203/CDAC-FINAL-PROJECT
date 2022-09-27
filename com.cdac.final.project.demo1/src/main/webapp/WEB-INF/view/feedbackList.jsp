@@ -33,12 +33,12 @@
 
 	<!-- FeedbackList form -->
 	<div class="main-container">
-		<div class="course-box">
-		 <h4 style="color: rgb(65, 105, 225);text-align: center;">Feedback list</h4>
-			<div class="input-block" id="input-course">
+	<div class="course-box">
+		<h4 style="color: rgb(65, 105, 225);text-align: center;">Feedback list</h4>
+		<div class="input-block" id="input-course">
 				<input type="text" placeholder="Course Name" class="input-control"
 					id="courseName" required>
-				<h6 id="feedbackListValidMsg" style="color: red;"></h6>
+				<p id="feedbackListValidMsg" style="color: red; font-size: 11px; margin-top: 0px; margin-left: 0px"></p>
 			</div>
 			<div class="input-box">
 				<button class="btn" id="courseSubmit">Submit</button>

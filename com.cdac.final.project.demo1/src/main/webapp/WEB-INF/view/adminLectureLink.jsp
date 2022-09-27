@@ -40,49 +40,61 @@
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
                             <div style="width: 40%;"> 
                                 <input id="subject" type="text" placeholder="Subject Name"class="form-control my-3 p-3">
+                                <p id="LectureSubjectValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-10px"></p>
                             </div>
                             <div style="width: 40%;">    
                                 <input id="session_date" type="date" placeholder="Session Date"class="form-control my-3 p-3" style="color: gray;"> 
+                                <p id="LectureDateValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-45px"></p>
                             </div>   
                         </div>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
                             <div style="width: 40%;"> 
                                 <input id="theory_link" type="text" placeholder="Theory Link"class="form-control my-3 p-3">
+                                <p id="LectureTheoryLinkValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-15px"></p>
                             </div>
                             <div style="width: 40%;">     
                                 <input id="theory_time" type="text" placeholder="Theory Time"class="form-control my-3 p-3">  
+                                <p id="LectureTheoryTimeValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-13px"></p>
                             </div>    
                         </div>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
                             <div style="width: 40%;"> 
                                 <input id="b1_link" type="text" placeholder="B1 Link"class="form-control my-3 p-3">
+                                <p id="LectureB1LinkValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-35px"></p>
                             </div>
                             <div style="width: 40%;">    
                                 <input id="b1_time" type="text" placeholder="B1 Time"class="form-control my-3 p-3">  
+                                <p id="LectureB1TimeValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-33px"></p>
                             </div>    
                         </div>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
                             <div style="width: 40%;"> 
                                 <input id="b2_link" type="text" placeholder="B2 Link"class="form-control my-3 p-3">
+                                 <p id="LectureB2LinkValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-35px"></p>
                             </div>
                             <div style="width: 40%;">    
                                 <input id="b2_time" type="text" placeholder="B2 Time"class="form-control my-3 p-3">  
+                                <p id="LectureB2TimeValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-33px"></p>
                             </div>    
                         </div>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
                             <div style="width: 40%;"> 
                                 <input id="b3_link" type="text" placeholder="B3 Link"class="form-control my-3 p-3">
+                                 <p id="LectureB3LinkValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-35px"></p>
                             </div>
                             <div style="width: 40%;">    
                                 <input id="b3_time" type="text" placeholder="B3 Time"class="form-control my-3 p-3">  
+                                <p id="LectureB3TimeValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-33px"></p>
                             </div>    
                         </div>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
                             <div style="width: 40%;"> 
                                 <input id="b4_link" type="text" placeholder="B4 Link"class="form-control my-3 p-3">
+                                <p id="LectureB4LinkValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-35px"></p>
                             </div>
                             <div style="width: 40%;">    
                                 <input id="b4_time" type="text" placeholder="B4 Time"class="form-control my-3 p-3">  
+                                <p id="LectureB4TimeValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-33px"></p>
                             </div>    
                         </div>
                         <div class="form-row">

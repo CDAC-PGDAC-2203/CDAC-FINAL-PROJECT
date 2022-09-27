@@ -40,13 +40,13 @@
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="course_name" type="text" placeholder="Course Name"class="form-control my-3 p-4"> 
-                                <h6 id="validFacultyListMsg" style="color: red;"></h6>
+                                <p id="validFacultyListMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -10px"></p>
                             </div>    
                         </div>
                         <div class="form-row">
-                            <div style="width: 100%;"> 
+                            <div style="width: 100%; margin-top: 30px"> 
                                 <input id="faculty_list" type="text" placeholder="Faculty List File Path"class="form-control my-3 p-4" style="color:gray"> 
-                                 <h6 id="validFacultyListFileMsg" style="color: red;"></h6>
+                                 <p id="validFacultyListFileMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -120px"></p>
                             </div>    
                         </div>
                         <div class="form-row">

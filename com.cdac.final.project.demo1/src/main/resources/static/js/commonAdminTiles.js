@@ -267,77 +267,110 @@ $(document).ready(()=>{
 
    $("#lecture_link_upload").click((e)=>{
       e.preventDefault();
-      var subject = $("#subject").val();
-      var session_date = $("#session_date").val();
-      var theoryLink = $("#theory_time").val() + "_" + $("#theory_link").val();
-      var b1Link = $("#b1_time").val() + "_" + $("#b1_link").val();
-      var b2Link = $("#b2_time").val() + "_" + $("#b2_link").val();
-      var b3Link = $("#b3_time").val() + "_" + $("#b3_link").val();
-      var b4Link = $("#b4_time").val() + "_" + $("#b4_link").val();
+      if(validLectureLinkSubject && validLectureLinkDate && validLectureLinkTheoryLink
+           && validLectureLinkTheoryTime && validLectureB1Link && validLectureLinkB1Time
+           && validLectureB2Link && validLectureLinkB2Time && validLectureB3Link
+           && validLectureLinkB3Time && validLectureB4Link && validLectureLinkB4Time){
+            var subject = $("#subject").val();
+            var session_date = $("#session_date").val();
+            var theoryLink = $("#theory_time").val() + "_" + $("#theory_link").val();
+            var b1Link = $("#b1_time").val() + "_" + $("#b1_link").val();
+            var b2Link = $("#b2_time").val() + "_" + $("#b2_link").val();
+            var b3Link = $("#b3_time").val() + "_" + $("#b3_link").val();
+            var b4Link = $("#b4_time").val() + "_" + $("#b4_link").val();
+            $.ajax({
+                url: "/portal/links",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    "course": subject, 
+                    "sessionDate": session_date,
+                    "theoryLink": theoryLink,
+                    "b1Link": b1Link,
+                    "b2Link": b2Link,
+                    "b3Link": b3Link,
+                    "b4Link": b4Link
+                }),
+                beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+                success: (data) => {
+                   if(data.data == "DONE"){
+                     $("#message").append(success);
+                     $("#subject").val("");
+                     $("#session_date").val("");
+                     $("#theory_time").val("");
+                     $("#b1_time").val("");
+                     $("#b2_time").val("");
+                     $("#b3_time").val("");
+                   }else{
+                     $("#message").append(failure);
+                     $("#subject").val("");
+                     $("#session_date").val("");
+                     $("#theory_time").val("");
+                     $("#b1_time").val("");
+                     $("#b2_time").val("");
+                     $("#b3_time").val("");
+                   }
+                },
+                error: (error) => {
+                     $("#message").append(failure);
+                     $("#subject").val("");
+                     $("#session_date").val("");
+                     $("#theory_time").val("");
+                     $("#b1_time").val("");
+                     $("#b2_time").val("");
+                     $("#b3_time").val("");
+                }
+             }); 
+           }else{
+                   $("#message").append(failure);
+                   $("#subject").val("");
+                   $("#session_date").val("");
+                   $("#theory_time").val("");
+                   $("#b1_time").val("");
+                   $("#b2_time").val("");
+                   $("#b3_time").val("");
+           }
+     
+  });
+
+  $("#notice_upload").click((e)=>{
+   e.preventDefault();
+   if(validNoticeName && validNoticeLink){
+      var noticeName = $("#noticeName").val();
+      var noticeLink = $("#noticeLink").val();
+      
       $.ajax({
-          url: "/portal/links",
+          url: "/portal/notice",
           type: "POST",
           contentType: "application/json",
           data: JSON.stringify({
-              "course": subject, 
-              "sessionDate": session_date,
-              "theoryLink": theoryLink,
-              "b1Link": b1Link,
-              "b2Link": b2Link,
-              "b3Link": b3Link,
-              "b4Link": b4Link
+            "subject": noticeName, 
+            "filePath" : noticeLink
           }),
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
                $("#message").append(success);
-               $("#course_name").val("");
-               $("#faculty_list").val("");
+               $("#noticeName").val("");
+               $("#noticeLink").val("");
              }else{
                $("#message").append(failure);
-               $("#course_name").val("");
-               $("#faculty_list").val("");
+               $("#noticeName").val("");
+               $("#noticeLink").val("");
              }
           },
           error: (error) => {
-            $("#message").append(failure);
-            $("#course_name").val("");
-            $("#faculty_list").val("");
+             $("#message").append(failure);
+             $("#noticeName").val("");
+             $("#noticeLink").val("");
           }
-       }); 
-  });
-
-  $("#notice_upload").click((e)=>{
-   e.preventDefault();
-   var noticeName = $("#noticeName").val();
-   var noticeLink = $("#noticeLink").val();
+         }); 
+       }else{
+             $("#message").append(failure);
+             $("#noticeName").val("");
+             $("#noticeLink").val("");
+           }
    
-   $.ajax({
-       url: "/portal/notice",
-       type: "POST",
-       contentType: "application/json",
-       data: JSON.stringify({
-         "subject": noticeName, 
-         "filePath" : noticeLink
-       }),
-       beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-       success: (data) => {
-          if(data.data == "DONE"){
-            $("#message").append(success);
-            $("#noticeName").val("");
-            $("#noticeLink").val("");
-          }else{
-            $("#message").append(failure);
-            $("#noticeName").val("");
-            $("#noticeLink").val("");
-          }
-       },
-       error: (error) => {
-          $("#message").append(failure);
-          $("#noticeName").val("");
-          $("#noticeLink").val("");
-       }
-      }); 
    });
 
    $("#notice_update").click((e)=>{
@@ -495,5 +528,177 @@ $(document).ready(()=>{
             validQuestionFile= true;
          }
       });
+
+      //Validation : Lecture Link
+      var validLectureLinkSubject= false;
+      $("#subject").blur(function(){
+         var subject = $("#subject").val()
+         if (!isNaN(subject) || subject == ""){
+          $("#LectureSubjectValidMsg").html(" Subject Name can not be a number or empty!");
+         }else{
+          $("#LectureSubjectValidMsg").html("");
+          validLectureLinkSubject= true;
+         }
+      });
+
+
+      var validLectureLinkDate= false;
+      $("#session_date").blur(function(){
+         var session_date = $("#session_date").val()
+         if (session_date == ""){
+          $("#LectureDateValidMsg").html(" Date can not be empty!");
+         }else{
+          $("#LectureDateValidMsg").html("");
+          validLectureLinkDate= true;
+         }
+      });
+
+      var validLectureLinkTheoryLink= false;
+      $("#theory_link").blur(function(){
+         var theory_link = $("#theory_link").val()
+         if (theory_link == ""){
+          $("#LectureTheoryLinkValidMsg").html(" Theory link can not be empty!");
+         }else{
+          $("#LectureTheoryLinkValidMsg").html("");
+          validLectureLinkTheoryLink= true;
+         }
+      });
+
+      var validLectureLinkTheoryTime= false;
+      $("#theory_time").blur(function(){
+         var theory_time = $("#theory_time").val()
+         if (theory_time == ""){
+          $("#LectureTheoryTimeValidMsg").html(" Theory time can not be empty!");
+         }else{
+          $("#LectureTheoryTimeValidMsg").html("");
+          validLectureLinkTheoryTime= true;
+         }
+      });
+
+      var validLectureB1Link= false;
+      $("#b1_link").blur(function(){
+         var b1_link = $("#b1_link").val()
+         if (b1_link == ""){
+          $("#LectureB1LinkValidMsg").html(" B1 link can not be empty!");
+         }else{
+          $("#LectureB1LinkValidMsg").html("");
+             validLectureB1Link = true;
+         }
+      });
+
+      var validLectureLinkB1Time= false;
+      $("#b1_time").blur(function(){
+         var b1_time = $("#b1_time").val()
+         if (b1_time == ""){
+          $("#LectureB1TimeValidMsg").html(" B1 time can not be empty!");
+         }else{
+          $("#LectureB1TimeValidMsg").html("");
+          validLectureLinkB1Time= true;
+         }
+      });
+
+      var validLectureB2Link= false;
+      $("#b2_link").blur(function(){
+         var b2_link = $("#b2_link").val()
+         if (b2_link == ""){
+          $("#LectureB2LinkValidMsg").html(" B2 link can not be empty!");
+         }else{
+          $("#LectureB2LinkValidMsg").html("");
+             validLectureB2Link = true;
+         }
+      });
+
+      var validLectureLinkB2Time= false;
+      $("#b2_time").blur(function(){
+         var b2_time = $("#b2_time").val()
+         if (b2_time == ""){
+          $("#LectureB2TimeValidMsg").html(" B2 time can not be empty!");
+         }else{
+          $("#LectureB2TimeValidMsg").html("");
+          validLectureLinkB2Time= true;
+         }
+      });
+
+
+      var validLectureB3Link= false;
+      $("#b3_link").blur(function(){
+         var b3_link = $("#b3_link").val()
+         if (b3_link == ""){
+          $("#LectureB3LinkValidMsg").html(" B3 link can not be empty!");
+         }else{
+          $("#LectureB3LinkValidMsg").html("");
+             validLectureB3Link = true;
+         }
+      });
+
+      var validLectureLinkB3Time= false;
+      $("#b3_time").blur(function(){
+         var b3_time = $("#b3_time").val()
+         if (b3_time == ""){
+          $("#LectureB3TimeValidMsg").html(" B3 time can not be empty!");
+         }else{
+          $("#LectureB3TimeValidMsg").html("");
+          validLectureLinkB3Time= true;
+         }
+      });
+
+      var validLectureB4Link= false;
+      $("#b4_link").blur(function(){
+         var b4_link = $("#b4_link").val()
+         if (b4_link == ""){
+          $("#LectureB4LinkValidMsg").html(" B4 link can not be empty!");
+         }else{
+          $("#LectureB4LinkValidMsg").html("");
+             validLectureB4Link = true;
+         }
+      });
+
+      var validLectureLinkB4Time= false;
+      $("#b4_time").blur(function(){
+         var b4_time = $("#b4_time").val()
+         if (b4_time == ""){
+          $("#LectureB4TimeValidMsg").html(" B4 time can not be empty!");
+         }else{
+          $("#LectureB4TimeValidMsg").html("");
+          validLectureLinkB4Time= true;
+         }
+      });
+
+      //Validation : Notice
+
+      var validNoticeName= false;
+      $("#noticeName").blur(function(){
+         var noticeName = $("#noticeName").val()
+         if (noticeName == ""){
+          $("#validNoticeNameMsg").html(" Notice name can not be empty!");
+         }else{
+          $("#validNoticeNameMsg").html("");
+          validNoticeName= true;
+         }
+      });
+
+      var validNoticeLink= false;
+      $("#noticeLink").blur(function(){
+         var noticeLink = $("#noticeLink").val()
+         if (noticeLink == ""){
+          $("#validNoticeLinkMsg").html(" Notice link can not be empty!");
+         }else{
+          $("#validNoticeLinkMsg").html("");
+          validNoticeLink= true;
+         }
+      });
+
+       //Validation : Notice flag
+
+       var validNoticeName= false;
+       $("#noticeNameFlag").blur(function(){
+          var noticeNameFlag = $("#noticeNameFlag").val()
+          if (noticeNameFlag == ""){
+           $("#validNoticeNameFlagMsg").html(" Notice name can not be empty!");
+          }else{
+           $("#validNoticeNameFlagMsg").html("");
+           validNoticeName= true;
+          }
+       });
 
 });

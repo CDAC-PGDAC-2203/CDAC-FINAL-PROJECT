@@ -40,11 +40,13 @@
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="noticeName" type="text" placeholder="Notice Name"class="form-control my-3 p-4"> 
+                                <p id="validNoticeNameMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -70px"></p>
                             </div>    
                         </div>
                         <div class="form-row">
-                            <div style="width: 100%;"> 
+                            <div style="width: 100%; margin-top: 60px"> 
                                 <input id="noticeLink" type="text" placeholder="Notice Link"class="form-control my-3 p-4" style="color:gray"> 
+                                <p id="validNoticeLinkMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -70px"></p>
                             </div>    
                         </div>
                         <div class="form-row">

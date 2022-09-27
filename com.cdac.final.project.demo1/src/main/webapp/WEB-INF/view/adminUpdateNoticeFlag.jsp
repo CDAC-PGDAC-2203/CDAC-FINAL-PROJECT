@@ -34,13 +34,13 @@
     <section class="mt-4 mx-5">
         <div class="container-fluid" style="display: flex;justify-content: center;">
             <div class="row row1">
-                <h1 class="font-weight-bold py-3">CDAC ADMIN PORTAL</h1>
-                <h4>Update Notice Flag</h4>
+                <h4 style="color: rgb(65, 105, 225);text-align: center;">Update Notice Flag</h4>
                 <div style="display: flex;justify-content: center;">
                     <form>
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="noticeNameFlag" type="text" placeholder="Notice Name"class="form-control my-3 p-4"> 
+                                <p id="validNoticeNameFlagMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -70px"></p>
                             </div>    
                         </div>
                         <div class="form-row">
@@ -48,12 +48,13 @@
                                 <button id="notice_update" type="button" class="btn1 mt-3 mb-5">Update</button> 
                             </div>    
                         </div>
+                        <span id="message"></span>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="text-center text-lg-start bg-light text-muted" style="margin-top: 11vh;">
+    <footer class="text-center text-lg-start bg-light text-muted" style="margin-top: 42vh;">
     	<div class="text-center p-3 mt-1"
 			style="background-color: rgba(0, 0, 0, 0.05);">
 			© 2022 CDAC. All rights reserved: <a class="text-reset fw-bold"

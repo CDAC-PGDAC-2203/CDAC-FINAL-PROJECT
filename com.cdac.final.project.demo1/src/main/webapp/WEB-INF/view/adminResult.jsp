@@ -40,19 +40,19 @@
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="subjectResult" type="text" placeholder="Subject Name" class="form-control my-3 p-4" required="required"> 
-                                 <h6 id="validSubjectResultMsg" style="color: red;"></h6>
+                                 <p id="validSubjectResultMsg" style="color: red;font-size: 11px; margin-top: -15px; margin-left: -10px"></p>
                             </div>    
                         </div>
                         <div class="form-row">
-                            <div style="width: 100%;"> 
+                            <div style="width: 100%; margin-top:30px"> 
                                 <input id="course_name" type="text" placeholder="Course Name" class="form-control my-3 p-4" required="required"> 
-                                 <h6 id="validCourseResultMsg" style="color: red;"></h6>
+                                 <p id="validCourseResultMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -10px"></p>
                             </div>    
                         </div>
                         <div class="form-row">
-                            <div style="width: 100%;"> 
+                            <div style="width: 100%; margin-top:30px"> 
                                 <input id="resultPath" type="text" placeholder="Result File Path"class="form-control my-3 p-4" style="color:gray" required="required"> 
-                                <h6 id="validResultPathMsg" style="color: red;"></h6>
+                                <p id="validResultPathMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -120px"></p>
                             </div>    
                         </div>
                         <div class="form-row">

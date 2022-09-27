@@ -50,14 +50,12 @@
                  </div>
 				<form id="loginForm" method="POST" action="">
                 <div class="form-group">
-                    <h6 id="login_message_prn" style="color: red; padding:0px"></h6>
+                     <p id="login_message_prn" style="color: red; font-size: 11px; margin-top: -30px; margin-left:-250px"></p>
                     <input id="prnNo" name="prn" class="form-control _ge_de_ol" type="text" placeholder="PRN No" required="required" aria-required="true">
-                    
-                    
-                </div>
+                 </div>
   
-                <div class="form-group">                                              
-                  <input id="password" type="password" class="form-control" name="password" placeholder="********" required="required">
+                <div class="form-group mt-5">                                              
+                  <input id="password" type="password" class="form-control" name="password" placeholder="********" required="required" aria-required="true">
                   <i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
                 </div>
   

@@ -40,14 +40,14 @@
                         <div class="form-row">
                             <div style="width: 100%;"> 
                                 <input id="subjectAttendance" type="text" placeholder="Subject Name"class="form-control my-3 p-4" required/> 
-                                <h6 id="validSubjectAttendanceMsg" style="color: red;"></h6>
+                                <p id="validSubjectAttendanceMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -10px"></p>
                             </div>    
                         </div>
                         <div class="form-row">
-                            <div style="width: 100%;"> 
+                            <div style="width: 100%; margin-top: 30px"> 
                                 <input id="attendance_file" type="text" placeholder="Attendance file Path"class="form-control my-3 p-4" style="color:gray"
                                  required/> 
-                                 <h6 id="validAttendanceFileMsg" style="color: red;"></h6>
+                                 <p id="validAttendanceFileMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left: -120px"></p>
                             </div>    
                         </div>
                         <div class="form-row">
