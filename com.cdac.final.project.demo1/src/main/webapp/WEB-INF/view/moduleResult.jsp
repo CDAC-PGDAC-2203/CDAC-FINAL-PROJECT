@@ -126,7 +126,7 @@ td {
 									Module 1</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Concepts of Programming</td>
+								Core Java</td>
 							<td><button id="mod1result" class="btn1">View
 									Result</button></td>
 						</tr>
@@ -146,7 +146,7 @@ td {
 									Module 3</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Operating Systems</td>
+								Concepts of Programming</td>
 							<td><button id="mod3result" class="btn1">View
 									Result</button></td>
 						</tr>
@@ -166,7 +166,7 @@ td {
 									Module 5</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Core Java</td>
+								Operating Systems</td>
 							<td><button id="mod5result" class="btn1">View
 									Result</button></td>
 						</tr>
