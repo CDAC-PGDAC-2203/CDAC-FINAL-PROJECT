@@ -1,8 +1,9 @@
-1,Data of Binary Management System,Database Management System,Database Management Service,Data Backup 2,Management System,Database Management System,mod2
+1,Full Form of DBMS is,Data of Binary Management System,Database Management System,Database Management Service,Data Backup Management System,Database Management System,mod2
+2,For designing a normal RDBMS which of the following normal form is considered adequate?,4NF,3NF,2NF,5NF,3NF,mod2
 3,In which of the following formats data is stored in the database management system?,Image,Text,Table,Graph,Table,mod2
 4,Which of the following is not a type of database?,Hierarchical,Network,Distributed,Decentralized,Decentralized,mod2
-5,Which of the following is not an example of DBMS?MySQL,Microsoft Access,IBM DB2,Google,Google,mod2,mod2
-6,Which of the following is a function of the DBMS?,Storing data,Providing multi-users access control,Data Integrity,All of the above,All of the above,mod2
+5,Which of the following is not an example of DBMS?MySQL,Microsoft Access,IBM DB2,Google,Google,mod2
+6,Which of the following is a function of the DBMS?,Storing data,Providing multiusers access control,Data Integrity,All of the above,All of the above,mod2
 7,Which of the following is a component of the DBMS?,Data,Data Languages,Data Manager,All of the above,All of the above,mod2
 8,What is information about data called?,Hyper data,Tera data,Meta data,Relations,Meta data,mod2
 9,RDBMS consist of collection of?,Records,Keys,Tables,Fields,Tables,mod2
