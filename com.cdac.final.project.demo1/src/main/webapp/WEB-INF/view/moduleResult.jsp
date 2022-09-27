@@ -18,6 +18,14 @@
 	border-radius: 1%;
 }
 
+.modClass {
+	width: 25%;
+}
+
+.btn-warning {
+	width: 50%;
+}
+
 .mod-list {
 	margin-bottom: 20px;
 	font-size: 25px;

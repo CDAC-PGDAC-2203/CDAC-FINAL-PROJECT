@@ -18,6 +18,14 @@
 	border-radius: 1%;
 }
 
+.modClass {
+	width: 25%;
+}
+
+.btn-warning {
+	width: 50%;
+}
+
 .mod-list {
 	margin-bottom: 20px;
 	font-size: 25px;
@@ -114,7 +122,7 @@ td {
 				<table class="table table-striped">
 					<tbody>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 1</button>
 							</td>
@@ -123,7 +131,7 @@ td {
 							<td><button id="mod1exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 2</button>
 							</td>
@@ -132,7 +140,7 @@ td {
 							<td><button id="mod2exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 3</button>
 							</td>
@@ -141,7 +149,7 @@ td {
 							<td><button id="mod3exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 4</button>
 							</td>
@@ -150,7 +158,7 @@ td {
 							<td><button id="mod4exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 5</button>
 							</td>
@@ -159,7 +167,7 @@ td {
 							<td><button id="mod5exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 6</button>
 							</td>
@@ -168,7 +176,7 @@ td {
 							<td><button id="mod6exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 7</button>
 							</td>
@@ -177,7 +185,7 @@ td {
 							<td><button id="mod7exam" class="btn1">Start Exam</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
-							<td scope="row">
+							<td scope="row" class="modClass">
 								<button type="button" class="btn btn-warning btn-arrow-right">
 									Module 8</button>
 							</td>
