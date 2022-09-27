@@ -226,20 +226,18 @@ $("#fName").blur(function(){
       validPhone =  true;
     }
  });
-  //var validImage = false;
-  //  $("#image_input").blur(function(){
-  // var image_input = $("#image_input").val()
-  // var Extension = image_input.substring(
-  //   image_input.lastIndexOf('.') + 1).toLowerCase();
-  // if {
-  //  $("#register_message_photo").html("Upload PNG,JPEG or JPG file only!");
-  // }else{
-  //    validImage =  true;
-  // }
-//});
-$("#image_input").rules("add", {
-  accept: "jpg|jpeg|png"
-});
+//   //var validImage = false;
+//   //  $("#image_input").blur(function(){
+//   // var image_input = $("#image_input").val()
+//   // var Extension = image_input.substring(
+//   //   image_input.lastIndexOf('.') + 1).toLowerCase();
+//   // if {
+//   //  $("#register_message_photo").html("Upload PNG,JPEG or JPG file only!");
+//   // }else{
+//   //    validImage =  true;
+//   // }
+// //});
+
 var validEmail = false;
 $("#email").blur(function(){
   var email = $("#email").val()
@@ -271,6 +269,9 @@ var validGuardianPhone  = false;
    $("#register_message_gPhone").html("");
       validGuardianPhone = true;
   }
+});
+$("#image_input").rules("add", {
+  accept: "jpg|jpeg|png"
 });
 
 //validation : address
