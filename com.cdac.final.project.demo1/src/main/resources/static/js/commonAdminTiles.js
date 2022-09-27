@@ -1,8 +1,5 @@
 $(document).ready(()=>{
 
-   var success = "<h4 style='color: green;'>Data Processed Successfully!</h4>";
-   var failure = "<h4 style='color: red;'>Some Error Occured!</h4>"
-
     $("#adminDashboard").click((e)=>{
         e.preventDefault();
         $.ajax({
@@ -24,15 +21,15 @@ $(document).ready(()=>{
             success: (data) => {
                if(data.data == "DONE"){
                   $("#course_name_gprn").val("");
-                  $("#message").append(success);
+                  $("#message").html("<h5 style='color: green;'>PRN generated successfully!</h5>");
                }else{
                   $("#course_name_gprn").val("");
-                  $("#message").append(failure);
+                  $("#message").html("<h5 style='color: red;'>Error! PRN not generated</h5>");
                }
             },
             error: (error) => {
                $("#course_name_gprn").val("");
-               $("#message").append(failure);
+               $("#message").html("<h6 style='color: red;'>Error! PRN not generated</h6>");
             }
          }); 
     });
@@ -53,23 +50,23 @@ $(document).ready(()=>{
              beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
              success: (data) => {
                 if(data.data == "DONE"){
-                   $("#message").append(success);
+                   $("#message").html("<h5 style='color: green;'>Question Paper uploded successfully!</h5>");
                    $("#subject").val("");
                    $("#question_ppr").val("");
                 }else{
-                   $("#message").append(failure);
+                   $("#message").html("<h5 style='color: red;'>Error! Question Paper not uploaded</h5>");
                    $("#subject").val("");
                    $("#question_ppr").val("");
                 }
              },
              error: (error) => {
-                $("#message").append(failure);
+                $("#message").html("<h5 style='color: red;'>Error! Question Paper not uploaded</h5>");
                 $("#subject").val("");
                 $("#question_ppr").val("");
              }
           }); 
         }else{
-         $("#message").append(failure);
+         $("#message").html("<h5 style='color: red;'>Error! Question Paper not uploaded</h5>");
          $("#subject").val("");
          $("#question_ppr").val("");
         }
@@ -92,23 +89,23 @@ $(document).ready(()=>{
              beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
              success: (data) => {
                 if(data.data == "DONE"){
-                   $("#message").append(success);
+                   $("#message").html("<h5 style='color: green;'>Attendance uploded successfully!</h5>");
                    $("#subjectAttendance").val("");
                    $("#attendance_file").val("");
                 }else{
-                  $("#message").append(failure);
+                  $("#message").html("<h5 style='color: red;'>Error! Attendance not uploaded</h5>");
                   $("#subjectAttendance").val("");
                   $("#attendance_file").val("");
                 }
              },
              error: (error) => {
-               $("#message").append(failure);
+               $("#message").html("<h5 style='color: red;'>Error! Attendance not uploaded</h5>");
                $("#subjectAttendance").val("");
                $("#attendance_file").val("");
              }
           }); 
       }else{
-         $("#message").append(failure);
+         $("#message").html("<h5 style='color: red;'>Error! Attendance not uploaded</h5>");
          $("#subjectAttendance").val("");
          $("#attendance_file").val("");
       }
@@ -133,26 +130,26 @@ $(document).ready(()=>{
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
-               $("#message").append(success);
+               $("#message").html("<h5 style='color: green;'>Result uploaded successfully!</h5>");
                $("#subjectResult").val("");
                $("#course_name").val("");
                $("#resultPath").val("");
              }else{
-               $("#message").append(failure);
+               $("#message").html("<h5 style='color: red;'>Error! Result not uploaded</h5>");
                $("#subjectResult").val("");
                $("#course_name").val("");
                $("#resultPath").val("");
              }
           },
           error: (error) => {
-            $("#message").append(failure);
+            $("#message").html("<h5 style='color: red;'>Error! Result not uploaded</h5>");
             $("#subjectResult").val("");
             $("#course_name").val("");
             $("#resultPath").val("");
           }
        }); 
    }else{
-      $("#message").append(failure);
+      $("#message").html("<h5 style='color: red;'>Error! Result not uploaded</h5>");
    }
    
    });
@@ -167,7 +164,7 @@ $(document).ready(()=>{
             type: "GET",
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
             success: (data) => {
-                $("#message").append(success);
+                $("#message").html("<h5 style='color: green;'>Feedback List uploaded successfully!</h5>");
                 data.forEach((element) =>{
                     var tableRow = "<tr style='font-family: helvetica;'>" 
                                  + "<td scope='row'>" + element.uPrn + "</td>"
@@ -186,12 +183,12 @@ $(document).ready(()=>{
                 $("#courseName").val("");
             },
             error: (error) => {
-               $("#message").append(failure);
+               $("#message").html("<h5 style='color: red;'>Error! Feedback List not uploaded</h5>");
                $("#courseName").val("");
             }
          }); 
       }else{
-         $("#message").append(failure);
+         $("#message").html("<h5 style='color: red;'>Error! Feedback List not uploaded</h5>");
          $("#courseName").val("");
       }
       
@@ -213,23 +210,23 @@ $(document).ready(()=>{
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
-               $("#message").append(success);
+               $("#message").html("<h5 style='color: green;'>Faculty List uploaded successfully!</h5>");
               $("#course_name").val("");
               $("#faculty_list").val("");
              }else{
-               $("#message").append(failure);
+               $("#message").html("<h5 style='color: red;'>Error! Faculty List not uploaded</h5>");
                $("#course_name").val("");
                $("#faculty_list").val("");
              }
           },
           error: (error) => {
-             $("#message").append(failure);
+             $("#message").html("<h5 style='color: red;'>Error! Faculty List not uploaded</h5>");
              $("#course_name").val("");
              $("#faculty_list").val("");
           }
        }); 
       }else{
-         $("#message").append(failure);
+         $("#message").html("<h5 style='color: red;'>Error! Faculty List not uploaded</h5>");
          $("#course_name").val("");
          $("#faculty_list").val("");
       }
@@ -248,17 +245,17 @@ $(document).ready(()=>{
        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
        success: (data) => {
           if(data.data == "DONE"){
-            $("#message").append(success);
+            $("#message").html("<h5 style='color: green;'>Faculty Feedback List updated successfully!</h5>");
             $("#course_name").val("");
             $("#faculty_name").val("");
           }else{
-            $("#message").append(failure);
+            $("#message").html("<h5 style='color: red;'>Error! Faculty Feedback List not updated</h5>");
             $("#course_name").val("");
             $("#faculty_name").val("");
           }
        },
        error: (error) => {
-          $("#message").append(failure);
+          $("#message").html("<h5 style='color: red;'>Error! Faculty Feedback List not updated</h5>");
           $("#course_name").val("");
           $("#faculty_name").val("");
        }
@@ -294,7 +291,7 @@ $(document).ready(()=>{
                 beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
                 success: (data) => {
                    if(data.data == "DONE"){
-                     $("#message").append(success);
+                     $("#message").html("<h5 style='color: green;'> Lecture Link uploaded successfully!</h5>");
                      $("#subject").val("");
                      $("#session_date").val("");
                      $("#theory_time").val("");
@@ -302,7 +299,7 @@ $(document).ready(()=>{
                      $("#b2_time").val("");
                      $("#b3_time").val("");
                    }else{
-                     $("#message").append(failure);
+                     $("#message").html("<h5 style='color: red;'>Error! Lecture Link not uploaded</h5>");
                      $("#subject").val("");
                      $("#session_date").val("");
                      $("#theory_time").val("");
@@ -312,7 +309,7 @@ $(document).ready(()=>{
                    }
                 },
                 error: (error) => {
-                     $("#message").append(failure);
+                     $("#message").html("<h5 style='color: red;'>Error! Lecture Link not uploaded</h5>");
                      $("#subject").val("");
                      $("#session_date").val("");
                      $("#theory_time").val("");
@@ -322,7 +319,7 @@ $(document).ready(()=>{
                 }
              }); 
            }else{
-                   $("#message").append(failure);
+                   $("#message").html("<h5 style='color: red;'>Error! Lecture Link not uploaded</h5>");
                    $("#subject").val("");
                    $("#session_date").val("");
                    $("#theory_time").val("");
@@ -350,23 +347,23 @@ $(document).ready(()=>{
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
-               $("#message").append(success);
+               $("#message").html("<h5 style='color: green;'> Notice uploaded successfully!</h5>");
                $("#noticeName").val("");
                $("#noticeLink").val("");
              }else{
-               $("#message").append(failure);
+               $("#message").html("<h5 style='color: red;'>Error! Notice not uploaded</h5>");
                $("#noticeName").val("");
                $("#noticeLink").val("");
              }
           },
           error: (error) => {
-             $("#message").append(failure);
+             $("#message").html("<h5 style='color: red;'>Error! Notice not uploaded</h5>");
              $("#noticeName").val("");
              $("#noticeLink").val("");
           }
          }); 
        }else{
-             $("#message").append(failure);
+             $("#message").html("<h5 style='color: red;'>Error! Notice not uploaded</h5>");
              $("#noticeName").val("");
              $("#noticeLink").val("");
            }
@@ -385,15 +382,15 @@ $(document).ready(()=>{
           beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
           success: (data) => {
              if(data.data == "DONE"){
-               $("#message").append(success);
+               $("#message").html("<h5 style='color: green;'> Notice flag updated successfully</h5>");
                $("#noticeNameFlag").val("");
              }else{
-               $("#message").append(failure);
+               $("#message").html("<h5 style='color: red;'>Error! Notice flag not updated</h5>");
                $("#noticeNameFlag").val("");
              }
           },
           error: (error) => {
-             $("#message").append(failure);
+             $("#message").html("<h5 style='color: red;'>Error! Notice flag not updated</h5>");
              $("#noticeNameFlag").val("");
           }
          }); 
