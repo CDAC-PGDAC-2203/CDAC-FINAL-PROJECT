@@ -115,8 +115,13 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to calculate attendance of a student
 	@Override
-	public Double getTotalAttendance(Long uPrn) {
+	public Double getTotalAttendance(Long uPrn) throws Exception{
 		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
+		
+		if(!(list.size()>0)) {
+			throw new CDACAppException("TOTAL ATTENDANCE ERROR!");
+		}
+		
 		Double attendancePercentage = 0.0;
 		int lectureAttended = 0;
 		int totalLecture = 0;
@@ -132,9 +137,12 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to get module wise attendance of a student
 	@Override
-	public List<TotalAttendance> getModuleAttendance(Long uPrn) {
+	public List<TotalAttendance> getModuleAttendance(Long uPrn) throws Exception{
 		List<TotalAttendance> list = totalAttendanceRepository.findByUPrn(uPrn);
-		return list;
+		if(list.size()>0) {
+			return list;
+		}
+		throw new CDACAppException("MODULE ATTENDACE NOT FOUND!");
 	}
 
 	// Method to store doubt details in dataBase

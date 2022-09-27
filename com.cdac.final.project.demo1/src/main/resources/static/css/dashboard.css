@@ -195,29 +195,6 @@ body {
 	font-weight: 600;
 	color: #555;
 }
-
-circle {
-	fill: none;
-	stroke: url(#GradientColor);
-	stroke-width: 20px;
-	stroke-dasharray: 472;
-	stroke-dashoffset: 472;
-	animation: anim 2s linear forwards;
-}
-
-svg {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-@
-keyframes anim { 100%{
-	stroke-dashoffset: 165;
-}
-
-}
-
 /* notice-board css */
 .notice-board-div {
 	margin: auto;

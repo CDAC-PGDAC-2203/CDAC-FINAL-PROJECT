@@ -94,20 +94,28 @@ public class DashboardController {
 	@GetMapping("/performance/{uPrn}")
 	public ResponseEntity<?> getFinalPerformance(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
-			Long finalPerformance = Math.round(service.getPerformance(uPrn));
-			return new ResponseEntity<Long>(finalPerformance,HttpStatus.OK);
+			Double finalPerformance = service.getPerformance(uPrn);
+			return new ResponseEntity<Double>(finalPerformance,HttpStatus.OK);
 		}catch(Exception e) {
 			logger.info(e.getMessage());
 			e.printStackTrace();
-			Long bad = 0L;
-			return new ResponseEntity<Long>(bad,HttpStatus.ACCEPTED);
+			Double bad = 0.0;
+			return new ResponseEntity<Double>(bad,HttpStatus.ACCEPTED);
 		}
 	}
 
-	// API to show student attendance report
+	// API to show student final attendance
 	@GetMapping("/attendance/{uPrn}")
-	public Double getTotalAttendance(@PathVariable(name = "uPrn") Long uPrn) {
-		return service.getTotalAttendance(uPrn);
+	public ResponseEntity<?> getTotalAttendance(@PathVariable(name = "uPrn") Long uPrn) {
+		try {
+			Double finalAttendance = service.getTotalAttendance(uPrn);
+			return new ResponseEntity<Double>(finalAttendance,HttpStatus.OK);
+		}catch(Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			Double bad = 0.0;
+			return new ResponseEntity<Double>(bad,HttpStatus.ACCEPTED);
+		}
 	}
 
 	// API to show stuRdent module wise attendance report

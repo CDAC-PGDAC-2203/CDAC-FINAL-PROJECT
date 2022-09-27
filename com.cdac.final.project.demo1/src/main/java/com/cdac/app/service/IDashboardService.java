@@ -11,9 +11,9 @@ public interface IDashboardService {
 
 	Double getPerformance(Long uPrn) throws Exception;
 
-	Double getTotalAttendance(Long uPrn);
+	Double getTotalAttendance(Long uPrn) throws Exception;
 
-	List<TotalAttendance> getModuleAttendance(Long uPrn);
+	List<TotalAttendance> getModuleAttendance(Long uPrn) throws Exception;
 
 	List<DoubtForum> getActiveDoubts();
 

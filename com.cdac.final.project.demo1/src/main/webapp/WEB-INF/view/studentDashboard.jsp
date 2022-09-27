@@ -23,9 +23,8 @@
 						Join Link</a>
 					<ul class="dropdown-menu dropdown-menu-end"
 						aria-labelledby="navbarDropdown" id="lectureLinkDropdown">
-						
-					</ul>
-				</li>
+
+					</ul></li>
 
 				<li id="exam" class="nav-item"><a class="nav-link" href="#">Exam</a>
 				</li>
@@ -53,24 +52,24 @@
 				<div class="card card-margin" style="height: 88%; width: 100%;">
 
 					<h3 class="card-title my-3" style="text-align: center;">Current
-						performance</h3>
+						Performance</h3>
 
 					<div class="card-body pt-0">
 						<div class="circular-progress-1">
-           						 <div class="value-container-1">0%</div>
-        				</div>
+							<div class="value-container-1" id="currentPerformance">0%</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-lg-4">
 				<div class="card card-margin" style="height: 88%; width: 100%;">
-					<h3 class="card-title my-3" style="text-align: center;">Overall
-						performance</h3>
+					<h3 class="card-title my-3" style="text-align: center;">Current
+						Attendance</h3>
 
 					<div class="card-body pt-0">
 						<div class="circular-progress-2">
-								<div class="value-container-2">0%</div>
+							<div class="value-container-2" id="currentAttendance">0%</div>
 						</div>
 					</div>
 				</div>
@@ -273,20 +272,6 @@
 		<!-- Copyright -->
 	</footer>
 	<!-- Footer -->
-	<script>
 
-    let number2 = document.getElementById("number2");
-    let counter2 = 0;
-    setInterval(() => {
-        if (counter2 == 5) {
-            clearInterval();
-        } else {
-            counter2 += 1;
-            number2.innerHTML = counter2 + "%";
-        }
-    }, 30);
-
-    
-  </script>
 	<script src="js/dashboard.js"></script>
 </body>

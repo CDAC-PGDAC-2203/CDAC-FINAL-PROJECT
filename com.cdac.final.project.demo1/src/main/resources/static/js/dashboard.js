@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    var totalPerformance = 0;
+    var totalPerformance = 0.00;
     
     // AJAX to get current performance of student
     $.ajax({
@@ -7,24 +7,26 @@ $(document).ready(() => {
             url: "/portal/performance/"+localStorage.getItem("uPrn"),
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
             success: (data) => {
-               totalPerformance = data;
+                totalPerformance = data.toFixed(2); 
+                $("#currentPerformance").append(totalPerformance+"%");
             },
             error: (error) => {
                 alert("Internal Server Error!");
             }
     });
 
-    let number1 = document.getElementById("number1");
-    let counter1 = 0;
-    setInterval(() => {
-        if (counter1 == totalPerformance) {
-            clearInterval();
-        } else {
-            counter1 += 1;
-            number1.innerHTML = counter1+ "%";
-        }
-    }, 30);
-
+    // AJAX to get current attendance of student
+    $.ajax({
+        type: "GET",
+            url: "/portal/attendance/"+localStorage.getItem("uPrn"),
+            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+            success: (data) => {
+               $("#currentAttendance").append(data+"%");
+            },
+            error: (error) => {
+                alert("Internal Server Error!");
+            }
+    });
 
     //AJAX to get module wise attendance and draw the bar graph.
     $.ajax({
