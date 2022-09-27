@@ -270,9 +270,7 @@ var validGuardianPhone  = false;
       validGuardianPhone = true;
   }
 });
-$("#image_input").rules("add", {
-  accept: "jpg|jpeg|png"
-});
+
 
 //validation : address
 
@@ -318,4 +316,7 @@ var validPinCode  = false;
       validPinCode =  true;
     }
  });
+ $("#image_input").rules("add", {
+  accept: "jpg|jpeg|png"
+});
 });
