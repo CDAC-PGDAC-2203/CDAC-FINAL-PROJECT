@@ -1,5 +1,5 @@
-$(document).ready(() => { 
-    var totalPerformance = 0.00;
+$(document).ready(() => {
+    var totalPerformance = 0.0;
     
     // AJAX to get current performance of student
     $.ajax({
@@ -7,35 +7,58 @@ $(document).ready(() => {
             url: "/portal/performance/"+localStorage.getItem("uPrn"),
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
             success: (data) => {
-                totalPerformance = data.toFixed(2); 
+                totalPerformance = parseFloat(data.toFixed(1)); 
             },
             error: (error) => {
                 alert("Internal Server Error!");
             }
     });
 
-    let progressBar1 = document.querySelector(".circular-progress-1");
-    let valueContainer1 = document.querySelector(".value-container-1");
+	// Circular Progress Bar : Current Performance
+    var progressBar1 = document.querySelector(".circular-progress-1");
+    var valueContainer1 = document.querySelector(".value-container-1");
  
-    var progressValue1 = "0.00";
-    progressValue1 = parseFloat(progressValue1);
-    var progressEndValue1 = totalPerformance;
-    var speed1 = 10;
+    var progressValue1 = 0.0;
+    progressValue1 = parseFloat(parseFloat(progressValue1).toFixed(1));
+    var progressEndValue1 = parseFloat((totalPerformance).toFixed(1));
+    var speed1 = 0.1;
  
-    let progress1 = setInterval(() => {
-        progressValue1 = progressValue1 + 0.01;
-        console.log(progressValue1);
+    var progress1 = setInterval(() => {
+        progressValue1 = parseFloat((progressValue1 + 0.1).toFixed(1));
         valueContainer1.textContent = `${progressValue1}%`;
         progressBar1.style.background = `conic-gradient(
              #804FB3 ${progressValue1 * 0.6}deg,
              #9969C7 ${progressValue1 * 1.2}deg,
-                #e91e63 ${progressValue1 * 2.7}deg,
-                white ${progressValue1 * 3.6}deg
+             #e91e63 ${progressValue1 * 2.7}deg,
+             white ${progressValue1 * 3.6}deg
         )`;
-        if(progressValue1 == progressEndValue1){
+        if(parseFloat((progressValue1).toFixed(1)) == parseFloat((totalPerformance).toFixed(1))) {
             clearInterval(progress1);
         }
     }, speed1);
+    
+    // Circular Progress Bar : Overall Performance
+    var progressBar2 = document.querySelector(".circular-progress-2");
+    var valueContainer2 = document.querySelector(".value-container-2");
+ 
+    var progressValue2 = 0.0;
+    progressValue1 = parseFloat(parseFloat(progressValue2).toFixed(1));
+    var progressEndValue1 = parseFloat((totalPerformance).toFixed(1));
+    var speed2 = 0.5;
+ 
+    var progress2 = setInterval(() => {
+        progressValue2 = parseFloat((progressValue2 + 0.1).toFixed(1));
+        valueContainer2.textContent = `${progressValue2}%`;
+        progressBar2.style.background = `conic-gradient(
+             #804FB3 ${progressValue2 * 0.6}deg,
+             #9969C7 ${progressValue2 * 1.2}deg,
+             #e91e63 ${progressValue2 * 2.7}deg,
+             white ${progressValue2 * 3.6}deg
+        )`;
+        if(parseFloat((progressValue2).toFixed(1)) == parseFloat((totalPerformance).toFixed(1))) {
+            clearInterval(progress2);
+        }
+    }, speed2);
 
     // AJAX to get current attendance of student
     $.ajax({

@@ -76,6 +76,11 @@ body {
 .card-header:first-child {
 	border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
 }
+
+.card-title {
+	text-align: center; 
+	font-weight: 550;
+}
 /* Doubt forum */
 .doubt-div {
 	height: 30vh;

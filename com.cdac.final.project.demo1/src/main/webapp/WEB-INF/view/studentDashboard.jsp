@@ -8,14 +8,11 @@
 	<div class="container mt-3">
 		<div class="row">
 			<div class="col-lg-4">
-
 				<div class="card card-margin" style="height: 88%; width: 100%;">
-
-					<h3 class="card-title my-3" style="text-align: center;">Current
+					<h3 class="card-title my-3">Current
 						Performance</h3>
-
 					<div class="card-body pt-0">
-						<div class="circular-progress-1">
+						<div class="circular-progress-1 mt-3" style="margin-left: auto; margin-right: auto;">
 							<div class="value-container-1" id="currentPerformance">0%</div>
 						</div>
 					</div>
@@ -26,14 +23,14 @@
 				<div class="card card-margin" style="height: 88%; width: 100%;">
 					<h3 class="card-title my-3" style="text-align: center;">Current
 						Attendance</h3>
-
 					<div class="card-body pt-0">
-						<div class="circular-progress-2">
+						<div class="circular-progress-2 mt-3" style="margin-left: auto; margin-right: auto;">
 							<div class="value-container-2" id="currentAttendance">0%</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div class="col-lg-4">
 				<div class="card card-margin">
 					<h3 class="card-title my-3"
@@ -57,16 +54,12 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="card card-margin" style="height: 88%; width: 100%;">
-
-
 						<h3 class="card-title my-3" style="text-align: center;">Schdeule</h3>
-
 						<div class="card-body pt-0">
-
-
 
 							<table
 								style="margin-top: 10%; margin-left: auto; margin-right: auto; overflow-y: auto;"
