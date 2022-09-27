@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.cdac.app.domain.Faculty;
 import com.cdac.app.domain.Feedback;
 import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.TotalAttendance;
@@ -162,8 +163,18 @@ public class DashboardController {
 
 	// API to store feedback
 	@PostMapping("/feedback")
-	public void submitFeedback(@RequestBody Feedback feedback) {
-		feedbackService.submitFeedback(feedback);
+	public ResponseEntity<?> submitFeedback(@RequestBody Feedback feedback) {
+		SimpleString simple = new SimpleString("DONE");
+		try {
+			feedbackService.submitFeedback(feedback);
+			logger.info("************Uploaded Feedback*************");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			e.printStackTrace();
+			simple = new SimpleString("FAILED");
+			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
+		}
 	}
 
 	// API to get lecture timings
@@ -215,15 +226,28 @@ public class DashboardController {
 	}
 
 	@GetMapping("/modules/{course}")
-	public ResponseEntity<Modules> getModulesList(@PathVariable(name = "course") String course) {
+	public ResponseEntity<?> getModulesList(@PathVariable(name = "course") String course) {
 		try {
 			Modules moduleList = service.getModulesList(course);
 			logger.info("************Received Notices*************");
-			return new ResponseEntity<>(moduleList, HttpStatus.OK);
+			return new ResponseEntity<Modules>(moduleList, HttpStatus.OK);
 		} catch (Exception e) {
 			logger.info(e.getMessage());
 			Modules badModuleList = null;
-			return new ResponseEntity<>(badModuleList, HttpStatus.OK);
+			return new ResponseEntity<Modules>(badModuleList, HttpStatus.OK);
+		}
+	}
+
+	@GetMapping("/faculty/{course}")
+	public ResponseEntity<?> getFacultyList(@PathVariable(name = "course") String course) {
+		try {
+			List<Faculty> list = service.getFacultyList(course);
+			logger.info("************Received Faculty List*************");
+			return new ResponseEntity<List<Faculty>>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			List<Faculty> badList = null;
+			return new ResponseEntity<List<Faculty>>(badList, HttpStatus.OK);
 		}
 	}
 }

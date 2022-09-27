@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.app.domain.DoubtForum;
 import com.cdac.app.domain.EmailDetails;
+import com.cdac.app.domain.Faculty;
 import com.cdac.app.domain.FinalResult;
 import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.Notice;
@@ -26,6 +27,7 @@ import com.cdac.app.dto.DoubtDTO;
 import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.IDoubtForumRepository;
+import com.cdac.app.repositories.IFacultyRepository;
 import com.cdac.app.repositories.IFinalResultRepository;
 import com.cdac.app.repositories.IModulesRepository;
 import com.cdac.app.repositories.INoticeRepository;
@@ -65,6 +67,9 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private IModulesRepository modulesRepository;
+
+	@Autowired
+	private IFacultyRepository facultyRepository;
 
 	private PasswordEncoder passwordEncoder;
 
@@ -371,4 +376,15 @@ public class DashboardServiceImpl implements IDashboardService {
 		}
 		throw new CDACAppException("Invalid Course");
 	}
+
+	@Override
+	public List<Faculty> getFacultyList(String course) throws Exception {
+		List<Faculty> list = facultyRepository.findByCourse(course, "Y");
+		
+		if(list != null) {
+			return list;	
+		}
+		throw new CDACAppException("Faculty list is empty");
+	}
+
 }

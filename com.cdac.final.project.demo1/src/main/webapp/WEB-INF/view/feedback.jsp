@@ -157,21 +157,15 @@ form .btn button:hover {
 						<div class="form-row">
 							<div class="d-flex justify-content-around pb-2">
 								<div>
-									<label for="faculty" class="">Faculty:</label> <select
-										style="color: rgb(65, 105, 225);">
-										<option>faculty 1</option>
-										<option>faculty 2</option>
-										<option>faculty 3</option>
-										<option>faculty 4</option>
+									<label for="faculty" class="">Faculty:</label> 
+									<select id="facultyDropDown" name="feedbackFaculty" style="color: rgb(65, 105, 225);">
+										
 									</select>
 								</div>
 								<div>
-									<label for="faculty" class="">Module:</label> <select
-										style="color: rgb(65, 105, 225);">
-										<option>Module 1</option>
-										<option>Module 2</option>
-										<option>Module 3</option>
-										<option>Module 4</option>
+									<label for="faculty" class="">Module:</label>
+									<select id="moduleDropDown" name="feedbackModule" style="color: rgb(65, 105, 225);">
+										
 									</select>
 								</div>
 							</div>
@@ -189,15 +183,15 @@ form .btn button:hover {
 										<td>Knowledge</td>
 										<td>
 											<div class="star-widget">
-												<input type="radio" name="1rate" id="1rate-5"> <label
+												<input type="radio" name="1rate" id="1rate-5" value="5"> <label
 													for="1rate-5" class="fas fa-star"></label> <input
-													type="radio" name="1rate" id="1rate-4"> <label
+													type="radio" name="1rate" id="1rate-4" value="4"> <label
 													for="1rate-4" class="fas fa-star"></label> <input
-													type="radio" name="1rate" id="1rate-3"> <label
+													type="radio" name="1rate" id="1rate-3" value="3"> <label
 													for="1rate-3" class="fas fa-star"></label> <input
-													type="radio" name="1rate" id="1rate-2"> <label
+													type="radio" name="1rate" id="1rate-2" value="2"> <label
 													for="1rate-2" class="fas fa-star"></label> <input
-													type="radio" name="1rate" id="1rate-1"> <label
+													type="radio" name="1rate" id="1rate-1" value="1"> <label
 													for="1rate-1" class="fas fa-star"></label>
 											</div>
 										</td>
@@ -207,15 +201,15 @@ form .btn button:hover {
 										<td>Communication</td>
 										<td>
 											<div class="star-widget">
-												<input type="radio" name="2rate" id="2rate-5"> <label
+												<input type="radio" name="2rate" id="2rate-5" value="5"> <label
 													for="2rate-5" class="fas fa-star"></label> <input
-													type="radio" name="2rate" id="2rate-4"> <label
+													type="radio" name="2rate" id="2rate-4" value="4"> <label
 													for="2rate-4" class="fas fa-star"></label> <input
-													type="radio" name="2rate" id="2rate-3"> <label
+													type="radio" name="2rate" id="2rate-3" value="3"> <label
 													for="2rate-3" class="fas fa-star"></label> <input
-													type="radio" name="2rate" id="2rate-2"> <label
+													type="radio" name="2rate" id="2rate-2" value="2"> <label
 													for="2rate-2" class="fas fa-star"></label> <input
-													type="radio" name="2rate" id="2rate-1"> <label
+													type="radio" name="2rate" id="2rate-1" value="1"> <label
 													for="2rate-1" class="fas fa-star"></label>
 											</div>
 										</td>
@@ -225,15 +219,15 @@ form .btn button:hover {
 										<td>Punctuality</td>
 										<td>
 											<div class="star-widget">
-												<input type="radio" name="3rate" id="3rate-5"> <label
+												<input type="radio" name="3rate" id="3rate-5" value="5"> <label
 													for="3rate-5" class="fas fa-star"></label> <input
-													type="radio" name="3rate" id="3rate-4"> <label
+													type="radio" name="3rate" id="3rate-4" value="4"> <label
 													for="3rate-4" class="fas fa-star"></label> <input
-													type="radio" name="3rate" id="3rate-3"> <label
+													type="radio" name="3rate" id="3rate-3" value="3"> <label
 													for="3rate-3" class="fas fa-star"></label> <input
-													type="radio" name="3rate" id="3rate-2"> <label
+													type="radio" name="3rate" id="3rate-2" value="2"> <label
 													for="3rate-2" class="fas fa-star"></label> <input
-													type="radio" name="3rate" id="3rate-1"> <label
+													type="radio" name="3rate" id="3rate-1" value="1"> <label
 													for="3rate-1" class="fas fa-star"></label>
 											</div>
 										</td>
@@ -243,15 +237,15 @@ form .btn button:hover {
 										<td>Teaching</td>
 										<td>
 											<div class="star-widget">
-												<input type="radio" name="4rate" id="4rate-5"> <label
+												<input type="radio" name="4rate" id="4rate-5" value="5"> <label
 													for="4rate-5" class="fas fa-star"></label> <input
-													type="radio" name="4rate" id="4rate-4"> <label
+													type="radio" name="4rate" id="4rate-4" value="4"> <label
 													for="4rate-4" class="fas fa-star"></label> <input
-													type="radio" name="4rate" id="4rate-3"> <label
+													type="radio" name="4rate" id="4rate-3" value="3"> <label
 													for="4rate-3" class="fas fa-star"></label> <input
-													type="radio" name="4rate" id="4rate-2"> <label
+													type="radio" name="4rate" id="4rate-2" value="2"> <label
 													for="4rate-2" class="fas fa-star"></label> <input
-													type="radio" name="4rate" id="4rate-1"> <label
+													type="radio" name="4rate" id="4rate-1" value="1"> <label
 													for="4rate-1" class="fas fa-star"></label>
 											</div>
 										</td>
@@ -261,15 +255,15 @@ form .btn button:hover {
 										<td>Guidance</td>
 										<td>
 											<div class="star-widget">
-												<input type="radio" name="5rate" id="5rate-5"> <label
+												<input type="radio" name="5rate" id="5rate-5" value="5"> <label
 													for="5rate-5" class="fas fa-star"></label> <input
-													type="radio" name="5rate" id="5rate-4"> <label
+													type="radio" name="5rate" id="5rate-4" value="4"> <label
 													for="5rate-4" class="fas fa-star"></label> <input
-													type="radio" name="5rate" id="5rate-3"> <label
+													type="radio" name="5rate" id="5rate-3" value="3"> <label
 													for="5rate-3" class="fas fa-star"></label> <input
-													type="radio" name="5rate" id="5rate-2"> <label
+													type="radio" name="5rate" id="5rate-2" value="2"> <label
 													for="5rate-2" class="fas fa-star"></label> <input
-													type="radio" name="5rate" id="5rate-1"> <label
+													type="radio" name="5rate" id="5rate-1" value="1"> <label
 													for="5rate-1" class="fas fa-star"></label>
 											</div>
 										</td>
@@ -277,11 +271,12 @@ form .btn button:hover {
 								</tbody>
 							</table>
 							<div class="textarea">
-								<textarea cols="30" placeholder="Suggestion...."></textarea>
+								<textarea id="feedbackSuggestion" cols="30" placeholder="Suggestion...."></textarea>
 							</div>
-							<button id="submit" type="submit" class="btn1 mt-3 mb-5">Submit</button>
+							<button id="submitFeedback" type="submit" class="btn1 mt-3 mb-5">Submit</button>
 						</div>
 					</form>
+					<span id="msg"></span>
 				</div>
 			</div>
 		</div>
@@ -295,4 +290,5 @@ form .btn button:hover {
 	<script src="js/navBar.js"></script>
 	<script src="js/footerStudent.js"></script>
 	<script src="js/studentDashboardNavbarFooter.js"></script>
+	<script src="js/feedback.js"></script>
 </body>

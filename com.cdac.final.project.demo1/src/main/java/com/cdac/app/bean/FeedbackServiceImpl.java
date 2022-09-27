@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.cdac.app.domain.Faculty;
 import com.cdac.app.domain.Feedback;
+import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.IFacultyRepository;
 import com.cdac.app.repositories.IFeedbackRepository;
 import com.cdac.app.service.IFeedbackService;
@@ -29,8 +30,14 @@ public class FeedbackServiceImpl implements IFeedbackService {
 
 	// Method to store feedback to dataBase
 	@Override
-	public void submitFeedback(Feedback feedback) {
-		repository.save(feedback);
+	public void submitFeedback(Feedback feedback) throws Exception{
+		try {
+			repository.save(feedback);			
+		} catch(Exception e) {
+			e.printStackTrace();
+			throw new CDACAppException("Feedback Save Error");
+		}
+		
 	}
 
 	// Method to fetch feedback response (Admin functionality)

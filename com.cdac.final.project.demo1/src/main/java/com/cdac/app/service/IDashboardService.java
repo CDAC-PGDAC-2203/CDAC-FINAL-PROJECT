@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.cdac.app.domain.DoubtForum;
+import com.cdac.app.domain.Faculty;
 import com.cdac.app.domain.Modules;
 import com.cdac.app.domain.TotalAttendance;
 import com.cdac.app.dto.DoubtDTO;
@@ -34,4 +35,6 @@ public interface IDashboardService {
 	List<HashMap<String, String>> getNotice() throws Exception;
 
 	Modules getModulesList(String course) throws Exception;
+
+	List<Faculty> getFacultyList(String course) throws Exception;
 }

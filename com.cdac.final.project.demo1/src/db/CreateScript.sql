@@ -204,7 +204,8 @@ CREATE TABLE IF NOT EXISTS lecture_link(
 -- question_paper table
 
 CREATE TABLE IF NOT EXISTS question_paper(
-	question varchar(700) PRIMARY KEY NOT NULL,
+	question_no int,
+	question varchar(700),
     option1 varchar(700),
     option2 varchar(700),
     option3 varchar(700),
