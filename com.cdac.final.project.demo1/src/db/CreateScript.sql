@@ -1,6 +1,6 @@
+drop database if exists cdac_app_final;
 create database cdac_app_final;
 use cdac_app_final;
--- drop database cdac_app_final
 
 -- ------------------------------------------------------------------------------------------------------
 
