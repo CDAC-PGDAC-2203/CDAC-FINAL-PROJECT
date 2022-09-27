@@ -31,7 +31,7 @@ INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','
 -- --------------------------------------------------------------------------------------------
 
 -- user_login table
-insert into user_login values(10000,'admin',11111,11111,'ADMIN','PG-DAC');
+insert into user_login values(10000,'admin',11111,'$2a$10$dp.US7K4f97owgHXpmwyUO1aiox8vexAFD/egkn4QHUDvqI4.NHn2','ADMIN','PG-DAC');
 INSERT INTO user_login VALUES (1, 'Hardik', 220340120001,'220340120001','STUDENT','PG-DAC');
 INSERT INTO user_login VALUES (2, 'Joy', 220340120002,'220340120001', 'STUDENT','PG-DAC');
 

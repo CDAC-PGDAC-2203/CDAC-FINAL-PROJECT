@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS user_login(
 	u_id bigint not null,
     u_name varchar(50),
     u_prn bigint primary key not null,
-    u_password varchar(20),
+    u_password varchar(500),
     u_role varchar(10),
     course varchar(10)
 );
