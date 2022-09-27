@@ -2,6 +2,106 @@
 	pageEncoding="ISO-8859-1"%>
 
 <body>
+	<style>
+.ouetrmostdiv {
+	height: 464px;
+	width: 100%;
+}
+
+.outerdiv {
+	padding: 20px;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	text-align: center;
+	background-color: lightgray;
+	margin-top: 30px;
+	border-radius: 1%;
+}
+
+.mod-list {
+	margin-bottom: 20px;
+	font-size: 25px;
+	font-family: "Google Sans", Roboto, Arial, sans-serif;
+	background-color: gold;
+	color: black;
+	border: 1px solid gray;
+	width: 30%;
+	height: 45px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 45%;
+}
+
+.btn1 {
+	border-radius: 45%;
+	height: 45px;
+	width: 120px;
+	background-color: gold;
+	border: none;
+}
+
+.btn1:hover {
+	color: whitesmoke;
+}
+
+td {
+	border-radius: 5%;
+	font-family: "Google Sans", Roboto, Arial, sans-serif;
+	font-size: 18px;
+}
+
+.btn { /* just for this demo. */
+	margin-top: 4px;
+}
+
+.btn-arrow-right {
+	position: relative;
+	padding-right: 18px;
+	padding-left: 30px;
+}
+
+.btn-arrow-right:before, .btn-arrow-right:after {
+	/* make two squares (before and after), looking similar to the button */
+	content: "";
+	position: absolute;
+	top: 13%; /* move it down because of rounded corners */
+	width: 27px; /* same as height */
+	height: 27px; /* button_outer_height / sqrt(2) */
+	background: inherit; /* use parent background */
+	border: inherit; /* use parent border */
+	border-left-color: none; /* hide left border */
+	border-bottom-color: none; /* hide bottom border */
+	border-radius: 0px 4px 0px 0px;
+	/* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+	-webkit-border-radius: 0px 4px 0px 0px;
+	-moz-border-radius: 0px 4px 0px 0px;
+}
+
+.btn-arrow-right:before, .btn-arrow-right:after {
+	transform: rotate(42deg);
+	/* rotate right arrow squares 45 deg to point right */
+	-webkit-transform: rotate(42deg);
+	-moz-transform: rotate(42deg);
+	-o-transform: rotate(42deg);
+	-ms-transform: rotate(42deg);
+}
+
+.btn-arrow-right:before, .btn-arrow-right:after {
+	/* align the "after" square to the right */
+	right: -15px;
+}
+
+.btn-arrow-right:after, .btn-arrow-left:before {
+	/* bring arrow pointers to front */
+	z-index: 1;
+}
+
+.btn-arrow-right:before, .btn-arrow-left:after {
+	/* hide arrow tails background */
+	background-color: gold;
+}
+</style>
+	
 	<!-- NAV BAR WILL BE DRAWN -->
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
 	</nav>
@@ -147,9 +247,7 @@
 							Computing, C-DAC Innovation Park 34, B/1, Panchwati Road, Pashan,
 							Pune, Maharashtra 411008 <a
 								href="https://www.google.com/maps/place/CENTRE+FOR+DEVELOPMENT+OF+ADVANCED+COMPUTING,+Panchawati+Rd,+Mansarovar,+Pashan,+Pune,+Maharashtra+411008/@18.5349721,73.8105031,19z/data=!4m5!3m4!1s0x3bc2bf0e5dca0f97:0xaed6c14da20b1d0f!8m2!3d18.5350147!4d73.8108441?shorturl=1">
-								<img
-								src="./img/2901214.png"
-								style="height: 13px; width: 13px;" />
+								<img src="./img/2901214.png" style="height: 13px; width: 13px;" />
 							</a>
 						</p>
 						<p>
