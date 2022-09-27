@@ -187,7 +187,15 @@ public class DashboardController {
 
 	// API to get notice details on dashBoard
 	@GetMapping("/notice")
-	public List<HashMap<String, String>> getNotice() {
-		return service.getNotice();
+	public ResponseEntity<?> getNotice() {
+		try {
+			List<HashMap<String, String>> map = service.getNotice();
+			logger.info("************Received Notices*************");
+			return new ResponseEntity<>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+			HashMap<String, String> badMap = null;
+			return new ResponseEntity<>(badMap, HttpStatus.OK);
+		}
 	}
 }

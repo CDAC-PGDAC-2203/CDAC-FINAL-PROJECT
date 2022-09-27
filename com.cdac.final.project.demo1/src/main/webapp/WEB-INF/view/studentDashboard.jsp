@@ -37,18 +37,9 @@
 						style="text-align: center; width: 100%;">Notice Board</h3>
 					<div class="card-body pt-0">
 						<div class="notice-board-div">
-							<marquee direction="down" id="noticeBoard" scrollamount="5"
+							<marquee direction="up" id="noticeBoard" scrollamount="5"
 								loop="true" onmouseover="stop()" onmouseout="start()">
-								<div class="desc" id="desc">The direction of text will be
-									from bottom to top.</div>
-								<div class="desc" id="desc">The direction of text will be
-									from bottom to top.</div>
-								<div class="desc" id="desc">The direction of text will be
-									from bottom to top.</div>
-								<div class="desc" id="desc">The direction of text will be
-									from bottom to top.</div>
-								<div class="desc" id="desc">The direction of text will be
-									from bottom to top.</div>
+								
 							</marquee>
 						</div>
 					</div>

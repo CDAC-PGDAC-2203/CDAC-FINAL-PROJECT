@@ -1,5 +1,6 @@
 $(document).ready(() => {
     var totalPerformance = 0.0;
+    var totalAttendance = 0.0;
     
     // AJAX to get current performance of student
     $.ajax({
@@ -36,14 +37,27 @@ $(document).ready(() => {
             clearInterval(progress1);
         }
     }, speed1);
-    
+
+    // AJAX to get current attendance of student
+    $.ajax({
+        type: "GET",
+            url: "/portal/attendance/"+localStorage.getItem("uPrn"),
+            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+            success: (data) => {
+               totalAttendance =  parseFloat(data.toFixed(1));
+            },
+            error: (error) => {
+                alert("Internal Server Error!");
+            }
+    });
+
     // Circular Progress Bar : Overall Performance
     var progressBar2 = document.querySelector(".circular-progress-2");
     var valueContainer2 = document.querySelector(".value-container-2");
  
     var progressValue2 = 0.0;
     progressValue1 = parseFloat(parseFloat(progressValue2).toFixed(1));
-    var progressEndValue1 = parseFloat((totalPerformance).toFixed(1));
+    var progressEndValue1 = parseFloat((totalAttendance).toFixed(1));
     var speed2 = 0.5;
  
     var progress2 = setInterval(() => {
@@ -55,23 +69,10 @@ $(document).ready(() => {
              #e91e63 ${progressValue2 * 2.7}deg,
              white ${progressValue2 * 3.6}deg
         )`;
-        if(parseFloat((progressValue2).toFixed(1)) == parseFloat((totalPerformance).toFixed(1))) {
+        if(parseFloat((progressValue2).toFixed(1)) == parseFloat((totalAttendance).toFixed(1))) {
             clearInterval(progress2);
         }
     }, speed2);
-
-    // AJAX to get current attendance of student
-    $.ajax({
-        type: "GET",
-            url: "/portal/attendance/"+localStorage.getItem("uPrn"),
-            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-            success: (data) => {
-               //$("#currentAttendance").append(data+"%");
-            },
-            error: (error) => {
-                alert("Internal Server Error!");
-            }
-    });
 
     //AJAX to get module wise attendance and draw the bar graph.
     $.ajax({
@@ -98,4 +99,25 @@ $(document).ready(() => {
            alert("Internal Server Error! Please contact Administrator");
         }
      });
+
+     // AJAX to get notices
+    $.ajax({
+        type: "GET",
+            url: "/portal/notice",
+            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+            success: (data) => {
+               data.forEach((map) => {
+                    var notice = "<div class='desc' id='desc'><a href='" 
+                                + map.noticeLink 
+                                + "' target='_blank'>" 
+                                + map.noticeName 
+                                + "</a></div>"
+                    
+                    $("#noticeBoard").append(notice);
+               });
+            },
+            error: (error) => {
+                alert("Internal Server Error!");
+            }
+    });
 });

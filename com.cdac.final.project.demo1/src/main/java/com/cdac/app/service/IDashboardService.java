@@ -29,5 +29,5 @@ public interface IDashboardService {
 
 	void removeNotice(String noticeName);
 
-	List<HashMap<String, String>> getNotice();
+	List<HashMap<String, String>> getNotice() throws Exception;
 }

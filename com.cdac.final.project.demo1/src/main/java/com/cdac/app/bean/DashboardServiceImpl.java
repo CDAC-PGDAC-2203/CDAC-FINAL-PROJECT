@@ -274,9 +274,13 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to get notice (Ajax call)
 	@Override
-	public List<HashMap<String, String>> getNotice() {
+	public List<HashMap<String, String>> getNotice() throws Exception{
 		List<Notice> list = noticeRepository.findAllByVisibility("Y");
 		List<HashMap<String, String>> listMap = new ArrayList<>();
+		
+		if((list == null) || (listMap == null)) {
+			throw new CDACAppException("NO NOTICES FOUND!");
+		}
 
 		for (Notice notice : list) {
 			HashMap<String, String> map = new HashMap<>();
