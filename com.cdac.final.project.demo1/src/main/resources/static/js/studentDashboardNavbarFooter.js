@@ -1,6 +1,4 @@
 $(document).ready(()=>{
-    
-
 
 //AJAX To Fetch Links To Join Lecture & Labs
 var today = new Date();
@@ -46,13 +44,12 @@ $.ajax({
     }
  });
 
-
-//Dashboard Navigation
-$("#dashboardNav").click((e)=>{
+//My Profile Page
+$("#student_profile").click((e)=>{
     e.preventDefault();
     $.ajax({
         type: "GET",
-        url: "/portal/dashboard",
+        url: "/portal/profile",
         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
         success: (data) => {
             $("body").html(data);
@@ -63,12 +60,12 @@ $("#dashboardNav").click((e)=>{
      });
 });
 
-//My Profile Page
-$("#student_profile").click((e)=>{
+//Dashboard Navigation
+$("#dashboardNav").click((e)=>{
     e.preventDefault();
     $.ajax({
         type: "GET",
-        url: "/portal/profile",
+        url: "/portal/dashboard",
         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
         success: (data) => {
             $("body").html(data);
@@ -110,4 +107,90 @@ $("#resultNav").click((e)=>{
         }
      });
 });
+
+//Feedback Page
+$("#feedbackNav").click((e)=>{
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "/portal/feedback",
+        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+        success: (data) => {
+            $("body").html(data);
+        },
+        error: (error) => {
+            alert("Internal Server Error!");
+        }
+     });
+});
+
+// Footer Links
+//Dashboard Navigation
+$("#dashboardFooter").click((e)=>{
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "/portal/dashboard",
+        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+        success: (data) => {
+            $("body").html(data);
+        },
+        error: (error) => {
+            alert("Internal Server Error!");
+        }
+     });
+});
+
+//Exam Home Page
+$("#examFooter").click((e)=>{
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "/portal/exam",
+        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+        success: (data) => {
+            $("body").html(data);
+        },
+        error: (error) => {
+            alert("Internal Server Error!");
+        }
+     });
+});
+
+//Result Page
+$("#resultFooter").click((e)=>{
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "/portal/result",
+        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+        success: (data) => {
+            $("body").html(data);
+        },
+        error: (error) => {
+            alert("Internal Server Error!");
+        }
+     });
+});
+
+//Feedback Page
+$("#feedbackFooter").click((e)=>{
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "/portal/feedback",
+        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
+        success: (data) => {
+            $("body").html(data);
+        },
+        error: (error) => {
+            alert("Internal Server Error!");
+        }
+     });
+});
+
+
+
+
+
 });
