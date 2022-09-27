@@ -6,6 +6,7 @@ insert into ccat_student values('2203003','Udit',NULL,'Keskar','1999-11-23','PG-
 insert into ccat_student values('2203004','Mayank',NULL,'Sachan','1994-03-07','PG-DBDA');
 insert into ccat_student values('2203005','Kamana',NULL,'Mathur','1997-07-04','PG-DESD');
 insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','PG-DAC');
+insert into ccat_student values('1111112','admin','admin','admin','1999-01-01','PG-DAC');
 
 -- --------------------------------------------------------------------------------------------
 
@@ -14,6 +15,7 @@ insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','
 INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
 INSERT INTO user_table VALUES (2, 'Joy', 2203002, 'STUDENT');
 INSERT INTO user_table VALUES (10000, 'admin', 1111111, 'ADMIN');
+INSERT INTO user_table VALUES (10001, 'admin', 1111112, 'ADMIN');
 
 -- --------------------------------------------------------------------------------------------
 
@@ -32,8 +34,6 @@ INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','
 
 -- user_login table
 insert into user_login values(10000,'admin',11111,'$2a$10$dp.US7K4f97owgHXpmwyUO1aiox8vexAFD/egkn4QHUDvqI4.NHn2','ADMIN','PG-DAC');
-INSERT INTO user_login VALUES (1, 'Hardik', 220340120001,'220340120001','STUDENT','PG-DAC');
-INSERT INTO user_login VALUES (2, 'Joy', 220340120002,'220340120001', 'STUDENT','PG-DAC');
 
 -- --------------------------------------------------------------------------------------------
 
