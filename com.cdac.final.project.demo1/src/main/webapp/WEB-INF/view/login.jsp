@@ -47,8 +47,8 @@
                  </div>
 				<form id="loginForm" method="POST" action="">
                 <div class="form-group">
-                     <p id="login_message_prn" style="color: red; font-size: 11px; margin-top: -30px; margin-left:-250px"></p>
                     <input id="prnNo" name="prn" class="form-control _ge_de_ol" type="text" placeholder="PRN No" required="required" aria-required="true">
+                    <p id="login_message_prn" style="color: red; font-size: 11px; margin-top: -30px; margin-left:-250px"></p>
                  </div>
   
                 <div class="form-group mt-5">                                              
