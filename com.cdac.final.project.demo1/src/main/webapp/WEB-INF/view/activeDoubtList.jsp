@@ -47,6 +47,7 @@
 	<!-- <script src="js/activeDoubtList.js" type="text/javascript"></script> -->
 	<script>
 	$(document).ready(()=>{
+		var photo = "";
 	    $.ajax({
 	        url: "/portal/doubts",
 	        type: "GET",
@@ -60,17 +61,23 @@
 	                             + "<td scope='row'>" + element.email + "</td>"
 	                             + "<td scope='row'>" + element.subjectName + "</td>"
 	                             + "<td scope='row'>" + element.doubtContent + "</td>"
-	                             + "<td scope='row'>" + element.attachment +"</td>"
+	                             + "<td scope='row'><div class='col-md-4' id='attachmentImage'></div></td>"
 	                             + "<td scope='row' style='width:85px'><button class='btn btn-primary btn-sm' style='width:80px; height: 40px;' id='" + element.doubtId + "' onclick='update_doubt_flag(" +  element.doubtId + ")'>Solved</button></td>"
 	                             + "</tr>";
+	                var attachmentPhoto = element.attachment;
 	                $("#doubtTable").append(tableRow);
+	                document.querySelector("#attachmentImage").style.backgroundImage = `url(${attachmentPhoto})`;
+	                document.querySelector("#attachmentImage").style.backgroundRepeat = "no-repeat";
+	                document.querySelector("#attachmentImage").style.backgroundSize = "contain";
+
 	            });
 	        },
 	        error: (error) => {
 	           //append FAILURE MESSAGE ON Ui
 	        }
 	     });
-
+	    
+        
 	    $("#adminDashboard").click((e)=>{
 	        e.preventDefault();
 	        $.ajax({

@@ -121,78 +121,87 @@ td {
 			<div class="inner-div">
 				<table class="table table-striped">
 					<tbody>
+					
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 1</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Core Java</td>
-							<td><button id="mod1exam" class="btn1">Start Exam</button></td>
+							<td><button id="mod1Exam" class="btn1">Start Exam</button></td>
 						</tr>
+
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 2</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Database Technologies</td>
-							<td><button id="mod2exam" class="btn1">Start Exam</button></td>
+							<td><button id="mod2Exam" class="btn1">Start Exam</button></td>
 						</tr>
+						
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 3</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Concepts of Programming</td>
-							<td><button id="mod3exam" class="btn1">Start Exam</button></td>
+							<td><button id="mod3exam" class="btn1" disabled>Start Exam</button></td>
 						</tr>
+						
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 4</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Software Development Methodologies</td>
-							<td><button id="mod4exam" class="btn1">Start Exam</button></td>
+							<td><button id="mod4exam" class="btn1" disabled>Start Exam</button></td>
 						</tr>
+						
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 5</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Operating Systems</td>
-							<td><button id="mod5exam" class="btn1">Start Exam</button></td>
+							<td><button id="mod5exam" class="btn1" disabled>Start Exam</button></td>
 						</tr>
+						
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 6</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Alogirthms and Data Structures</td>
-							<td><button id="mod6exam" class="btn1">Start Exam</button></td>
+								Algorithms and Data Structures</td>
+							<td><button id="mod6exam" class="btn1" disabled>Start Exam</button></td>
 						</tr>
+						
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 7</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Web Programming Technology</td>
-							<td><button id="mod7exam" class="btn1">Start Exam</button></td>
+							<td><button id="mod7exam" class="btn1" disabled>Start Exam</button></td>
 						</tr>
+						
 						<tr style="font-family: helvetica;">
 							<td scope="row" class="modClass">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 8</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Advanced Java</td>
-							<td><button id="mod8exam" class="btn1">Start Exam</button></td>
+							<td><button id="mod8exam" class="btn1" disabled>Start Exam</button></td>
 						</tr>
+						
 					</tbody>
 				</table>
 			</div>
@@ -207,4 +216,5 @@ td {
 	<script src="js/navBar.js"></script>
 	<script src="js/footerStudent.js"></script>
 	<script src="js/studentDashboardNavbarFooter.js"></script>
+	<script src="js/examPage.js"></script>
 </body>
