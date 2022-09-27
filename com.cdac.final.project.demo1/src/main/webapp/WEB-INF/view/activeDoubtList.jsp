@@ -61,7 +61,7 @@
 	                             + "<td scope='row'>" + element.subjectName + "</td>"
 	                             + "<td scope='row'>" + element.doubtContent + "</td>"
 	                             + "<td scope='row'>" + element.attachment +"</td>"
-	                             + "<td scope='row'><button id='" + element.doubtId + "' onclick='update_doubt_flag(" +  element.doubtId + ")'>Solved</button></td>"
+	                             + "<td scope='row' style='width:85px'><button class='btn btn-primary btn-sm' style='width:80px; height: 40px;' id='" + element.doubtId + "' onclick='update_doubt_flag(" +  element.doubtId + ")'>Solved</button></td>"
 	                             + "</tr>";
 	                $("#doubtTable").append(tableRow);
 	            });
