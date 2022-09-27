@@ -1,20 +1,4 @@
 $(document).ready(()=>{
-
-    $("#dashboardNav").click((e)=>{
-        e.preventDefault();
-        $.ajax({
-            type: "GET",
-            url: "/portal/dashboard",
-            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-            success: (data) => {
-                $("body").html(data);
-            },
-            error: (error) => {
-                alert("Internal Server Error!");
-            }
-         });
-    });
-
     $.ajax({
         url: "/portal/profile/"+localStorage.getItem("uPrn"),
         type: "GET",
@@ -39,8 +23,6 @@ $(document).ready(()=>{
            alert("Internal Server Error! Please contact Administrator");
         }
      });
-
-
      $("#changePassword").click((e) => {
         e.preventDefault();
         $.ajax({
@@ -55,19 +37,4 @@ $(document).ready(()=>{
             }
          });
      });
-
-	$("#logout").click((e) => {
-        e.preventDefault();
-        $.ajax({
-            url: "/portal/admin/logout",
-            type: "GET",
-            beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem("token"))},
-            success: (data) => {
-                localStorage.removeItem("token");
-                localStorage.removeItem("uPrn");
-                $("body").html(data);
-            }
-         });
-
-    });
 });

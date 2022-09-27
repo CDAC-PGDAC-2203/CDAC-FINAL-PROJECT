@@ -53,6 +53,16 @@ public class DashboardController {
 		return "/changePassword";
 	}
 
+	@GetMapping("/exam")
+	public String loadExamPage() {
+		return "/moduleExam";
+	}
+
+	@GetMapping("/result")
+	public String loadResultPage() {
+		return "/moduleResult";
+	}
+
 	// API to show user profile details
 	@GetMapping("/profile/{uPrn}")
 	public ResponseEntity<HashMap<String, String>> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
