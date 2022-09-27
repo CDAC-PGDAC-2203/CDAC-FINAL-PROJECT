@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,6 +49,8 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	@Autowired
 	private IEmailService emailService;
+
+	PasswordEncoder passwordEncoder;
 
 	// Method to validate user before registration
 	@Override
@@ -120,6 +124,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 		for (PersonalDetails pDetail : list) {
 			UserTable userTable = userTableRepository.findByUserId(pDetail.getUserId());
 			UserLogin userLogin = new UserLogin();
+			passwordEncoder = new BCryptPasswordEncoder();
 
 			userLogin.setUserId(pDetail.getUserId());
 
@@ -133,7 +138,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 			userLogin.setuName(name);
 			userLogin.setuPrn(prnNo);
-			userLogin.setuPassword(prnNo.toString());
+			userLogin.setuPassword(passwordEncoder.encode(prnNo.toString()));
 			userLogin.setCourse(pDetail.getCourse());
 			userLogin.setuRole(userTable.getUserRole());
 

@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,6 +59,8 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Autowired
 	private IEmailService emailService;
+
+	private PasswordEncoder passwordEncoder;
 
 	// Method to calculate performance of a student
 	@Override
@@ -234,10 +238,18 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	@Override
 	public void updateProfile(String oldPassword, String newPassword, Long uPrn) throws Exception {
-		UserLogin user = userLoginRepository.findByUserPassword(uPrn, oldPassword);
+		
+		passwordEncoder = new BCryptPasswordEncoder();
+		UserLogin user = userLoginRepository.findByUPrn(uPrn);
+
 		if (user != null) {
-			user.setuPassword(newPassword);
-			sendPasswordChangeMail(newPassword, uPrn);
+			String encryptedPassword = user.getuPassword();
+			if(passwordEncoder.matches(oldPassword, encryptedPassword)) {
+				user.setuPassword(passwordEncoder.encode(newPassword));
+				sendPasswordChangeMail(newPassword, uPrn);
+			}else {
+				throw new CDACAppException("WRONG OLD PASSWORD!");
+			}
 		} else {
 			throw new CDACAppException("WRONG OLD PASSWORD!");
 		}

@@ -35,7 +35,8 @@ public class EmailServiceImpl implements IEmailService {
 			javaMailSender.send(mailMessage);
 			return "Mail Sent Successfully...";
 		} catch (Exception e) {
-			return "Error while Sending Mail";
+			e.printStackTrace();
 		}
+		return "Mail not sent";
 	}
 }
