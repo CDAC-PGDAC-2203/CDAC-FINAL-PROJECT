@@ -32,18 +32,37 @@ INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','
 
 -- user_login table
 insert into user_login values(10000,'admin',11111,11111,'ADMIN','PG-DAC');
+INSERT INTO user_login VALUES (1, 'Hardik', 220340120001,'220340120001','STUDENT','PG-DAC');
+INSERT INTO user_login VALUES (2, 'Joy', 220340120002,'220340120001', 'STUDENT','PG-DAC');
 
 -- --------------------------------------------------------------------------------------------
 
 -- module tables
 
-insert into module_1 values(220340120003,35,15,5);
-insert into module_2 values(220340120003,34,15,5);
+insert into module_1 values(220340120001,35,15,5);
+insert into module_2 values(220340120001,34,15,5);
+insert into module_3 values(220340120001,35,14,5);
+insert into module_4 values(220340120001,36,12,5);
+
+-- --------------------------------------------------------------------------------------------
+
+-- final_result table
+
+insert into final_result values(220340120001,50,40,50,40,60,null,null,null);
+insert into final_result values(220340120002,60,55,50,45,40,null,null,null);
+
+-- --------------------------------------------------------------------------------------------
+
+-- total_attendance table
+
+INSERT INTO total_attendance VALUES(220340120001,'mod1',8,10);
+INSERT INTO total_attendance VALUES(220340120001,'mod2',7,10);
+INSERT INTO total_attendance VALUES(220340120001,'mod3',2,10);
+INSERT INTO total_attendance VALUES(220340120001,'mod4',4,10);
 
 -- --------------------------------------------------------------------------------------------
 
 -- doubt_forum table
-
 
 INSERT INTO doubt_forum VALUES(1, 220340120001, 'Hardik', 'hardikagarwal1703@gmail.com', 'mod1', 'xyz', 'xyz', 'Y');
 INSERT INTO doubt_forum VALUES(2, 220340120002, 'Joy', 'joypahari11@gmail.com', 'mod2', 'abc', 'abc', 'Y');
@@ -77,4 +96,6 @@ INSERT INTO notice VALUES('IJKL','http://link3','N');
 
 -- lecture_link table
 
-INSERT INTO lecture_link VALUES(1,'PG-D','2022-09-22','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');
+INSERT INTO lecture_link VALUES(1,'PG-DAC','2022-09-27','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');
+INSERT INTO lecture_link VALUES(2,'PG-DAC','2022-09-28','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');
+INSERT INTO lecture_link VALUES(3,'PG-DAC','2022-09-29','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');

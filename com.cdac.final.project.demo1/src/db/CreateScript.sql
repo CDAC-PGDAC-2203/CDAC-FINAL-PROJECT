@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS total_attendance(
     total_lecture int not null,
     PRIMARY KEY (u_prn, module)
 );
-INSERT INTO total_attendance VALUES(220340140001,'mod1',8,10);
+
 -- ------------------------------------------------------------------------------------------------------
 
 -- lecture_link table
