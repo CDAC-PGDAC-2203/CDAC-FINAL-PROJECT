@@ -112,6 +112,9 @@
 									<div>
 										<input type="email" placeholder="Email Id" id="email"
 											class="form-control my-3 p-4" style="color: gray">
+									    <div style="margin-top: -15px">
+									       <p id="register_message_email" style="color: red;font-size: 11px; margin-top: 0px; margin-left:-350px"></p>
+									   </div>
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">
@@ -141,7 +144,7 @@
                                    
 									<input type="file" placeholder="Photo" id="image_input"
 										class="form-control p-4" required="required" 
-				                            aria-required="true">
+				                            aria-required="true" accept="image/*"/>
 
 								</div>
 								<div class="form-row" style="height: 4rem;">
@@ -182,6 +185,9 @@
 										<input type="text" placeholder="Address Line 1" id="addL1"
 											class="form-control my-3 p-4" required="required" 
 				                            aria-required="true">
+				                         <div style="margin-top: -15px">
+									       <p id="register_message_address" style="color: red;font-size: 11px; margin-top: 0px; margin-left:-350px"></p>
+									   </div>
 									</div>
 								</div>
 								<div class="form-row" style="height: 4rem;">

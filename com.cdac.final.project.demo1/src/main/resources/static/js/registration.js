@@ -79,7 +79,7 @@ $(document).ready(() => {
           dataType: "json",
         });
       } else if (formStepsNum == 1) {
-        if(validPhone && validGuardianName && validGuardianPhone){
+        if(validPhone && validGuardianName && validGuardianPhone && validEmail){
           gender = $("input[name='gender']:checked").val();
           email = $("#email").val();
           phone = $("#phone").val();
@@ -162,7 +162,7 @@ $(document).ready(() => {
 
   $("#submit").click((e) => {
     e.preventDefault();
-    if(validState && validCity && validPinCode){
+    if(validAddress && validState && validCity && validPinCode){
       addLine1 = $("#addL1").val();
       addLine2 = $("#addL2").val();
       state = $("#state").val();
@@ -226,19 +226,30 @@ $("#fName").blur(function(){
       validPhone =  true;
     }
  });
-//   var validImage = false;
-//    $("#image_input").blur(function(){
-//   var image_input = $("#image_input").val()
-//   var Extension = image_input.substring(
-//     image_input.lastIndexOf('.') + 1).toLowerCase();
-//   if (Extension != "png" || !Extension != "jpeg" || Extension != "jpg"){
-//    $("#register_message_photo").html("Upload PNG,JPEG or JPG file only!");
-//   }else{
-//    $("#register_message_photo").html("");
-//      validImage =  true;
-//   }
-// });
-
+  //var validImage = false;
+  //  $("#image_input").blur(function(){
+  // var image_input = $("#image_input").val()
+  // var Extension = image_input.substring(
+  //   image_input.lastIndexOf('.') + 1).toLowerCase();
+  // if {
+  //  $("#register_message_photo").html("Upload PNG,JPEG or JPG file only!");
+  // }else{
+  //    validImage =  true;
+  // }
+//});
+$("#image_input").rules("add", {
+  accept: "jpg|jpeg|png"
+});
+var validEmail = false;
+$("#email").blur(function(){
+  var email = $("#email").val()
+  if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)){
+   $("#register_message_email").html(" Please Enter Valid Email Id!");
+  }else{
+   $("#register_message_email").html("");
+      validEmail = true;
+  }
+});
 var validGuardianName = false;
 $("#guardianName").blur(function(){
   var guardianName = $("#guardianName").val()
@@ -262,22 +273,38 @@ var validGuardianPhone  = false;
   }
 });
 
-var validState = $("#state").blur(function(){
+//validation : address
+
+var validAddress = false;
+$("#addL1").blur(function(){
+  var addL1 = $("#addL1").val()
+  if ((addL1 == "")){
+   $("#register_message_address").html("Address can not be Null!");
+  }else{
+   $("#register_message_address").html("");
+        validAddress = true;
+  }
+});
+
+
+var validState = false;
+   $("#state").blur(function(){
   var state = $("#state").val()
   if (!state.match(/^[a-zA-Z]+$/)){
    $("#register_message_state").html(" For your state please use alphabets only!");
   }else{
    $("#register_message_state").html("");
-   return true;
+     validState = true;
   }
 });
- var validCity = $("#city").blur(function(){
+ var validCity = false;
+   $("#city").blur(function(){
   var city = $("#city").val()
   if (!city.match(/^[a-zA-Z]+$/)){
    $("#register_message_city").html(" For your city please use alphabets only!");
   }else{
    $("#register_message_city").html("");
-   return true;
+       validCity = true;
   }
 });
 var validPinCode  = false;
@@ -287,7 +314,7 @@ var validPinCode  = false;
      $("#register_message_pincode").html(" Please enter a valid Pincode!");
     }else{
      $("#register_message_pincode").html("");
-      validPhone =  true;
+      validPinCode =  true;
     }
  });
 });
