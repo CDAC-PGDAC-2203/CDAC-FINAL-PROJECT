@@ -18,7 +18,9 @@
 <link rel="stylesheet" href="css/feedBackList.css" type="text/css" />
 <link rel="stylesheet" href="css/dashboard.css" type="text/css"/>
 <link rel="stylesheet" href="css/adminDashboard.css" type="text/css" />
-<link rel="stylesheet" href="css/styleFeedback.css" type="text/css" />
+<!--  <link rel="stylesheet" href="css/styleFeedback.css" type="text/css" />
+<link rel="stylesheet" href="css/moduleExam.css" type="text/css" />
+<link rel="stylesheet" href="css/moduleResult.css" type="text/css" />-->
 <link rel="stylesheet" href="css/styleNavbarAndFooter.css" type="text/css" />
 
 

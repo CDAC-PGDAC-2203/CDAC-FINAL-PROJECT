@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>CDAC APP | Module Exam</title>
-<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="css/styleNavbarAndFooter.css" />
-<link rel="stylesheet" href="css/moduleExam.css" />
-</head>
+
 <body>
 	<!-- NAV BAR WILL BE DRAWN -->
 	<nav class="navbar navbar-expand-lg navbar-light" id="navbar-1">
@@ -184,4 +176,3 @@
 	<script src="js/navBar.js"></script>
 	<script src="js/studentDashboardNavbar.js"></script>
 </body>
-</html>
