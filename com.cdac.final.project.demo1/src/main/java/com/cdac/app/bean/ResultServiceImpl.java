@@ -22,6 +22,8 @@ import com.cdac.app.domain.Module6;
 import com.cdac.app.domain.Module7;
 import com.cdac.app.domain.Module8;
 import com.cdac.app.domain.TotalAttendance;
+import com.cdac.app.domain.UserLogin;
+import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.IFinalResultRepository;
 import com.cdac.app.repositories.IMCQExamRepository;
 import com.cdac.app.repositories.IModule1Repository;
@@ -33,6 +35,7 @@ import com.cdac.app.repositories.IModule6Repository;
 import com.cdac.app.repositories.IModule7Repository;
 import com.cdac.app.repositories.IModule8Repository;
 import com.cdac.app.repositories.ITotalAttendanceRepository;
+import com.cdac.app.repositories.IUserLoginRepository;
 import com.cdac.app.service.IResultService;
 
 @Component
@@ -72,9 +75,12 @@ public class ResultServiceImpl implements IResultService {
 	@Autowired
 	private IFinalResultRepository finalResultRepository;
 
+	@Autowired
+	private IUserLoginRepository userLoginRepository;
+
 	// Method to return student overall result
 	@Override
-	public HashMap<String, String> getResult(Long uPrn, String moduleName) {
+	public HashMap<String, String> getResult(Long uPrn, String moduleName) throws Exception{
 		HashMap<String, String> map = new HashMap<>();
 		Module1 m1 = null;
 		Module2 m2 = null;
@@ -87,53 +93,79 @@ public class ResultServiceImpl implements IResultService {
 
 		if ("mod1".equals(moduleName)) {
 			m1 = module1Repository.getResult(uPrn);
+			if(m1 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m1.getLab().toString());
 			map.put("assessment", m1.getAssessment().toString());
 			map.put("attendance", m1.getAttendance().toString());
 		}
 		if ("mod2".equals(moduleName)) {
 			m2 = module2Repository.getResult(uPrn);
+			if(m2 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m2.getLab().toString());
 			map.put("assessment", m2.getAssessment().toString());
 			map.put("attendance", m2.getAttendance().toString());
 		}
 		if ("mod3".equals(moduleName)) {
 			m3 = module3Repository.getResult(uPrn);
+			if(m3 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m3.getLab().toString());
 			map.put("assessment", m3.getAssessment().toString());
 			map.put("attendance", m3.getAttendance().toString());
 		}
 		if ("mod4".equals(moduleName)) {
 			m4 = module4Repository.getResult(uPrn);
+			if(m4 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m4.getLab().toString());
 			map.put("assessment", m4.getAssessment().toString());
 			map.put("attendance", m4.getAttendance().toString());
 		}
 		if ("mod5".equals(moduleName)) {
 			m5 = module5Repository.getResult(uPrn);
+			if(m5 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m5.getLab().toString());
 			map.put("assessment", m5.getAssessment().toString());
 			map.put("attendance", m5.getAttendance().toString());
 		}
 		if ("mod6".equals(moduleName)) {
 			m6 = module6Repository.getResult(uPrn);
+			if(m6 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m6.getLab().toString());
 			map.put("assessment", m6.getAssessment().toString());
 			map.put("attendance", m6.getAttendance().toString());
 		}
 		if ("mod7".equals(moduleName)) {
 			m7 = module7Repository.getResult(uPrn);
+			if(m7 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m7.getLab().toString());
 			map.put("assessment", m7.getAssessment().toString());
 			map.put("attendance", m7.getAttendance().toString());
 		}
 		if ("mod8".equals(moduleName)) {
 			m8 = module8Repository.getResult(uPrn);
+			if(m8 == null) {
+				throw new CDACAppException("RESULT NOT FOUND!!");
+			}
 			map.put("lab", m8.getLab().toString());
 			map.put("assessment", m8.getAssessment().toString());
 			map.put("attendance", m8.getAttendance().toString());
 		}
 
+		UserLogin user = userLoginRepository.findByUPrn(uPrn);
+		map.put("name", user.getuName());
 		return map;
 	}
 
@@ -309,6 +341,10 @@ public class ResultServiceImpl implements IResultService {
 	// Method to get MCQ marks for calculating overall result
 	public Long getMCQMarks(Long uPrn, String module) {
 		MCQExamMarks mcqMarks = mcqExamRepository.findAllByUPrnAndModule(uPrn, module);
-		return mcqMarks.getMarks();
+		
+		if(mcqMarks != null) {
+			return mcqMarks.getMarks();
+		}
+		return 0L;
 	}
 }

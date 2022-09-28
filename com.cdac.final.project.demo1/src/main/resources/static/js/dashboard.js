@@ -38,8 +38,6 @@ $(document).ready(() => {
 			                #e91e63 ${progressValue1 * 2.7}deg,
 			                white ${progressValue1 * 3.6}deg
 			            )`;
-			            console.log("progressValue1",parseFloat((progressValue1).toFixed(1)));
-			            console.log("progressEndValue1",parseFloat((progressEndValue1).toFixed(1)));
 			            if (parseFloat((progressValue1).toFixed(1)) == parseFloat((progressEndValue1).toFixed(1))) {
 			                clearInterval(progress1);
 			            }

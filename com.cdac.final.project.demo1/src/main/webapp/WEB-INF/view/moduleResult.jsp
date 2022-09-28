@@ -122,82 +122,82 @@ td {
 					<tbody>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 1</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Core Java</td>
-							<td><button id="mod1result" class="btn1">View
+							<td><button id="mod1Result" class="btn1">View
 									Result</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 2</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Database Technologies</td>
-							<td><button id="mod2result" class="btn1">View
+							<td><button id="mod2Result" class="btn1">View
 									Result</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 3</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Concepts of Programming</td>
-							<td><button id="mod3result" class="btn1">View
+							<td><button id="mod3result" class="btn1" disabled>View
 									Result</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 4</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Software Development Methodologies</td>
-							<td><button id="mod4result" class="btn1">View
+							<td><button id="mod4result" class="btn1" disabled>View
 									Result</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 5</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Operating Systems</td>
-							<td><button id="mod5result" class="btn1">View
+							<td><button id="mod5result" class="btn1" disabled>View
 									Result</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 6</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
-								Alogirthms and Data Structures</td>
-							<td><button id="mod6result" class="btn1">View
+								Algorithms and Data Structures</td>
+							<td><button id="mod6result" class="btn1" disabled>View
 									Result</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 7</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Web Programming Technology</td>
-							<td><button id="mod7result" class="btn1">View
+							<td><button id="mod7result" class="btn1" disabled>View
 									Result</button></td>
 						</tr>
 						<tr style="font-family: helvetica;">
 							<td scope="row">
-								<button type="button" class="btn btn-warning btn-arrow-right">
+								<button type="button" class="btn btn-warning btn-arrow-right" disabled>
 									Module 8</button>
 							</td>
 							<td style="color: black; text-align: center; padding-top: 18px;">
 								Advanced Java</td>
-							<td><button id="mod8result" class="btn1">View
+							<td><button id="mod8result" class="btn1" disabled>View
 									Result</button></td>
 						</tr>
 					</tbody>
@@ -214,4 +214,5 @@ td {
 	<script src="js/navBar.js"></script>
 	<script src="js/footerStudent.js"></script>
 	<script src="js/studentDashboardNavbarFooter.js"></script>
+	<script src="js/resultPage.js"></script>
 </body>
