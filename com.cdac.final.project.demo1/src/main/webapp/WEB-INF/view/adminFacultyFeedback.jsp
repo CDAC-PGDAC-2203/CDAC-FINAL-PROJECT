@@ -49,13 +49,13 @@
                         <div style="display: flex;justify-content: space-evenly; margin-top: 10px;">
                           Flag:
                           <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flag" id="flag_yes">
+                              <input class="form-check-input" type="radio" name="flag" id="flag_yes" value="Y">
                               <label class="form-check-label" for="flag_yes">
-                                yes
+                                Yes
                               </label>
                             </div>
                             <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flag" id="flag_no" checked>
+                              <input class="form-check-input" type="radio" name="flag" id="flag_no" value="N" checked>
                               <label class="form-check-label" for="flag_no">
                                 No
                               </label>
