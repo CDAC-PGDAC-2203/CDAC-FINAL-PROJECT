@@ -248,6 +248,10 @@ $(document).ready(() => {
         e.preventDefault();
         var doubtContent = $('textarea[name="content"]').val();
         var subjectName = $('#moduleList :selected').text();
+        if(doubtContent == "" || subjectName == ""){
+            $("#msg").html("<h6 style='color: red;'>Error! Subject & Doubt content can't be empty.</h6>");
+            return;
+        }
         var uPrn = localStorage.getItem("uPrn");
         var attachment = $("#photo").val();
         $.ajax({
@@ -266,9 +270,9 @@ $(document).ready(() => {
                     return;
                 }
                 if(data.data == "DONE"){
-                    $("#msg").append("<h6 style='color: green;'>Doubt Saved Successfully!</h6>");
+                    $("#msg").html("<h6 style='color: green;'>Doubt Saved Successfully!</h6>");
                 }else{
-                    $("#msg").append("<h6 style='color: red;'>Error! Please try after some time.</h6>");
+                    $("#msg").html("<h6 style='color: red;'>Error! Please try after some time.</h6>");
                 }
             },
             error: (error) => {
