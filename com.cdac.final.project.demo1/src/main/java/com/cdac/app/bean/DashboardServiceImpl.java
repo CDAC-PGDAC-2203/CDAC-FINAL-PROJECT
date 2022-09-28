@@ -371,7 +371,7 @@ public class DashboardServiceImpl implements IDashboardService {
 	@Override
 	public Modules getModulesList(String course) throws Exception {
 		Modules module = modulesRepository.findByCourse(course);
-		if(module == null) {
+		if(module != null) {
 			return module;
 		}
 		throw new CDACAppException("Invalid Course");
