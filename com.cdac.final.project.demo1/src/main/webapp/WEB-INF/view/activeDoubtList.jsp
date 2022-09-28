@@ -66,10 +66,6 @@
 	                             + "</tr>";
 	                var attachmentPhoto = element.attachment;
 	                $("#doubtTable").append(tableRow);
-	                document.querySelector("#attachmentImage").style.backgroundImage = `url(${attachmentPhoto})`;
-	                document.querySelector("#attachmentImage").style.backgroundRepeat = "no-repeat";
-	                document.querySelector("#attachmentImage").style.backgroundSize = "contain";
-
 	            });
 	        },
 	        error: (error) => {
