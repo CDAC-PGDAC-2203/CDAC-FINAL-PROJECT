@@ -169,7 +169,7 @@ form .btn button:hover {
 									</select>
 								</div>
 							</div>
-							<table class="table">
+							<table class="table" id="feedback_table">
 								<thead>
 									<tr>
 										<th scope="col">#</th>
@@ -218,7 +218,7 @@ form .btn button:hover {
 										<th scope="row">3</th>
 										<td>Punctuality</td>
 										<td>
-											<div class="star-widget">
+											<div class="star-widget" >
 												<input type="radio" name="3rate" id="3rate-5" value="5"> <label
 													for="3rate-5" class="fas fa-star"></label> <input
 													type="radio" name="3rate" id="3rate-4" value="4"> <label
@@ -254,7 +254,7 @@ form .btn button:hover {
 										<th scope="row">3</th>
 										<td>Guidance</td>
 										<td>
-											<div class="star-widget">
+											<div class="star-widget" >
 												<input type="radio" name="5rate" id="5rate-5" value="5"> <label
 													for="5rate-5" class="fas fa-star"></label> <input
 													type="radio" name="5rate" id="5rate-4" value="4"> <label
