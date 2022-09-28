@@ -33,6 +33,7 @@
                  <img src="${pageContext.request.contextPath}/img/success.jpeg" style="height:30%">
                  <h5>Registration Completed Successfully</h5>
                  <h6 style="color: rgb(27, 76, 221);">Login credentials will be mailed to you soon</h6>
+                 <a href=""><button class="btn btn-primary">Back to login</button></a>
               </div>
             </div>
           </div>
