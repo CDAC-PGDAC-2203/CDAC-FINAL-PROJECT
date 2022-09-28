@@ -295,17 +295,29 @@ $(document).ready(()=>{
                      $("#subject").val("");
                      $("#session_date").val("");
                      $("#theory_time").val("");
+                     $("#theory_link").val("");
                      $("#b1_time").val("");
                      $("#b2_time").val("");
                      $("#b3_time").val("");
+                     $("#b4_time").val("");
+                     $("#b1_link").val("");
+                     $("#b2_link").val("");
+                     $("#b3_link").val("");
+                     $("#b4_link").val("");
                    }else{
                      $("#message").html("<h5 style='color: red;'>Error! Lecture Link not uploaded</h5>");
                      $("#subject").val("");
                      $("#session_date").val("");
                      $("#theory_time").val("");
+                     $("#theory_link").val("");
                      $("#b1_time").val("");
                      $("#b2_time").val("");
                      $("#b3_time").val("");
+                     $("#b4_time").val("");
+                     $("#b1_link").val("");
+                     $("#b2_link").val("");
+                     $("#b3_link").val("");
+                     $("#b4_link").val("");
                    }
                 },
                 error: (error) => {
@@ -313,19 +325,31 @@ $(document).ready(()=>{
                      $("#subject").val("");
                      $("#session_date").val("");
                      $("#theory_time").val("");
+                     $("#theory_link").val("");
                      $("#b1_time").val("");
                      $("#b2_time").val("");
                      $("#b3_time").val("");
+                     $("#b4_time").val("");
+                     $("#b1_link").val("");
+                     $("#b2_link").val("");
+                     $("#b3_link").val("");
+                     $("#b4_link").val("");
                 }
              }); 
-           }else{
+            }else{
                    $("#message").html("<h5 style='color: red;'>Error! Lecture Link not uploaded</h5>");
                    $("#subject").val("");
                    $("#session_date").val("");
-                   $("#theory_time").val("");
-                   $("#b1_time").val("");
-                   $("#b2_time").val("");
-                   $("#b3_time").val("");
+                     $("#theory_time").val("");
+                     $("#theory_link").val("");
+                     $("#b1_time").val("");
+                     $("#b2_time").val("");
+                     $("#b3_time").val("");
+                     $("#b4_time").val("");
+                     $("#b1_link").val("");
+                     $("#b2_link").val("");
+                     $("#b3_link").val("");
+                     $("#b4_link").val("");
            }
      
   });
@@ -495,8 +519,8 @@ $(document).ready(()=>{
       //validation: faculty_feedback
       $("#faculty_name").blur(function(){
          var faculty_name = $("#faculty_name").val()
-         if (!isNaN(faculty_name) || faculty_name == ""){
-          $("#validFacultyNameMsg").html(" Faculty name can not contain number or be empty!");
+         if (isNaN(faculty_name) || faculty_name == ""){
+          $("#validFacultyNameMsg").html(" Faculty ID can not contain alphabet or be empty!");
          }else{
           $("#validFacultyNameMsg").html("");
          }

@@ -39,7 +39,7 @@
                     <form>
                         <div class="form-row" style="display: flex;justify-content: space-evenly;">
                             <div style="width: 40%;"> 
-                                <input id="subject" type="text" placeholder="Subject Name"class="form-control my-3 p-3">
+                                <input id="subject" type="text" placeholder="Course Name"class="form-control my-3 p-3">
                                 <p id="LectureSubjectValidMsg" style="color: red; font-size: 11px; margin-top: -15px; margin-left:-10px"></p>
                             </div>
                             <div style="width: 40%;">    

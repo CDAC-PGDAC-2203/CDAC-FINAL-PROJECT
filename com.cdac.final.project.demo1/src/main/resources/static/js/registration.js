@@ -248,7 +248,7 @@ $("#email").blur(function(){
 var validGuardianName = false;
 $("#guardianName").blur(function(){
   var guardianName = $("#guardianName").val()
-  if (!guardianName.match(/^[a-zA-Z]+$/)){
+  if (!guardianName.match(/[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/)){
    $("#register_message_gName").html(" For your name please use alphabets only!");
   }else{
    $("#register_message_gName").html("");
@@ -274,7 +274,7 @@ var validGuardianPhone  = false;
 var validAddress = false;
 $("#addL1").blur(function(){
   var addL1 = $("#addL1").val()
-  if ((addL1 == "")){
+  if(addL1 == ""){
    $("#register_message_address").html("Address can not be Null!");
   }else{
    $("#register_message_address").html("");
@@ -286,7 +286,7 @@ $("#addL1").blur(function(){
 var validState = false;
    $("#state").blur(function(){
   var state = $("#state").val()
-  if (!state.match(/^[a-zA-Z]+$/)){
+  if (!state.match(/[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/)){
    $("#register_message_state").html(" For your state please use alphabets only!");
   }else{
    $("#register_message_state").html("");
@@ -296,7 +296,7 @@ var validState = false;
  var validCity = false;
    $("#city").blur(function(){
   var city = $("#city").val()
-  if (!city.match(/^[a-zA-Z]+$/)){
+  if (!city.match(/[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/)){
    $("#register_message_city").html(" For your city please use alphabets only!");
   }else{
    $("#register_message_city").html("");
