@@ -1,7 +1,7 @@
 $(document).ready(() => {
     var questionNumber = 1;
     $.ajax({
-        url: "/portal/exam/questions/mod1",
+        url: "/portal/exam/questions/mod2",
         type: "GET",
         beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', localStorage.getItem("token")) },
         success: (data) => {
@@ -24,7 +24,7 @@ $(document).ready(() => {
                 <hr>
             </div>`;
                 questionNumber += 1;
-                $("#paperStartMod1").append(question);
+                $("#paperStartMod2").append(question);
             });
         }
     });
@@ -60,7 +60,7 @@ $(document).ready(() => {
             beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', localStorage.getItem("token")) },
             contentType: "application/json",
             data: JSON.stringify({
-                "module": "mod1",
+                "module": "mod2",
                 "uPrn": localStorage.getItem("uPrn"),
                 "map": answerJson
             }),

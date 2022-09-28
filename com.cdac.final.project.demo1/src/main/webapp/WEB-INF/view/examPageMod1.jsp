@@ -116,8 +116,11 @@
 			<b>Module : <span id="examPageMod1Name"></span></b>
 		</h4>
 		<br>
-		<div id="paperStart">
-		</div>
+			<div id="paperStartMod1">
+				
+				<!-- Question Paper will be drawn -->
+			
+			</div>
 		<br>
 		<div class="d-flex align-items-center pt-3">
 			<div id="prev" style="margin: auto;">
