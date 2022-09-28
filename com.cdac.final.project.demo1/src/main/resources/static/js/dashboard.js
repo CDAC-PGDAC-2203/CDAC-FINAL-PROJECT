@@ -229,7 +229,6 @@ $(document).ready(() => {
         beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', localStorage.getItem("token")) },
         success: (data) => {
             var list = "<option value='" + data.mod1 + "'>" + data.mod1 + "</option>"
-                + "<option value='" + data.mod1 + "'>" + data.mod1 + "</option>"
                 + "<option value='" + data.mod2 + "'>" + data.mod2 + "</option>"
                 + "<option value='" + data.mod3 + "'>" + data.mod3 + "</option>"
                 + "<option value='" + data.mod4 + "'>" + data.mod4 + "</option>"
