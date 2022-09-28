@@ -9,9 +9,11 @@ public interface IRegistrationService {
 
 	public void saveUser(Long ccatNo, String fName);
 
-	public PersonalDetails savePersonalDetails(PersonalDetails pDetails);
+	public PersonalDetails savePersonalDetails(PersonalDetails pDetails) throws Exception;
 
-	public UserAddress saveAddressDetails(UserAddress addressDetails);
+	public UserAddress saveAddressDetails(UserAddress addressDetails) throws Exception;
+	
+	public void removeDataFromUserTable(PersonalDetails pDetail);
 
-	public void generatePRN(String courseName);
+	public void generatePRN(String courseName) throws Exception;
 }

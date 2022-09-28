@@ -56,6 +56,11 @@ $(document).ready(() => {
             "fName": fName,
           }),
           success: function (returnedData) {
+            if(returnedData == "" || returnedData == null){
+              $("#register_failure").html("<i class='bi bi-info-square'></i>" + " Invalid Credentials!")
+              $("#ccatNo").val("");
+              $("#fName").val("");
+            }
             mName = returnedData.mName;
             lName = returnedData.lName;
             course = returnedData.course;
@@ -108,6 +113,10 @@ $(document).ready(() => {
               "guardianPhone": guardianPhone,
             }),
             success: function (returnedData) {
+              if(returnedData == "" || returnedData == null){
+                window.alert("Internal Server Error!");
+                return;
+              }
               userId = returnedData.userId;
               formStepsNum++;
               updateFormSteps();
@@ -121,8 +130,6 @@ $(document).ready(() => {
         }else{
           window.alert("Enter Valid Details!");
         }
-       
-
        }
     });
   });
@@ -182,19 +189,20 @@ $(document).ready(() => {
           "pincode": pincode
         }),
         success: function (returnedData) {
+          if(returnedData == "" || returnedData == null){
+            window.alert("Internal Server Error");
+            return;
+          }
           window.location.href = "/portal/register/success";
         },
         error: function (error) {
-          console.log(error);
+          window.alert("Internal Server Error");
         },
         dataType: "json",
       });
     }else{
       window.alert("Enter Valid Details!");
     }
-
-   
-     
   }); 
    //Validation
    $("#ccatNo").blur(function(){
@@ -226,17 +234,6 @@ $("#fName").blur(function(){
       validPhone =  true;
     }
  });
-//   //var validImage = false;
-//   //  $("#image_input").blur(function(){
-//   // var image_input = $("#image_input").val()
-//   // var Extension = image_input.substring(
-//   //   image_input.lastIndexOf('.') + 1).toLowerCase();
-//   // if {
-//   //  $("#register_message_photo").html("Upload PNG,JPEG or JPG file only!");
-//   // }else{
-//   //    validImage =  true;
-//   // }
-// //});
 
 var validEmail = false;
 $("#email").blur(function(){

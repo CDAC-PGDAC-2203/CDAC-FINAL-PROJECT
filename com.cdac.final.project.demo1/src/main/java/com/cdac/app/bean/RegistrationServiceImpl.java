@@ -16,6 +16,7 @@ import com.cdac.app.domain.Role;
 import com.cdac.app.domain.UserAddress;
 import com.cdac.app.domain.UserLogin;
 import com.cdac.app.domain.UserTable;
+import com.cdac.app.exception.CDACAppException;
 import com.cdac.app.repositories.IAddressDetailsRepository;
 import com.cdac.app.repositories.ICCATUserRepository;
 import com.cdac.app.repositories.IPersonalDetailsRepository;
@@ -79,7 +80,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	// Method to save user personal details
 	@Override
-	public PersonalDetails savePersonalDetails(PersonalDetails pDetails) {
+	public PersonalDetails savePersonalDetails(PersonalDetails pDetails) throws Exception{
 		UserTable uTable = userTableRepository.findByFNameAndCCATNo(pDetails.getfName(), pDetails.getCcatNo());
 		pDetails.setUserId(uTable.getUserId());
 
@@ -90,7 +91,7 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	// Method to save user address details
 	@Override
-	public UserAddress saveAddressDetails(UserAddress addressDetails) {
+	public UserAddress saveAddressDetails(UserAddress addressDetails) throws Exception{
 		addressDetailsRepository.save(addressDetails);
 		sendRegisterationEmail(addressDetails.getUserId());
 
@@ -100,14 +101,18 @@ public class RegistrationServiceImpl implements IRegistrationService {
 
 	// Method to store PRN of students course wise (Admin functionality)
 	@Override
-	public void generatePRN(String courseName) {
+	public void generatePRN(String courseName) throws Exception{
 		List<PersonalDetails> list = personalDetailsRepository.findAll(courseName);
-		List<UserLogin> prnList = populatePRNList(list);
-		userLoginRepository.saveAll(prnList);
+		if(list.size()>0) {
+			List<UserLogin> prnList = populatePRNList(list);
+			userLoginRepository.saveAll(prnList);			
+		}else {
+			throw new CDACAppException("NO USER REGISTERED YET!");
+		}
 	}
 
 	// Method to generate PRN of students course wise
-	public List<UserLogin> populatePRNList(List<PersonalDetails> list) {
+	public List<UserLogin> populatePRNList(List<PersonalDetails> list) throws Exception{
 		List<UserLogin> prnList = new ArrayList<>();
 		Long prnNo = 0L;
 
@@ -224,4 +229,12 @@ public class RegistrationServiceImpl implements IRegistrationService {
 			email.setMsgBody(messageBody);
 			emailService.sendSimpleMail(email);	
 		}
+
+	@Override
+	public void removeDataFromUserTable(PersonalDetails pDetail) {
+		userTableRepository.deleteByCcatNo(pDetail.getCcatNo());
+		
+	}
+
+	
 }

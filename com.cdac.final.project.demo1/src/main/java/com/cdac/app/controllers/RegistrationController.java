@@ -38,15 +38,26 @@ public class RegistrationController {
 	// API to save personal details in dataBase
 	@PostMapping("/register/details")
 	public ResponseEntity<?> savePersonalDetails(@RequestBody PersonalDetails pDetails) {
-		PersonalDetails savedDetails = service.savePersonalDetails(pDetails);
-		return new ResponseEntity<PersonalDetails>(savedDetails, HttpStatus.OK);
+		try {
+			PersonalDetails savedDetails = service.savePersonalDetails(pDetails);
+			return new ResponseEntity<PersonalDetails>(savedDetails, HttpStatus.OK);
+		}catch(Exception e) {
+			service.removeDataFromUserTable(pDetails);
+			PersonalDetails savedDetails = null;
+			return new ResponseEntity<PersonalDetails>(savedDetails, HttpStatus.OK);
+		}
 	}
 
 	// API to save address details in database
 	@PostMapping("/register/address")
 	public ResponseEntity<?> saveAddressDetails(@RequestBody UserAddress addressDetails) {
-		UserAddress savedAddress = service.saveAddressDetails(addressDetails);
-		return new ResponseEntity<UserAddress>(savedAddress, HttpStatus.OK);
+		try {
+			UserAddress savedAddress = service.saveAddressDetails(addressDetails);
+			return new ResponseEntity<UserAddress>(savedAddress, HttpStatus.OK);
+		}catch(Exception e) {			
+			UserAddress savedAddress = null;
+			return new ResponseEntity<UserAddress>(savedAddress,HttpStatus.OK);
+		}
 	}
 
 	@GetMapping("/register/success")

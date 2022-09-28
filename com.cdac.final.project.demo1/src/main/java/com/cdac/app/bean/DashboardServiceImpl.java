@@ -191,13 +191,13 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to fetch active doubts
 	@Override
-	public List<DoubtForum> getActiveDoubts() {
-		return doubtForumRepository.findAllActiveDoubt("Y");
+	public List<DoubtForum> getActiveDoubts() throws Exception{
+			return doubtForumRepository.findAllActiveDoubt("Y");
 	}
 
 	// Method to mark solved doubts in dataBase
 	@Override
-	public void updateActiveFlag(Long doubtId) {
+	public void updateActiveFlag(Long doubtId) throws Exception{
 		doubtForumRepository.updateActiveFlag(doubtId, "N");
 	}
 
@@ -289,7 +289,7 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to upload notice (Admin functionality)
 	@Override
-	public void setNotice(String noticeName, String noticeLink) {
+	public void setNotice(String noticeName, String noticeLink) throws Exception{
 		Notice notice = new Notice();
 		notice.setNoticeName(noticeName);
 		notice.setNoticeLink(noticeLink);
@@ -300,7 +300,7 @@ public class DashboardServiceImpl implements IDashboardService {
 
 	// Method to remove notice (Admin functionality)
 	@Override
-	public void removeNotice(String noticeName) {
+	public void removeNotice(String noticeName) throws Exception{
 		noticeRepository.removeNotice(noticeName, "N");
 	}
 

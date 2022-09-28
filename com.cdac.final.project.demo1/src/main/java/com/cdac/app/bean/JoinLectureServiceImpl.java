@@ -21,7 +21,7 @@ public class JoinLectureServiceImpl implements IJoinLectureService {
 
 	// Method to upload lecture links (Admin functionality)
 	@Override
-	public void uploadLectureLinks(LectureLink lectureLink) {
+	public void uploadLectureLinks(LectureLink lectureLink) throws Exception{
 		repository.save(lectureLink);
 	}
 

@@ -24,7 +24,7 @@ $(document).ready(()=>{
                   $("#message").html("<h5 style='color: green;'>PRN generated successfully!</h5>");
                }else{
                   $("#course_name_gprn").val("");
-                  $("#message").html("<h5 style='color: red;'>Error! PRN not generated</h5>");
+                  $("#message").html("<h5 style='color: red;'>Error! PRN can not be generated</h5>");
                }
             },
             error: (error) => {

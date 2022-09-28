@@ -42,7 +42,7 @@ public class FeedbackServiceImpl implements IFeedbackService {
 
 	// Method to fetch feedback response (Admin functionality)
 	@Override
-	public List<Feedback> getFeedbackList(String course) {
+	public List<Feedback> getFeedbackList(String course) throws Exception{
 		return repository.findAllByCourse(course);
 	}
 
@@ -73,7 +73,7 @@ public class FeedbackServiceImpl implements IFeedbackService {
 
 	// Method to update faculty list (Admin functionality)
 	@Override
-	public void updateFacultyFlag(String flag, Long facultyId, String course) {
+	public void updateFacultyFlag(String flag, Long facultyId, String course) throws Exception{
 		facultyRepository.updateFacultyFlag(flag, facultyId, course);
 	}
 }

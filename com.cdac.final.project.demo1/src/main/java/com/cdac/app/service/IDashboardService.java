@@ -18,9 +18,9 @@ public interface IDashboardService {
 
 	List<TotalAttendance> getModuleAttendance(Long uPrn) throws Exception;
 
-	List<DoubtForum> getActiveDoubts();
+	List<DoubtForum> getActiveDoubts() throws Exception;
 
-	void updateActiveFlag(Long doubtId);
+	void updateActiveFlag(Long doubtId) throws Exception;
 
 	void uploadAttendance(String filePath, String subject);
 
@@ -28,9 +28,9 @@ public interface IDashboardService {
 
 	void updateProfile(String oldPassword, String newPassword, Long uPrn) throws Exception;
 
-	void setNotice(String noticeName, String noticeLink);
+	void setNotice(String noticeName, String noticeLink) throws Exception;
 
-	void removeNotice(String noticeName);
+	void removeNotice(String noticeName) throws Exception;
 
 	List<HashMap<String, String>> getNotice() throws Exception;
 
