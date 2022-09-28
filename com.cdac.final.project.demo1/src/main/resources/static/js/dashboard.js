@@ -246,11 +246,10 @@ $(document).ready(() => {
     //Functionality to submit doubt
     $("#doubtSubmit").click((e) => {
         e.preventDefault();
-        var doubtContent = $("#doubtContent").val();
+        var doubtContent = $('textarea[name="content"]').val();
         var subjectName = $('#moduleList :selected').text();
         var uPrn = localStorage.getItem("uPrn");
         var attachment = $("#photo").val();
-
         $.ajax({
             url: "/portal/doubt",
             type: "POST",

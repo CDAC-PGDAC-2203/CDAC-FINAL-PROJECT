@@ -89,7 +89,7 @@
 								</div>
 								<div class="form-group">
 									<p class="doubtContent mt-1">Doubt Content</p>
-									<textarea class="form-control" id="Textarea" rows="3" id="doubtContent"></textarea>
+									<textarea class="form-control" id="Textarea" rows="3" id="doubtContent" name="content"></textarea>
 								</div>
 								<div class="form-group">
 									<input type="file" id="image_input">
