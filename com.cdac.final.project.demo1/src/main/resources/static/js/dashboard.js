@@ -43,7 +43,7 @@ $(document).ready(() => {
                 #e91e63 ${progressValue1 * 2.7}deg,
                 white ${progressValue1 * 3.6}deg
             )`;
-            if (parseFloat((progressValue1).toFixed(1)) == parseFloat((totalPerformance).toFixed(1))) {
+            if (parseFloat((progressValue1).toFixed(1)) == parseFloat((progressEndValue1).toFixed(1))) {
                 clearInterval(progress1);
             }
         }, speed1);
@@ -69,8 +69,8 @@ $(document).ready(() => {
         var valueContainer2 = document.querySelector(".value-container-2");
 
         var progressValue2 = 0.0;
-        progressValue1 = parseFloat(parseFloat(progressValue2).toFixed(1));
-        var progressEndValue1 = parseFloat((totalAttendance).toFixed(1));
+        progressValue2 = parseFloat(parseFloat(progressValue2).toFixed(1));
+        var progressEndValue2 = parseFloat((totalAttendance).toFixed(1));
         var speed2 = 0.5;
 
         var progress2 = setInterval(() => {
@@ -82,7 +82,7 @@ $(document).ready(() => {
                 #e91e63 ${progressValue2 * 2.7}deg,
                 white ${progressValue2 * 3.6}deg
             )`;
-            if (parseFloat((progressValue2).toFixed(1)) == parseFloat((totalAttendance).toFixed(1))) {
+            if (parseFloat((progressValue2).toFixed(1)) == parseFloat((progressEndValue2).toFixed(1))) {
                 clearInterval(progress2);
             }
         }, speed2);
@@ -176,7 +176,10 @@ $(document).ready(() => {
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({
-            
+            "day": dd.toString(),
+            "month": mm.toString(),
+            "year": yyyy.toString(),
+            "course": courseLink
         }),
         beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', localStorage.getItem("token")) },
         success: (data) => {

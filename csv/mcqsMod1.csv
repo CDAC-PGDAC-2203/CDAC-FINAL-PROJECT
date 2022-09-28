@@ -2,7 +2,7 @@
 2,What is the size of float and double in java?,32 and 64,32 and 32,64 and 64,64 and 32,32 and 64,mod1
 3,Automatic type conversion is possible in which of the cases?,byte to int,int to long,long to int,double to int,int to long,mod1
 4,Select the valid statement.,char[] ch = new char(5),char[] ch = new char[5],char[] ch = new char,char[] ch = new char[],char[] ch = new char[5],mod1
-5,When an array is passed to a method, what does the method receive?,Reference of array,Copy of array,Length of array,None of the above,Reference of array,mod1
+5,When an array is passed to a method what does the method receive?,Reference of array,Copy of array,Length of array,None of the above,Reference of array,mod1
 6,What is the implicit return type of constructor?,No return type,A class object in which it is defined,int,All of the above,A class object in which it is defined,mod1
 7,Arrays in java are,Object refereces,Objects,Primitive data type,None of the above,Objects,mod1
 8,A package is a collection of,Editing tools,Classes,Classes and interfaces,Interfaces,Classes and interfaces,mod1
