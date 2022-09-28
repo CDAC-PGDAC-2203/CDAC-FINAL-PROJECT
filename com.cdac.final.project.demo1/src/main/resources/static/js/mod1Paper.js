@@ -46,7 +46,9 @@ $(document).ready(() => {
 
     $("#submitExam").click((e) => {
         e.preventDefault();
-
+        var count = $("input[type = 'radio']:checked");  
+        if(count.length == questionNumber-1)  
+        {  
         var answerMap = new Map();
         var i = 1;
         $('input:radio:checked').each(function () {
@@ -77,6 +79,11 @@ $(document).ready(() => {
             error: (error) => {
                 alert("Internal Server Error!");
             }
-        });
+        });    
+        }
+        else {  
+            alert("please answer all questions!!!");  
+               return false;  
+        }
     });
 });
