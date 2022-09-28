@@ -43,7 +43,7 @@ $(document).ready(() => {
                 #e91e63 ${progressValue1 * 2.7}deg,
                 white ${progressValue1 * 3.6}deg
             )`;
-            if (parseFloat((progressValue1).toFixed(1)) == parseFloat((totalPerformance).toFixed(1))) {
+            if (parseFloat((progressValue1).toFixed(1)) == parseFloat((progressEndValue1).toFixed(1))) {
                 clearInterval(progress1);
             }
         }, speed1);
@@ -176,7 +176,10 @@ $(document).ready(() => {
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({
-            
+            "day": dd.toString(),
+            "month": mm.toString(),
+            "year": yyyy.toString(),
+            "course": courseLink
         }),
         beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', localStorage.getItem("token")) },
         success: (data) => {
