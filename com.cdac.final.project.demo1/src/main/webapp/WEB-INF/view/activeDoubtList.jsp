@@ -26,7 +26,7 @@
 			</h4>
 		  </div>
 			<div class="inner-div" style="overflow-x: auto;">
-				<table class="table table-striped">
+				<table class="table table-striped" style="text-align: center;">
 					<thead>
 						<tr style="font-family: helvetica;">
 							<th scope="row">PRN No</th>
@@ -61,7 +61,7 @@
 	                             + "<td scope='row'>" + element.email + "</td>"
 	                             + "<td scope='row'>" + element.subjectName + "</td>"
 	                             + "<td scope='row'>" + element.doubtContent + "</td>"
-	                             + "<td scope='row'><div class='col-md-4' id='attachmentImage'></div></td>"
+	                             + "<td scope='row'><a target='_blank' href='" + element.attachment + "'>Attachment</a></td>"
 	                             + "<td scope='row' style='width:85px'><button class='btn btn-primary btn-sm' style='width:80px; height: 40px;' id='" + element.doubtId + "' onclick='update_doubt_flag(" +  element.doubtId + ")'>Solved</button></td>"
 	                             + "</tr>";
 	                var attachmentPhoto = element.attachment;
