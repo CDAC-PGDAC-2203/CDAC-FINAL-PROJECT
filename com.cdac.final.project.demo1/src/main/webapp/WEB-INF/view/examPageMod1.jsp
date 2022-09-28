@@ -113,7 +113,7 @@
 
 	<div class="container-box mt-sm-5 my-1">
 		<h4 style="text-align: center;">
-			<b>Module : <span id="examPageMod1Name"></span></b>
+			<b>Module : Core Java<span id="examPageMod1Name"></span></b>
 		</h4>
 		<br>
 			<div id="paperStartMod1">
