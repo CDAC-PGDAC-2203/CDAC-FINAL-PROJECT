@@ -79,7 +79,7 @@
 						<h3 class="card-title"
 							style="text-align: center; margin-top: 5px;">Doubt Forum</h3>
 
-						<div class="card-body pt-0">
+						<div class="card-body" style="padding :0px;">
 
 							<form>
 								<div class="form-group">
