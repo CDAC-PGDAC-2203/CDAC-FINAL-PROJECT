@@ -1,3 +1,9 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Hardik Agarwal [220340120083] & Joy Pahari [220340120092]
+ * @Date: 21-09-2022 
+ */
+
 package com.cdac.app.controllers;
 
 import java.util.HashMap;
@@ -70,7 +76,6 @@ public class DashboardController {
 		return "/feedback";
 	}
 
-	// API to show user profile details
 	@GetMapping("/profile/{uPrn}")
 	public ResponseEntity<HashMap<String, String>> getProfile(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
@@ -85,7 +90,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to update user password
 	@PostMapping("/profile")
 	public ResponseEntity<?> updateProfile(@RequestBody ChangePasswordDTO password) {
 		SimpleString simple = new SimpleString("DONE");
@@ -101,7 +105,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to get doubt details
 	@PostMapping("/doubt")
 	public ResponseEntity<?> DoubtForumDetails(@RequestBody DoubtDTO dobutDetails) {
 		SimpleString simple = new SimpleString("DONE");
@@ -117,7 +120,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to show student performance
 	@GetMapping("/performance/{uPrn}")
 	public ResponseEntity<?> getFinalPerformance(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
@@ -131,7 +133,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to show student final attendance
 	@GetMapping("/attendance/{uPrn}")
 	public ResponseEntity<?> getTotalAttendance(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
@@ -145,7 +146,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to show stuRdent module wise attendance report
 	@GetMapping("/moduleAttendance/{uPrn}")
 	public ResponseEntity<List<TotalAttendance>> getModuleAttendance(@PathVariable(name = "uPrn") Long uPrn) {
 		try {
@@ -161,7 +161,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to store feedback
 	@PostMapping("/feedback")
 	public ResponseEntity<?> submitFeedback(@RequestBody Feedback feedback) {
 		SimpleString simple = new SimpleString("DONE");
@@ -177,7 +176,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to get lecture timings
 	@PostMapping("/dashboard/time")
 	public ResponseEntity<HashMap<String, String>> lectureTime(@RequestBody LectureDTO lecture) {
 		try {
@@ -194,7 +192,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to get lecture links
 	@PostMapping("/dashboard/links")
 	public ResponseEntity<HashMap<String, String>> lectureLink(@RequestBody LectureDTO lecture) {
 		try {
@@ -211,7 +208,6 @@ public class DashboardController {
 		}
 	}
 
-	// API to get notice details on dashBoard
 	@GetMapping("/notice")
 	public ResponseEntity<?> getNotice() {
 		try {

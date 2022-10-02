@@ -1,7 +1,7 @@
 /*
  * CDAC Final Project - CDAC APP
- * @Author: Hardik Agarwal [220340120083]
- * @Date: 21-09-2022 
+ * @Author: Hardik Agarwal [220340120083] & Joy Pahari [220340120092]
+ * @Date: 23-09-2022 
  */
 
 package com.cdac.app.controllers;
@@ -42,7 +42,6 @@ public class ExamController {
 		return "/examPageMod2";
 	}
 
-	// API to get question paper
 	@GetMapping("/exam/questions/{module}")
 	public ResponseEntity<?> getQuestions(@PathVariable(name = "module") String module) {
 		try {
@@ -57,7 +56,6 @@ public class ExamController {
 		}
 	}
 
-	// API to give attempt exam
 	@PostMapping("/exam/attempt")
 	public ResponseEntity<?> examAttempt(@RequestBody ExamAttemptDTO exam) {
 		SimpleString simple = new SimpleString("DONE");

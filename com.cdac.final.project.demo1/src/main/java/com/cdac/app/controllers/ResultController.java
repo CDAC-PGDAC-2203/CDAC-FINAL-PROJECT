@@ -1,3 +1,9 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Hardik Agarwal [220340120083] & Joy Pahari [220340120092]
+ * @Date: 24-09-2022 
+ */
+
 package com.cdac.app.controllers;
 
 import java.util.HashMap;
@@ -31,7 +37,6 @@ public class ResultController {
 		return "/studentResultMod2";
 	}
 
-	// API to get fetch result
 	@GetMapping("/result/{uPrn}/{moduleName}")
 	public ResponseEntity<?> getResult(@PathVariable(name = "uPrn") Long uPrn,
 			@PathVariable(name = "moduleName") String moduleName) {

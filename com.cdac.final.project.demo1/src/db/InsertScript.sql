@@ -90,7 +90,9 @@ INSERT INTO feedback VALUES(220340120002,'PG-DAC','Madhura','mod1',3,4,5,5,5,20,
 INSERT INTO faculty VALUES(1,'Madhura','Y','PG-DAC');
 INSERT INTO faculty VALUES(2,'B','N','PG-DESD');
 INSERT INTO faculty VALUES(3,'C','N','PG-DAC');
-
+select * from modules
+insert into modules values('PG-DAC','COP','DBT','J2SE','ADS','WPT','J2EE','SE','.NET');
+insert into modules values('PG-DBDA','DOM','SDE','PYTHON','ADS','CCNA','SECURITY','SE','.NET');
 -- --------------------------------------------------------------------------------------------
 
 -- notice table
@@ -103,5 +105,5 @@ INSERT INTO notice VALUES('TCS Hiring!!!','https://www.tcs.com/careers/entry-lev
 -- lecture_link table
 
 INSERT INTO lecture_link VALUES(1,'PG-DAC','2022-09-27','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');
-INSERT INTO lecture_link VALUES(2,'PG-DAC','2022-09-28','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');
+INSERT INTO lecture_link VALUES(2,'PG-DBDA','2022-09-29','08:00_https://meet.google.com/oed-smxz-dkb','14:00_https://meet.google.com/jqf-yrqq-aye','15:00_https://meet.google.com/pnt-difv-fum','16:00_https://meet.google.com/jqf-yrqq-aye','18:00_https://meet.google.com/pnt-difv-fum');
 INSERT INTO lecture_link VALUES(3,'PG-DAC','2022-09-29','01:00_https://meet.google.com/oed-smxz-dkb','04:00_https://meet.google.com/jqf-yrqq-aye','06:00_https://meet.google.com/pnt-difv-fum','05:00_https://meet.google.com/jqf-yrqq-aye','03:00_https://meet.google.com/pnt-difv-fum');

@@ -1,3 +1,9 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Hardik Agarwal [220340120083] & Joy Pahari [220340120092]
+ * @Date: 22-09-2022 
+ */
+
 package com.cdac.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +31,6 @@ public class RegistrationController {
 		return "/registration";
 	}
 
-	// API to check if student is valid for registration
 	@PostMapping("/register/validate")
 	public ResponseEntity<?> checkValidStudent(@RequestBody ValidStudent student) {
 		CCATStudent isValidStudent = service.checkIfValid(Long.parseLong(student.getCcatNo()), student.getfName());
@@ -35,7 +40,6 @@ public class RegistrationController {
 		return null;
 	}
 
-	// API to save personal details in dataBase
 	@PostMapping("/register/details")
 	public ResponseEntity<?> savePersonalDetails(@RequestBody PersonalDetails pDetails) {
 		try {
@@ -48,7 +52,6 @@ public class RegistrationController {
 		}
 	}
 
-	// API to save address details in database
 	@PostMapping("/register/address")
 	public ResponseEntity<?> saveAddressDetails(@RequestBody UserAddress addressDetails) {
 		try {

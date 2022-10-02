@@ -171,6 +171,7 @@ CREATE TABLE IF NOT EXISTS doubt_forum(
     attachment longtext,
     active_doubt char(1) not null -- (Y/N)
 );
+select * from doubt_forum
 
 -- ------------------------------------------------------------------------------------------------------
 

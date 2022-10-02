@@ -1,3 +1,9 @@
+/*
+ * CDAC Final Project - CDAC APP
+ * @Author: Hardik Agarwal [220340120083] & Joy Pahari [220340120092]
+ * @Date: 26-09-2022 
+ */
+
 package com.cdac.app.controllers;
 
 import java.util.List;
@@ -89,7 +95,7 @@ public class AdminController {
 	public String loadUploadFacultyList() {
 		return "/adminFacultyList";
 	}
-	
+
 	@GetMapping("/admin/faculty/flag")
 	public String loadUpdateFaculty() {
 		return "/adminFacultyFeedback";
@@ -119,9 +125,7 @@ public class AdminController {
 	public String logout() {
 		return "/login";
 	}
-	
-	
-	// API to generate PRN of students course wise
+
 	@PostMapping("/generate/{courseName}")
 	public ResponseEntity<?> generatePRN(@PathVariable(name = "courseName") String courseName) {
 		SimpleString simple = new SimpleString("DONE");
@@ -129,13 +133,12 @@ public class AdminController {
 			registartionService.generatePRN(courseName);
 			logger.info("**************Generated PRN of course: " + courseName + "****************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to upload question paper
 	@PostMapping("/questions")
 	public ResponseEntity<?> uploadExamPaper(@RequestBody ImportDataDTO questionPaper) {
 		SimpleString simple = new SimpleString("DONE");
@@ -143,20 +146,19 @@ public class AdminController {
 			examService.uploadExamPaper(questionPaper.getFilePath(), questionPaper.getSubject());
 			logger.info("************Uploaded Question Paper*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to get all active doubts
 	@GetMapping("/doubts")
 	public ResponseEntity<List<DoubtForum>> getAllActiveDoubts() {
 		try {
 			List<DoubtForum> list = dashboardService.getActiveDoubts();
 			logger.info("************Received active doubts*************");
-			return new ResponseEntity<>(list,HttpStatus.OK);
-		}catch(Exception e) {
+			return new ResponseEntity<>(list, HttpStatus.OK);
+		} catch (Exception e) {
 			List<DoubtForum> badList = null;
 			return new ResponseEntity<>(badList, HttpStatus.OK);
 		}
@@ -165,122 +167,115 @@ public class AdminController {
 	@PutMapping("/doubt/{doubtId}")
 	public ResponseEntity<?> updateActiveFlag(@PathVariable(name = "doubtId") Long doubtId) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			dashboardService.updateActiveFlag(doubtId);
 			logger.info("************Doubt:" + doubtId + " inactive*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to upload attendance of students
 	@PostMapping("/attendance")
 	public ResponseEntity<?> uploadAttendance(@RequestBody ImportDataDTO attendance) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			dashboardService.uploadAttendance(attendance.getFilePath(), attendance.getSubject());
 			logger.info("************Uploaded Attendance Key*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to upload results of students
 	@PostMapping("/result")
 	public ResponseEntity<?> setResult(@RequestBody ResultDTO result) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			resultService.setResult(result.getFilePath(), result.getSubject(), result.getCourse());
-			logger.info("****************RESULT UPDATED OF "+result.getSubject()+"*************");
+			logger.info("****************RESULT UPDATED OF " + result.getSubject() + "*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to get feedback list
 	@GetMapping("/feedback/{course}")
 	public ResponseEntity<List<Feedback>> getFeedbackList(@PathVariable(name = "course") String course) {
 		try {
 			List<Feedback> list = feedbackService.getFeedbackList(course);
 			logger.info("************Received feedbacks*************");
-			return new ResponseEntity<>(list,HttpStatus.OK);
-		}catch(Exception e) {
+			return new ResponseEntity<>(list, HttpStatus.OK);
+		} catch (Exception e) {
 			List<Feedback> badList = null;
 			return new ResponseEntity<>(badList, HttpStatus.OK);
 		}
 	}
 
-	// API to update faculty list
 	@PostMapping("/faculty")
 	public ResponseEntity<?> importFacultyList(@RequestBody ImportDataDTO faculty) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			feedbackService.importFacultyList(faculty.getFilePath(), faculty.getSubject());
 			logger.info("************Uploaded Faculty List*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to make faculty visible for feedback
 	@PutMapping("/faculty/{flag}/{facultyId}/{course}")
 	public ResponseEntity<?> updateFacultyFlag(@PathVariable(name = "flag") String flag,
 			@PathVariable(name = "facultyId") Long facultyId, @PathVariable(name = "course") String course) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			feedbackService.updateFacultyFlag(flag, facultyId, course);
 			logger.info("************Uploaded Faculty List*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
-	}	
-	
+	}
+
 	@PostMapping("/links")
 	public ResponseEntity<?> uploadLinks(@RequestBody LectureLink lectureLink) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			joinLectureService.uploadLectureLinks(lectureLink);
 			logger.info("************Uploaded Links*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to upload notice
 	@PostMapping("/notice")
-	public ResponseEntity<?> setNotice(@RequestBody ImportDataDTO notice ) {
+	public ResponseEntity<?> setNotice(@RequestBody ImportDataDTO notice) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			dashboardService.setNotice(notice.getSubject(), notice.getFilePath());
 			logger.info("************Uploaded Links*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
 	}
 
-	// API to remove an old notice
 	@PostMapping("/notice/{name}")
 	public ResponseEntity<?> removeNotice(@PathVariable(name = "name") String noticeName) {
 		SimpleString simple = new SimpleString("DONE");
-		try{
+		try {
 			dashboardService.removeNotice(noticeName);
 			logger.info("************Uploaded Links*************");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			simple = new SimpleString("FAILED");
 			return new ResponseEntity<SimpleString>(simple, HttpStatus.OK);
 		}
