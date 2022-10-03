@@ -11,61 +11,13 @@ insert into ccat_student values('1111111','admin','admin','admin','1999-01-01','
 
 -- user_table table
 
-INSERT INTO user_table VALUES (1, 'Hardik', 2203001, 'STUDENT');
-INSERT INTO user_table VALUES (2, 'Joy', 2203002, 'STUDENT');
 INSERT INTO user_table VALUES (10000, 'admin', 1111111, 'ADMIN');
-
--- --------------------------------------------------------------------------------------------
-
--- personal_details table
-
-insert into personal_details values('1',2203001,'Hardik',NULL,'Agarwal','M','2000-03-17','hardikagarwal1703@gmail.com','8630296896','B.tech','https:\\hardik.png','PG-DAC','Mala Agarwal', '8630298749');
-insert into personal_details values('2',2203002,'Joy',NULL,'Pahari','M','1998-09-01','joypahari11@gmail.com','7798003910','B.tech','https:\\joy.png','PG-DAC','SB Pahari', '7499153589');
-
--- --------------------------------------------------------------------------------------------
--- user_address table
-
-INSERT INTO user_address VALUES(1,'Ganesh Apartment','Kisan Nagar','Uttar Pradesh','Hapur',400001);
-INSERT INTO user_address VALUES(2,'Flat No. C/4','Navelkar Bldg, Mangoor Hill','Goa','Vasco',403802);
 
 -- --------------------------------------------------------------------------------------------
 
 -- user_login table
 
 insert into user_login values(10000,'admin',11111,'$2a$10$dp.US7K4f97owgHXpmwyUO1aiox8vexAFD/egkn4QHUDvqI4.NHn2','ADMIN','PG-DAC');
-
--- --------------------------------------------------------------------------------------------
-
--- module tables
-
-insert into module_1 values(220340120001,35,15,4);
-insert into module_2 values(220340120001,34,15,4);
-insert into module_3 values(220340120001,35,14,4);
-insert into module_4 values(220340120001,36,12,4);
-insert into module_1 values(220340120002,35,15,4);
-insert into module_2 values(220340120002,35,15,4);
-insert into module_3 values(220340120002,35,14,4);
-insert into module_4 values(220340120002,35,12,3);
-
--- --------------------------------------------------------------------------------------------
-
--- final_result table
-
-insert into final_result values(220340120001,54,53,53,52,null,null,null,null);
-insert into final_result values(220340120002,54,54,53,51,null,null,null,null);
-
--- --------------------------------------------------------------------------------------------
-
--- total_attendance table
-
-INSERT INTO total_attendance VALUES(220340120001,'mod1',8,10);
-INSERT INTO total_attendance VALUES(220340120001,'mod2',8,10);
-INSERT INTO total_attendance VALUES(220340120001,'mod3',8,10);
-INSERT INTO total_attendance VALUES(220340120001,'mod4',8,10);
-INSERT INTO total_attendance VALUES(220340120002,'mod1',8,10);
-INSERT INTO total_attendance VALUES(220340120002,'mod2',8,10);
-INSERT INTO total_attendance VALUES(220340120002,'mod3',8,10);
-INSERT INTO total_attendance VALUES(220340120002,'mod4',6,10);
 
 -- --------------------------------------------------------------------------------------------
 
@@ -83,16 +35,6 @@ INSERT INTO doubt_forum VALUES(4, 220340120002, 'Joy', 'joypahari11@gmail.com', 
 INSERT INTO feedback VALUES(220340120001,'PG-DAC','Madhura','mod1',2,3,5,5,5,20,'Excellent');
 INSERT INTO feedback VALUES(220340120002,'PG-DAC','Madhura','mod1',3,4,5,5,5,20,'Excellent');
 
--- -------------------------------------------------------------------------------------------- 
-
--- faculty table
-
-INSERT INTO faculty VALUES(1,'Madhura','Y','PG-DAC');
-INSERT INTO faculty VALUES(2,'B','N','PG-DESD');
-INSERT INTO faculty VALUES(3,'C','N','PG-DAC');
-select * from modules
-insert into modules values('PG-DAC','COP','DBT','J2SE','ADS','WPT','J2EE','SE','.NET');
-insert into modules values('PG-DBDA','DOM','SDE','PYTHON','ADS','CCNA','SECURITY','SE','.NET');
 -- --------------------------------------------------------------------------------------------
 
 -- notice table
